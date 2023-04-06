@@ -23,7 +23,7 @@ import WorkspaceCompact from './WorkspaceCompact';
 /**
  * The ProjectBase model module.
  * @module model/ProjectBase
- * @version 1.0.0
+ * @version 1.0.1
  */
 class ProjectBase {
     /**

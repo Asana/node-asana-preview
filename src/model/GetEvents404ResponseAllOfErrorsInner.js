@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GetEvents404ResponseAllOfErrorsInner model module.
  * @module model/GetEvents404ResponseAllOfErrorsInner
- * @version 1.0.0
+ * @version 1.0.1
  */
 class GetEvents404ResponseAllOfErrorsInner {
     /**

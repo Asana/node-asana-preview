@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TaskBaseAllOfExternal model module.
  * @module model/TaskBaseAllOfExternal
- * @version 1.0.0
+ * @version 1.0.1
  */
 class TaskBaseAllOfExternal {
     /**

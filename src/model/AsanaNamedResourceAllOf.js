@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AsanaNamedResourceAllOf model module.
  * @module model/AsanaNamedResourceAllOf
- * @version 1.0.0
+ * @version 1.0.1
  */
 class AsanaNamedResourceAllOf {
     /**

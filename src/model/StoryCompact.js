@@ -19,7 +19,7 @@ import UserCompact from './UserCompact';
 /**
  * The StoryCompact model module.
  * @module model/StoryCompact
- * @version 1.0.0
+ * @version 1.0.1
  */
 class StoryCompact {
     /**

@@ -17,7 +17,7 @@ import UserCompact from './UserCompact';
 /**
  * The Like model module.
  * @module model/Like
- * @version 1.0.0
+ * @version 1.0.1
  */
 class Like {
     /**

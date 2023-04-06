@@ -24,7 +24,7 @@ import GetEvents500Response from '../model/GetEvents500Response';
 /**
 * Events service.
 * @module api/EventsApi
-* @version 1.0.0
+* @version 1.0.1
 */
 export default class EventsApi {
 

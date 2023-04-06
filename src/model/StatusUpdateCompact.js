@@ -18,7 +18,7 @@ import StatusUpdateCompactAllOf from './StatusUpdateCompactAllOf';
 /**
  * The StatusUpdateCompact model module.
  * @module model/StatusUpdateCompact
- * @version 1.0.0
+ * @version 1.0.1
  */
 class StatusUpdateCompact {
     /**

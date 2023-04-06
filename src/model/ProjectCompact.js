@@ -18,7 +18,7 @@ import ProjectCompactAllOf from './ProjectCompactAllOf';
 /**
  * The ProjectCompact model module.
  * @module model/ProjectCompact
- * @version 1.0.0
+ * @version 1.0.1
  */
 class ProjectCompact {
     /**

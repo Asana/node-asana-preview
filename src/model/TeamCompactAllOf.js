@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TeamCompactAllOf model module.
  * @module model/TeamCompactAllOf
- * @version 1.0.0
+ * @version 1.0.1
  */
 class TeamCompactAllOf {
     /**

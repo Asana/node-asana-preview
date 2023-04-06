@@ -24,7 +24,7 @@ import GetProjects200Response from '../model/GetProjects200Response';
 /**
 * Projects service.
 * @module api/ProjectsApi
-* @version 1.0.0
+* @version 1.0.1
 */
 export default class ProjectsApi {
 

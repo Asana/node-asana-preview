@@ -18,7 +18,7 @@ import ProjectCompact from './ProjectCompact';
 /**
  * The CustomFieldSettingResponseAllOf model module.
  * @module model/CustomFieldSettingResponseAllOf
- * @version 1.0.0
+ * @version 1.0.1
  */
 class CustomFieldSettingResponseAllOf {
     /**

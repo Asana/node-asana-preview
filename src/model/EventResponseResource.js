@@ -17,7 +17,7 @@ import AsanaNamedResource from './AsanaNamedResource';
 /**
  * The EventResponseResource model module.
  * @module model/EventResponseResource
- * @version 1.0.0
+ * @version 1.0.1
  */
 class EventResponseResource {
     /**

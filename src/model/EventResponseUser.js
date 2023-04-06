@@ -17,7 +17,7 @@ import UserCompact from './UserCompact';
 /**
  * The EventResponseUser model module.
  * @module model/EventResponseUser
- * @version 1.0.0
+ * @version 1.0.1
  */
 class EventResponseUser {
     /**

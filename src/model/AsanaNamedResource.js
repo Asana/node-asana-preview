@@ -18,7 +18,7 @@ import AsanaResource from './AsanaResource';
 /**
  * The AsanaNamedResource model module.
  * @module model/AsanaNamedResource
- * @version 1.0.0
+ * @version 1.0.1
  */
 class AsanaNamedResource {
     /**

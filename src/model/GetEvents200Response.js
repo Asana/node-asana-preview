@@ -17,7 +17,7 @@ import EventResponse from './EventResponse';
 /**
  * The GetEvents200Response model module.
  * @module model/GetEvents200Response
- * @version 1.0.0
+ * @version 1.0.1
  */
 class GetEvents200Response {
     /**

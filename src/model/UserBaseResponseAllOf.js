@@ -17,7 +17,7 @@ import UserBaseResponseAllOfPhoto from './UserBaseResponseAllOfPhoto';
 /**
  * The UserBaseResponseAllOf model module.
  * @module model/UserBaseResponseAllOf
- * @version 1.0.0
+ * @version 1.0.1
  */
 class UserBaseResponseAllOf {
     /**

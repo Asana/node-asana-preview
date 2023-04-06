@@ -19,7 +19,7 @@ import UserCompact from './UserCompact';
 /**
  * The UserBaseResponse model module.
  * @module model/UserBaseResponse
- * @version 1.0.0
+ * @version 1.0.1
  */
 class UserBaseResponse {
     /**

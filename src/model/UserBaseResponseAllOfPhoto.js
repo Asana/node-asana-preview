@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UserBaseResponseAllOfPhoto model module.
  * @module model/UserBaseResponseAllOfPhoto
- * @version 1.0.0
+ * @version 1.0.1
  */
 class UserBaseResponseAllOfPhoto {
     /**

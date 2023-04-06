@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The EventResponseChange model module.
  * @module model/EventResponseChange
- * @version 1.0.0
+ * @version 1.0.1
  */
 class EventResponseChange {
     /**

@@ -17,7 +17,7 @@ import GetEvents401ResponseAllOfErrorsInner from './GetEvents401ResponseAllOfErr
 /**
  * The GetEvents401ResponseAllOf model module.
  * @module model/GetEvents401ResponseAllOf
- * @version 1.0.0
+ * @version 1.0.1
  */
 class GetEvents401ResponseAllOf {
     /**

@@ -19,7 +19,7 @@ import ErrorResponse5XXAllOfErrors from './ErrorResponse5XXAllOfErrors';
 /**
  * The ErrorResponse5XX model module.
  * @module model/ErrorResponse5XX
- * @version 1.0.0
+ * @version 1.0.1
  */
 class ErrorResponse5XX {
     /**

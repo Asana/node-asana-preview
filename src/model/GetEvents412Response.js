@@ -19,7 +19,7 @@ import GetEvents412ResponseAllOfErrorsInner from './GetEvents412ResponseAllOfErr
 /**
  * The GetEvents412Response model module.
  * @module model/GetEvents412Response
- * @version 1.0.0
+ * @version 1.0.1
  */
 class GetEvents412Response {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ProjectTemplateCompactAllOf model module.
  * @module model/ProjectTemplateCompactAllOf
- * @version 1.0.0
+ * @version 1.0.1
  */
 class ProjectTemplateCompactAllOf {
     /**

@@ -27,7 +27,7 @@ import WorkspaceCompact from './WorkspaceCompact';
 /**
  * The ProjectResponse model module.
  * @module model/ProjectResponse
- * @version 1.0.0
+ * @version 1.0.1
  */
 class ProjectResponse {
     /**

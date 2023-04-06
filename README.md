@@ -2,7 +2,7 @@
 
 This is the interface for interacting with the Asana platform
 
-- Package version: 1.0.0
+- Package version: 1.0.1
 
 ## Installation
 

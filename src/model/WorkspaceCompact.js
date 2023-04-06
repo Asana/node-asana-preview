@@ -18,7 +18,7 @@ import WorkspaceCompactAllOf from './WorkspaceCompactAllOf';
 /**
  * The WorkspaceCompact model module.
  * @module model/WorkspaceCompact
- * @version 1.0.0
+ * @version 1.0.1
  */
 class WorkspaceCompact {
     /**

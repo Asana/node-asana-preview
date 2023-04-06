@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The NextPage model module.
  * @module model/NextPage
- * @version 1.0.0
+ * @version 1.0.1
  */
 class NextPage {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CustomFieldSettingCompactAllOf model module.
  * @module model/CustomFieldSettingCompactAllOf
- * @version 1.0.0
+ * @version 1.0.1
  */
 class CustomFieldSettingCompactAllOf {
     /**
