@@ -20,7 +20,7 @@ Returns the complete project record for a single project.
 ### Example
 
 ```javascript
-import AsanaPreview from 'asana-preview';
+const AsanaPreview = require('asana-preview');
 
 let defaultClient = AsanaPreview.ApiClient.instance;
 // Configure Bearer access token for authorization: personal_access_token
@@ -77,7 +77,7 @@ Returns the compact project records for some filtered set of projects. Use one o
 ### Example
 
 ```javascript
-import AsanaPreview from 'asana-preview';
+const AsanaPreview = require('asana-preview');
 
 let defaultClient = AsanaPreview.ApiClient.instance;
 // Configure Bearer access token for authorization: personal_access_token

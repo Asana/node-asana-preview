@@ -19,7 +19,7 @@ Returns the full record for all events that have occurred since the sync token w
 ### Example
 
 ```javascript
-import AsanaPreview from 'asana-preview';
+const AsanaPreview = require('asana-preview');
 
 let defaultClient = AsanaPreview.ApiClient.instance;
 // Configure Bearer access token for authorization: personal_access_token

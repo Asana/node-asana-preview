@@ -19,7 +19,7 @@ Returns the compact records for all sections in the specified project.
 ### Example
 
 ```javascript
-import AsanaPreview from 'asana-preview';
+const AsanaPreview = require('asana-preview');
 
 let defaultClient = AsanaPreview.ApiClient.instance;
 // Configure Bearer access token for authorization: personal_access_token

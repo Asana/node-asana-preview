@@ -22,7 +22,7 @@ Returns a compact representation of all of the subtasks of a task.
 ### Example
 
 ```javascript
-import AsanaPreview from 'asana-preview';
+const AsanaPreview = require('asana-preview');
 
 let defaultClient = AsanaPreview.ApiClient.instance;
 // Configure Bearer access token for authorization: personal_access_token
@@ -83,7 +83,7 @@ Returns the complete task record for a single task.
 ### Example
 
 ```javascript
-import AsanaPreview from 'asana-preview';
+const AsanaPreview = require('asana-preview');
 
 let defaultClient = AsanaPreview.ApiClient.instance;
 // Configure Bearer access token for authorization: personal_access_token
@@ -140,7 +140,7 @@ Returns the compact task records for some filtered set of tasks. Use one or more
 ### Example
 
 ```javascript
-import AsanaPreview from 'asana-preview';
+const AsanaPreview = require('asana-preview');
 
 let defaultClient = AsanaPreview.ApiClient.instance;
 // Configure Bearer access token for authorization: personal_access_token
@@ -211,7 +211,7 @@ Returns the compact task records for all tasks within the given project, ordered
 ### Example
 
 ```javascript
-import AsanaPreview from 'asana-preview';
+const AsanaPreview = require('asana-preview');
 
 let defaultClient = AsanaPreview.ApiClient.instance;
 // Configure Bearer access token for authorization: personal_access_token
