@@ -64,7 +64,7 @@ class ApiClient {
         // Add custom header
         this.defaultHeaders['X-Asana-Client-Lib'] = querystring.stringify(
             {
-                'version': {{projectVersion}},
+                'version': "{{projectVersion}}",
                 'language': 'NodeJSPreview',
                 'language_version': process.version,
                 'os': process.platform
