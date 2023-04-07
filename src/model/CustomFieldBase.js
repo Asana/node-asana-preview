@@ -20,7 +20,7 @@ import EnumOption from './EnumOption';
 /**
  * The CustomFieldBase model module.
  * @module model/CustomFieldBase
- * @version 1.0.1
+ * @version 1.0.2
  */
 class CustomFieldBase {
     /**

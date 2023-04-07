@@ -17,7 +17,7 @@ import TaskBaseAllOfExternal from './TaskBaseAllOfExternal';
 /**
  * The TaskBaseAllOf model module.
  * @module model/TaskBaseAllOf
- * @version 1.0.1
+ * @version 1.0.2
  */
 class TaskBaseAllOf {
     /**

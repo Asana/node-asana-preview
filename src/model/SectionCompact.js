@@ -18,7 +18,7 @@ import SectionCompactAllOf from './SectionCompactAllOf';
 /**
  * The SectionCompact model module.
  * @module model/SectionCompact
- * @version 1.0.1
+ * @version 1.0.2
  */
 class SectionCompact {
     /**

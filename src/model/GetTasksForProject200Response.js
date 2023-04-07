@@ -18,7 +18,7 @@ import TaskCompact from './TaskCompact';
 /**
  * The GetTasksForProject200Response model module.
  * @module model/GetTasksForProject200Response
- * @version 1.0.1
+ * @version 1.0.2
  */
 class GetTasksForProject200Response {
     /**

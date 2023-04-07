@@ -17,7 +17,7 @@ import UserCompact from './UserCompact';
 /**
  * The ProjectStatusResponseAllOf model module.
  * @module model/ProjectStatusResponseAllOf
- * @version 1.0.1
+ * @version 1.0.2
  */
 class ProjectStatusResponseAllOf {
     /**

@@ -1,6 +1,6 @@
 {
   "name": "asana-preview",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "This is the interface for interacting with the Asana platform",
   "license": "Apache 2.0",
   "main": "dist/index.js",

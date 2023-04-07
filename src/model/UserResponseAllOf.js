@@ -17,7 +17,7 @@ import WorkspaceCompact from './WorkspaceCompact';
 /**
  * The UserResponseAllOf model module.
  * @module model/UserResponseAllOf
- * @version 1.0.1
+ * @version 1.0.2
  */
 class UserResponseAllOf {
     /**

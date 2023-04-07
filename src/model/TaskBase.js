@@ -19,7 +19,7 @@ import TaskCompact from './TaskCompact';
 /**
  * The TaskBase model module.
  * @module model/TaskBase
- * @version 1.0.1
+ * @version 1.0.2
  */
 class TaskBase {
     /**

@@ -18,7 +18,7 @@ import EnumOptionAllOf from './EnumOptionAllOf';
 /**
  * The EnumOption model module.
  * @module model/EnumOption
- * @version 1.0.1
+ * @version 1.0.2
  */
 class EnumOption {
     /**

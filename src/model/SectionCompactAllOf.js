@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SectionCompactAllOf model module.
  * @module model/SectionCompactAllOf
- * @version 1.0.1
+ * @version 1.0.2
  */
 class SectionCompactAllOf {
     /**

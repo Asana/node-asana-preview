@@ -18,7 +18,7 @@ import TeamCompactAllOf from './TeamCompactAllOf';
 /**
  * The TeamCompact model module.
  * @module model/TeamCompact
- * @version 1.0.1
+ * @version 1.0.2
  */
 class TeamCompact {
     /**

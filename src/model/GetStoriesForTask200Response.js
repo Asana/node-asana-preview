@@ -18,7 +18,7 @@ import StoryCompact from './StoryCompact';
 /**
  * The GetStoriesForTask200Response model module.
  * @module model/GetStoriesForTask200Response
- * @version 1.0.1
+ * @version 1.0.2
  */
 class GetStoriesForTask200Response {
     /**

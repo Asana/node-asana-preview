@@ -21,7 +21,7 @@ import UserCompact from './UserCompact';
 /**
  * The CustomFieldResponse model module.
  * @module model/CustomFieldResponse
- * @version 1.0.1
+ * @version 1.0.2
  */
 class CustomFieldResponse {
     /**

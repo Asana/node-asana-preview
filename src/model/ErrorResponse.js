@@ -17,7 +17,7 @@ import ErrorResponseErrorsInner from './ErrorResponseErrorsInner';
 /**
  * The ErrorResponse model module.
  * @module model/ErrorResponse
- * @version 1.0.1
+ * @version 1.0.2
  */
 class ErrorResponse {
     /**

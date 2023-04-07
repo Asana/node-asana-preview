@@ -23,7 +23,7 @@ import GetUser200Response from '../model/GetUser200Response';
 /**
 * Users service.
 * @module api/UsersApi
-* @version 1.0.1
+* @version 1.0.2
 */
 export default class UsersApi {
 

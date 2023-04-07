@@ -19,7 +19,7 @@ import GetEvents404ResponseAllOfErrorsInner from './GetEvents404ResponseAllOfErr
 /**
  * The GetEvents404Response model module.
  * @module model/GetEvents404Response
- * @version 1.0.1
+ * @version 1.0.2
  */
 class GetEvents404Response {
     /**

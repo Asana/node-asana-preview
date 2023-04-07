@@ -18,7 +18,7 @@ import CustomFieldSettingCompactAllOf from './CustomFieldSettingCompactAllOf';
 /**
  * The CustomFieldSettingCompact model module.
  * @module model/CustomFieldSettingCompact
- * @version 1.0.1
+ * @version 1.0.2
  */
 class CustomFieldSettingCompact {
     /**

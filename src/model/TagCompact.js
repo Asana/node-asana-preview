@@ -18,7 +18,7 @@ import TagCompactAllOf from './TagCompactAllOf';
 /**
  * The TagCompact model module.
  * @module model/TagCompact
- * @version 1.0.1
+ * @version 1.0.2
  */
 class TagCompact {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CustomFieldBaseAllOf model module.
  * @module model/CustomFieldBaseAllOf
- * @version 1.0.1
+ * @version 1.0.2
  */
 class CustomFieldBaseAllOf {
     /**

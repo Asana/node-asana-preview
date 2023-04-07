@@ -24,7 +24,7 @@ import GetTasksForProject200Response from '../model/GetTasksForProject200Respons
 /**
 * Tasks service.
 * @module api/TasksApi
-* @version 1.0.1
+* @version 1.0.2
 */
 export default class TasksApi {
 

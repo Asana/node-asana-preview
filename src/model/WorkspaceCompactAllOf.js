@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The WorkspaceCompactAllOf model module.
  * @module model/WorkspaceCompactAllOf
- * @version 1.0.1
+ * @version 1.0.2
  */
 class WorkspaceCompactAllOf {
     /**

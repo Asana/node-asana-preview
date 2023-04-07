@@ -18,7 +18,7 @@ import EnumOption from './EnumOption';
 /**
  * The CustomFieldCompactAllOf model module.
  * @module model/CustomFieldCompactAllOf
- * @version 1.0.1
+ * @version 1.0.2
  */
 class CustomFieldCompactAllOf {
     /**

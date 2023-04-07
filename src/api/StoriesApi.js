@@ -23,7 +23,7 @@ import GetStoriesForTask200Response from '../model/GetStoriesForTask200Response'
 /**
 * Stories service.
 * @module api/StoriesApi
-* @version 1.0.1
+* @version 1.0.2
 */
 export default class StoriesApi {
 

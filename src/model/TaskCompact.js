@@ -18,7 +18,7 @@ import TaskCompactAllOf from './TaskCompactAllOf';
 /**
  * The TaskCompact model module.
  * @module model/TaskCompact
- * @version 1.0.1
+ * @version 1.0.2
  */
 class TaskCompact {
     /**

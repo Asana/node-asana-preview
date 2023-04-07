@@ -17,7 +17,7 @@ import ProjectCompact from './ProjectCompact';
 /**
  * The GetProjects200Response model module.
  * @module model/GetProjects200Response
- * @version 1.0.1
+ * @version 1.0.2
  */
 class GetProjects200Response {
     /**

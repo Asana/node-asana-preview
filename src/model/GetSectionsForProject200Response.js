@@ -18,7 +18,7 @@ import SectionCompact from './SectionCompact';
 /**
  * The GetSectionsForProject200Response model module.
  * @module model/GetSectionsForProject200Response
- * @version 1.0.1
+ * @version 1.0.2
  */
 class GetSectionsForProject200Response {
     /**

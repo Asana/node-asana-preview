@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ProjectStatusCompactAllOf model module.
  * @module model/ProjectStatusCompactAllOf
- * @version 1.0.1
+ * @version 1.0.2
  */
 class ProjectStatusCompactAllOf {
     /**

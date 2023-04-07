@@ -23,7 +23,7 @@ import GetSectionsForProject200Response from '../model/GetSectionsForProject200R
 /**
 * Sections service.
 * @module api/SectionsApi
-* @version 1.0.1
+* @version 1.0.2
 */
 export default class SectionsApi {
 

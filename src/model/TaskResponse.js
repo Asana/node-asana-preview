@@ -29,7 +29,7 @@ import WorkspaceCompact from './WorkspaceCompact';
 /**
  * The TaskResponse model module.
  * @module model/TaskResponse
- * @version 1.0.1
+ * @version 1.0.2
  */
 class TaskResponse {
     /**

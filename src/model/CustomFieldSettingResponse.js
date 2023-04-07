@@ -20,7 +20,7 @@ import ProjectCompact from './ProjectCompact';
 /**
  * The CustomFieldSettingResponse model module.
  * @module model/CustomFieldSettingResponse
- * @version 1.0.1
+ * @version 1.0.2
  */
 class CustomFieldSettingResponse {
     /**

@@ -17,7 +17,7 @@ import UserCompact from './UserCompact';
 /**
  * The CustomFieldResponseAllOf model module.
  * @module model/CustomFieldResponseAllOf
- * @version 1.0.1
+ * @version 1.0.2
  */
 class CustomFieldResponseAllOf {
     /**

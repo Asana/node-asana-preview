@@ -19,7 +19,7 @@ import GetEvents500ResponseAllOfErrorsInner from './GetEvents500ResponseAllOfErr
 /**
  * The GetEvents500Response model module.
  * @module model/GetEvents500Response
- * @version 1.0.1
+ * @version 1.0.2
  */
 class GetEvents500Response {
     /**

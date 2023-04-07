@@ -17,7 +17,7 @@ import UserCompact from './UserCompact';
 /**
  * The StoryCompactAllOf model module.
  * @module model/StoryCompactAllOf
- * @version 1.0.1
+ * @version 1.0.2
  */
 class StoryCompactAllOf {
     /**

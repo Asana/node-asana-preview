@@ -18,7 +18,7 @@ import SectionCompact from './SectionCompact';
 /**
  * The TaskResponseAllOfMemberships model module.
  * @module model/TaskResponseAllOfMemberships
- * @version 1.0.1
+ * @version 1.0.2
  */
 class TaskResponseAllOfMemberships {
     /**

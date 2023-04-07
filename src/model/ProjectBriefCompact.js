@@ -18,7 +18,7 @@ import ProjectBriefCompactAllOf from './ProjectBriefCompactAllOf';
 /**
  * The ProjectBriefCompact model module.
  * @module model/ProjectBriefCompact
- * @version 1.0.1
+ * @version 1.0.2
  */
 class ProjectBriefCompact {
     /**

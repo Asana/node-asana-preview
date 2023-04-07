@@ -20,7 +20,7 @@ import WorkspaceCompact from './WorkspaceCompact';
 /**
  * The UserResponse model module.
  * @module model/UserResponse
- * @version 1.0.1
+ * @version 1.0.2
  */
 class UserResponse {
     /**

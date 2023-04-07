@@ -18,7 +18,7 @@ import ProjectStatusCompactAllOf from './ProjectStatusCompactAllOf';
 /**
  * The ProjectStatusCompact model module.
  * @module model/ProjectStatusCompact
- * @version 1.0.1
+ * @version 1.0.2
  */
 class ProjectStatusCompact {
     /**

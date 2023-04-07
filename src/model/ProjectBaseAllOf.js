@@ -21,7 +21,7 @@ import WorkspaceCompact from './WorkspaceCompact';
 /**
  * The ProjectBaseAllOf model module.
  * @module model/ProjectBaseAllOf
- * @version 1.0.1
+ * @version 1.0.2
  */
 class ProjectBaseAllOf {
     /**

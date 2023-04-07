@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The EnumOptionAllOf model module.
  * @module model/EnumOptionAllOf
- * @version 1.0.1
+ * @version 1.0.2
  */
 class EnumOptionAllOf {
     /**

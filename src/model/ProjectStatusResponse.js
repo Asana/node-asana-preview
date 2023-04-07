@@ -19,7 +19,7 @@ import UserCompact from './UserCompact';
 /**
  * The ProjectStatusResponse model module.
  * @module model/ProjectStatusResponse
- * @version 1.0.1
+ * @version 1.0.2
  */
 class ProjectStatusResponse {
     /**

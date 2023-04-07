@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TaskCompactAllOf model module.
  * @module model/TaskCompactAllOf
- * @version 1.0.1
+ * @version 1.0.2
  */
 class TaskCompactAllOf {
     /**
