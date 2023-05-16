@@ -5,12 +5,13 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **gid** | **String** | Globally unique identifier of the resource, as a string. | [optional] [readonly] 
-**resourceType** | **Object** |  | [optional] 
+**resourceType** | **String** | The base type of this resource. | [optional] [readonly] 
 **name** | **String** | The name of the custom field. | [optional] 
-**resourceSubtype** | **String** | The type of the custom field. Must be one of the given values. | [optional] 
-**type** | **String** | *Deprecated: new integrations should prefer the resource_subtype field.* The type of the custom field. Must be one of the given values. | [optional] [readonly] 
+**resourceSubtype** | **String** | The type of the custom field. Must be one of the given values.  | [optional] 
+**type** | **String** | *Deprecated: new integrations should prefer the resource_subtype field.* The type of the custom field. Must be one of the given values.  | [optional] [readonly] 
 **enumOptions** | [**[EnumOption]**](EnumOption.md) | *Conditional*. Only relevant for custom fields of type &#x60;enum&#x60;. This array specifies the possible values which an &#x60;enum&#x60; custom field can adopt. To modify the enum options, refer to [working with enum options](/reference/createenumoptionforcustomfield). | [optional] 
 **enabled** | **Boolean** | *Conditional*. Determines if the custom field is enabled or not. | [optional] 
+**isFormulaField** | **Boolean** | *Conditional*. This flag describes whether a custom field is a formula custom field. | [optional] 
 **dateValue** | [**CustomFieldCompactAllOfDateValue**](CustomFieldCompactAllOfDateValue.md) |  | [optional] 
 **enumValue** | [**EnumOption**](EnumOption.md) |  | [optional] 
 **multiEnumValues** | [**[EnumOption]**](EnumOption.md) | *Conditional*. Only relevant for custom fields of type &#x60;multi_enum&#x60;. This object is the chosen values of a &#x60;multi_enum&#x60; custom field. | [optional] 
@@ -23,11 +24,12 @@ Name | Type | Description | Notes
 **currencyCode** | **String** | ISO 4217 currency code to format this custom field. This will be null if the &#x60;format&#x60; is not &#x60;currency&#x60;. | [optional] 
 **customLabel** | **String** | This is the string that appears next to the custom field value. This will be null if the &#x60;format&#x60; is not &#x60;custom&#x60;. | [optional] 
 **customLabelPosition** | **String** | Only relevant for custom fields with &#x60;custom&#x60; format. This depicts where to place the custom label. This will be null if the &#x60;format&#x60; is not &#x60;custom&#x60;. | [optional] 
-**hasNotificationsEnabled** | **Boolean** | *Conditional*. This flag describes whether a follower of a task with this field should receive inbox notifications from changes to this field. | [optional] 
-**createdBy** | [**UserCompact**](UserCompact.md) |  | [optional] [readonly] 
-**peopleValue** | [**[UserCompact]**](UserCompact.md) | *Conditional*. Only relevant for custom fields of type &#x60;people&#x60;. This array of [compact user](/reference/users) objects reflects the values of a &#x60;people&#x60; custom field. | [optional] [readonly] 
 **isGlobalToWorkspace** | **Boolean** | This flag describes whether this custom field is available to every container in the workspace. Before project-specific custom fields, this field was always true. | [optional] [readonly] 
+**hasNotificationsEnabled** | **Boolean** | *Conditional*. This flag describes whether a follower of a task with this field should receive inbox notifications from changes to this field. | [optional] 
 **asanaCreatedField** | **String** | *Conditional*. A unique identifier to associate this field with the template source of truth. | [optional] [readonly] 
+**isValueReadOnly** | **Boolean** | *Conditional*. This flag describes whether a custom field is read only. | [optional] 
+**createdBy** | [**UserCompact**](UserCompact.md) |  | [optional] 
+**peopleValue** | [**[UserCompact]**](UserCompact.md) | *Conditional*. Only relevant for custom fields of type &#x60;people&#x60;. This array of [compact user](/reference/users) objects reflects the values of a &#x60;people&#x60; custom field. | [optional] 
 
 
 

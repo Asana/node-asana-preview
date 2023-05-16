@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **customFields** | [**[CustomFieldCompact]**](CustomFieldCompact.md) | Array of Custom Fields. | [optional] [readonly] 
 **completed** | **Boolean** | True if the project is currently marked complete, false if not. | [optional] [readonly] 
 **completedAt** | **Date** | The time at which this project was completed, or null if the project is not completed. | [optional] [readonly] 
-**completedBy** | [**UserCompact**](UserCompact.md) | The user that marked this project complete, or null if the project is not completed. | [optional] [readonly] 
+**completedBy** | [**UserCompact**](UserCompact.md) |  | [optional] 
 **followers** | [**[UserCompact]**](UserCompact.md) | Array of users following this project. Followers are a subset of members who have opted in to receive \&quot;tasks added\&quot; notifications for a project. | [optional] [readonly] 
 **owner** | [**UserCompact**](UserCompact.md) | The current owner of the project, may be null. | [optional] 
 **team** | [**TeamCompact**](TeamCompact.md) |  | [optional] 

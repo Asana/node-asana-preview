@@ -5,15 +5,15 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **gid** | **String** | Globally unique identifier of the resource, as a string. | [optional] [readonly] 
-**resourceType** | **Object** |  | [optional] 
+**resourceType** | **String** | The base type of this resource. | [optional] [readonly] 
 **title** | **String** | The title of the project status update. | [optional] 
 **text** | **String** | The text content of the status update. | 
-**htmlText** | **String** | [OptIn](/docs/inputoutput-options). The text content of the status update with formatting as HTML. | [optional] 
+**htmlText** | **String** | [Opt In](/docs/inputoutput-options). The text content of the status update with formatting as HTML. | [optional] 
 **color** | **String** | The color associated with the status update. | 
 **author** | [**UserCompact**](UserCompact.md) |  | [optional] 
-**createdAt** | **Date** | The time at which this project status was created. | [optional] [readonly] 
+**createdAt** | **Date** | The time at which this resource was created. | [optional] [readonly] 
 **createdBy** | [**UserCompact**](UserCompact.md) |  | [optional] 
-**modifiedAt** | **Date** | The time at which this project status was last modified.  *Note: This does not currently reflect any changes in associations such as comments that may have been added or removed from the project status.* | [optional] [readonly] 
+**modifiedAt** | **Date** | The time at which this project status was last modified. *Note: This does not currently reflect any changes in associations such as comments that may have been added or removed from the project status.* | [optional] [readonly] 
 
 
 

@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **archived** | **Boolean** | True if the project is archived, false if not. Archived projects do not show in the UI by default and may be treated differently for queries. | [optional] 
 **color** | **String** | Color of the project. | [optional] 
-**createdAt** | **Date** | The time at which this project was created. | [optional] [readonly] 
+**createdAt** | **Date** | The time at which this resource was created. | [optional] [readonly] 
 **currentStatus** | [**ProjectStatusResponse**](ProjectStatusResponse.md) | *Deprecated: new integrations should prefer the &#x60;current_status_update&#x60; resource.* | [optional] 
 **currentStatusUpdate** | [**StatusUpdateCompact**](StatusUpdateCompact.md) | The latest &#x60;status_update&#x60; posted to this project. | [optional] 
 **customFieldSettings** | [**[CustomFieldSettingResponse]**](CustomFieldSettingResponse.md) | Array of Custom Field Settings (in compact form). | [optional] [readonly] 

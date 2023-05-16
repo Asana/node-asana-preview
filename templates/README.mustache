@@ -92,10 +92,18 @@ Please follow the [installation](#installation) instruction and execute the foll
 ```javascript
 const {{{moduleName}}} = require('{{{projectName}}}');
 
+{{#hasAuthMethods}}
 let defaultClient = {{{moduleName}}}.ApiClient.instance;
-// Configure Bearer access token for authorization: personal_access_token
-let personal_access_token = defaultClient.authentications['personal_access_token'];
-personal_access_token.accessToken = "PERSONAL_ACCESS_TOKEN"
+{{#authMethods}}
+{{#isBasic}}
+{{#isBasicBearer}}
+// Configure Bearer{{#bearerFormat}} ({{{.}}}){{/bearerFormat}} access token for authorization: {{{name}}}
+let {{{name}}} = defaultClient.authentications['{{{name}}}'];
+{{{name}}}.accessToken = "PERSONAL_ACCESS_TOKEN"
+{{/isBasicBearer}}
+{{/isBasic}}
+{{/authMethods}}
+{{/hasAuthMethods}}
 
 let apiInstance = new AsanaPreview.UsersApi();
 let userGid = "me"; // String | A string identifying a user. This can either be the string \"me\", an email, or the gid of a user.

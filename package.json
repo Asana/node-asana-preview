@@ -1,7 +1,7 @@
 {
   "name": "asana-preview",
-  "version": "1.0.2",
-  "description": "This is the interface for interacting with the Asana platform",
+  "version": "1.0.3",
+  "description": "This is the interface for interacting with the [Asana Platform](https://developers.asana.com). Our API reference is generated from our [OpenAPI spec] (https://raw.githubusercontent.com/Asana/openapi/master/defs/asana_oas.yaml).",
   "license": "Apache 2.0",
   "main": "dist/index.js",
   "scripts": {

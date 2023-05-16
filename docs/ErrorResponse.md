@@ -4,6 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**errors** | [**[ErrorResponseErrorsInner]**](ErrorResponseErrorsInner.md) |  | [optional] 
+**errors** | [**[Error]**](Error.md) |  | [optional] 
 
 

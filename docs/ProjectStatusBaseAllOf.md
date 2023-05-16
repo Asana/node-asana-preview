@@ -4,9 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**resourceType** | **Object** |  | [optional] 
 **text** | **String** | The text content of the status update. | 
-**htmlText** | **String** | [OptIn](/docs/inputoutput-options). The text content of the status update with formatting as HTML. | [optional] 
+**htmlText** | **String** | [Opt In](/docs/inputoutput-options). The text content of the status update with formatting as HTML. | [optional] 
 **color** | **String** | The color associated with the status update. | 
 
 

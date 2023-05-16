@@ -5,11 +5,11 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **gid** | **String** | Globally unique identifier of the resource, as a string. | [optional] [readonly] 
-**resourceType** | **Object** |  | [optional] 
+**resourceType** | **String** | The base type of this resource. | [optional] [readonly] 
 **name** | **String** | Name of the project. This is generally a short sentence fragment that fits on a line in the UI for maximum readability. However, it can be longer. | [optional] 
 **archived** | **Boolean** | True if the project is archived, false if not. Archived projects do not show in the UI by default and may be treated differently for queries. | [optional] 
 **color** | **String** | Color of the project. | [optional] 
-**createdAt** | **Date** | The time at which this project was created. | [optional] [readonly] 
+**createdAt** | **Date** | The time at which this resource was created. | [optional] [readonly] 
 **currentStatus** | [**ProjectStatusResponse**](ProjectStatusResponse.md) | *Deprecated: new integrations should prefer the &#x60;current_status_update&#x60; resource.* | [optional] 
 **currentStatusUpdate** | [**StatusUpdateCompact**](StatusUpdateCompact.md) | The latest &#x60;status_update&#x60; posted to this project. | [optional] 
 **customFieldSettings** | [**[CustomFieldSettingResponse]**](CustomFieldSettingResponse.md) | Array of Custom Field Settings (in compact form). | [optional] [readonly] 

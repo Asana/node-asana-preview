@@ -5,12 +5,13 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **gid** | **String** | Globally unique identifier of the resource, as a string. | [optional] [readonly] 
-**resourceType** | **Object** |  | [optional] 
+**resourceType** | **String** | The base type of this resource. | [optional] [readonly] 
 **name** | **String** | The name of the custom field. | [optional] 
-**resourceSubtype** | **String** | The type of the custom field. Must be one of the given values. | [optional] 
-**type** | **String** | *Deprecated: new integrations should prefer the resource_subtype field.* The type of the custom field. Must be one of the given values. | [optional] [readonly] 
+**resourceSubtype** | **String** | The type of the custom field. Must be one of the given values.  | [optional] 
+**type** | **String** | *Deprecated: new integrations should prefer the resource_subtype field.* The type of the custom field. Must be one of the given values.  | [optional] [readonly] 
 **enumOptions** | [**[EnumOption]**](EnumOption.md) | *Conditional*. Only relevant for custom fields of type &#x60;enum&#x60;. This array specifies the possible values which an &#x60;enum&#x60; custom field can adopt. To modify the enum options, refer to [working with enum options](/reference/createenumoptionforcustomfield). | [optional] 
 **enabled** | **Boolean** | *Conditional*. Determines if the custom field is enabled or not. | [optional] 
+**isFormulaField** | **Boolean** | *Conditional*. This flag describes whether a custom field is a formula custom field. | [optional] 
 **dateValue** | [**CustomFieldCompactAllOfDateValue**](CustomFieldCompactAllOfDateValue.md) |  | [optional] 
 **enumValue** | [**EnumOption**](EnumOption.md) |  | [optional] 
 **multiEnumValues** | [**[EnumOption]**](EnumOption.md) | *Conditional*. Only relevant for custom fields of type &#x60;multi_enum&#x60;. This object is the chosen values of a &#x60;multi_enum&#x60; custom field. | [optional] 
