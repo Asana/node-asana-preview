@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Preview model module.
  * @module model/Preview
- * @version 1.0.3
+ * @version 1.0.4
  */
 class Preview {
     /**

@@ -31,19 +31,19 @@ import AddUserForTeamRequest from './model/AddUserForTeamRequest';
 import AddUserForWorkspace200Response from './model/AddUserForWorkspace200Response';
 import AddUserForWorkspaceRequest from './model/AddUserForWorkspaceRequest';
 import AsanaNamedResource from './model/AsanaNamedResource';
-import AsanaNamedResourceAllOf from './model/AsanaNamedResourceAllOf';
 import AsanaResource from './model/AsanaResource';
+import AttachmentBase from './model/AttachmentBase';
 import AttachmentCompact from './model/AttachmentCompact';
-import AttachmentCompactAllOf from './model/AttachmentCompactAllOf';
 import AttachmentResponse from './model/AttachmentResponse';
-import AttachmentResponseAllOf from './model/AttachmentResponseAllOf';
+import AttachmentResponseParent from './model/AttachmentResponseParent';
 import AuditLogEvent from './model/AuditLogEvent';
 import AuditLogEventActor from './model/AuditLogEventActor';
 import AuditLogEventContext from './model/AuditLogEventContext';
 import AuditLogEventResource from './model/AuditLogEventResource';
 import BatchRequest from './model/BatchRequest';
 import BatchRequestAction from './model/BatchRequestAction';
-import BatchRequestActionOptions from './model/BatchRequestActionOptions';
+import BatchRequestActionsInner from './model/BatchRequestActionsInner';
+import BatchRequestActionsInnerOptions from './model/BatchRequestActionsInnerOptions';
 import BatchResponse from './model/BatchResponse';
 import CreateBatchRequest200Response from './model/CreateBatchRequest200Response';
 import CreateBatchRequestRequest from './model/CreateBatchRequestRequest';
@@ -54,12 +54,15 @@ import CreateEnumOptionForCustomFieldRequest from './model/CreateEnumOptionForCu
 import CreateGoalMetricRequest from './model/CreateGoalMetricRequest';
 import CreateMembership200Response from './model/CreateMembership200Response';
 import CreateMembershipRequest from './model/CreateMembershipRequest';
-import CreateMembershipRequestAllOf from './model/CreateMembershipRequestAllOf';
 import CreateOrganizationExport201Response from './model/CreateOrganizationExport201Response';
 import CreateOrganizationExportRequest from './model/CreateOrganizationExportRequest';
 import CreatePortfolio201Response from './model/CreatePortfolio201Response';
 import CreatePortfolioRequest from './model/CreatePortfolioRequest';
 import CreateProject201Response from './model/CreateProject201Response';
+import CreateProjectFromAsanaTemplateRequest from './model/CreateProjectFromAsanaTemplateRequest';
+import CreateProjectFromAsanaTemplateRequestAllOf from './model/CreateProjectFromAsanaTemplateRequestAllOf';
+import CreateProjectFromAsanaTemplateRequestAllOf1 from './model/CreateProjectFromAsanaTemplateRequestAllOf1';
+import CreateProjectFromAsanaTemplateRequestAllOf1Workspace from './model/CreateProjectFromAsanaTemplateRequestAllOf1Workspace';
 import CreateProjectRequest from './model/CreateProjectRequest';
 import CreateProjectStatusForProjectRequest from './model/CreateProjectStatusForProjectRequest';
 import CreateStatusForObjectRequest from './model/CreateStatusForObjectRequest';
@@ -72,29 +75,32 @@ import CreateTimeTrackingEntryRequest from './model/CreateTimeTrackingEntryReque
 import CreateWebhook201Response from './model/CreateWebhook201Response';
 import CreateWebhookRequest from './model/CreateWebhookRequest';
 import CustomFieldBase from './model/CustomFieldBase';
-import CustomFieldBaseAllOf from './model/CustomFieldBaseAllOf';
+import CustomFieldBaseDateValue from './model/CustomFieldBaseDateValue';
+import CustomFieldBaseEnumOptionsInner from './model/CustomFieldBaseEnumOptionsInner';
+import CustomFieldBaseEnumValue from './model/CustomFieldBaseEnumValue';
 import CustomFieldCompact from './model/CustomFieldCompact';
-import CustomFieldCompactAllOf from './model/CustomFieldCompactAllOf';
-import CustomFieldCompactAllOfDateValue from './model/CustomFieldCompactAllOfDateValue';
 import CustomFieldRequest from './model/CustomFieldRequest';
-import CustomFieldRequestAllOf from './model/CustomFieldRequestAllOf';
 import CustomFieldResponse from './model/CustomFieldResponse';
-import CustomFieldResponseAllOf from './model/CustomFieldResponseAllOf';
+import CustomFieldResponseCreatedBy from './model/CustomFieldResponseCreatedBy';
+import CustomFieldResponsePeopleValueInner from './model/CustomFieldResponsePeopleValueInner';
+import CustomFieldSettingBase from './model/CustomFieldSettingBase';
 import CustomFieldSettingCompact from './model/CustomFieldSettingCompact';
 import CustomFieldSettingResponse from './model/CustomFieldSettingResponse';
-import CustomFieldSettingResponseAllOf from './model/CustomFieldSettingResponseAllOf';
+import CustomFieldSettingResponseCustomField from './model/CustomFieldSettingResponseCustomField';
+import CustomFieldSettingResponseParent from './model/CustomFieldSettingResponseParent';
+import CustomFieldSettingResponseProject from './model/CustomFieldSettingResponseProject';
 import DateVariableCompact from './model/DateVariableCompact';
 import DateVariableRequest from './model/DateVariableRequest';
 import DeleteAttachment200Response from './model/DeleteAttachment200Response';
 import DuplicateProjectRequest from './model/DuplicateProjectRequest';
 import DuplicateTaskRequest from './model/DuplicateTaskRequest';
 import EnumOption from './model/EnumOption';
-import EnumOptionAllOf from './model/EnumOptionAllOf';
+import EnumOptionBase from './model/EnumOptionBase';
 import EnumOptionInsertRequest from './model/EnumOptionInsertRequest';
 import EnumOptionRequest from './model/EnumOptionRequest';
-import EnumOptionRequestAllOf from './model/EnumOptionRequestAllOf';
 import Error from './model/Error';
 import ErrorResponse from './model/ErrorResponse';
+import ErrorResponseErrorsInner from './model/ErrorResponseErrorsInner';
 import EventResponse from './model/EventResponse';
 import EventResponseChange from './model/EventResponseChange';
 import EventResponseParent from './model/EventResponseParent';
@@ -151,89 +157,115 @@ import GoalAddSubgoalRequest from './model/GoalAddSubgoalRequest';
 import GoalAddSupportingRelationshipRequest from './model/GoalAddSupportingRelationshipRequest';
 import GoalAddSupportingWorkRequest from './model/GoalAddSupportingWorkRequest';
 import GoalBase from './model/GoalBase';
-import GoalBaseAllOf from './model/GoalBaseAllOf';
 import GoalCompact from './model/GoalCompact';
-import GoalCompactAllOf from './model/GoalCompactAllOf';
+import GoalMembershipBase from './model/GoalMembershipBase';
+import GoalMembershipBaseGoal from './model/GoalMembershipBaseGoal';
 import GoalMembershipCompact from './model/GoalMembershipCompact';
-import GoalMembershipCompactAllOf from './model/GoalMembershipCompactAllOf';
+import GoalMembershipResponse from './model/GoalMembershipResponse';
 import GoalMetricBase from './model/GoalMetricBase';
-import GoalMetricBaseAllOf from './model/GoalMetricBaseAllOf';
 import GoalMetricCurrentValueRequest from './model/GoalMetricCurrentValueRequest';
-import GoalMetricCurrentValueRequestAllOf from './model/GoalMetricCurrentValueRequestAllOf';
+import GoalMetricRequest from './model/GoalMetricRequest';
 import GoalRelationshipBase from './model/GoalRelationshipBase';
-import GoalRelationshipBaseAllOf from './model/GoalRelationshipBaseAllOf';
+import GoalRelationshipBaseSupportedGoal from './model/GoalRelationshipBaseSupportedGoal';
+import GoalRelationshipBaseSupportingResource from './model/GoalRelationshipBaseSupportingResource';
 import GoalRelationshipCompact from './model/GoalRelationshipCompact';
-import GoalRelationshipCompactAllOf from './model/GoalRelationshipCompactAllOf';
 import GoalRelationshipRequest from './model/GoalRelationshipRequest';
 import GoalRelationshipResponse from './model/GoalRelationshipResponse';
 import GoalRemoveSubgoalRequest from './model/GoalRemoveSubgoalRequest';
 import GoalRemoveSupportingRelationshipRequest from './model/GoalRemoveSupportingRelationshipRequest';
 import GoalRequest from './model/GoalRequest';
-import GoalRequestAllOf from './model/GoalRequestAllOf';
 import GoalResponse from './model/GoalResponse';
-import GoalResponseAllOf from './model/GoalResponseAllOf';
+import GoalResponseCurrentStatusUpdate from './model/GoalResponseCurrentStatusUpdate';
+import GoalResponseCurrentStatusUpdateAllOf from './model/GoalResponseCurrentStatusUpdateAllOf';
+import GoalResponseLikesInner from './model/GoalResponseLikesInner';
+import GoalResponseMetric from './model/GoalResponseMetric';
+import GoalResponseTeam from './model/GoalResponseTeam';
+import GoalResponseTeamAllOf from './model/GoalResponseTeamAllOf';
+import GoalResponseTimePeriod from './model/GoalResponseTimePeriod';
+import GoalResponseWorkspace from './model/GoalResponseWorkspace';
 import InsertEnumOptionForCustomFieldRequest from './model/InsertEnumOptionForCustomFieldRequest';
 import InsertSectionForProjectRequest from './model/InsertSectionForProjectRequest';
 import InstantiateProjectRequest from './model/InstantiateProjectRequest';
+import JobBase from './model/JobBase';
+import JobBaseNewProject from './model/JobBaseNewProject';
+import JobBaseNewProjectTemplate from './model/JobBaseNewProjectTemplate';
+import JobBaseNewTask from './model/JobBaseNewTask';
+import JobBaseNewTaskTemplate from './model/JobBaseNewTaskTemplate';
+import JobBaseNewTaskTemplateAllOf from './model/JobBaseNewTaskTemplateAllOf';
 import JobCompact from './model/JobCompact';
-import JobCompactAllOf from './model/JobCompactAllOf';
+import JobResponse from './model/JobResponse';
 import Like from './model/Like';
 import MemberCompact from './model/MemberCompact';
-import MemberCompactAllOf from './model/MemberCompactAllOf';
 import MembershipRequest from './model/MembershipRequest';
 import MembershipResponse from './model/MembershipResponse';
+import MembershipResponseAnyOf from './model/MembershipResponseAnyOf';
+import MembershipResponseAnyOf1 from './model/MembershipResponseAnyOf1';
+import MembershipResponseAnyOf2 from './model/MembershipResponseAnyOf2';
+import MembershipResponseAnyOf3 from './model/MembershipResponseAnyOf3';
+import MembershipResponseAnyOf4 from './model/MembershipResponseAnyOf4';
+import MembershipResponseAnyOf4UserTaskList from './model/MembershipResponseAnyOf4UserTaskList';
+import MessageBase from './model/MessageBase';
+import MessageBaseAllOf from './model/MessageBaseAllOf';
+import MessageParent from './model/MessageParent';
+import MessageParentAllOf from './model/MessageParentAllOf';
 import ModifyDependenciesRequest from './model/ModifyDependenciesRequest';
 import ModifyDependentsRequest from './model/ModifyDependentsRequest';
+import OrganizationExportBase from './model/OrganizationExportBase';
 import OrganizationExportCompact from './model/OrganizationExportCompact';
-import OrganizationExportCompactAllOf from './model/OrganizationExportCompactAllOf';
 import OrganizationExportRequest from './model/OrganizationExportRequest';
+import OrganizationExportResponse from './model/OrganizationExportResponse';
 import PortfolioAddItemRequest from './model/PortfolioAddItemRequest';
 import PortfolioBase from './model/PortfolioBase';
-import PortfolioBaseAllOf from './model/PortfolioBaseAllOf';
 import PortfolioCompact from './model/PortfolioCompact';
-import PortfolioCompactAllOf from './model/PortfolioCompactAllOf';
+import PortfolioMembershipBase from './model/PortfolioMembershipBase';
+import PortfolioMembershipBasePortfolio from './model/PortfolioMembershipBasePortfolio';
 import PortfolioMembershipCompact from './model/PortfolioMembershipCompact';
-import PortfolioMembershipCompactAllOf from './model/PortfolioMembershipCompactAllOf';
+import PortfolioMembershipResponse from './model/PortfolioMembershipResponse';
 import PortfolioRemoveItemRequest from './model/PortfolioRemoveItemRequest';
 import PortfolioRequest from './model/PortfolioRequest';
-import PortfolioRequestAllOf from './model/PortfolioRequestAllOf';
 import PortfolioResponse from './model/PortfolioResponse';
-import PortfolioResponseAllOf from './model/PortfolioResponseAllOf';
+import PortfolioResponseCurrentStatusUpdate from './model/PortfolioResponseCurrentStatusUpdate';
+import PortfolioResponseCustomFieldSettingsInner from './model/PortfolioResponseCustomFieldSettingsInner';
+import PortfolioResponseCustomFieldsInner from './model/PortfolioResponseCustomFieldsInner';
+import PortfolioResponseWorkspace from './model/PortfolioResponseWorkspace';
 import Preview from './model/Preview';
 import ProjectBase from './model/ProjectBase';
-import ProjectBaseAllOf from './model/ProjectBaseAllOf';
+import ProjectBaseCurrentStatus from './model/ProjectBaseCurrentStatus';
+import ProjectBaseCurrentStatusAllOf from './model/ProjectBaseCurrentStatusAllOf';
+import ProjectBaseCurrentStatusUpdate from './model/ProjectBaseCurrentStatusUpdate';
 import ProjectBriefBase from './model/ProjectBriefBase';
-import ProjectBriefBaseAllOf from './model/ProjectBriefBaseAllOf';
 import ProjectBriefCompact from './model/ProjectBriefCompact';
 import ProjectBriefRequest from './model/ProjectBriefRequest';
-import ProjectBriefRequestAllOf from './model/ProjectBriefRequestAllOf';
 import ProjectBriefResponse from './model/ProjectBriefResponse';
-import ProjectBriefResponseAllOf from './model/ProjectBriefResponseAllOf';
+import ProjectBriefResponseProject from './model/ProjectBriefResponseProject';
 import ProjectCompact from './model/ProjectCompact';
-import ProjectCompactAllOf from './model/ProjectCompactAllOf';
 import ProjectDuplicateRequest from './model/ProjectDuplicateRequest';
 import ProjectDuplicateRequestScheduleDates from './model/ProjectDuplicateRequestScheduleDates';
+import ProjectMembershipBase from './model/ProjectMembershipBase';
 import ProjectMembershipCompact from './model/ProjectMembershipCompact';
-import ProjectMembershipCompactAllOf from './model/ProjectMembershipCompactAllOf';
 import ProjectMembershipResponse from './model/ProjectMembershipResponse';
-import ProjectMembershipResponseAllOf from './model/ProjectMembershipResponseAllOf';
+import ProjectMembershipResponseMember from './model/ProjectMembershipResponseMember';
 import ProjectRequest from './model/ProjectRequest';
-import ProjectRequestAllOf from './model/ProjectRequestAllOf';
 import ProjectResponse from './model/ProjectResponse';
-import ProjectResponseAllOf from './model/ProjectResponseAllOf';
+import ProjectResponseCompletedBy from './model/ProjectResponseCompletedBy';
+import ProjectResponseCreatedFromTemplate from './model/ProjectResponseCreatedFromTemplate';
+import ProjectResponseOwner from './model/ProjectResponseOwner';
+import ProjectResponseProjectBrief from './model/ProjectResponseProjectBrief';
+import ProjectResponseTeam from './model/ProjectResponseTeam';
 import ProjectSaveAsTemplateRequest from './model/ProjectSaveAsTemplateRequest';
 import ProjectSectionInsertRequest from './model/ProjectSectionInsertRequest';
 import ProjectStatusBase from './model/ProjectStatusBase';
-import ProjectStatusBaseAllOf from './model/ProjectStatusBaseAllOf';
 import ProjectStatusCompact from './model/ProjectStatusCompact';
-import ProjectStatusCompactAllOf from './model/ProjectStatusCompactAllOf';
+import ProjectStatusRequest from './model/ProjectStatusRequest';
 import ProjectStatusResponse from './model/ProjectStatusResponse';
-import ProjectStatusResponseAllOf from './model/ProjectStatusResponseAllOf';
 import ProjectTemplateBase from './model/ProjectTemplateBase';
-import ProjectTemplateBaseAllOf from './model/ProjectTemplateBaseAllOf';
+import ProjectTemplateBaseOwner from './model/ProjectTemplateBaseOwner';
+import ProjectTemplateBaseRequestedDatesInner from './model/ProjectTemplateBaseRequestedDatesInner';
+import ProjectTemplateBaseRequestedRolesInner from './model/ProjectTemplateBaseRequestedRolesInner';
 import ProjectTemplateCompact from './model/ProjectTemplateCompact';
-import ProjectTemplateCompactAllOf from './model/ProjectTemplateCompactAllOf';
 import ProjectTemplateInstantiateProjectRequest from './model/ProjectTemplateInstantiateProjectRequest';
+import ProjectTemplateInstantiateProjectRequestRequestedDatesInner from './model/ProjectTemplateInstantiateProjectRequestRequestedDatesInner';
+import ProjectTemplateInstantiateProjectRequestRequestedRolesInner from './model/ProjectTemplateInstantiateProjectRequestRequestedRolesInner';
 import ProjectTemplateResponse from './model/ProjectTemplateResponse';
 import RemoveCustomFieldSettingForPortfolioRequest from './model/RemoveCustomFieldSettingForPortfolioRequest';
 import RemoveCustomFieldSettingRequest from './model/RemoveCustomFieldSettingRequest';
@@ -251,75 +283,82 @@ import RemoveUserForWorkspaceRequest from './model/RemoveUserForWorkspaceRequest
 import RequestedRoleRequest from './model/RequestedRoleRequest';
 import RuleTriggerRequest from './model/RuleTriggerRequest';
 import RuleTriggerResponse from './model/RuleTriggerResponse';
+import ScimUser from './model/ScimUser';
+import SectionBase from './model/SectionBase';
 import SectionCompact from './model/SectionCompact';
-import SectionCompactAllOf from './model/SectionCompactAllOf';
 import SectionRequest from './model/SectionRequest';
 import SectionResponse from './model/SectionResponse';
-import SectionResponseAllOf from './model/SectionResponseAllOf';
 import SectionTaskInsertRequest from './model/SectionTaskInsertRequest';
 import SetParentForTaskRequest from './model/SetParentForTaskRequest';
 import StatusUpdateBase from './model/StatusUpdateBase';
-import StatusUpdateBaseAllOf from './model/StatusUpdateBaseAllOf';
 import StatusUpdateCompact from './model/StatusUpdateCompact';
-import StatusUpdateCompactAllOf from './model/StatusUpdateCompactAllOf';
 import StatusUpdateRequest from './model/StatusUpdateRequest';
-import StatusUpdateRequestAllOf from './model/StatusUpdateRequestAllOf';
 import StatusUpdateResponse from './model/StatusUpdateResponse';
-import StatusUpdateResponseAllOf from './model/StatusUpdateResponseAllOf';
+import StatusUpdateResponseParent from './model/StatusUpdateResponseParent';
 import StoryBase from './model/StoryBase';
-import StoryBaseAllOf from './model/StoryBaseAllOf';
 import StoryCompact from './model/StoryCompact';
-import StoryCompactAllOf from './model/StoryCompactAllOf';
+import StoryRequest from './model/StoryRequest';
 import StoryResponse from './model/StoryResponse';
-import StoryResponseAllOf from './model/StoryResponseAllOf';
+import StoryResponseAssignee from './model/StoryResponseAssignee';
+import StoryResponseCustomField from './model/StoryResponseCustomField';
 import StoryResponseDates from './model/StoryResponseDates';
+import StoryResponseNewDateValue from './model/StoryResponseNewDateValue';
+import StoryResponseOldDateValue from './model/StoryResponseOldDateValue';
+import StoryResponseOldDates from './model/StoryResponseOldDates';
+import StoryResponseOldEnumValue from './model/StoryResponseOldEnumValue';
+import StoryResponseOldSection from './model/StoryResponseOldSection';
+import StoryResponsePreviewsInner from './model/StoryResponsePreviewsInner';
+import StoryResponseProject from './model/StoryResponseProject';
+import StoryResponseStory from './model/StoryResponseStory';
+import StoryResponseTag from './model/StoryResponseTag';
+import StoryResponseTarget from './model/StoryResponseTarget';
+import StoryResponseTask from './model/StoryResponseTask';
 import TagBase from './model/TagBase';
-import TagBaseAllOf from './model/TagBaseAllOf';
 import TagCompact from './model/TagCompact';
-import TagCompactAllOf from './model/TagCompactAllOf';
 import TagRequest from './model/TagRequest';
-import TagRequestAllOf from './model/TagRequestAllOf';
 import TagResponse from './model/TagResponse';
-import TagResponseAllOf from './model/TagResponseAllOf';
+import TaskAddFollowersRequest from './model/TaskAddFollowersRequest';
 import TaskAddProjectRequest from './model/TaskAddProjectRequest';
 import TaskAddTagRequest from './model/TaskAddTagRequest';
 import TaskBase from './model/TaskBase';
-import TaskBaseAllOf from './model/TaskBaseAllOf';
-import TaskBaseAllOfExternal from './model/TaskBaseAllOfExternal';
-import TaskBaseAllOfMemberships from './model/TaskBaseAllOfMemberships';
+import TaskBaseExternal from './model/TaskBaseExternal';
+import TaskBaseMembershipsInner from './model/TaskBaseMembershipsInner';
+import TaskBaseMembershipsInnerSection from './model/TaskBaseMembershipsInnerSection';
 import TaskCompact from './model/TaskCompact';
-import TaskCompactAllOf from './model/TaskCompactAllOf';
+import TaskConvertToTemplateRequest from './model/TaskConvertToTemplateRequest';
 import TaskCountResponse from './model/TaskCountResponse';
 import TaskDuplicateRequest from './model/TaskDuplicateRequest';
 import TaskRemoveFollowersRequest from './model/TaskRemoveFollowersRequest';
 import TaskRemoveProjectRequest from './model/TaskRemoveProjectRequest';
 import TaskRemoveTagRequest from './model/TaskRemoveTagRequest';
 import TaskRequest from './model/TaskRequest';
-import TaskRequestAllOf from './model/TaskRequestAllOf';
 import TaskResponse from './model/TaskResponse';
-import TaskResponseAllOf from './model/TaskResponseAllOf';
+import TaskResponseAssignee from './model/TaskResponseAssignee';
+import TaskResponseAssigneeSection from './model/TaskResponseAssigneeSection';
+import TaskResponseCustomFieldsInner from './model/TaskResponseCustomFieldsInner';
+import TaskResponseParent from './model/TaskResponseParent';
+import TaskResponseTagsInner from './model/TaskResponseTagsInner';
+import TaskResponseWorkspace from './model/TaskResponseWorkspace';
 import TaskSetParentRequest from './model/TaskSetParentRequest';
+import TaskTemplateCompact from './model/TaskTemplateCompact';
+import TaskTemplateInstantiateTaskRequest from './model/TaskTemplateInstantiateTaskRequest';
 import TeamAddUserRequest from './model/TeamAddUserRequest';
+import TeamBase from './model/TeamBase';
 import TeamCompact from './model/TeamCompact';
-import TeamCompactAllOf from './model/TeamCompactAllOf';
+import TeamMembershipBase from './model/TeamMembershipBase';
 import TeamMembershipCompact from './model/TeamMembershipCompact';
-import TeamMembershipCompactAllOf from './model/TeamMembershipCompactAllOf';
+import TeamMembershipResponse from './model/TeamMembershipResponse';
 import TeamRemoveUserRequest from './model/TeamRemoveUserRequest';
 import TeamRequest from './model/TeamRequest';
-import TeamRequestAllOf from './model/TeamRequestAllOf';
 import TeamResponse from './model/TeamResponse';
-import TeamResponseAllOf from './model/TeamResponseAllOf';
+import TeamResponseOrganization from './model/TeamResponseOrganization';
 import TemplateRole from './model/TemplateRole';
-import TemplateRoleAllOf from './model/TemplateRoleAllOf';
 import TimePeriodBase from './model/TimePeriodBase';
-import TimePeriodBaseAllOf from './model/TimePeriodBaseAllOf';
+import TimePeriodBaseParent from './model/TimePeriodBaseParent';
 import TimePeriodCompact from './model/TimePeriodCompact';
-import TimePeriodCompactAllOf from './model/TimePeriodCompactAllOf';
 import TimePeriodResponse from './model/TimePeriodResponse';
 import TimeTrackingEntryBase from './model/TimeTrackingEntryBase';
-import TimeTrackingEntryBaseAllOf from './model/TimeTrackingEntryBaseAllOf';
 import TimeTrackingEntryCompact from './model/TimeTrackingEntryCompact';
-import TimeTrackingEntryCompactAllOf from './model/TimeTrackingEntryCompactAllOf';
 import TriggerRule200Response from './model/TriggerRule200Response';
 import TriggerRuleRequest from './model/TriggerRuleRequest';
 import TypeaheadForWorkspace200Response from './model/TypeaheadForWorkspace200Response';
@@ -335,34 +374,38 @@ import UpdateTeamRequest from './model/UpdateTeamRequest';
 import UpdateTimeTrackingEntryRequest from './model/UpdateTimeTrackingEntryRequest';
 import UpdateWebhookRequest from './model/UpdateWebhookRequest';
 import UpdateWorkspaceRequest from './model/UpdateWorkspaceRequest';
+import UserBase from './model/UserBase';
 import UserBaseResponse from './model/UserBaseResponse';
-import UserBaseResponseAllOf from './model/UserBaseResponseAllOf';
-import UserBaseResponseAllOfPhoto from './model/UserBaseResponseAllOfPhoto';
+import UserBaseResponsePhoto from './model/UserBaseResponsePhoto';
 import UserCompact from './model/UserCompact';
-import UserCompactAllOf from './model/UserCompactAllOf';
+import UserRequest from './model/UserRequest';
 import UserResponse from './model/UserResponse';
-import UserResponseAllOf from './model/UserResponseAllOf';
+import UserTaskListBase from './model/UserTaskListBase';
+import UserTaskListBaseOwner from './model/UserTaskListBaseOwner';
+import UserTaskListBaseWorkspace from './model/UserTaskListBaseWorkspace';
 import UserTaskListCompact from './model/UserTaskListCompact';
-import UserTaskListCompactAllOf from './model/UserTaskListCompactAllOf';
+import UserTaskListRequest from './model/UserTaskListRequest';
+import UserTaskListResponse from './model/UserTaskListResponse';
 import WebhookCompact from './model/WebhookCompact';
-import WebhookCompactAllOf from './model/WebhookCompactAllOf';
 import WebhookFilter from './model/WebhookFilter';
 import WebhookRequest from './model/WebhookRequest';
 import WebhookRequestFiltersInner from './model/WebhookRequestFiltersInner';
 import WebhookResponse from './model/WebhookResponse';
-import WebhookResponseAllOf from './model/WebhookResponseAllOf';
 import WebhookUpdateRequest from './model/WebhookUpdateRequest';
 import WorkspaceAddUserRequest from './model/WorkspaceAddUserRequest';
+import WorkspaceBase from './model/WorkspaceBase';
 import WorkspaceCompact from './model/WorkspaceCompact';
-import WorkspaceCompactAllOf from './model/WorkspaceCompactAllOf';
+import WorkspaceEventResponse from './model/WorkspaceEventResponse';
+import WorkspaceEventResponseAllOf from './model/WorkspaceEventResponseAllOf';
+import WorkspaceMembershipBase from './model/WorkspaceMembershipBase';
 import WorkspaceMembershipCompact from './model/WorkspaceMembershipCompact';
-import WorkspaceMembershipCompactAllOf from './model/WorkspaceMembershipCompactAllOf';
+import WorkspaceMembershipRequest from './model/WorkspaceMembershipRequest';
 import WorkspaceMembershipResponse from './model/WorkspaceMembershipResponse';
-import WorkspaceMembershipResponseAllOf from './model/WorkspaceMembershipResponseAllOf';
-import WorkspaceMembershipResponseAllOfVacationDates from './model/WorkspaceMembershipResponseAllOfVacationDates';
+import WorkspaceMembershipResponseUserTaskList from './model/WorkspaceMembershipResponseUserTaskList';
+import WorkspaceMembershipResponseVacationDates from './model/WorkspaceMembershipResponseVacationDates';
 import WorkspaceRemoveUserRequest from './model/WorkspaceRemoveUserRequest';
+import WorkspaceRequest from './model/WorkspaceRequest';
 import WorkspaceResponse from './model/WorkspaceResponse';
-import WorkspaceResponseAllOf from './model/WorkspaceResponseAllOf';
 import AttachmentsApi from './api/AttachmentsApi';
 import AuditLogAPIApi from './api/AuditLogAPIApi';
 import BatchAPIApi from './api/BatchAPIApi';
@@ -428,7 +471,7 @@ import WorkspacesApi from './api/WorkspacesApi';
 * </pre>
 * </p>
 * @module index
-* @version 1.0.3
+* @version 1.0.4
 */
 export {
     /**
@@ -546,16 +589,16 @@ export {
     AsanaNamedResource,
 
     /**
-     * The AsanaNamedResourceAllOf model constructor.
-     * @property {module:model/AsanaNamedResourceAllOf}
-     */
-    AsanaNamedResourceAllOf,
-
-    /**
      * The AsanaResource model constructor.
      * @property {module:model/AsanaResource}
      */
     AsanaResource,
+
+    /**
+     * The AttachmentBase model constructor.
+     * @property {module:model/AttachmentBase}
+     */
+    AttachmentBase,
 
     /**
      * The AttachmentCompact model constructor.
@@ -564,22 +607,16 @@ export {
     AttachmentCompact,
 
     /**
-     * The AttachmentCompactAllOf model constructor.
-     * @property {module:model/AttachmentCompactAllOf}
-     */
-    AttachmentCompactAllOf,
-
-    /**
      * The AttachmentResponse model constructor.
      * @property {module:model/AttachmentResponse}
      */
     AttachmentResponse,
 
     /**
-     * The AttachmentResponseAllOf model constructor.
-     * @property {module:model/AttachmentResponseAllOf}
+     * The AttachmentResponseParent model constructor.
+     * @property {module:model/AttachmentResponseParent}
      */
-    AttachmentResponseAllOf,
+    AttachmentResponseParent,
 
     /**
      * The AuditLogEvent model constructor.
@@ -618,10 +655,16 @@ export {
     BatchRequestAction,
 
     /**
-     * The BatchRequestActionOptions model constructor.
-     * @property {module:model/BatchRequestActionOptions}
+     * The BatchRequestActionsInner model constructor.
+     * @property {module:model/BatchRequestActionsInner}
      */
-    BatchRequestActionOptions,
+    BatchRequestActionsInner,
+
+    /**
+     * The BatchRequestActionsInnerOptions model constructor.
+     * @property {module:model/BatchRequestActionsInnerOptions}
+     */
+    BatchRequestActionsInnerOptions,
 
     /**
      * The BatchResponse model constructor.
@@ -684,12 +727,6 @@ export {
     CreateMembershipRequest,
 
     /**
-     * The CreateMembershipRequestAllOf model constructor.
-     * @property {module:model/CreateMembershipRequestAllOf}
-     */
-    CreateMembershipRequestAllOf,
-
-    /**
      * The CreateOrganizationExport201Response model constructor.
      * @property {module:model/CreateOrganizationExport201Response}
      */
@@ -718,6 +755,30 @@ export {
      * @property {module:model/CreateProject201Response}
      */
     CreateProject201Response,
+
+    /**
+     * The CreateProjectFromAsanaTemplateRequest model constructor.
+     * @property {module:model/CreateProjectFromAsanaTemplateRequest}
+     */
+    CreateProjectFromAsanaTemplateRequest,
+
+    /**
+     * The CreateProjectFromAsanaTemplateRequestAllOf model constructor.
+     * @property {module:model/CreateProjectFromAsanaTemplateRequestAllOf}
+     */
+    CreateProjectFromAsanaTemplateRequestAllOf,
+
+    /**
+     * The CreateProjectFromAsanaTemplateRequestAllOf1 model constructor.
+     * @property {module:model/CreateProjectFromAsanaTemplateRequestAllOf1}
+     */
+    CreateProjectFromAsanaTemplateRequestAllOf1,
+
+    /**
+     * The CreateProjectFromAsanaTemplateRequestAllOf1Workspace model constructor.
+     * @property {module:model/CreateProjectFromAsanaTemplateRequestAllOf1Workspace}
+     */
+    CreateProjectFromAsanaTemplateRequestAllOf1Workspace,
 
     /**
      * The CreateProjectRequest model constructor.
@@ -792,10 +853,22 @@ export {
     CustomFieldBase,
 
     /**
-     * The CustomFieldBaseAllOf model constructor.
-     * @property {module:model/CustomFieldBaseAllOf}
+     * The CustomFieldBaseDateValue model constructor.
+     * @property {module:model/CustomFieldBaseDateValue}
      */
-    CustomFieldBaseAllOf,
+    CustomFieldBaseDateValue,
+
+    /**
+     * The CustomFieldBaseEnumOptionsInner model constructor.
+     * @property {module:model/CustomFieldBaseEnumOptionsInner}
+     */
+    CustomFieldBaseEnumOptionsInner,
+
+    /**
+     * The CustomFieldBaseEnumValue model constructor.
+     * @property {module:model/CustomFieldBaseEnumValue}
+     */
+    CustomFieldBaseEnumValue,
 
     /**
      * The CustomFieldCompact model constructor.
@@ -804,28 +877,10 @@ export {
     CustomFieldCompact,
 
     /**
-     * The CustomFieldCompactAllOf model constructor.
-     * @property {module:model/CustomFieldCompactAllOf}
-     */
-    CustomFieldCompactAllOf,
-
-    /**
-     * The CustomFieldCompactAllOfDateValue model constructor.
-     * @property {module:model/CustomFieldCompactAllOfDateValue}
-     */
-    CustomFieldCompactAllOfDateValue,
-
-    /**
      * The CustomFieldRequest model constructor.
      * @property {module:model/CustomFieldRequest}
      */
     CustomFieldRequest,
-
-    /**
-     * The CustomFieldRequestAllOf model constructor.
-     * @property {module:model/CustomFieldRequestAllOf}
-     */
-    CustomFieldRequestAllOf,
 
     /**
      * The CustomFieldResponse model constructor.
@@ -834,10 +889,22 @@ export {
     CustomFieldResponse,
 
     /**
-     * The CustomFieldResponseAllOf model constructor.
-     * @property {module:model/CustomFieldResponseAllOf}
+     * The CustomFieldResponseCreatedBy model constructor.
+     * @property {module:model/CustomFieldResponseCreatedBy}
      */
-    CustomFieldResponseAllOf,
+    CustomFieldResponseCreatedBy,
+
+    /**
+     * The CustomFieldResponsePeopleValueInner model constructor.
+     * @property {module:model/CustomFieldResponsePeopleValueInner}
+     */
+    CustomFieldResponsePeopleValueInner,
+
+    /**
+     * The CustomFieldSettingBase model constructor.
+     * @property {module:model/CustomFieldSettingBase}
+     */
+    CustomFieldSettingBase,
 
     /**
      * The CustomFieldSettingCompact model constructor.
@@ -852,10 +919,22 @@ export {
     CustomFieldSettingResponse,
 
     /**
-     * The CustomFieldSettingResponseAllOf model constructor.
-     * @property {module:model/CustomFieldSettingResponseAllOf}
+     * The CustomFieldSettingResponseCustomField model constructor.
+     * @property {module:model/CustomFieldSettingResponseCustomField}
      */
-    CustomFieldSettingResponseAllOf,
+    CustomFieldSettingResponseCustomField,
+
+    /**
+     * The CustomFieldSettingResponseParent model constructor.
+     * @property {module:model/CustomFieldSettingResponseParent}
+     */
+    CustomFieldSettingResponseParent,
+
+    /**
+     * The CustomFieldSettingResponseProject model constructor.
+     * @property {module:model/CustomFieldSettingResponseProject}
+     */
+    CustomFieldSettingResponseProject,
 
     /**
      * The DateVariableCompact model constructor.
@@ -894,10 +973,10 @@ export {
     EnumOption,
 
     /**
-     * The EnumOptionAllOf model constructor.
-     * @property {module:model/EnumOptionAllOf}
+     * The EnumOptionBase model constructor.
+     * @property {module:model/EnumOptionBase}
      */
-    EnumOptionAllOf,
+    EnumOptionBase,
 
     /**
      * The EnumOptionInsertRequest model constructor.
@@ -912,12 +991,6 @@ export {
     EnumOptionRequest,
 
     /**
-     * The EnumOptionRequestAllOf model constructor.
-     * @property {module:model/EnumOptionRequestAllOf}
-     */
-    EnumOptionRequestAllOf,
-
-    /**
      * The Error model constructor.
      * @property {module:model/Error}
      */
@@ -928,6 +1001,12 @@ export {
      * @property {module:model/ErrorResponse}
      */
     ErrorResponse,
+
+    /**
+     * The ErrorResponseErrorsInner model constructor.
+     * @property {module:model/ErrorResponseErrorsInner}
+     */
+    ErrorResponseErrorsInner,
 
     /**
      * The EventResponse model constructor.
@@ -1266,22 +1345,22 @@ export {
     GoalBase,
 
     /**
-     * The GoalBaseAllOf model constructor.
-     * @property {module:model/GoalBaseAllOf}
-     */
-    GoalBaseAllOf,
-
-    /**
      * The GoalCompact model constructor.
      * @property {module:model/GoalCompact}
      */
     GoalCompact,
 
     /**
-     * The GoalCompactAllOf model constructor.
-     * @property {module:model/GoalCompactAllOf}
+     * The GoalMembershipBase model constructor.
+     * @property {module:model/GoalMembershipBase}
      */
-    GoalCompactAllOf,
+    GoalMembershipBase,
+
+    /**
+     * The GoalMembershipBaseGoal model constructor.
+     * @property {module:model/GoalMembershipBaseGoal}
+     */
+    GoalMembershipBaseGoal,
 
     /**
      * The GoalMembershipCompact model constructor.
@@ -1290,10 +1369,10 @@ export {
     GoalMembershipCompact,
 
     /**
-     * The GoalMembershipCompactAllOf model constructor.
-     * @property {module:model/GoalMembershipCompactAllOf}
+     * The GoalMembershipResponse model constructor.
+     * @property {module:model/GoalMembershipResponse}
      */
-    GoalMembershipCompactAllOf,
+    GoalMembershipResponse,
 
     /**
      * The GoalMetricBase model constructor.
@@ -1302,22 +1381,16 @@ export {
     GoalMetricBase,
 
     /**
-     * The GoalMetricBaseAllOf model constructor.
-     * @property {module:model/GoalMetricBaseAllOf}
-     */
-    GoalMetricBaseAllOf,
-
-    /**
      * The GoalMetricCurrentValueRequest model constructor.
      * @property {module:model/GoalMetricCurrentValueRequest}
      */
     GoalMetricCurrentValueRequest,
 
     /**
-     * The GoalMetricCurrentValueRequestAllOf model constructor.
-     * @property {module:model/GoalMetricCurrentValueRequestAllOf}
+     * The GoalMetricRequest model constructor.
+     * @property {module:model/GoalMetricRequest}
      */
-    GoalMetricCurrentValueRequestAllOf,
+    GoalMetricRequest,
 
     /**
      * The GoalRelationshipBase model constructor.
@@ -1326,22 +1399,22 @@ export {
     GoalRelationshipBase,
 
     /**
-     * The GoalRelationshipBaseAllOf model constructor.
-     * @property {module:model/GoalRelationshipBaseAllOf}
+     * The GoalRelationshipBaseSupportedGoal model constructor.
+     * @property {module:model/GoalRelationshipBaseSupportedGoal}
      */
-    GoalRelationshipBaseAllOf,
+    GoalRelationshipBaseSupportedGoal,
+
+    /**
+     * The GoalRelationshipBaseSupportingResource model constructor.
+     * @property {module:model/GoalRelationshipBaseSupportingResource}
+     */
+    GoalRelationshipBaseSupportingResource,
 
     /**
      * The GoalRelationshipCompact model constructor.
      * @property {module:model/GoalRelationshipCompact}
      */
     GoalRelationshipCompact,
-
-    /**
-     * The GoalRelationshipCompactAllOf model constructor.
-     * @property {module:model/GoalRelationshipCompactAllOf}
-     */
-    GoalRelationshipCompactAllOf,
 
     /**
      * The GoalRelationshipRequest model constructor.
@@ -1374,22 +1447,58 @@ export {
     GoalRequest,
 
     /**
-     * The GoalRequestAllOf model constructor.
-     * @property {module:model/GoalRequestAllOf}
-     */
-    GoalRequestAllOf,
-
-    /**
      * The GoalResponse model constructor.
      * @property {module:model/GoalResponse}
      */
     GoalResponse,
 
     /**
-     * The GoalResponseAllOf model constructor.
-     * @property {module:model/GoalResponseAllOf}
+     * The GoalResponseCurrentStatusUpdate model constructor.
+     * @property {module:model/GoalResponseCurrentStatusUpdate}
      */
-    GoalResponseAllOf,
+    GoalResponseCurrentStatusUpdate,
+
+    /**
+     * The GoalResponseCurrentStatusUpdateAllOf model constructor.
+     * @property {module:model/GoalResponseCurrentStatusUpdateAllOf}
+     */
+    GoalResponseCurrentStatusUpdateAllOf,
+
+    /**
+     * The GoalResponseLikesInner model constructor.
+     * @property {module:model/GoalResponseLikesInner}
+     */
+    GoalResponseLikesInner,
+
+    /**
+     * The GoalResponseMetric model constructor.
+     * @property {module:model/GoalResponseMetric}
+     */
+    GoalResponseMetric,
+
+    /**
+     * The GoalResponseTeam model constructor.
+     * @property {module:model/GoalResponseTeam}
+     */
+    GoalResponseTeam,
+
+    /**
+     * The GoalResponseTeamAllOf model constructor.
+     * @property {module:model/GoalResponseTeamAllOf}
+     */
+    GoalResponseTeamAllOf,
+
+    /**
+     * The GoalResponseTimePeriod model constructor.
+     * @property {module:model/GoalResponseTimePeriod}
+     */
+    GoalResponseTimePeriod,
+
+    /**
+     * The GoalResponseWorkspace model constructor.
+     * @property {module:model/GoalResponseWorkspace}
+     */
+    GoalResponseWorkspace,
 
     /**
      * The InsertEnumOptionForCustomFieldRequest model constructor.
@@ -1410,16 +1519,52 @@ export {
     InstantiateProjectRequest,
 
     /**
+     * The JobBase model constructor.
+     * @property {module:model/JobBase}
+     */
+    JobBase,
+
+    /**
+     * The JobBaseNewProject model constructor.
+     * @property {module:model/JobBaseNewProject}
+     */
+    JobBaseNewProject,
+
+    /**
+     * The JobBaseNewProjectTemplate model constructor.
+     * @property {module:model/JobBaseNewProjectTemplate}
+     */
+    JobBaseNewProjectTemplate,
+
+    /**
+     * The JobBaseNewTask model constructor.
+     * @property {module:model/JobBaseNewTask}
+     */
+    JobBaseNewTask,
+
+    /**
+     * The JobBaseNewTaskTemplate model constructor.
+     * @property {module:model/JobBaseNewTaskTemplate}
+     */
+    JobBaseNewTaskTemplate,
+
+    /**
+     * The JobBaseNewTaskTemplateAllOf model constructor.
+     * @property {module:model/JobBaseNewTaskTemplateAllOf}
+     */
+    JobBaseNewTaskTemplateAllOf,
+
+    /**
      * The JobCompact model constructor.
      * @property {module:model/JobCompact}
      */
     JobCompact,
 
     /**
-     * The JobCompactAllOf model constructor.
-     * @property {module:model/JobCompactAllOf}
+     * The JobResponse model constructor.
+     * @property {module:model/JobResponse}
      */
-    JobCompactAllOf,
+    JobResponse,
 
     /**
      * The Like model constructor.
@@ -1434,12 +1579,6 @@ export {
     MemberCompact,
 
     /**
-     * The MemberCompactAllOf model constructor.
-     * @property {module:model/MemberCompactAllOf}
-     */
-    MemberCompactAllOf,
-
-    /**
      * The MembershipRequest model constructor.
      * @property {module:model/MembershipRequest}
      */
@@ -1450,6 +1589,66 @@ export {
      * @property {module:model/MembershipResponse}
      */
     MembershipResponse,
+
+    /**
+     * The MembershipResponseAnyOf model constructor.
+     * @property {module:model/MembershipResponseAnyOf}
+     */
+    MembershipResponseAnyOf,
+
+    /**
+     * The MembershipResponseAnyOf1 model constructor.
+     * @property {module:model/MembershipResponseAnyOf1}
+     */
+    MembershipResponseAnyOf1,
+
+    /**
+     * The MembershipResponseAnyOf2 model constructor.
+     * @property {module:model/MembershipResponseAnyOf2}
+     */
+    MembershipResponseAnyOf2,
+
+    /**
+     * The MembershipResponseAnyOf3 model constructor.
+     * @property {module:model/MembershipResponseAnyOf3}
+     */
+    MembershipResponseAnyOf3,
+
+    /**
+     * The MembershipResponseAnyOf4 model constructor.
+     * @property {module:model/MembershipResponseAnyOf4}
+     */
+    MembershipResponseAnyOf4,
+
+    /**
+     * The MembershipResponseAnyOf4UserTaskList model constructor.
+     * @property {module:model/MembershipResponseAnyOf4UserTaskList}
+     */
+    MembershipResponseAnyOf4UserTaskList,
+
+    /**
+     * The MessageBase model constructor.
+     * @property {module:model/MessageBase}
+     */
+    MessageBase,
+
+    /**
+     * The MessageBaseAllOf model constructor.
+     * @property {module:model/MessageBaseAllOf}
+     */
+    MessageBaseAllOf,
+
+    /**
+     * The MessageParent model constructor.
+     * @property {module:model/MessageParent}
+     */
+    MessageParent,
+
+    /**
+     * The MessageParentAllOf model constructor.
+     * @property {module:model/MessageParentAllOf}
+     */
+    MessageParentAllOf,
 
     /**
      * The ModifyDependenciesRequest model constructor.
@@ -1464,22 +1663,28 @@ export {
     ModifyDependentsRequest,
 
     /**
+     * The OrganizationExportBase model constructor.
+     * @property {module:model/OrganizationExportBase}
+     */
+    OrganizationExportBase,
+
+    /**
      * The OrganizationExportCompact model constructor.
      * @property {module:model/OrganizationExportCompact}
      */
     OrganizationExportCompact,
 
     /**
-     * The OrganizationExportCompactAllOf model constructor.
-     * @property {module:model/OrganizationExportCompactAllOf}
-     */
-    OrganizationExportCompactAllOf,
-
-    /**
      * The OrganizationExportRequest model constructor.
      * @property {module:model/OrganizationExportRequest}
      */
     OrganizationExportRequest,
+
+    /**
+     * The OrganizationExportResponse model constructor.
+     * @property {module:model/OrganizationExportResponse}
+     */
+    OrganizationExportResponse,
 
     /**
      * The PortfolioAddItemRequest model constructor.
@@ -1494,22 +1699,22 @@ export {
     PortfolioBase,
 
     /**
-     * The PortfolioBaseAllOf model constructor.
-     * @property {module:model/PortfolioBaseAllOf}
-     */
-    PortfolioBaseAllOf,
-
-    /**
      * The PortfolioCompact model constructor.
      * @property {module:model/PortfolioCompact}
      */
     PortfolioCompact,
 
     /**
-     * The PortfolioCompactAllOf model constructor.
-     * @property {module:model/PortfolioCompactAllOf}
+     * The PortfolioMembershipBase model constructor.
+     * @property {module:model/PortfolioMembershipBase}
      */
-    PortfolioCompactAllOf,
+    PortfolioMembershipBase,
+
+    /**
+     * The PortfolioMembershipBasePortfolio model constructor.
+     * @property {module:model/PortfolioMembershipBasePortfolio}
+     */
+    PortfolioMembershipBasePortfolio,
 
     /**
      * The PortfolioMembershipCompact model constructor.
@@ -1518,10 +1723,10 @@ export {
     PortfolioMembershipCompact,
 
     /**
-     * The PortfolioMembershipCompactAllOf model constructor.
-     * @property {module:model/PortfolioMembershipCompactAllOf}
+     * The PortfolioMembershipResponse model constructor.
+     * @property {module:model/PortfolioMembershipResponse}
      */
-    PortfolioMembershipCompactAllOf,
+    PortfolioMembershipResponse,
 
     /**
      * The PortfolioRemoveItemRequest model constructor.
@@ -1536,22 +1741,34 @@ export {
     PortfolioRequest,
 
     /**
-     * The PortfolioRequestAllOf model constructor.
-     * @property {module:model/PortfolioRequestAllOf}
-     */
-    PortfolioRequestAllOf,
-
-    /**
      * The PortfolioResponse model constructor.
      * @property {module:model/PortfolioResponse}
      */
     PortfolioResponse,
 
     /**
-     * The PortfolioResponseAllOf model constructor.
-     * @property {module:model/PortfolioResponseAllOf}
+     * The PortfolioResponseCurrentStatusUpdate model constructor.
+     * @property {module:model/PortfolioResponseCurrentStatusUpdate}
      */
-    PortfolioResponseAllOf,
+    PortfolioResponseCurrentStatusUpdate,
+
+    /**
+     * The PortfolioResponseCustomFieldSettingsInner model constructor.
+     * @property {module:model/PortfolioResponseCustomFieldSettingsInner}
+     */
+    PortfolioResponseCustomFieldSettingsInner,
+
+    /**
+     * The PortfolioResponseCustomFieldsInner model constructor.
+     * @property {module:model/PortfolioResponseCustomFieldsInner}
+     */
+    PortfolioResponseCustomFieldsInner,
+
+    /**
+     * The PortfolioResponseWorkspace model constructor.
+     * @property {module:model/PortfolioResponseWorkspace}
+     */
+    PortfolioResponseWorkspace,
 
     /**
      * The Preview model constructor.
@@ -1566,22 +1783,28 @@ export {
     ProjectBase,
 
     /**
-     * The ProjectBaseAllOf model constructor.
-     * @property {module:model/ProjectBaseAllOf}
+     * The ProjectBaseCurrentStatus model constructor.
+     * @property {module:model/ProjectBaseCurrentStatus}
      */
-    ProjectBaseAllOf,
+    ProjectBaseCurrentStatus,
+
+    /**
+     * The ProjectBaseCurrentStatusAllOf model constructor.
+     * @property {module:model/ProjectBaseCurrentStatusAllOf}
+     */
+    ProjectBaseCurrentStatusAllOf,
+
+    /**
+     * The ProjectBaseCurrentStatusUpdate model constructor.
+     * @property {module:model/ProjectBaseCurrentStatusUpdate}
+     */
+    ProjectBaseCurrentStatusUpdate,
 
     /**
      * The ProjectBriefBase model constructor.
      * @property {module:model/ProjectBriefBase}
      */
     ProjectBriefBase,
-
-    /**
-     * The ProjectBriefBaseAllOf model constructor.
-     * @property {module:model/ProjectBriefBaseAllOf}
-     */
-    ProjectBriefBaseAllOf,
 
     /**
      * The ProjectBriefCompact model constructor.
@@ -1596,34 +1819,22 @@ export {
     ProjectBriefRequest,
 
     /**
-     * The ProjectBriefRequestAllOf model constructor.
-     * @property {module:model/ProjectBriefRequestAllOf}
-     */
-    ProjectBriefRequestAllOf,
-
-    /**
      * The ProjectBriefResponse model constructor.
      * @property {module:model/ProjectBriefResponse}
      */
     ProjectBriefResponse,
 
     /**
-     * The ProjectBriefResponseAllOf model constructor.
-     * @property {module:model/ProjectBriefResponseAllOf}
+     * The ProjectBriefResponseProject model constructor.
+     * @property {module:model/ProjectBriefResponseProject}
      */
-    ProjectBriefResponseAllOf,
+    ProjectBriefResponseProject,
 
     /**
      * The ProjectCompact model constructor.
      * @property {module:model/ProjectCompact}
      */
     ProjectCompact,
-
-    /**
-     * The ProjectCompactAllOf model constructor.
-     * @property {module:model/ProjectCompactAllOf}
-     */
-    ProjectCompactAllOf,
 
     /**
      * The ProjectDuplicateRequest model constructor.
@@ -1638,16 +1849,16 @@ export {
     ProjectDuplicateRequestScheduleDates,
 
     /**
+     * The ProjectMembershipBase model constructor.
+     * @property {module:model/ProjectMembershipBase}
+     */
+    ProjectMembershipBase,
+
+    /**
      * The ProjectMembershipCompact model constructor.
      * @property {module:model/ProjectMembershipCompact}
      */
     ProjectMembershipCompact,
-
-    /**
-     * The ProjectMembershipCompactAllOf model constructor.
-     * @property {module:model/ProjectMembershipCompactAllOf}
-     */
-    ProjectMembershipCompactAllOf,
 
     /**
      * The ProjectMembershipResponse model constructor.
@@ -1656,10 +1867,10 @@ export {
     ProjectMembershipResponse,
 
     /**
-     * The ProjectMembershipResponseAllOf model constructor.
-     * @property {module:model/ProjectMembershipResponseAllOf}
+     * The ProjectMembershipResponseMember model constructor.
+     * @property {module:model/ProjectMembershipResponseMember}
      */
-    ProjectMembershipResponseAllOf,
+    ProjectMembershipResponseMember,
 
     /**
      * The ProjectRequest model constructor.
@@ -1668,22 +1879,40 @@ export {
     ProjectRequest,
 
     /**
-     * The ProjectRequestAllOf model constructor.
-     * @property {module:model/ProjectRequestAllOf}
-     */
-    ProjectRequestAllOf,
-
-    /**
      * The ProjectResponse model constructor.
      * @property {module:model/ProjectResponse}
      */
     ProjectResponse,
 
     /**
-     * The ProjectResponseAllOf model constructor.
-     * @property {module:model/ProjectResponseAllOf}
+     * The ProjectResponseCompletedBy model constructor.
+     * @property {module:model/ProjectResponseCompletedBy}
      */
-    ProjectResponseAllOf,
+    ProjectResponseCompletedBy,
+
+    /**
+     * The ProjectResponseCreatedFromTemplate model constructor.
+     * @property {module:model/ProjectResponseCreatedFromTemplate}
+     */
+    ProjectResponseCreatedFromTemplate,
+
+    /**
+     * The ProjectResponseOwner model constructor.
+     * @property {module:model/ProjectResponseOwner}
+     */
+    ProjectResponseOwner,
+
+    /**
+     * The ProjectResponseProjectBrief model constructor.
+     * @property {module:model/ProjectResponseProjectBrief}
+     */
+    ProjectResponseProjectBrief,
+
+    /**
+     * The ProjectResponseTeam model constructor.
+     * @property {module:model/ProjectResponseTeam}
+     */
+    ProjectResponseTeam,
 
     /**
      * The ProjectSaveAsTemplateRequest model constructor.
@@ -1704,22 +1933,16 @@ export {
     ProjectStatusBase,
 
     /**
-     * The ProjectStatusBaseAllOf model constructor.
-     * @property {module:model/ProjectStatusBaseAllOf}
-     */
-    ProjectStatusBaseAllOf,
-
-    /**
      * The ProjectStatusCompact model constructor.
      * @property {module:model/ProjectStatusCompact}
      */
     ProjectStatusCompact,
 
     /**
-     * The ProjectStatusCompactAllOf model constructor.
-     * @property {module:model/ProjectStatusCompactAllOf}
+     * The ProjectStatusRequest model constructor.
+     * @property {module:model/ProjectStatusRequest}
      */
-    ProjectStatusCompactAllOf,
+    ProjectStatusRequest,
 
     /**
      * The ProjectStatusResponse model constructor.
@@ -1728,22 +1951,28 @@ export {
     ProjectStatusResponse,
 
     /**
-     * The ProjectStatusResponseAllOf model constructor.
-     * @property {module:model/ProjectStatusResponseAllOf}
-     */
-    ProjectStatusResponseAllOf,
-
-    /**
      * The ProjectTemplateBase model constructor.
      * @property {module:model/ProjectTemplateBase}
      */
     ProjectTemplateBase,
 
     /**
-     * The ProjectTemplateBaseAllOf model constructor.
-     * @property {module:model/ProjectTemplateBaseAllOf}
+     * The ProjectTemplateBaseOwner model constructor.
+     * @property {module:model/ProjectTemplateBaseOwner}
      */
-    ProjectTemplateBaseAllOf,
+    ProjectTemplateBaseOwner,
+
+    /**
+     * The ProjectTemplateBaseRequestedDatesInner model constructor.
+     * @property {module:model/ProjectTemplateBaseRequestedDatesInner}
+     */
+    ProjectTemplateBaseRequestedDatesInner,
+
+    /**
+     * The ProjectTemplateBaseRequestedRolesInner model constructor.
+     * @property {module:model/ProjectTemplateBaseRequestedRolesInner}
+     */
+    ProjectTemplateBaseRequestedRolesInner,
 
     /**
      * The ProjectTemplateCompact model constructor.
@@ -1752,16 +1981,22 @@ export {
     ProjectTemplateCompact,
 
     /**
-     * The ProjectTemplateCompactAllOf model constructor.
-     * @property {module:model/ProjectTemplateCompactAllOf}
-     */
-    ProjectTemplateCompactAllOf,
-
-    /**
      * The ProjectTemplateInstantiateProjectRequest model constructor.
      * @property {module:model/ProjectTemplateInstantiateProjectRequest}
      */
     ProjectTemplateInstantiateProjectRequest,
+
+    /**
+     * The ProjectTemplateInstantiateProjectRequestRequestedDatesInner model constructor.
+     * @property {module:model/ProjectTemplateInstantiateProjectRequestRequestedDatesInner}
+     */
+    ProjectTemplateInstantiateProjectRequestRequestedDatesInner,
+
+    /**
+     * The ProjectTemplateInstantiateProjectRequestRequestedRolesInner model constructor.
+     * @property {module:model/ProjectTemplateInstantiateProjectRequestRequestedRolesInner}
+     */
+    ProjectTemplateInstantiateProjectRequestRequestedRolesInner,
 
     /**
      * The ProjectTemplateResponse model constructor.
@@ -1866,16 +2101,22 @@ export {
     RuleTriggerResponse,
 
     /**
+     * The ScimUser model constructor.
+     * @property {module:model/ScimUser}
+     */
+    ScimUser,
+
+    /**
+     * The SectionBase model constructor.
+     * @property {module:model/SectionBase}
+     */
+    SectionBase,
+
+    /**
      * The SectionCompact model constructor.
      * @property {module:model/SectionCompact}
      */
     SectionCompact,
-
-    /**
-     * The SectionCompactAllOf model constructor.
-     * @property {module:model/SectionCompactAllOf}
-     */
-    SectionCompactAllOf,
 
     /**
      * The SectionRequest model constructor.
@@ -1888,12 +2129,6 @@ export {
      * @property {module:model/SectionResponse}
      */
     SectionResponse,
-
-    /**
-     * The SectionResponseAllOf model constructor.
-     * @property {module:model/SectionResponseAllOf}
-     */
-    SectionResponseAllOf,
 
     /**
      * The SectionTaskInsertRequest model constructor.
@@ -1914,22 +2149,10 @@ export {
     StatusUpdateBase,
 
     /**
-     * The StatusUpdateBaseAllOf model constructor.
-     * @property {module:model/StatusUpdateBaseAllOf}
-     */
-    StatusUpdateBaseAllOf,
-
-    /**
      * The StatusUpdateCompact model constructor.
      * @property {module:model/StatusUpdateCompact}
      */
     StatusUpdateCompact,
-
-    /**
-     * The StatusUpdateCompactAllOf model constructor.
-     * @property {module:model/StatusUpdateCompactAllOf}
-     */
-    StatusUpdateCompactAllOf,
 
     /**
      * The StatusUpdateRequest model constructor.
@@ -1938,22 +2161,16 @@ export {
     StatusUpdateRequest,
 
     /**
-     * The StatusUpdateRequestAllOf model constructor.
-     * @property {module:model/StatusUpdateRequestAllOf}
-     */
-    StatusUpdateRequestAllOf,
-
-    /**
      * The StatusUpdateResponse model constructor.
      * @property {module:model/StatusUpdateResponse}
      */
     StatusUpdateResponse,
 
     /**
-     * The StatusUpdateResponseAllOf model constructor.
-     * @property {module:model/StatusUpdateResponseAllOf}
+     * The StatusUpdateResponseParent model constructor.
+     * @property {module:model/StatusUpdateResponseParent}
      */
-    StatusUpdateResponseAllOf,
+    StatusUpdateResponseParent,
 
     /**
      * The StoryBase model constructor.
@@ -1962,22 +2179,16 @@ export {
     StoryBase,
 
     /**
-     * The StoryBaseAllOf model constructor.
-     * @property {module:model/StoryBaseAllOf}
-     */
-    StoryBaseAllOf,
-
-    /**
      * The StoryCompact model constructor.
      * @property {module:model/StoryCompact}
      */
     StoryCompact,
 
     /**
-     * The StoryCompactAllOf model constructor.
-     * @property {module:model/StoryCompactAllOf}
+     * The StoryRequest model constructor.
+     * @property {module:model/StoryRequest}
      */
-    StoryCompactAllOf,
+    StoryRequest,
 
     /**
      * The StoryResponse model constructor.
@@ -1986,10 +2197,16 @@ export {
     StoryResponse,
 
     /**
-     * The StoryResponseAllOf model constructor.
-     * @property {module:model/StoryResponseAllOf}
+     * The StoryResponseAssignee model constructor.
+     * @property {module:model/StoryResponseAssignee}
      */
-    StoryResponseAllOf,
+    StoryResponseAssignee,
+
+    /**
+     * The StoryResponseCustomField model constructor.
+     * @property {module:model/StoryResponseCustomField}
+     */
+    StoryResponseCustomField,
 
     /**
      * The StoryResponseDates model constructor.
@@ -1998,16 +2215,76 @@ export {
     StoryResponseDates,
 
     /**
+     * The StoryResponseNewDateValue model constructor.
+     * @property {module:model/StoryResponseNewDateValue}
+     */
+    StoryResponseNewDateValue,
+
+    /**
+     * The StoryResponseOldDateValue model constructor.
+     * @property {module:model/StoryResponseOldDateValue}
+     */
+    StoryResponseOldDateValue,
+
+    /**
+     * The StoryResponseOldDates model constructor.
+     * @property {module:model/StoryResponseOldDates}
+     */
+    StoryResponseOldDates,
+
+    /**
+     * The StoryResponseOldEnumValue model constructor.
+     * @property {module:model/StoryResponseOldEnumValue}
+     */
+    StoryResponseOldEnumValue,
+
+    /**
+     * The StoryResponseOldSection model constructor.
+     * @property {module:model/StoryResponseOldSection}
+     */
+    StoryResponseOldSection,
+
+    /**
+     * The StoryResponsePreviewsInner model constructor.
+     * @property {module:model/StoryResponsePreviewsInner}
+     */
+    StoryResponsePreviewsInner,
+
+    /**
+     * The StoryResponseProject model constructor.
+     * @property {module:model/StoryResponseProject}
+     */
+    StoryResponseProject,
+
+    /**
+     * The StoryResponseStory model constructor.
+     * @property {module:model/StoryResponseStory}
+     */
+    StoryResponseStory,
+
+    /**
+     * The StoryResponseTag model constructor.
+     * @property {module:model/StoryResponseTag}
+     */
+    StoryResponseTag,
+
+    /**
+     * The StoryResponseTarget model constructor.
+     * @property {module:model/StoryResponseTarget}
+     */
+    StoryResponseTarget,
+
+    /**
+     * The StoryResponseTask model constructor.
+     * @property {module:model/StoryResponseTask}
+     */
+    StoryResponseTask,
+
+    /**
      * The TagBase model constructor.
      * @property {module:model/TagBase}
      */
     TagBase,
-
-    /**
-     * The TagBaseAllOf model constructor.
-     * @property {module:model/TagBaseAllOf}
-     */
-    TagBaseAllOf,
 
     /**
      * The TagCompact model constructor.
@@ -2016,22 +2293,10 @@ export {
     TagCompact,
 
     /**
-     * The TagCompactAllOf model constructor.
-     * @property {module:model/TagCompactAllOf}
-     */
-    TagCompactAllOf,
-
-    /**
      * The TagRequest model constructor.
      * @property {module:model/TagRequest}
      */
     TagRequest,
-
-    /**
-     * The TagRequestAllOf model constructor.
-     * @property {module:model/TagRequestAllOf}
-     */
-    TagRequestAllOf,
 
     /**
      * The TagResponse model constructor.
@@ -2040,10 +2305,10 @@ export {
     TagResponse,
 
     /**
-     * The TagResponseAllOf model constructor.
-     * @property {module:model/TagResponseAllOf}
+     * The TaskAddFollowersRequest model constructor.
+     * @property {module:model/TaskAddFollowersRequest}
      */
-    TagResponseAllOf,
+    TaskAddFollowersRequest,
 
     /**
      * The TaskAddProjectRequest model constructor.
@@ -2064,22 +2329,22 @@ export {
     TaskBase,
 
     /**
-     * The TaskBaseAllOf model constructor.
-     * @property {module:model/TaskBaseAllOf}
+     * The TaskBaseExternal model constructor.
+     * @property {module:model/TaskBaseExternal}
      */
-    TaskBaseAllOf,
+    TaskBaseExternal,
 
     /**
-     * The TaskBaseAllOfExternal model constructor.
-     * @property {module:model/TaskBaseAllOfExternal}
+     * The TaskBaseMembershipsInner model constructor.
+     * @property {module:model/TaskBaseMembershipsInner}
      */
-    TaskBaseAllOfExternal,
+    TaskBaseMembershipsInner,
 
     /**
-     * The TaskBaseAllOfMemberships model constructor.
-     * @property {module:model/TaskBaseAllOfMemberships}
+     * The TaskBaseMembershipsInnerSection model constructor.
+     * @property {module:model/TaskBaseMembershipsInnerSection}
      */
-    TaskBaseAllOfMemberships,
+    TaskBaseMembershipsInnerSection,
 
     /**
      * The TaskCompact model constructor.
@@ -2088,10 +2353,10 @@ export {
     TaskCompact,
 
     /**
-     * The TaskCompactAllOf model constructor.
-     * @property {module:model/TaskCompactAllOf}
+     * The TaskConvertToTemplateRequest model constructor.
+     * @property {module:model/TaskConvertToTemplateRequest}
      */
-    TaskCompactAllOf,
+    TaskConvertToTemplateRequest,
 
     /**
      * The TaskCountResponse model constructor.
@@ -2130,22 +2395,46 @@ export {
     TaskRequest,
 
     /**
-     * The TaskRequestAllOf model constructor.
-     * @property {module:model/TaskRequestAllOf}
-     */
-    TaskRequestAllOf,
-
-    /**
      * The TaskResponse model constructor.
      * @property {module:model/TaskResponse}
      */
     TaskResponse,
 
     /**
-     * The TaskResponseAllOf model constructor.
-     * @property {module:model/TaskResponseAllOf}
+     * The TaskResponseAssignee model constructor.
+     * @property {module:model/TaskResponseAssignee}
      */
-    TaskResponseAllOf,
+    TaskResponseAssignee,
+
+    /**
+     * The TaskResponseAssigneeSection model constructor.
+     * @property {module:model/TaskResponseAssigneeSection}
+     */
+    TaskResponseAssigneeSection,
+
+    /**
+     * The TaskResponseCustomFieldsInner model constructor.
+     * @property {module:model/TaskResponseCustomFieldsInner}
+     */
+    TaskResponseCustomFieldsInner,
+
+    /**
+     * The TaskResponseParent model constructor.
+     * @property {module:model/TaskResponseParent}
+     */
+    TaskResponseParent,
+
+    /**
+     * The TaskResponseTagsInner model constructor.
+     * @property {module:model/TaskResponseTagsInner}
+     */
+    TaskResponseTagsInner,
+
+    /**
+     * The TaskResponseWorkspace model constructor.
+     * @property {module:model/TaskResponseWorkspace}
+     */
+    TaskResponseWorkspace,
 
     /**
      * The TaskSetParentRequest model constructor.
@@ -2154,10 +2443,28 @@ export {
     TaskSetParentRequest,
 
     /**
+     * The TaskTemplateCompact model constructor.
+     * @property {module:model/TaskTemplateCompact}
+     */
+    TaskTemplateCompact,
+
+    /**
+     * The TaskTemplateInstantiateTaskRequest model constructor.
+     * @property {module:model/TaskTemplateInstantiateTaskRequest}
+     */
+    TaskTemplateInstantiateTaskRequest,
+
+    /**
      * The TeamAddUserRequest model constructor.
      * @property {module:model/TeamAddUserRequest}
      */
     TeamAddUserRequest,
+
+    /**
+     * The TeamBase model constructor.
+     * @property {module:model/TeamBase}
+     */
+    TeamBase,
 
     /**
      * The TeamCompact model constructor.
@@ -2166,10 +2473,10 @@ export {
     TeamCompact,
 
     /**
-     * The TeamCompactAllOf model constructor.
-     * @property {module:model/TeamCompactAllOf}
+     * The TeamMembershipBase model constructor.
+     * @property {module:model/TeamMembershipBase}
      */
-    TeamCompactAllOf,
+    TeamMembershipBase,
 
     /**
      * The TeamMembershipCompact model constructor.
@@ -2178,10 +2485,10 @@ export {
     TeamMembershipCompact,
 
     /**
-     * The TeamMembershipCompactAllOf model constructor.
-     * @property {module:model/TeamMembershipCompactAllOf}
+     * The TeamMembershipResponse model constructor.
+     * @property {module:model/TeamMembershipResponse}
      */
-    TeamMembershipCompactAllOf,
+    TeamMembershipResponse,
 
     /**
      * The TeamRemoveUserRequest model constructor.
@@ -2196,22 +2503,16 @@ export {
     TeamRequest,
 
     /**
-     * The TeamRequestAllOf model constructor.
-     * @property {module:model/TeamRequestAllOf}
-     */
-    TeamRequestAllOf,
-
-    /**
      * The TeamResponse model constructor.
      * @property {module:model/TeamResponse}
      */
     TeamResponse,
 
     /**
-     * The TeamResponseAllOf model constructor.
-     * @property {module:model/TeamResponseAllOf}
+     * The TeamResponseOrganization model constructor.
+     * @property {module:model/TeamResponseOrganization}
      */
-    TeamResponseAllOf,
+    TeamResponseOrganization,
 
     /**
      * The TemplateRole model constructor.
@@ -2220,34 +2521,22 @@ export {
     TemplateRole,
 
     /**
-     * The TemplateRoleAllOf model constructor.
-     * @property {module:model/TemplateRoleAllOf}
-     */
-    TemplateRoleAllOf,
-
-    /**
      * The TimePeriodBase model constructor.
      * @property {module:model/TimePeriodBase}
      */
     TimePeriodBase,
 
     /**
-     * The TimePeriodBaseAllOf model constructor.
-     * @property {module:model/TimePeriodBaseAllOf}
+     * The TimePeriodBaseParent model constructor.
+     * @property {module:model/TimePeriodBaseParent}
      */
-    TimePeriodBaseAllOf,
+    TimePeriodBaseParent,
 
     /**
      * The TimePeriodCompact model constructor.
      * @property {module:model/TimePeriodCompact}
      */
     TimePeriodCompact,
-
-    /**
-     * The TimePeriodCompactAllOf model constructor.
-     * @property {module:model/TimePeriodCompactAllOf}
-     */
-    TimePeriodCompactAllOf,
 
     /**
      * The TimePeriodResponse model constructor.
@@ -2262,22 +2551,10 @@ export {
     TimeTrackingEntryBase,
 
     /**
-     * The TimeTrackingEntryBaseAllOf model constructor.
-     * @property {module:model/TimeTrackingEntryBaseAllOf}
-     */
-    TimeTrackingEntryBaseAllOf,
-
-    /**
      * The TimeTrackingEntryCompact model constructor.
      * @property {module:model/TimeTrackingEntryCompact}
      */
     TimeTrackingEntryCompact,
-
-    /**
-     * The TimeTrackingEntryCompactAllOf model constructor.
-     * @property {module:model/TimeTrackingEntryCompactAllOf}
-     */
-    TimeTrackingEntryCompactAllOf,
 
     /**
      * The TriggerRule200Response model constructor.
@@ -2370,22 +2647,22 @@ export {
     UpdateWorkspaceRequest,
 
     /**
+     * The UserBase model constructor.
+     * @property {module:model/UserBase}
+     */
+    UserBase,
+
+    /**
      * The UserBaseResponse model constructor.
      * @property {module:model/UserBaseResponse}
      */
     UserBaseResponse,
 
     /**
-     * The UserBaseResponseAllOf model constructor.
-     * @property {module:model/UserBaseResponseAllOf}
+     * The UserBaseResponsePhoto model constructor.
+     * @property {module:model/UserBaseResponsePhoto}
      */
-    UserBaseResponseAllOf,
-
-    /**
-     * The UserBaseResponseAllOfPhoto model constructor.
-     * @property {module:model/UserBaseResponseAllOfPhoto}
-     */
-    UserBaseResponseAllOfPhoto,
+    UserBaseResponsePhoto,
 
     /**
      * The UserCompact model constructor.
@@ -2394,10 +2671,10 @@ export {
     UserCompact,
 
     /**
-     * The UserCompactAllOf model constructor.
-     * @property {module:model/UserCompactAllOf}
+     * The UserRequest model constructor.
+     * @property {module:model/UserRequest}
      */
-    UserCompactAllOf,
+    UserRequest,
 
     /**
      * The UserResponse model constructor.
@@ -2406,10 +2683,22 @@ export {
     UserResponse,
 
     /**
-     * The UserResponseAllOf model constructor.
-     * @property {module:model/UserResponseAllOf}
+     * The UserTaskListBase model constructor.
+     * @property {module:model/UserTaskListBase}
      */
-    UserResponseAllOf,
+    UserTaskListBase,
+
+    /**
+     * The UserTaskListBaseOwner model constructor.
+     * @property {module:model/UserTaskListBaseOwner}
+     */
+    UserTaskListBaseOwner,
+
+    /**
+     * The UserTaskListBaseWorkspace model constructor.
+     * @property {module:model/UserTaskListBaseWorkspace}
+     */
+    UserTaskListBaseWorkspace,
 
     /**
      * The UserTaskListCompact model constructor.
@@ -2418,22 +2707,22 @@ export {
     UserTaskListCompact,
 
     /**
-     * The UserTaskListCompactAllOf model constructor.
-     * @property {module:model/UserTaskListCompactAllOf}
+     * The UserTaskListRequest model constructor.
+     * @property {module:model/UserTaskListRequest}
      */
-    UserTaskListCompactAllOf,
+    UserTaskListRequest,
+
+    /**
+     * The UserTaskListResponse model constructor.
+     * @property {module:model/UserTaskListResponse}
+     */
+    UserTaskListResponse,
 
     /**
      * The WebhookCompact model constructor.
      * @property {module:model/WebhookCompact}
      */
     WebhookCompact,
-
-    /**
-     * The WebhookCompactAllOf model constructor.
-     * @property {module:model/WebhookCompactAllOf}
-     */
-    WebhookCompactAllOf,
 
     /**
      * The WebhookFilter model constructor.
@@ -2460,12 +2749,6 @@ export {
     WebhookResponse,
 
     /**
-     * The WebhookResponseAllOf model constructor.
-     * @property {module:model/WebhookResponseAllOf}
-     */
-    WebhookResponseAllOf,
-
-    /**
      * The WebhookUpdateRequest model constructor.
      * @property {module:model/WebhookUpdateRequest}
      */
@@ -2478,16 +2761,34 @@ export {
     WorkspaceAddUserRequest,
 
     /**
+     * The WorkspaceBase model constructor.
+     * @property {module:model/WorkspaceBase}
+     */
+    WorkspaceBase,
+
+    /**
      * The WorkspaceCompact model constructor.
      * @property {module:model/WorkspaceCompact}
      */
     WorkspaceCompact,
 
     /**
-     * The WorkspaceCompactAllOf model constructor.
-     * @property {module:model/WorkspaceCompactAllOf}
+     * The WorkspaceEventResponse model constructor.
+     * @property {module:model/WorkspaceEventResponse}
      */
-    WorkspaceCompactAllOf,
+    WorkspaceEventResponse,
+
+    /**
+     * The WorkspaceEventResponseAllOf model constructor.
+     * @property {module:model/WorkspaceEventResponseAllOf}
+     */
+    WorkspaceEventResponseAllOf,
+
+    /**
+     * The WorkspaceMembershipBase model constructor.
+     * @property {module:model/WorkspaceMembershipBase}
+     */
+    WorkspaceMembershipBase,
 
     /**
      * The WorkspaceMembershipCompact model constructor.
@@ -2496,10 +2797,10 @@ export {
     WorkspaceMembershipCompact,
 
     /**
-     * The WorkspaceMembershipCompactAllOf model constructor.
-     * @property {module:model/WorkspaceMembershipCompactAllOf}
+     * The WorkspaceMembershipRequest model constructor.
+     * @property {module:model/WorkspaceMembershipRequest}
      */
-    WorkspaceMembershipCompactAllOf,
+    WorkspaceMembershipRequest,
 
     /**
      * The WorkspaceMembershipResponse model constructor.
@@ -2508,16 +2809,16 @@ export {
     WorkspaceMembershipResponse,
 
     /**
-     * The WorkspaceMembershipResponseAllOf model constructor.
-     * @property {module:model/WorkspaceMembershipResponseAllOf}
+     * The WorkspaceMembershipResponseUserTaskList model constructor.
+     * @property {module:model/WorkspaceMembershipResponseUserTaskList}
      */
-    WorkspaceMembershipResponseAllOf,
+    WorkspaceMembershipResponseUserTaskList,
 
     /**
-     * The WorkspaceMembershipResponseAllOfVacationDates model constructor.
-     * @property {module:model/WorkspaceMembershipResponseAllOfVacationDates}
+     * The WorkspaceMembershipResponseVacationDates model constructor.
+     * @property {module:model/WorkspaceMembershipResponseVacationDates}
      */
-    WorkspaceMembershipResponseAllOfVacationDates,
+    WorkspaceMembershipResponseVacationDates,
 
     /**
      * The WorkspaceRemoveUserRequest model constructor.
@@ -2526,16 +2827,16 @@ export {
     WorkspaceRemoveUserRequest,
 
     /**
+     * The WorkspaceRequest model constructor.
+     * @property {module:model/WorkspaceRequest}
+     */
+    WorkspaceRequest,
+
+    /**
      * The WorkspaceResponse model constructor.
      * @property {module:model/WorkspaceResponse}
      */
     WorkspaceResponse,
-
-    /**
-     * The WorkspaceResponseAllOf model constructor.
-     * @property {module:model/WorkspaceResponseAllOf}
-     */
-    WorkspaceResponseAllOf,
 
     /**
     * The AttachmentsApi service constructor.

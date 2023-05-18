@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The EnumOptionInsertRequest model module.
  * @module model/EnumOptionInsertRequest
- * @version 1.0.3
+ * @version 1.0.4
  */
 class EnumOptionInsertRequest {
     /**

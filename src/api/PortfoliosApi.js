@@ -30,7 +30,7 @@ import RemoveMembersForPortfolioRequest from '../model/RemoveMembersForPortfolio
 /**
 * Portfolios service.
 * @module api/PortfoliosApi
-* @version 1.0.3
+* @version 1.0.4
 */
 export default class PortfoliosApi {
 
@@ -90,8 +90,8 @@ export default class PortfoliosApi {
       };
 
       let authNames = ['personalAccessToken'];
-      let contentTypes = ['application/json'];
-      let accepts = ['application/json'];
+      let contentTypes = ['application/json; charset=UTF-8'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = AddCustomFieldSettingForPortfolio200Response;
       return this.apiClient.callApi(
         '/portfolios/{portfolio_gid}/addCustomFieldSetting', 'POST',
@@ -142,8 +142,8 @@ export default class PortfoliosApi {
       };
 
       let authNames = ['personalAccessToken'];
-      let contentTypes = ['application/json'];
-      let accepts = ['application/json'];
+      let contentTypes = ['application/json; charset=UTF-8'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = DeleteAttachment200Response;
       return this.apiClient.callApi(
         '/portfolios/{portfolio_gid}/addItem', 'POST',
@@ -196,8 +196,8 @@ export default class PortfoliosApi {
       };
 
       let authNames = ['personalAccessToken'];
-      let contentTypes = ['application/json'];
-      let accepts = ['application/json'];
+      let contentTypes = ['application/json; charset=UTF-8'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = CreatePortfolio201Response;
       return this.apiClient.callApi(
         '/portfolios/{portfolio_gid}/addMembers', 'POST',
@@ -244,8 +244,8 @@ export default class PortfoliosApi {
       };
 
       let authNames = ['personalAccessToken'];
-      let contentTypes = ['application/json'];
-      let accepts = ['application/json'];
+      let contentTypes = ['application/json; charset=UTF-8'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = CreatePortfolio201Response;
       return this.apiClient.callApi(
         '/portfolios', 'POST',
@@ -292,7 +292,7 @@ export default class PortfoliosApi {
 
       let authNames = ['personalAccessToken'];
       let contentTypes = [];
-      let accepts = ['application/json'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = DeleteAttachment200Response;
       return this.apiClient.callApi(
         '/portfolios/{portfolio_gid}', 'DELETE',
@@ -345,7 +345,7 @@ export default class PortfoliosApi {
 
       let authNames = ['personalAccessToken'];
       let contentTypes = [];
-      let accepts = ['application/json'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = GetItemsForPortfolio200Response;
       return this.apiClient.callApi(
         '/portfolios/{portfolio_gid}/items', 'GET',
@@ -394,7 +394,7 @@ export default class PortfoliosApi {
 
       let authNames = ['personalAccessToken'];
       let contentTypes = [];
-      let accepts = ['application/json'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = CreatePortfolio201Response;
       return this.apiClient.callApi(
         '/portfolios/{portfolio_gid}', 'GET',
@@ -449,7 +449,7 @@ export default class PortfoliosApi {
 
       let authNames = ['personalAccessToken'];
       let contentTypes = [];
-      let accepts = ['application/json'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = GetPortfolios200Response;
       return this.apiClient.callApi(
         '/portfolios', 'GET',
@@ -500,8 +500,8 @@ export default class PortfoliosApi {
       };
 
       let authNames = ['personalAccessToken'];
-      let contentTypes = ['application/json'];
-      let accepts = ['application/json'];
+      let contentTypes = ['application/json; charset=UTF-8'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = DeleteAttachment200Response;
       return this.apiClient.callApi(
         '/portfolios/{portfolio_gid}/removeCustomFieldSetting', 'POST',
@@ -552,8 +552,8 @@ export default class PortfoliosApi {
       };
 
       let authNames = ['personalAccessToken'];
-      let contentTypes = ['application/json'];
-      let accepts = ['application/json'];
+      let contentTypes = ['application/json; charset=UTF-8'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = DeleteAttachment200Response;
       return this.apiClient.callApi(
         '/portfolios/{portfolio_gid}/removeItem', 'POST',
@@ -606,8 +606,8 @@ export default class PortfoliosApi {
       };
 
       let authNames = ['personalAccessToken'];
-      let contentTypes = ['application/json'];
-      let accepts = ['application/json'];
+      let contentTypes = ['application/json; charset=UTF-8'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = CreatePortfolio201Response;
       return this.apiClient.callApi(
         '/portfolios/{portfolio_gid}/removeMembers', 'POST',
@@ -660,8 +660,8 @@ export default class PortfoliosApi {
       };
 
       let authNames = ['personalAccessToken'];
-      let contentTypes = ['application/json'];
-      let accepts = ['application/json'];
+      let contentTypes = ['application/json; charset=UTF-8'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = CreatePortfolio201Response;
       return this.apiClient.callApi(
         '/portfolios/{portfolio_gid}', 'PUT',

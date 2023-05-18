@@ -25,7 +25,7 @@ import UpdateWorkspaceRequest from '../model/UpdateWorkspaceRequest';
 /**
 * Workspaces service.
 * @module api/WorkspacesApi
-* @version 1.0.3
+* @version 1.0.4
 */
 export default class WorkspacesApi {
 
@@ -85,8 +85,8 @@ export default class WorkspacesApi {
       };
 
       let authNames = ['personalAccessToken'];
-      let contentTypes = ['application/json'];
-      let accepts = ['application/json'];
+      let contentTypes = ['application/json; charset=UTF-8'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = AddUserForWorkspace200Response;
       return this.apiClient.callApi(
         '/workspaces/{workspace_gid}/addUser', 'POST',
@@ -135,7 +135,7 @@ export default class WorkspacesApi {
 
       let authNames = ['personalAccessToken'];
       let contentTypes = [];
-      let accepts = ['application/json'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = GetWorkspace200Response;
       return this.apiClient.callApi(
         '/workspaces/{workspace_gid}', 'GET',
@@ -182,7 +182,7 @@ export default class WorkspacesApi {
 
       let authNames = ['personalAccessToken'];
       let contentTypes = [];
-      let accepts = ['application/json'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = GetWorkspaces200Response;
       return this.apiClient.callApi(
         '/workspaces', 'GET',
@@ -233,8 +233,8 @@ export default class WorkspacesApi {
       };
 
       let authNames = ['personalAccessToken'];
-      let contentTypes = ['application/json'];
-      let accepts = ['application/json'];
+      let contentTypes = ['application/json; charset=UTF-8'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = DeleteAttachment200Response;
       return this.apiClient.callApi(
         '/workspaces/{workspace_gid}/removeUser', 'POST',
@@ -287,8 +287,8 @@ export default class WorkspacesApi {
       };
 
       let authNames = ['personalAccessToken'];
-      let contentTypes = ['application/json'];
-      let accepts = ['application/json'];
+      let contentTypes = ['application/json; charset=UTF-8'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = GetWorkspace200Response;
       return this.apiClient.callApi(
         '/workspaces/{workspace_gid}', 'PUT',

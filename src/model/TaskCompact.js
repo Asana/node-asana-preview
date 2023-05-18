@@ -12,23 +12,20 @@
  */
 
 import ApiClient from '../ApiClient';
-import AsanaResource from './AsanaResource';
-import TaskCompactAllOf from './TaskCompactAllOf';
 
 /**
  * The TaskCompact model module.
  * @module model/TaskCompact
- * @version 1.0.3
+ * @version 1.0.4
  */
 class TaskCompact {
     /**
      * Constructs a new <code>TaskCompact</code>.
+     * A generic Asana Resource, containing a globally unique identifier.A generic Asana Resource, containing a globally unique identifier. The *task* is the basic object around which many operations in Asana are centered.
      * @alias module:model/TaskCompact
-     * @implements module:model/AsanaResource
-     * @implements module:model/TaskCompactAllOf
      */
     constructor() { 
-        AsanaResource.initialize(this);TaskCompactAllOf.initialize(this);
+        
         TaskCompact.initialize(this);
     }
 
@@ -50,8 +47,6 @@ class TaskCompact {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new TaskCompact();
-            AsanaResource.constructFromObject(data, obj);
-            TaskCompactAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('gid')) {
                 obj['gid'] = ApiClient.convertToType(data['gid'], 'String');
@@ -97,28 +92,6 @@ TaskCompact.prototype['name'] = undefined;
 TaskCompact.prototype['resource_subtype'] = undefined;
 
 
-// Implement AsanaResource interface:
-/**
- * Globally unique identifier of the resource, as a string.
- * @member {String} gid
- */
-AsanaResource.prototype['gid'] = undefined;
-/**
- * The base type of this resource.
- * @member {String} resource_type
- */
-AsanaResource.prototype['resource_type'] = undefined;
-// Implement TaskCompactAllOf interface:
-/**
- * The name of the task.
- * @member {String} name
- */
-TaskCompactAllOf.prototype['name'] = undefined;
-/**
- * The subtype of this resource. Different subtypes retain many of the same fields and behavior, but may render differently in Asana or represent resources with different semantic meaning. The resource_subtype `milestone` represent a single moment in time. This means tasks with this subtype cannot have a start_date.
- * @member {module:model/TaskCompactAllOf.ResourceSubtypeEnum} resource_subtype
- */
-TaskCompactAllOf.prototype['resource_subtype'] = undefined;
 
 
 

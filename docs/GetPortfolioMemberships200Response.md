@@ -4,6 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**[PortfolioMembershipCompact]**](PortfolioMembershipCompact.md) |  | [optional] 
+**data** | [**[PortfolioMembershipResponse]**](PortfolioMembershipResponse.md) |  | [optional] 
 
 

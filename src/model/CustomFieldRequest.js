@@ -12,26 +12,24 @@
  */
 
 import ApiClient from '../ApiClient';
-import CustomFieldBase from './CustomFieldBase';
-import CustomFieldCompactAllOfDateValue from './CustomFieldCompactAllOfDateValue';
-import CustomFieldRequestAllOf from './CustomFieldRequestAllOf';
-import EnumOption from './EnumOption';
+import CustomFieldBaseDateValue from './CustomFieldBaseDateValue';
+import CustomFieldBaseEnumOptionsInner from './CustomFieldBaseEnumOptionsInner';
+import CustomFieldBaseEnumValue from './CustomFieldBaseEnumValue';
 
 /**
  * The CustomFieldRequest model module.
  * @module model/CustomFieldRequest
- * @version 1.0.3
+ * @version 1.0.4
  */
 class CustomFieldRequest {
     /**
      * Constructs a new <code>CustomFieldRequest</code>.
+     * A generic Asana Resource, containing a globally unique identifier.A generic Asana Resource, containing a globally unique identifier. Custom Fields store the metadata that is used in order to add user-specified information to tasks in Asana. Be sure to reference the [custom fields](/reference/custom-fields) developer documentation for more information about how custom fields relate to various resources in Asana.  Users in Asana can [lock custom fields](https://asana.com/guide/help/premium/custom-fields#gl-lock-fields), which will make them read-only when accessed by other users. Attempting to edit a locked custom field will return HTTP error code &#x60;403 Forbidden&#x60;.
      * @alias module:model/CustomFieldRequest
-     * @implements module:model/CustomFieldBase
-     * @implements module:model/CustomFieldRequestAllOf
      * @param workspace {String} *Create-Only* The workspace to create a custom field in.
      */
     constructor(workspace) { 
-        CustomFieldBase.initialize(this);CustomFieldRequestAllOf.initialize(this, workspace);
+        
         CustomFieldRequest.initialize(this, workspace);
     }
 
@@ -54,8 +52,6 @@ class CustomFieldRequest {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new CustomFieldRequest();
-            CustomFieldBase.constructFromObject(data, obj);
-            CustomFieldRequestAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('gid')) {
                 obj['gid'] = ApiClient.convertToType(data['gid'], 'String');
@@ -73,7 +69,7 @@ class CustomFieldRequest {
                 obj['type'] = ApiClient.convertToType(data['type'], 'String');
             }
             if (data.hasOwnProperty('enum_options')) {
-                obj['enum_options'] = ApiClient.convertToType(data['enum_options'], [EnumOption]);
+                obj['enum_options'] = ApiClient.convertToType(data['enum_options'], [CustomFieldBaseEnumOptionsInner]);
             }
             if (data.hasOwnProperty('enabled')) {
                 obj['enabled'] = ApiClient.convertToType(data['enabled'], 'Boolean');
@@ -82,13 +78,13 @@ class CustomFieldRequest {
                 obj['is_formula_field'] = ApiClient.convertToType(data['is_formula_field'], 'Boolean');
             }
             if (data.hasOwnProperty('date_value')) {
-                obj['date_value'] = CustomFieldCompactAllOfDateValue.constructFromObject(data['date_value']);
+                obj['date_value'] = CustomFieldBaseDateValue.constructFromObject(data['date_value']);
             }
             if (data.hasOwnProperty('enum_value')) {
-                obj['enum_value'] = ApiClient.convertToType(data['enum_value'], EnumOption);
+                obj['enum_value'] = CustomFieldBaseEnumValue.constructFromObject(data['enum_value']);
             }
             if (data.hasOwnProperty('multi_enum_values')) {
-                obj['multi_enum_values'] = ApiClient.convertToType(data['multi_enum_values'], [EnumOption]);
+                obj['multi_enum_values'] = ApiClient.convertToType(data['multi_enum_values'], [CustomFieldBaseEnumOptionsInner]);
             }
             if (data.hasOwnProperty('number_value')) {
                 obj['number_value'] = ApiClient.convertToType(data['number_value'], 'Number');
@@ -174,7 +170,7 @@ CustomFieldRequest.prototype['type'] = undefined;
 
 /**
  * *Conditional*. Only relevant for custom fields of type `enum`. This array specifies the possible values which an `enum` custom field can adopt. To modify the enum options, refer to [working with enum options](/reference/createenumoptionforcustomfield).
- * @member {Array.<module:model/EnumOption>} enum_options
+ * @member {Array.<module:model/CustomFieldBaseEnumOptionsInner>} enum_options
  */
 CustomFieldRequest.prototype['enum_options'] = undefined;
 
@@ -191,18 +187,18 @@ CustomFieldRequest.prototype['enabled'] = undefined;
 CustomFieldRequest.prototype['is_formula_field'] = undefined;
 
 /**
- * @member {module:model/CustomFieldCompactAllOfDateValue} date_value
+ * @member {module:model/CustomFieldBaseDateValue} date_value
  */
 CustomFieldRequest.prototype['date_value'] = undefined;
 
 /**
- * @member {module:model/EnumOption} enum_value
+ * @member {module:model/CustomFieldBaseEnumValue} enum_value
  */
 CustomFieldRequest.prototype['enum_value'] = undefined;
 
 /**
  * *Conditional*. Only relevant for custom fields of type `multi_enum`. This object is the chosen values of a `multi_enum` custom field.
- * @member {Array.<module:model/EnumOption>} multi_enum_values
+ * @member {Array.<module:model/CustomFieldBaseEnumOptionsInner>} multi_enum_values
  */
 CustomFieldRequest.prototype['multi_enum_values'] = undefined;
 
@@ -297,136 +293,6 @@ CustomFieldRequest.prototype['owned_by_app'] = undefined;
 CustomFieldRequest.prototype['people_value'] = undefined;
 
 
-// Implement CustomFieldBase interface:
-/**
- * Globally unique identifier of the resource, as a string.
- * @member {String} gid
- */
-CustomFieldBase.prototype['gid'] = undefined;
-/**
- * The base type of this resource.
- * @member {String} resource_type
- */
-CustomFieldBase.prototype['resource_type'] = undefined;
-/**
- * The name of the custom field.
- * @member {String} name
- */
-CustomFieldBase.prototype['name'] = undefined;
-/**
- * The type of the custom field. Must be one of the given values. 
- * @member {module:model/CustomFieldBase.ResourceSubtypeEnum} resource_subtype
- */
-CustomFieldBase.prototype['resource_subtype'] = undefined;
-/**
- * *Deprecated: new integrations should prefer the resource_subtype field.* The type of the custom field. Must be one of the given values. 
- * @member {module:model/CustomFieldBase.TypeEnum} type
- */
-CustomFieldBase.prototype['type'] = undefined;
-/**
- * *Conditional*. Only relevant for custom fields of type `enum`. This array specifies the possible values which an `enum` custom field can adopt. To modify the enum options, refer to [working with enum options](/reference/createenumoptionforcustomfield).
- * @member {Array.<module:model/EnumOption>} enum_options
- */
-CustomFieldBase.prototype['enum_options'] = undefined;
-/**
- * *Conditional*. Determines if the custom field is enabled or not.
- * @member {Boolean} enabled
- */
-CustomFieldBase.prototype['enabled'] = undefined;
-/**
- * *Conditional*. This flag describes whether a custom field is a formula custom field.
- * @member {Boolean} is_formula_field
- */
-CustomFieldBase.prototype['is_formula_field'] = undefined;
-/**
- * @member {module:model/CustomFieldCompactAllOfDateValue} date_value
- */
-CustomFieldBase.prototype['date_value'] = undefined;
-/**
- * @member {module:model/EnumOption} enum_value
- */
-CustomFieldBase.prototype['enum_value'] = undefined;
-/**
- * *Conditional*. Only relevant for custom fields of type `multi_enum`. This object is the chosen values of a `multi_enum` custom field.
- * @member {Array.<module:model/EnumOption>} multi_enum_values
- */
-CustomFieldBase.prototype['multi_enum_values'] = undefined;
-/**
- * *Conditional*. This number is the value of a `number` custom field.
- * @member {Number} number_value
- */
-CustomFieldBase.prototype['number_value'] = undefined;
-/**
- * *Conditional*. This string is the value of a `text` custom field.
- * @member {String} text_value
- */
-CustomFieldBase.prototype['text_value'] = undefined;
-/**
- * A string representation for the value of the custom field. Integrations that don't require the underlying type should use this field to read values. Using this field will future-proof an app against new custom field types.
- * @member {String} display_value
- */
-CustomFieldBase.prototype['display_value'] = undefined;
-/**
- * [Opt In](/docs/inputoutput-options). The description of the custom field.
- * @member {String} description
- */
-CustomFieldBase.prototype['description'] = undefined;
-/**
- * Only relevant for custom fields of type ‘Number’. This field dictates the number of places after the decimal to round to, i.e. 0 is integer values, 1 rounds to the nearest tenth, and so on. Must be between 0 and 6, inclusive. For percentage format, this may be unintuitive, as a value of 0.25 has a precision of 0, while a value of 0.251 has a precision of 1. This is due to 0.25 being displayed as 25%. The identifier format will always have a precision of 0.
- * @member {Number} precision
- */
-CustomFieldBase.prototype['precision'] = undefined;
-/**
- * The format of this custom field.
- * @member {module:model/CustomFieldBase.FormatEnum} format
- */
-CustomFieldBase.prototype['format'] = undefined;
-/**
- * ISO 4217 currency code to format this custom field. This will be null if the `format` is not `currency`.
- * @member {String} currency_code
- */
-CustomFieldBase.prototype['currency_code'] = undefined;
-/**
- * This is the string that appears next to the custom field value. This will be null if the `format` is not `custom`.
- * @member {String} custom_label
- */
-CustomFieldBase.prototype['custom_label'] = undefined;
-/**
- * Only relevant for custom fields with `custom` format. This depicts where to place the custom label. This will be null if the `format` is not `custom`.
- * @member {module:model/CustomFieldBase.CustomLabelPositionEnum} custom_label_position
- */
-CustomFieldBase.prototype['custom_label_position'] = undefined;
-/**
- * This flag describes whether this custom field is available to every container in the workspace. Before project-specific custom fields, this field was always true.
- * @member {Boolean} is_global_to_workspace
- */
-CustomFieldBase.prototype['is_global_to_workspace'] = undefined;
-/**
- * *Conditional*. This flag describes whether a follower of a task with this field should receive inbox notifications from changes to this field.
- * @member {Boolean} has_notifications_enabled
- */
-CustomFieldBase.prototype['has_notifications_enabled'] = undefined;
-/**
- * *Conditional*. A unique identifier to associate this field with the template source of truth.
- * @member {module:model/CustomFieldBase.AsanaCreatedFieldEnum} asana_created_field
- */
-CustomFieldBase.prototype['asana_created_field'] = undefined;
-// Implement CustomFieldRequestAllOf interface:
-/**
- * *Create-Only* The workspace to create a custom field in.
- * @member {String} workspace
- */
-CustomFieldRequestAllOf.prototype['workspace'] = undefined;
-/**
- * *Allow-listed*. Instructs the API that this Custom Field is app-owned. This parameter is allow-listed to specific apps at this point in time. For apps that are not allow-listed, providing this parameter will result in a `403 Forbidden`.
- * @member {Boolean} owned_by_app
- */
-CustomFieldRequestAllOf.prototype['owned_by_app'] = undefined;
-/**
- * *Conditional*. Only relevant for custom fields of type `people`. This array of user GIDs reflects the users to be written to a `people` custom field. Note that *write* operations will replace existing users (if any) in the custom field with the users specified in this array.
- * @member {Array.<String>} people_value
- */
-CustomFieldRequestAllOf.prototype['people_value'] = undefined;
 
 
 

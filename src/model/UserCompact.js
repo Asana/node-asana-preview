@@ -12,23 +12,20 @@
  */
 
 import ApiClient from '../ApiClient';
-import AsanaResource from './AsanaResource';
-import UserCompactAllOf from './UserCompactAllOf';
 
 /**
  * The UserCompact model module.
  * @module model/UserCompact
- * @version 1.0.3
+ * @version 1.0.4
  */
 class UserCompact {
     /**
      * Constructs a new <code>UserCompact</code>.
+     * A generic Asana Resource, containing a globally unique identifier.A generic Asana Resource, containing a globally unique identifier. A *user* object represents an account in Asana that can be given access to various workspaces, projects, and tasks.
      * @alias module:model/UserCompact
-     * @implements module:model/AsanaResource
-     * @implements module:model/UserCompactAllOf
      */
     constructor() { 
-        AsanaResource.initialize(this);UserCompactAllOf.initialize(this);
+        
         UserCompact.initialize(this);
     }
 
@@ -50,8 +47,6 @@ class UserCompact {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new UserCompact();
-            AsanaResource.constructFromObject(data, obj);
-            UserCompactAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('gid')) {
                 obj['gid'] = ApiClient.convertToType(data['gid'], 'String');
@@ -88,23 +83,6 @@ UserCompact.prototype['resource_type'] = undefined;
 UserCompact.prototype['name'] = undefined;
 
 
-// Implement AsanaResource interface:
-/**
- * Globally unique identifier of the resource, as a string.
- * @member {String} gid
- */
-AsanaResource.prototype['gid'] = undefined;
-/**
- * The base type of this resource.
- * @member {String} resource_type
- */
-AsanaResource.prototype['resource_type'] = undefined;
-// Implement UserCompactAllOf interface:
-/**
- * *Read-only except when same user as requester*. The user’s name.
- * @member {String} name
- */
-UserCompactAllOf.prototype['name'] = undefined;
 
 
 

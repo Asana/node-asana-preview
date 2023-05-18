@@ -12,12 +12,12 @@
  */
 
 import ApiClient from '../ApiClient';
-import WorkspaceMembershipCompact from './WorkspaceMembershipCompact';
+import WorkspaceMembershipResponse from './WorkspaceMembershipResponse';
 
 /**
  * The GetWorkspaceMembershipsForUser200Response model module.
  * @module model/GetWorkspaceMembershipsForUser200Response
- * @version 1.0.3
+ * @version 1.0.4
  */
 class GetWorkspaceMembershipsForUser200Response {
     /**
@@ -49,7 +49,7 @@ class GetWorkspaceMembershipsForUser200Response {
             obj = obj || new GetWorkspaceMembershipsForUser200Response();
 
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [WorkspaceMembershipCompact]);
+                obj['data'] = ApiClient.convertToType(data['data'], [WorkspaceMembershipResponse]);
             }
         }
         return obj;
@@ -59,7 +59,7 @@ class GetWorkspaceMembershipsForUser200Response {
 }
 
 /**
- * @member {Array.<module:model/WorkspaceMembershipCompact>} data
+ * @member {Array.<module:model/WorkspaceMembershipResponse>} data
  */
 GetWorkspaceMembershipsForUser200Response.prototype['data'] = undefined;
 

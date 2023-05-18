@@ -12,21 +12,20 @@
  */
 
 import ApiClient from '../ApiClient';
-import AsanaNamedResource from './AsanaNamedResource';
 
 /**
  * The EventResponseResource model module.
  * @module model/EventResponseResource
- * @version 1.0.3
+ * @version 1.0.4
  */
 class EventResponseResource {
     /**
      * Constructs a new <code>EventResponseResource</code>.
+     * A generic Asana Resource, containing a globally unique identifier.A generic Asana Resource, containing a globally unique identifier. The resource which has triggered the event by being modified in some way.
      * @alias module:model/EventResponseResource
-     * @implements module:model/AsanaNamedResource
      */
     constructor() { 
-        AsanaNamedResource.initialize(this);
+        
         EventResponseResource.initialize(this);
     }
 
@@ -48,7 +47,6 @@ class EventResponseResource {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new EventResponseResource();
-            AsanaNamedResource.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('gid')) {
                 obj['gid'] = ApiClient.convertToType(data['gid'], 'String');
@@ -85,22 +83,6 @@ EventResponseResource.prototype['resource_type'] = undefined;
 EventResponseResource.prototype['name'] = undefined;
 
 
-// Implement AsanaNamedResource interface:
-/**
- * Globally unique identifier of the resource, as a string.
- * @member {String} gid
- */
-AsanaNamedResource.prototype['gid'] = undefined;
-/**
- * The base type of this resource.
- * @member {String} resource_type
- */
-AsanaNamedResource.prototype['resource_type'] = undefined;
-/**
- * The name of the object.
- * @member {String} name
- */
-AsanaNamedResource.prototype['name'] = undefined;
 
 
 

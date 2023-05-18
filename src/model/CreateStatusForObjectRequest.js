@@ -17,7 +17,7 @@ import StatusUpdateRequest from './StatusUpdateRequest';
 /**
  * The CreateStatusForObjectRequest model module.
  * @module model/CreateStatusForObjectRequest
- * @version 1.0.3
+ * @version 1.0.4
  */
 class CreateStatusForObjectRequest {
     /**

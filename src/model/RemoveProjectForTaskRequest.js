@@ -17,7 +17,7 @@ import TaskRemoveProjectRequest from './TaskRemoveProjectRequest';
 /**
  * The RemoveProjectForTaskRequest model module.
  * @module model/RemoveProjectForTaskRequest
- * @version 1.0.3
+ * @version 1.0.4
  */
 class RemoveProjectForTaskRequest {
     /**

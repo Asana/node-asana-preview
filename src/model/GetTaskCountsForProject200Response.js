@@ -17,7 +17,7 @@ import TaskCountResponse from './TaskCountResponse';
 /**
  * The GetTaskCountsForProject200Response model module.
  * @module model/GetTaskCountsForProject200Response
- * @version 1.0.3
+ * @version 1.0.4
  */
 class GetTaskCountsForProject200Response {
     /**

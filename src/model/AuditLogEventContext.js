@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AuditLogEventContext model module.
  * @module model/AuditLogEventContext
- * @version 1.0.3
+ * @version 1.0.4
  */
 class AuditLogEventContext {
     /**

@@ -12,21 +12,20 @@
  */
 
 import ApiClient from '../ApiClient';
-import AsanaResource from './AsanaResource';
 
 /**
  * The CustomFieldSettingCompact model module.
  * @module model/CustomFieldSettingCompact
- * @version 1.0.3
+ * @version 1.0.4
  */
 class CustomFieldSettingCompact {
     /**
      * Constructs a new <code>CustomFieldSettingCompact</code>.
+     * A generic Asana Resource, containing a globally unique identifier.A generic Asana Resource, containing a globally unique identifier. Custom Fields Settings objects represent the many-to-many join of the Custom Field and Project as well as stores information that is relevant to that particular pairing.
      * @alias module:model/CustomFieldSettingCompact
-     * @implements module:model/AsanaResource
      */
     constructor() { 
-        AsanaResource.initialize(this);
+        
         CustomFieldSettingCompact.initialize(this);
     }
 
@@ -48,7 +47,6 @@ class CustomFieldSettingCompact {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new CustomFieldSettingCompact();
-            AsanaResource.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('gid')) {
                 obj['gid'] = ApiClient.convertToType(data['gid'], 'String');
@@ -76,17 +74,6 @@ CustomFieldSettingCompact.prototype['gid'] = undefined;
 CustomFieldSettingCompact.prototype['resource_type'] = undefined;
 
 
-// Implement AsanaResource interface:
-/**
- * Globally unique identifier of the resource, as a string.
- * @member {String} gid
- */
-AsanaResource.prototype['gid'] = undefined;
-/**
- * The base type of this resource.
- * @member {String} resource_type
- */
-AsanaResource.prototype['resource_type'] = undefined;
 
 
 

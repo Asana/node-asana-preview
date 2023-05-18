@@ -12,12 +12,12 @@
  */
 
 import ApiClient from '../ApiClient';
-import TeamCompact from './TeamCompact';
+import TeamResponse from './TeamResponse';
 
 /**
  * The GetTeamsForWorkspace200Response model module.
  * @module model/GetTeamsForWorkspace200Response
- * @version 1.0.3
+ * @version 1.0.4
  */
 class GetTeamsForWorkspace200Response {
     /**
@@ -49,7 +49,7 @@ class GetTeamsForWorkspace200Response {
             obj = obj || new GetTeamsForWorkspace200Response();
 
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [TeamCompact]);
+                obj['data'] = ApiClient.convertToType(data['data'], [TeamResponse]);
             }
         }
         return obj;
@@ -59,7 +59,7 @@ class GetTeamsForWorkspace200Response {
 }
 
 /**
- * @member {Array.<module:model/TeamCompact>} data
+ * @member {Array.<module:model/TeamResponse>} data
  */
 GetTeamsForWorkspace200Response.prototype['data'] = undefined;
 

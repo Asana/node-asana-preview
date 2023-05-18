@@ -15,6 +15,7 @@
 import ApiClient from "../ApiClient";
 import AddDependenciesForTaskRequest from '../model/AddDependenciesForTaskRequest';
 import AddDependentsForTaskRequest from '../model/AddDependentsForTaskRequest';
+import AddFollowersRequest from '../model/AddFollowersRequest';
 import AddProjectForTaskRequest from '../model/AddProjectForTaskRequest';
 import AddTagForTaskRequest from '../model/AddTagForTaskRequest';
 import CreateTask201Response from '../model/CreateTask201Response';
@@ -32,7 +33,7 @@ import SetParentForTaskRequest from '../model/SetParentForTaskRequest';
 /**
 * Tasks service.
 * @module api/TasksApi
-* @version 1.0.3
+* @version 1.0.4
 */
 export default class TasksApi {
 
@@ -90,8 +91,8 @@ export default class TasksApi {
       };
 
       let authNames = ['personalAccessToken'];
-      let contentTypes = ['application/json'];
-      let accepts = ['application/json'];
+      let contentTypes = ['application/json; charset=UTF-8'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = DeleteAttachment200Response;
       return this.apiClient.callApi(
         '/tasks/{task_gid}/addDependencies', 'POST',
@@ -142,11 +143,65 @@ export default class TasksApi {
       };
 
       let authNames = ['personalAccessToken'];
-      let contentTypes = ['application/json'];
-      let accepts = ['application/json'];
+      let contentTypes = ['application/json; charset=UTF-8'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = DeleteAttachment200Response;
       return this.apiClient.callApi(
         '/tasks/{task_gid}/addDependents', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the addFollowersForTask operation.
+     * @callback module:api/TasksApi~addFollowersForTaskCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/CreateTask201Response} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Add followers to a task
+     * Adds followers to a task. Returns an empty data block. Each task can be associated with zero or more followers in the system. Requests to add/remove followers, if successful, will return the complete updated task record, described above.
+     * @param {String} taskGid The task to operate on.
+     * @param {module:model/AddFollowersRequest} addFollowersRequest The followers to add to the task.
+     * @param {Object} opts Optional parameters
+     * @param {Boolean} opts.optPretty Provides “pretty” output. Provides the response in a “pretty” format. In the case of JSON this means doing proper line breaking and indentation to make it readable. This will take extra time and increase the response size so it is advisable only to use this during debugging.
+     * @param {Array.<module:model/String>} opts.optFields This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
+     * @param {module:api/TasksApi~addFollowersForTaskCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/CreateTask201Response}
+     */
+    addFollowersForTask(taskGid, addFollowersRequest, opts, callback) {
+      opts = opts || {};
+      let postBody = addFollowersRequest;
+      // verify the required parameter 'taskGid' is set
+      if (taskGid === undefined || taskGid === null) {
+        throw new Error("Missing the required parameter 'taskGid' when calling addFollowersForTask");
+      }
+      // verify the required parameter 'addFollowersRequest' is set
+      if (addFollowersRequest === undefined || addFollowersRequest === null) {
+        throw new Error("Missing the required parameter 'addFollowersRequest' when calling addFollowersForTask");
+      }
+
+      let pathParams = {
+        'task_gid': taskGid
+      };
+      let queryParams = {
+        'opt_pretty': opts['optPretty'],
+        'opt_fields': this.apiClient.buildCollectionParam(opts['optFields'], 'csv')
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['personalAccessToken'];
+      let contentTypes = ['application/json; charset=UTF-8'];
+      let accepts = ['application/json; charset=UTF-8'];
+      let returnType = CreateTask201Response;
+      return this.apiClient.callApi(
+        '/tasks/{task_gid}/addFollowers', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
@@ -194,8 +249,8 @@ export default class TasksApi {
       };
 
       let authNames = ['personalAccessToken'];
-      let contentTypes = ['application/json'];
-      let accepts = ['application/json'];
+      let contentTypes = ['application/json; charset=UTF-8'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = DeleteAttachment200Response;
       return this.apiClient.callApi(
         '/tasks/{task_gid}/addProject', 'POST',
@@ -246,8 +301,8 @@ export default class TasksApi {
       };
 
       let authNames = ['personalAccessToken'];
-      let contentTypes = ['application/json'];
-      let accepts = ['application/json'];
+      let contentTypes = ['application/json; charset=UTF-8'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = DeleteAttachment200Response;
       return this.apiClient.callApi(
         '/tasks/{task_gid}/addTag', 'POST',
@@ -300,8 +355,8 @@ export default class TasksApi {
       };
 
       let authNames = ['personalAccessToken'];
-      let contentTypes = ['application/json'];
-      let accepts = ['application/json'];
+      let contentTypes = ['application/json; charset=UTF-8'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = CreateTask201Response;
       return this.apiClient.callApi(
         '/tasks/{task_gid}/subtasks', 'POST',
@@ -348,8 +403,8 @@ export default class TasksApi {
       };
 
       let authNames = ['personalAccessToken'];
-      let contentTypes = ['application/json'];
-      let accepts = ['application/json'];
+      let contentTypes = ['application/json; charset=UTF-8'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = CreateTask201Response;
       return this.apiClient.callApi(
         '/tasks', 'POST',
@@ -396,7 +451,7 @@ export default class TasksApi {
 
       let authNames = ['personalAccessToken'];
       let contentTypes = [];
-      let accepts = ['application/json'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = DeleteAttachment200Response;
       return this.apiClient.callApi(
         '/tasks/{task_gid}', 'DELETE',
@@ -449,8 +504,8 @@ export default class TasksApi {
       };
 
       let authNames = ['personalAccessToken'];
-      let contentTypes = ['application/json'];
-      let accepts = ['application/json'];
+      let contentTypes = ['application/json; charset=UTF-8'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = GetJob200Response;
       return this.apiClient.callApi(
         '/tasks/{task_gid}/duplicate', 'POST',
@@ -503,7 +558,7 @@ export default class TasksApi {
 
       let authNames = ['personalAccessToken'];
       let contentTypes = [];
-      let accepts = ['application/json'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = GetTasks200Response;
       return this.apiClient.callApi(
         '/tasks/{task_gid}/dependencies', 'GET',
@@ -556,7 +611,7 @@ export default class TasksApi {
 
       let authNames = ['personalAccessToken'];
       let contentTypes = [];
-      let accepts = ['application/json'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = GetTasks200Response;
       return this.apiClient.callApi(
         '/tasks/{task_gid}/dependents', 'GET',
@@ -609,7 +664,7 @@ export default class TasksApi {
 
       let authNames = ['personalAccessToken'];
       let contentTypes = [];
-      let accepts = ['application/json'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = GetTasks200Response;
       return this.apiClient.callApi(
         '/tasks/{task_gid}/subtasks', 'GET',
@@ -658,7 +713,7 @@ export default class TasksApi {
 
       let authNames = ['personalAccessToken'];
       let contentTypes = [];
-      let accepts = ['application/json'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = CreateTask201Response;
       return this.apiClient.callApi(
         '/tasks/{task_gid}', 'GET',
@@ -717,7 +772,7 @@ export default class TasksApi {
 
       let authNames = ['personalAccessToken'];
       let contentTypes = [];
-      let accepts = ['application/json'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = GetTasks200Response;
       return this.apiClient.callApi(
         '/tasks', 'GET',
@@ -772,7 +827,7 @@ export default class TasksApi {
 
       let authNames = ['personalAccessToken'];
       let contentTypes = [];
-      let accepts = ['application/json'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = GetTasks200Response;
       return this.apiClient.callApi(
         '/projects/{project_gid}/tasks', 'GET',
@@ -825,7 +880,7 @@ export default class TasksApi {
 
       let authNames = ['personalAccessToken'];
       let contentTypes = [];
-      let accepts = ['application/json'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = GetTasks200Response;
       return this.apiClient.callApi(
         '/sections/{section_gid}/tasks', 'GET',
@@ -878,7 +933,7 @@ export default class TasksApi {
 
       let authNames = ['personalAccessToken'];
       let contentTypes = [];
-      let accepts = ['application/json'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = GetTasks200Response;
       return this.apiClient.callApi(
         '/tags/{tag_gid}/tasks', 'GET',
@@ -933,7 +988,7 @@ export default class TasksApi {
 
       let authNames = ['personalAccessToken'];
       let contentTypes = [];
-      let accepts = ['application/json'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = GetTasks200Response;
       return this.apiClient.callApi(
         '/user_task_lists/{user_task_list_gid}/tasks', 'GET',
@@ -984,8 +1039,8 @@ export default class TasksApi {
       };
 
       let authNames = ['personalAccessToken'];
-      let contentTypes = ['application/json'];
-      let accepts = ['application/json'];
+      let contentTypes = ['application/json; charset=UTF-8'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = DeleteAttachment200Response;
       return this.apiClient.callApi(
         '/tasks/{task_gid}/removeDependencies', 'POST',
@@ -1036,8 +1091,8 @@ export default class TasksApi {
       };
 
       let authNames = ['personalAccessToken'];
-      let contentTypes = ['application/json'];
-      let accepts = ['application/json'];
+      let contentTypes = ['application/json; charset=UTF-8'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = DeleteAttachment200Response;
       return this.apiClient.callApi(
         '/tasks/{task_gid}/removeDependents', 'POST',
@@ -1090,8 +1145,8 @@ export default class TasksApi {
       };
 
       let authNames = ['personalAccessToken'];
-      let contentTypes = ['application/json'];
-      let accepts = ['application/json'];
+      let contentTypes = ['application/json; charset=UTF-8'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = CreateTask201Response;
       return this.apiClient.callApi(
         '/tasks/{task_gid}/removeFollowers', 'POST',
@@ -1142,8 +1197,8 @@ export default class TasksApi {
       };
 
       let authNames = ['personalAccessToken'];
-      let contentTypes = ['application/json'];
-      let accepts = ['application/json'];
+      let contentTypes = ['application/json; charset=UTF-8'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = DeleteAttachment200Response;
       return this.apiClient.callApi(
         '/tasks/{task_gid}/removeProject', 'POST',
@@ -1194,8 +1249,8 @@ export default class TasksApi {
       };
 
       let authNames = ['personalAccessToken'];
-      let contentTypes = ['application/json'];
-      let accepts = ['application/json'];
+      let contentTypes = ['application/json; charset=UTF-8'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = DeleteAttachment200Response;
       return this.apiClient.callApi(
         '/tasks/{task_gid}/removeTag', 'POST',
@@ -1348,7 +1403,7 @@ export default class TasksApi {
 
       let authNames = ['personalAccessToken'];
       let contentTypes = [];
-      let accepts = ['application/json'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = GetTasks200Response;
       return this.apiClient.callApi(
         '/workspaces/{workspace_gid}/tasks/search', 'GET',
@@ -1401,8 +1456,8 @@ export default class TasksApi {
       };
 
       let authNames = ['personalAccessToken'];
-      let contentTypes = ['application/json'];
-      let accepts = ['application/json'];
+      let contentTypes = ['application/json; charset=UTF-8'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = CreateTask201Response;
       return this.apiClient.callApi(
         '/tasks/{task_gid}/setParent', 'POST',
@@ -1455,8 +1510,8 @@ export default class TasksApi {
       };
 
       let authNames = ['personalAccessToken'];
-      let contentTypes = ['application/json'];
-      let accepts = ['application/json'];
+      let contentTypes = ['application/json; charset=UTF-8'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = CreateTask201Response;
       return this.apiClient.callApi(
         '/tasks/{task_gid}', 'PUT',

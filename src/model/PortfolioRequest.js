@@ -12,23 +12,20 @@
  */
 
 import ApiClient from '../ApiClient';
-import PortfolioBase from './PortfolioBase';
-import PortfolioRequestAllOf from './PortfolioRequestAllOf';
 
 /**
  * The PortfolioRequest model module.
  * @module model/PortfolioRequest
- * @version 1.0.3
+ * @version 1.0.4
  */
 class PortfolioRequest {
     /**
      * Constructs a new <code>PortfolioRequest</code>.
+     * A generic Asana Resource, containing a globally unique identifier.A generic Asana Resource, containing a globally unique identifier. A *portfolio* gives a high-level overview of the status of multiple initiatives in Asana. Portfolios provide a dashboard overview of the state of multiple projects, including a progress report and the most recent [project status](/reference/project-statuses) update. Portfolios have some restrictions on size. Each portfolio has a max of 500 items and, like projects, a max of 20 custom fields.
      * @alias module:model/PortfolioRequest
-     * @implements module:model/PortfolioBase
-     * @implements module:model/PortfolioRequestAllOf
      */
     constructor() { 
-        PortfolioBase.initialize(this);PortfolioRequestAllOf.initialize(this);
+        
         PortfolioRequest.initialize(this);
     }
 
@@ -50,8 +47,6 @@ class PortfolioRequest {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new PortfolioRequest();
-            PortfolioBase.constructFromObject(data, obj);
-            PortfolioRequestAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('gid')) {
                 obj['gid'] = ApiClient.convertToType(data['gid'], 'String');
@@ -124,43 +119,6 @@ PortfolioRequest.prototype['workspace'] = undefined;
 PortfolioRequest.prototype['public'] = undefined;
 
 
-// Implement PortfolioBase interface:
-/**
- * Globally unique identifier of the resource, as a string.
- * @member {String} gid
- */
-PortfolioBase.prototype['gid'] = undefined;
-/**
- * The base type of this resource.
- * @member {String} resource_type
- */
-PortfolioBase.prototype['resource_type'] = undefined;
-/**
- * The name of the portfolio.
- * @member {String} name
- */
-PortfolioBase.prototype['name'] = undefined;
-/**
- * Color of the portfolio.
- * @member {module:model/PortfolioBase.ColorEnum} color
- */
-PortfolioBase.prototype['color'] = undefined;
-// Implement PortfolioRequestAllOf interface:
-/**
- * An array of strings identifying users. These can either be the string \"me\", an email, or the gid of a user.
- * @member {Array.<String>} members
- */
-PortfolioRequestAllOf.prototype['members'] = undefined;
-/**
- * Gid of an object.
- * @member {String} workspace
- */
-PortfolioRequestAllOf.prototype['workspace'] = undefined;
-/**
- * True if the portfolio is public to its workspace members.
- * @member {Boolean} public
- */
-PortfolioRequestAllOf.prototype['public'] = undefined;
 
 
 

@@ -17,7 +17,7 @@ import WebhookRequest from './WebhookRequest';
 /**
  * The CreateWebhookRequest model module.
  * @module model/CreateWebhookRequest
- * @version 1.0.3
+ * @version 1.0.4
  */
 class CreateWebhookRequest {
     /**

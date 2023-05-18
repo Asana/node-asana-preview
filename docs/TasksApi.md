@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**addDependenciesForTask**](TasksApi.md#addDependenciesForTask) | **POST** /tasks/{task_gid}/addDependencies | Set dependencies for a task
 [**addDependentsForTask**](TasksApi.md#addDependentsForTask) | **POST** /tasks/{task_gid}/addDependents | Set dependents for a task
+[**addFollowersForTask**](TasksApi.md#addFollowersForTask) | **POST** /tasks/{task_gid}/addFollowers | Add followers to a task
 [**addProjectForTask**](TasksApi.md#addProjectForTask) | **POST** /tasks/{task_gid}/addProject | Add a project to a task
 [**addTagForTask**](TasksApi.md#addTagForTask) | **POST** /tasks/{task_gid}/addTag | Add a tag to a task
 [**createSubtaskForTask**](TasksApi.md#createSubtaskForTask) | **POST** /tasks/{task_gid}/subtasks | Create a subtask
@@ -85,8 +86,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+- **Content-Type**: application/json; charset=UTF-8
+- **Accept**: application/json; charset=UTF-8
 
 
 ## addDependentsForTask
@@ -142,8 +143,67 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+- **Content-Type**: application/json; charset=UTF-8
+- **Accept**: application/json; charset=UTF-8
+
+
+## addFollowersForTask
+
+> CreateTask201Response addFollowersForTask(taskGid, addFollowersRequest, opts)
+
+Add followers to a task
+
+Adds followers to a task. Returns an empty data block. Each task can be associated with zero or more followers in the system. Requests to add/remove followers, if successful, will return the complete updated task record, described above.
+
+### Example
+
+```javascript
+const AsanaPreview = require('asana-preview');
+
+let defaultClient = AsanaPreview.ApiClient.instance;
+// Configure Bearer access token for authorization: personalAccessToken
+let personalAccessToken = defaultClient.authentications['personalAccessToken'];
+personalAccessToken.accessToken = "PERSONAL_ACCESS_TOKEN"
+
+let apiInstance = new AsanaPreview.TasksApi();
+let taskGid = 321654; // String | The task to operate on.
+let addFollowersRequest = new AsanaPreview.AddFollowersRequest(); // AddFollowersRequest | The followers to add to the task.
+let opts = {
+  'optPretty': true, // Boolean | Provides “pretty” output. Provides the response in a “pretty” format. In the case of JSON this means doing proper line breaking and indentation to make it readable. This will take extra time and increase the response size so it is advisable only to use this during debugging.
+  'optFields': ["actual_time_minutes","num_subtasks","hearted","projects","created_at","modified_at","tags","memberships","approval_status","liked","parent","assignee","external","dependencies","completed_by","name","num_likes","start_at","custom_fields","hearts","due_on","resource_subtype","dependents","assignee_section","notes","is_rendered_as_separator","likes","start_on","workspace","followers","assignee_status","completed_at","due_at","html_notes","permalink_url","completed","num_hearts"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
+};
+
+apiInstance.addFollowersForTask(taskGid, addFollowersRequest, opts, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' +  JSON.stringify(data, 0, 2));
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **taskGid** | **String**| The task to operate on. | 
+ **addFollowersRequest** | [**AddFollowersRequest**](AddFollowersRequest.md)| The followers to add to the task. | 
+ **optPretty** | **Boolean**| Provides “pretty” output. Provides the response in a “pretty” format. In the case of JSON this means doing proper line breaking and indentation to make it readable. This will take extra time and increase the response size so it is advisable only to use this during debugging. | [optional] 
+ **optFields** | [**[String]**](String.md)| This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include. | [optional] 
+
+### Return type
+
+[**CreateTask201Response**](CreateTask201Response.md)
+
+### Authorization
+
+[personalAccessToken](../README.md#personalAccessToken)
+
+### HTTP request headers
+
+- **Content-Type**: application/json; charset=UTF-8
+- **Accept**: application/json; charset=UTF-8
 
 
 ## addProjectForTask
@@ -199,8 +259,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+- **Content-Type**: application/json; charset=UTF-8
+- **Accept**: application/json; charset=UTF-8
 
 
 ## addTagForTask
@@ -256,8 +316,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+- **Content-Type**: application/json; charset=UTF-8
+- **Accept**: application/json; charset=UTF-8
 
 
 ## createSubtaskForTask
@@ -283,7 +343,7 @@ let taskGid = 321654; // String | The task to operate on.
 let createTaskRequest = new AsanaPreview.CreateTaskRequest(); // CreateTaskRequest | The new subtask to create.
 let opts = {
   'optPretty': true, // Boolean | Provides “pretty” output. Provides the response in a “pretty” format. In the case of JSON this means doing proper line breaking and indentation to make it readable. This will take extra time and increase the response size so it is advisable only to use this during debugging.
-  'optFields': ["created_at","memberships","parent","assignee_status","actual_time_minutes","custom_fields","html_notes","start_at","assignee_section","due_on","name","permalink_url","external","modified_at","num_hearts","num_likes","resource_subtype","projects","num_subtasks","completed_at","completed_by","dependencies","approval_status","dependents","hearts","likes","liked","workspace","tags","hearted","due_at","completed","is_rendered_as_separator","notes","assignee","followers","start_on"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
+  'optFields': ["actual_time_minutes","num_subtasks","hearted","projects","created_at","modified_at","tags","memberships","approval_status","liked","parent","assignee","external","dependencies","completed_by","name","num_likes","start_at","custom_fields","hearts","due_on","resource_subtype","dependents","assignee_section","notes","is_rendered_as_separator","likes","start_on","workspace","followers","assignee_status","completed_at","due_at","html_notes","permalink_url","completed","num_hearts"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
 };
 
 apiInstance.createSubtaskForTask(taskGid, createTaskRequest, opts, (error, data, response) => {
@@ -315,8 +375,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+- **Content-Type**: application/json; charset=UTF-8
+- **Accept**: application/json; charset=UTF-8
 
 
 ## createTask
@@ -341,7 +401,7 @@ let apiInstance = new AsanaPreview.TasksApi();
 let createTaskRequest = new AsanaPreview.CreateTaskRequest(); // CreateTaskRequest | The task to create.
 let opts = {
   'optPretty': true, // Boolean | Provides “pretty” output. Provides the response in a “pretty” format. In the case of JSON this means doing proper line breaking and indentation to make it readable. This will take extra time and increase the response size so it is advisable only to use this during debugging.
-  'optFields': ["created_at","memberships","parent","assignee_status","actual_time_minutes","custom_fields","html_notes","start_at","assignee_section","due_on","name","permalink_url","external","modified_at","num_hearts","num_likes","resource_subtype","projects","num_subtasks","completed_at","completed_by","dependencies","approval_status","dependents","hearts","likes","liked","workspace","tags","hearted","due_at","completed","is_rendered_as_separator","notes","assignee","followers","start_on"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
+  'optFields': ["actual_time_minutes","num_subtasks","hearted","projects","created_at","modified_at","tags","memberships","approval_status","liked","parent","assignee","external","dependencies","completed_by","name","num_likes","start_at","custom_fields","hearts","due_on","resource_subtype","dependents","assignee_section","notes","is_rendered_as_separator","likes","start_on","workspace","followers","assignee_status","completed_at","due_at","html_notes","permalink_url","completed","num_hearts"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
 };
 
 apiInstance.createTask(createTaskRequest, opts, (error, data, response) => {
@@ -372,8 +432,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+- **Content-Type**: application/json; charset=UTF-8
+- **Accept**: application/json; charset=UTF-8
 
 
 ## deleteTask
@@ -428,7 +488,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: application/json; charset=UTF-8
 
 
 ## duplicateTask
@@ -454,7 +514,7 @@ let taskGid = 321654; // String | The task to operate on.
 let duplicateTaskRequest = new AsanaPreview.DuplicateTaskRequest(); // DuplicateTaskRequest | Describes the duplicate's name and the fields that will be duplicated.
 let opts = {
   'optPretty': true, // Boolean | Provides “pretty” output. Provides the response in a “pretty” format. In the case of JSON this means doing proper line breaking and indentation to make it readable. This will take extra time and increase the response size so it is advisable only to use this during debugging.
-  'optFields': ["status","resource_subtype","new_project_template","new_task","new_task_template","new_project"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
+  'optFields': ["status","new_task","new_project","new_project_template","new_task_template","resource_subtype"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
 };
 
 apiInstance.duplicateTask(taskGid, duplicateTaskRequest, opts, (error, data, response) => {
@@ -486,8 +546,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+- **Content-Type**: application/json; charset=UTF-8
+- **Accept**: application/json; charset=UTF-8
 
 
 ## getDependenciesForTask
@@ -514,7 +574,7 @@ let opts = {
   'optPretty': true, // Boolean | Provides “pretty” output. Provides the response in a “pretty” format. In the case of JSON this means doing proper line breaking and indentation to make it readable. This will take extra time and increase the response size so it is advisable only to use this during debugging.
   'limit': 50, // Number | Results per page. The number of objects to return per page. The value must be between 1 and 100.
   'offset': eyJ0eXAiOJiKV1iQLCJhbGciOiJIUzI1NiJ9, // String | Offset token. An offset to the next page returned by the API. A pagination request will return an offset token, which can be used as an input parameter to the next request. If an offset is not passed in, the API will return the first page of results. 'Note: You can only pass in an offset that was returned to you via a previously paginated request.'
-  'optFields': ["created_at","memberships","parent","assignee_status","actual_time_minutes","custom_fields","html_notes","start_at","assignee_section","name","due_on","permalink_url","external","modified_at","num_hearts","num_likes","resource_subtype","projects","num_subtasks","completed_at","completed_by","dependencies","approval_status","dependents","hearts","likes","liked","workspace","tags","hearted","due_at","completed","is_rendered_as_separator","notes","assignee","followers","start_on"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
+  'optFields': ["actual_time_minutes","num_subtasks","hearted","projects","created_at","modified_at","tags","memberships","approval_status","liked","parent","assignee","external","dependencies","completed_by","name","num_likes","start_at","custom_fields","hearts","due_on","resource_subtype","dependents","assignee_section","notes","is_rendered_as_separator","likes","start_on","workspace","followers","assignee_status","completed_at","due_at","html_notes","permalink_url","completed","num_hearts"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
 };
 
 apiInstance.getDependenciesForTask(taskGid, opts, (error, data, response) => {
@@ -548,7 +608,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: application/json; charset=UTF-8
 
 
 ## getDependentsForTask
@@ -575,7 +635,7 @@ let opts = {
   'optPretty': true, // Boolean | Provides “pretty” output. Provides the response in a “pretty” format. In the case of JSON this means doing proper line breaking and indentation to make it readable. This will take extra time and increase the response size so it is advisable only to use this during debugging.
   'limit': 50, // Number | Results per page. The number of objects to return per page. The value must be between 1 and 100.
   'offset': eyJ0eXAiOJiKV1iQLCJhbGciOiJIUzI1NiJ9, // String | Offset token. An offset to the next page returned by the API. A pagination request will return an offset token, which can be used as an input parameter to the next request. If an offset is not passed in, the API will return the first page of results. 'Note: You can only pass in an offset that was returned to you via a previously paginated request.'
-  'optFields': ["created_at","memberships","parent","assignee_status","actual_time_minutes","custom_fields","html_notes","start_at","assignee_section","name","due_on","permalink_url","external","modified_at","num_hearts","num_likes","resource_subtype","projects","num_subtasks","completed_at","completed_by","dependencies","approval_status","dependents","hearts","likes","liked","workspace","tags","hearted","due_at","completed","is_rendered_as_separator","notes","assignee","followers","start_on"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
+  'optFields': ["actual_time_minutes","num_subtasks","hearted","projects","created_at","modified_at","tags","memberships","approval_status","liked","parent","assignee","external","dependencies","completed_by","name","num_likes","start_at","custom_fields","hearts","due_on","resource_subtype","dependents","assignee_section","notes","is_rendered_as_separator","likes","start_on","workspace","followers","assignee_status","completed_at","due_at","html_notes","permalink_url","completed","num_hearts"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
 };
 
 apiInstance.getDependentsForTask(taskGid, opts, (error, data, response) => {
@@ -609,7 +669,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: application/json; charset=UTF-8
 
 
 ## getSubtasksForTask
@@ -636,7 +696,7 @@ let opts = {
   'optPretty': true, // Boolean | Provides “pretty” output. Provides the response in a “pretty” format. In the case of JSON this means doing proper line breaking and indentation to make it readable. This will take extra time and increase the response size so it is advisable only to use this during debugging.
   'limit': 50, // Number | Results per page. The number of objects to return per page. The value must be between 1 and 100.
   'offset': eyJ0eXAiOJiKV1iQLCJhbGciOiJIUzI1NiJ9, // String | Offset token. An offset to the next page returned by the API. A pagination request will return an offset token, which can be used as an input parameter to the next request. If an offset is not passed in, the API will return the first page of results. 'Note: You can only pass in an offset that was returned to you via a previously paginated request.'
-  'optFields': ["created_at","memberships","parent","assignee_status","actual_time_minutes","custom_fields","html_notes","start_at","assignee_section","name","due_on","permalink_url","external","modified_at","num_hearts","num_likes","resource_subtype","projects","num_subtasks","completed_at","completed_by","dependencies","approval_status","dependents","hearts","likes","liked","workspace","tags","hearted","due_at","completed","is_rendered_as_separator","notes","assignee","followers","start_on"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
+  'optFields': ["actual_time_minutes","num_subtasks","hearted","projects","created_at","modified_at","tags","memberships","approval_status","liked","parent","assignee","external","dependencies","completed_by","name","num_likes","start_at","custom_fields","hearts","due_on","resource_subtype","dependents","assignee_section","notes","is_rendered_as_separator","likes","start_on","workspace","followers","assignee_status","completed_at","due_at","html_notes","permalink_url","completed","num_hearts"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
 };
 
 apiInstance.getSubtasksForTask(taskGid, opts, (error, data, response) => {
@@ -670,7 +730,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: application/json; charset=UTF-8
 
 
 ## getTask
@@ -695,7 +755,7 @@ let apiInstance = new AsanaPreview.TasksApi();
 let taskGid = 321654; // String | The task to operate on.
 let opts = {
   'optPretty': true, // Boolean | Provides “pretty” output. Provides the response in a “pretty” format. In the case of JSON this means doing proper line breaking and indentation to make it readable. This will take extra time and increase the response size so it is advisable only to use this during debugging.
-  'optFields': ["created_at","memberships","parent","assignee_status","actual_time_minutes","custom_fields","html_notes","start_at","assignee_section","due_on","name","permalink_url","external","modified_at","num_hearts","num_likes","resource_subtype","projects","num_subtasks","completed_at","completed_by","dependencies","approval_status","dependents","hearts","likes","liked","workspace","tags","hearted","due_at","completed","is_rendered_as_separator","notes","assignee","followers","start_on"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
+  'optFields': ["actual_time_minutes","num_subtasks","hearted","projects","created_at","modified_at","tags","memberships","approval_status","liked","parent","assignee","external","dependencies","completed_by","name","num_likes","start_at","custom_fields","hearts","due_on","resource_subtype","dependents","assignee_section","notes","is_rendered_as_separator","likes","start_on","workspace","followers","assignee_status","completed_at","due_at","html_notes","permalink_url","completed","num_hearts"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
 };
 
 apiInstance.getTask(taskGid, opts, (error, data, response) => {
@@ -727,7 +787,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: application/json; charset=UTF-8
 
 
 ## getTasks
@@ -759,7 +819,7 @@ let opts = {
   'workspace': 321654, // String | The workspace to filter tasks on. *Note: If you specify `workspace`, you must also specify the `assignee` to filter on.*
   'completedSince': 2012-02-22T02:06:58.158Z, // Date | Only return tasks that are either incomplete or that have been completed since this time.
   'modifiedSince': 2012-02-22T02:06:58.158Z, // Date | Only return tasks that have been modified since the given time.  *Note: A task is considered “modified” if any of its properties change, or associations between it and other objects are modified (e.g.  a task being added to a project). A task is not considered modified just because another object it is associated with (e.g. a subtask) is modified. Actions that count as modifying the task include assigning, renaming, completing, and adding stories.*
-  'optFields': ["created_at","memberships","parent","assignee_status","actual_time_minutes","custom_fields","html_notes","start_at","assignee_section","name","due_on","permalink_url","external","modified_at","num_hearts","num_likes","resource_subtype","projects","num_subtasks","completed_at","completed_by","dependencies","approval_status","dependents","hearts","likes","liked","workspace","tags","hearted","due_at","completed","is_rendered_as_separator","notes","assignee","followers","start_on"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
+  'optFields': ["actual_time_minutes","num_subtasks","hearted","projects","created_at","modified_at","tags","memberships","approval_status","liked","parent","assignee","external","dependencies","completed_by","name","num_likes","start_at","custom_fields","hearts","due_on","resource_subtype","dependents","assignee_section","notes","is_rendered_as_separator","likes","start_on","workspace","followers","assignee_status","completed_at","due_at","html_notes","permalink_url","completed","num_hearts"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
 };
 
 apiInstance.getTasks(opts, (error, data, response) => {
@@ -798,7 +858,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: application/json; charset=UTF-8
 
 
 ## getTasksForProject
@@ -826,7 +886,7 @@ let opts = {
   'optPretty': true, // Boolean | Provides “pretty” output. Provides the response in a “pretty” format. In the case of JSON this means doing proper line breaking and indentation to make it readable. This will take extra time and increase the response size so it is advisable only to use this during debugging.
   'limit': 50, // Number | Results per page. The number of objects to return per page. The value must be between 1 and 100.
   'offset': eyJ0eXAiOJiKV1iQLCJhbGciOiJIUzI1NiJ9, // String | Offset token. An offset to the next page returned by the API. A pagination request will return an offset token, which can be used as an input parameter to the next request. If an offset is not passed in, the API will return the first page of results. 'Note: You can only pass in an offset that was returned to you via a previously paginated request.'
-  'optFields': ["created_at","memberships","parent","assignee_status","actual_time_minutes","custom_fields","html_notes","start_at","assignee_section","name","due_on","permalink_url","external","modified_at","num_hearts","num_likes","resource_subtype","projects","num_subtasks","completed_at","completed_by","dependencies","approval_status","dependents","hearts","likes","liked","workspace","tags","hearted","due_at","completed","is_rendered_as_separator","notes","assignee","followers","start_on"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
+  'optFields': ["actual_time_minutes","num_subtasks","hearted","projects","created_at","modified_at","tags","memberships","approval_status","liked","parent","assignee","external","dependencies","completed_by","name","num_likes","start_at","custom_fields","hearts","due_on","resource_subtype","dependents","assignee_section","notes","is_rendered_as_separator","likes","start_on","workspace","followers","assignee_status","completed_at","due_at","html_notes","permalink_url","completed","num_hearts"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
 };
 
 apiInstance.getTasksForProject(projectGid, opts, (error, data, response) => {
@@ -861,7 +921,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: application/json; charset=UTF-8
 
 
 ## getTasksForSection
@@ -888,7 +948,7 @@ let opts = {
   'optPretty': true, // Boolean | Provides “pretty” output. Provides the response in a “pretty” format. In the case of JSON this means doing proper line breaking and indentation to make it readable. This will take extra time and increase the response size so it is advisable only to use this during debugging.
   'limit': 50, // Number | Results per page. The number of objects to return per page. The value must be between 1 and 100.
   'offset': eyJ0eXAiOJiKV1iQLCJhbGciOiJIUzI1NiJ9, // String | Offset token. An offset to the next page returned by the API. A pagination request will return an offset token, which can be used as an input parameter to the next request. If an offset is not passed in, the API will return the first page of results. 'Note: You can only pass in an offset that was returned to you via a previously paginated request.'
-  'optFields': ["created_at","memberships","parent","assignee_status","actual_time_minutes","custom_fields","html_notes","start_at","assignee_section","name","due_on","permalink_url","external","modified_at","num_hearts","num_likes","resource_subtype","projects","num_subtasks","completed_at","completed_by","dependencies","approval_status","dependents","hearts","likes","liked","workspace","tags","hearted","due_at","completed","is_rendered_as_separator","notes","assignee","followers","start_on"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
+  'optFields': ["actual_time_minutes","num_subtasks","hearted","projects","created_at","modified_at","tags","memberships","approval_status","liked","parent","assignee","external","dependencies","completed_by","name","num_likes","start_at","custom_fields","hearts","due_on","resource_subtype","dependents","assignee_section","notes","is_rendered_as_separator","likes","start_on","workspace","followers","assignee_status","completed_at","due_at","html_notes","permalink_url","completed","num_hearts"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
 };
 
 apiInstance.getTasksForSection(sectionGid, opts, (error, data, response) => {
@@ -922,7 +982,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: application/json; charset=UTF-8
 
 
 ## getTasksForTag
@@ -949,7 +1009,7 @@ let opts = {
   'optPretty': true, // Boolean | Provides “pretty” output. Provides the response in a “pretty” format. In the case of JSON this means doing proper line breaking and indentation to make it readable. This will take extra time and increase the response size so it is advisable only to use this during debugging.
   'limit': 50, // Number | Results per page. The number of objects to return per page. The value must be between 1 and 100.
   'offset': eyJ0eXAiOJiKV1iQLCJhbGciOiJIUzI1NiJ9, // String | Offset token. An offset to the next page returned by the API. A pagination request will return an offset token, which can be used as an input parameter to the next request. If an offset is not passed in, the API will return the first page of results. 'Note: You can only pass in an offset that was returned to you via a previously paginated request.'
-  'optFields': ["created_at","memberships","parent","assignee_status","actual_time_minutes","custom_fields","html_notes","start_at","assignee_section","name","due_on","permalink_url","external","modified_at","num_hearts","num_likes","resource_subtype","projects","num_subtasks","completed_at","completed_by","dependencies","approval_status","dependents","hearts","likes","liked","workspace","tags","hearted","due_at","completed","is_rendered_as_separator","notes","assignee","followers","start_on"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
+  'optFields': ["actual_time_minutes","num_subtasks","hearted","projects","created_at","modified_at","tags","memberships","approval_status","liked","parent","assignee","external","dependencies","completed_by","name","num_likes","start_at","custom_fields","hearts","due_on","resource_subtype","dependents","assignee_section","notes","is_rendered_as_separator","likes","start_on","workspace","followers","assignee_status","completed_at","due_at","html_notes","permalink_url","completed","num_hearts"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
 };
 
 apiInstance.getTasksForTag(tagGid, opts, (error, data, response) => {
@@ -983,7 +1043,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: application/json; charset=UTF-8
 
 
 ## getTasksForUserTaskList
@@ -1011,7 +1071,7 @@ let opts = {
   'optPretty': true, // Boolean | Provides “pretty” output. Provides the response in a “pretty” format. In the case of JSON this means doing proper line breaking and indentation to make it readable. This will take extra time and increase the response size so it is advisable only to use this during debugging.
   'limit': 50, // Number | Results per page. The number of objects to return per page. The value must be between 1 and 100.
   'offset': eyJ0eXAiOJiKV1iQLCJhbGciOiJIUzI1NiJ9, // String | Offset token. An offset to the next page returned by the API. A pagination request will return an offset token, which can be used as an input parameter to the next request. If an offset is not passed in, the API will return the first page of results. 'Note: You can only pass in an offset that was returned to you via a previously paginated request.'
-  'optFields': ["created_at","memberships","parent","assignee_status","actual_time_minutes","custom_fields","html_notes","start_at","assignee_section","name","due_on","permalink_url","external","modified_at","num_hearts","num_likes","resource_subtype","projects","num_subtasks","completed_at","completed_by","dependencies","approval_status","dependents","hearts","likes","liked","workspace","tags","hearted","due_at","completed","is_rendered_as_separator","notes","assignee","followers","start_on"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
+  'optFields': ["actual_time_minutes","num_subtasks","hearted","projects","created_at","modified_at","tags","memberships","approval_status","liked","parent","assignee","external","dependencies","completed_by","name","num_likes","start_at","custom_fields","hearts","due_on","resource_subtype","dependents","assignee_section","notes","is_rendered_as_separator","likes","start_on","workspace","followers","assignee_status","completed_at","due_at","html_notes","permalink_url","completed","num_hearts"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
 };
 
 apiInstance.getTasksForUserTaskList(userTaskListGid, opts, (error, data, response) => {
@@ -1046,7 +1106,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: application/json; charset=UTF-8
 
 
 ## removeDependenciesForTask
@@ -1102,8 +1162,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+- **Content-Type**: application/json; charset=UTF-8
+- **Accept**: application/json; charset=UTF-8
 
 
 ## removeDependentsForTask
@@ -1159,8 +1219,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+- **Content-Type**: application/json; charset=UTF-8
+- **Accept**: application/json; charset=UTF-8
 
 
 ## removeFollowerForTask
@@ -1186,7 +1246,7 @@ let taskGid = 321654; // String | The task to operate on.
 let removeFollowerForTaskRequest = new AsanaPreview.RemoveFollowerForTaskRequest(); // RemoveFollowerForTaskRequest | The followers to remove from the task.
 let opts = {
   'optPretty': true, // Boolean | Provides “pretty” output. Provides the response in a “pretty” format. In the case of JSON this means doing proper line breaking and indentation to make it readable. This will take extra time and increase the response size so it is advisable only to use this during debugging.
-  'optFields': ["created_at","memberships","parent","assignee_status","actual_time_minutes","custom_fields","html_notes","start_at","assignee_section","due_on","name","permalink_url","external","modified_at","num_hearts","num_likes","resource_subtype","projects","num_subtasks","completed_at","completed_by","dependencies","approval_status","dependents","hearts","likes","liked","workspace","tags","hearted","due_at","completed","is_rendered_as_separator","notes","assignee","followers","start_on"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
+  'optFields': ["actual_time_minutes","num_subtasks","hearted","projects","created_at","modified_at","tags","memberships","approval_status","liked","parent","assignee","external","dependencies","completed_by","name","num_likes","start_at","custom_fields","hearts","due_on","resource_subtype","dependents","assignee_section","notes","is_rendered_as_separator","likes","start_on","workspace","followers","assignee_status","completed_at","due_at","html_notes","permalink_url","completed","num_hearts"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
 };
 
 apiInstance.removeFollowerForTask(taskGid, removeFollowerForTaskRequest, opts, (error, data, response) => {
@@ -1218,8 +1278,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+- **Content-Type**: application/json; charset=UTF-8
+- **Accept**: application/json; charset=UTF-8
 
 
 ## removeProjectForTask
@@ -1275,8 +1335,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+- **Content-Type**: application/json; charset=UTF-8
+- **Accept**: application/json; charset=UTF-8
 
 
 ## removeTagForTask
@@ -1332,8 +1392,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+- **Content-Type**: application/json; charset=UTF-8
+- **Accept**: application/json; charset=UTF-8
 
 
 ## searchTasksForWorkspace
@@ -1410,7 +1470,7 @@ let opts = {
   'isSubtask': false, // Boolean | Filter to subtasks
   'sortBy': likes, // String | One of `due_date`, `created_at`, `completed_at`, `likes`, or `modified_at`, defaults to `modified_at`
   'sortAscending': true, // Boolean | Default `false`
-  'optFields': ["created_at","memberships","parent","assignee_status","actual_time_minutes","custom_fields","html_notes","start_at","assignee_section","name","due_on","permalink_url","external","modified_at","num_hearts","num_likes","resource_subtype","projects","num_subtasks","completed_at","completed_by","dependencies","approval_status","dependents","hearts","likes","liked","workspace","tags","hearted","due_at","completed","is_rendered_as_separator","notes","assignee","followers","start_on"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
+  'optFields': ["actual_time_minutes","num_subtasks","hearted","projects","created_at","modified_at","tags","memberships","approval_status","liked","parent","assignee","external","dependencies","completed_by","name","num_likes","start_at","custom_fields","hearts","due_on","resource_subtype","dependents","assignee_section","notes","is_rendered_as_separator","likes","start_on","workspace","followers","assignee_status","completed_at","due_at","html_notes","permalink_url","completed","num_hearts"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
 };
 
 apiInstance.searchTasksForWorkspace(workspaceGid, opts, (error, data, response) => {
@@ -1494,7 +1554,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: application/json; charset=UTF-8
 
 
 ## setParentForTask
@@ -1520,7 +1580,7 @@ let taskGid = 321654; // String | The task to operate on.
 let setParentForTaskRequest = new AsanaPreview.SetParentForTaskRequest(); // SetParentForTaskRequest | The new parent of the subtask.
 let opts = {
   'optPretty': true, // Boolean | Provides “pretty” output. Provides the response in a “pretty” format. In the case of JSON this means doing proper line breaking and indentation to make it readable. This will take extra time and increase the response size so it is advisable only to use this during debugging.
-  'optFields': ["created_at","memberships","parent","assignee_status","actual_time_minutes","custom_fields","html_notes","start_at","assignee_section","due_on","name","permalink_url","external","modified_at","num_hearts","num_likes","resource_subtype","projects","num_subtasks","completed_at","completed_by","dependencies","approval_status","dependents","hearts","likes","liked","workspace","tags","hearted","due_at","completed","is_rendered_as_separator","notes","assignee","followers","start_on"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
+  'optFields': ["actual_time_minutes","num_subtasks","hearted","projects","created_at","modified_at","tags","memberships","approval_status","liked","parent","assignee","external","dependencies","completed_by","name","num_likes","start_at","custom_fields","hearts","due_on","resource_subtype","dependents","assignee_section","notes","is_rendered_as_separator","likes","start_on","workspace","followers","assignee_status","completed_at","due_at","html_notes","permalink_url","completed","num_hearts"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
 };
 
 apiInstance.setParentForTask(taskGid, setParentForTaskRequest, opts, (error, data, response) => {
@@ -1552,8 +1612,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+- **Content-Type**: application/json; charset=UTF-8
+- **Accept**: application/json; charset=UTF-8
 
 
 ## updateTask
@@ -1579,7 +1639,7 @@ let taskGid = 321654; // String | The task to operate on.
 let createTaskRequest = new AsanaPreview.CreateTaskRequest(); // CreateTaskRequest | The task to update.
 let opts = {
   'optPretty': true, // Boolean | Provides “pretty” output. Provides the response in a “pretty” format. In the case of JSON this means doing proper line breaking and indentation to make it readable. This will take extra time and increase the response size so it is advisable only to use this during debugging.
-  'optFields': ["created_at","memberships","parent","assignee_status","actual_time_minutes","custom_fields","html_notes","start_at","assignee_section","due_on","name","permalink_url","external","modified_at","num_hearts","num_likes","resource_subtype","projects","num_subtasks","completed_at","completed_by","dependencies","approval_status","dependents","hearts","likes","liked","workspace","tags","hearted","due_at","completed","is_rendered_as_separator","notes","assignee","followers","start_on"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
+  'optFields': ["actual_time_minutes","num_subtasks","hearted","projects","created_at","modified_at","tags","memberships","approval_status","liked","parent","assignee","external","dependencies","completed_by","name","num_likes","start_at","custom_fields","hearts","due_on","resource_subtype","dependents","assignee_section","notes","is_rendered_as_separator","likes","start_on","workspace","followers","assignee_status","completed_at","due_at","html_notes","permalink_url","completed","num_hearts"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
 };
 
 apiInstance.updateTask(taskGid, createTaskRequest, opts, (error, data, response) => {
@@ -1611,6 +1671,6 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+- **Content-Type**: application/json; charset=UTF-8
+- **Accept**: application/json; charset=UTF-8
 

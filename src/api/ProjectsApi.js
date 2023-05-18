@@ -33,7 +33,7 @@ import RemoveMembersForPortfolioRequest from '../model/RemoveMembersForPortfolio
 /**
 * Projects service.
 * @module api/ProjectsApi
-* @version 1.0.3
+* @version 1.0.4
 */
 export default class ProjectsApi {
 
@@ -93,8 +93,8 @@ export default class ProjectsApi {
       };
 
       let authNames = ['personalAccessToken'];
-      let contentTypes = ['application/json'];
-      let accepts = ['application/json'];
+      let contentTypes = ['application/json; charset=UTF-8'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = AddCustomFieldSettingForPortfolio200Response;
       return this.apiClient.callApi(
         '/projects/{project_gid}/addCustomFieldSetting', 'POST',
@@ -147,8 +147,8 @@ export default class ProjectsApi {
       };
 
       let authNames = ['personalAccessToken'];
-      let contentTypes = ['application/json'];
-      let accepts = ['application/json'];
+      let contentTypes = ['application/json; charset=UTF-8'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = CreateProject201Response;
       return this.apiClient.callApi(
         '/projects/{project_gid}/addFollowers', 'POST',
@@ -201,8 +201,8 @@ export default class ProjectsApi {
       };
 
       let authNames = ['personalAccessToken'];
-      let contentTypes = ['application/json'];
-      let accepts = ['application/json'];
+      let contentTypes = ['application/json; charset=UTF-8'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = CreateProject201Response;
       return this.apiClient.callApi(
         '/projects/{project_gid}/addMembers', 'POST',
@@ -249,8 +249,8 @@ export default class ProjectsApi {
       };
 
       let authNames = ['personalAccessToken'];
-      let contentTypes = ['application/json'];
-      let accepts = ['application/json'];
+      let contentTypes = ['application/json; charset=UTF-8'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = CreateProject201Response;
       return this.apiClient.callApi(
         '/projects', 'POST',
@@ -303,8 +303,8 @@ export default class ProjectsApi {
       };
 
       let authNames = ['personalAccessToken'];
-      let contentTypes = ['application/json'];
-      let accepts = ['application/json'];
+      let contentTypes = ['application/json; charset=UTF-8'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = CreateProject201Response;
       return this.apiClient.callApi(
         '/teams/{team_gid}/projects', 'POST',
@@ -357,8 +357,8 @@ export default class ProjectsApi {
       };
 
       let authNames = ['personalAccessToken'];
-      let contentTypes = ['application/json'];
-      let accepts = ['application/json'];
+      let contentTypes = ['application/json; charset=UTF-8'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = CreateProject201Response;
       return this.apiClient.callApi(
         '/workspaces/{workspace_gid}/projects', 'POST',
@@ -405,7 +405,7 @@ export default class ProjectsApi {
 
       let authNames = ['personalAccessToken'];
       let contentTypes = [];
-      let accepts = ['application/json'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = DeleteAttachment200Response;
       return this.apiClient.callApi(
         '/projects/{project_gid}', 'DELETE',
@@ -454,8 +454,8 @@ export default class ProjectsApi {
       };
 
       let authNames = ['personalAccessToken'];
-      let contentTypes = ['application/json'];
-      let accepts = ['application/json'];
+      let contentTypes = ['application/json; charset=UTF-8'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = GetJob200Response;
       return this.apiClient.callApi(
         '/projects/{project_gid}/duplicate', 'POST',
@@ -504,7 +504,7 @@ export default class ProjectsApi {
 
       let authNames = ['personalAccessToken'];
       let contentTypes = [];
-      let accepts = ['application/json'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = CreateProject201Response;
       return this.apiClient.callApi(
         '/projects/{project_gid}', 'GET',
@@ -557,7 +557,7 @@ export default class ProjectsApi {
 
       let authNames = ['personalAccessToken'];
       let contentTypes = [];
-      let accepts = ['application/json'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = GetItemsForPortfolio200Response;
       return this.apiClient.callApi(
         '/projects', 'GET',
@@ -610,7 +610,7 @@ export default class ProjectsApi {
 
       let authNames = ['personalAccessToken'];
       let contentTypes = [];
-      let accepts = ['application/json'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = GetItemsForPortfolio200Response;
       return this.apiClient.callApi(
         '/tasks/{task_gid}/projects', 'GET',
@@ -665,7 +665,7 @@ export default class ProjectsApi {
 
       let authNames = ['personalAccessToken'];
       let contentTypes = [];
-      let accepts = ['application/json'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = GetItemsForPortfolio200Response;
       return this.apiClient.callApi(
         '/teams/{team_gid}/projects', 'GET',
@@ -720,7 +720,7 @@ export default class ProjectsApi {
 
       let authNames = ['personalAccessToken'];
       let contentTypes = [];
-      let accepts = ['application/json'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = GetItemsForPortfolio200Response;
       return this.apiClient.callApi(
         '/workspaces/{workspace_gid}/projects', 'GET',
@@ -773,7 +773,7 @@ export default class ProjectsApi {
 
       let authNames = ['personalAccessToken'];
       let contentTypes = [];
-      let accepts = ['application/json'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = GetTaskCountsForProject200Response;
       return this.apiClient.callApi(
         '/projects/{project_gid}/task_counts', 'GET',
@@ -826,8 +826,8 @@ export default class ProjectsApi {
       };
 
       let authNames = ['personalAccessToken'];
-      let contentTypes = ['application/json'];
-      let accepts = ['application/json'];
+      let contentTypes = ['application/json; charset=UTF-8'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = GetJob200Response;
       return this.apiClient.callApi(
         '/projects/{project_gid}/saveAsTemplate', 'POST',
@@ -878,8 +878,8 @@ export default class ProjectsApi {
       };
 
       let authNames = ['personalAccessToken'];
-      let contentTypes = ['application/json'];
-      let accepts = ['application/json'];
+      let contentTypes = ['application/json; charset=UTF-8'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = DeleteAttachment200Response;
       return this.apiClient.callApi(
         '/projects/{project_gid}/removeCustomFieldSetting', 'POST',
@@ -932,8 +932,8 @@ export default class ProjectsApi {
       };
 
       let authNames = ['personalAccessToken'];
-      let contentTypes = ['application/json'];
-      let accepts = ['application/json'];
+      let contentTypes = ['application/json; charset=UTF-8'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = CreateProject201Response;
       return this.apiClient.callApi(
         '/projects/{project_gid}/removeFollowers', 'POST',
@@ -986,8 +986,8 @@ export default class ProjectsApi {
       };
 
       let authNames = ['personalAccessToken'];
-      let contentTypes = ['application/json'];
-      let accepts = ['application/json'];
+      let contentTypes = ['application/json; charset=UTF-8'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = CreateProject201Response;
       return this.apiClient.callApi(
         '/projects/{project_gid}/removeMembers', 'POST',
@@ -1040,8 +1040,8 @@ export default class ProjectsApi {
       };
 
       let authNames = ['personalAccessToken'];
-      let contentTypes = ['application/json'];
-      let accepts = ['application/json'];
+      let contentTypes = ['application/json; charset=UTF-8'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = CreateProject201Response;
       return this.apiClient.callApi(
         '/projects/{project_gid}', 'PUT',

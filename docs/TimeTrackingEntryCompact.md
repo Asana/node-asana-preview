@@ -8,6 +8,6 @@ Name | Type | Description | Notes
 **resourceType** | **String** | The base type of this resource. | [optional] [readonly] 
 **durationMinutes** | **Number** | Time in minutes tracked by the entry. | [optional] 
 **enteredOn** | **Date** | The day that this entry is logged on. | [optional] 
-**createdBy** | [**UserCompact**](UserCompact.md) |  | [optional] 
+**createdBy** | [**StoryResponseAssignee**](StoryResponseAssignee.md) |  | [optional] 
 
 

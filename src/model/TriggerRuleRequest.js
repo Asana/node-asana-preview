@@ -17,7 +17,7 @@ import RuleTriggerRequest from './RuleTriggerRequest';
 /**
  * The TriggerRuleRequest model module.
  * @module model/TriggerRuleRequest
- * @version 1.0.3
+ * @version 1.0.4
  */
 class TriggerRuleRequest {
     /**

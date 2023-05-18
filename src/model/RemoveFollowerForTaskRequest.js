@@ -17,7 +17,7 @@ import TaskRemoveFollowersRequest from './TaskRemoveFollowersRequest';
 /**
  * The RemoveFollowerForTaskRequest model module.
  * @module model/RemoveFollowerForTaskRequest
- * @version 1.0.3
+ * @version 1.0.4
  */
 class RemoveFollowerForTaskRequest {
     /**

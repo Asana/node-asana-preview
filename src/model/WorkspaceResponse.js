@@ -12,23 +12,20 @@
  */
 
 import ApiClient from '../ApiClient';
-import WorkspaceCompact from './WorkspaceCompact';
-import WorkspaceResponseAllOf from './WorkspaceResponseAllOf';
 
 /**
  * The WorkspaceResponse model module.
  * @module model/WorkspaceResponse
- * @version 1.0.3
+ * @version 1.0.4
  */
 class WorkspaceResponse {
     /**
      * Constructs a new <code>WorkspaceResponse</code>.
+     * A generic Asana Resource, containing a globally unique identifier.A generic Asana Resource, containing a globally unique identifier. A *workspace* is the highest-level organizational unit in Asana. All projects and tasks have an associated workspace.
      * @alias module:model/WorkspaceResponse
-     * @implements module:model/WorkspaceCompact
-     * @implements module:model/WorkspaceResponseAllOf
      */
     constructor() { 
-        WorkspaceCompact.initialize(this);WorkspaceResponseAllOf.initialize(this);
+        
         WorkspaceResponse.initialize(this);
     }
 
@@ -50,8 +47,6 @@ class WorkspaceResponse {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new WorkspaceResponse();
-            WorkspaceCompact.constructFromObject(data, obj);
-            WorkspaceResponseAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('gid')) {
                 obj['gid'] = ApiClient.convertToType(data['gid'], 'String');
@@ -106,33 +101,6 @@ WorkspaceResponse.prototype['email_domains'] = undefined;
 WorkspaceResponse.prototype['is_organization'] = undefined;
 
 
-// Implement WorkspaceCompact interface:
-/**
- * Globally unique identifier of the resource, as a string.
- * @member {String} gid
- */
-WorkspaceCompact.prototype['gid'] = undefined;
-/**
- * The base type of this resource.
- * @member {String} resource_type
- */
-WorkspaceCompact.prototype['resource_type'] = undefined;
-/**
- * The name of the workspace.
- * @member {String} name
- */
-WorkspaceCompact.prototype['name'] = undefined;
-// Implement WorkspaceResponseAllOf interface:
-/**
- * The email domains that are associated with this workspace.
- * @member {Array.<String>} email_domains
- */
-WorkspaceResponseAllOf.prototype['email_domains'] = undefined;
-/**
- * Whether the workspace is an *organization*.
- * @member {Boolean} is_organization
- */
-WorkspaceResponseAllOf.prototype['is_organization'] = undefined;
 
 
 

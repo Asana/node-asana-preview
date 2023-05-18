@@ -12,24 +12,21 @@
  */
 
 import ApiClient from '../ApiClient';
-import AsanaResource from './AsanaResource';
-import StoryCompactAllOf from './StoryCompactAllOf';
-import UserCompact from './UserCompact';
+import CustomFieldResponsePeopleValueInner from './CustomFieldResponsePeopleValueInner';
 
 /**
  * The StoryCompact model module.
  * @module model/StoryCompact
- * @version 1.0.3
+ * @version 1.0.4
  */
 class StoryCompact {
     /**
      * Constructs a new <code>StoryCompact</code>.
+     * A generic Asana Resource, containing a globally unique identifier.A generic Asana Resource, containing a globally unique identifier. A story represents an activity associated with an object in the Asana system.
      * @alias module:model/StoryCompact
-     * @implements module:model/AsanaResource
-     * @implements module:model/StoryCompactAllOf
      */
     constructor() { 
-        AsanaResource.initialize(this);StoryCompactAllOf.initialize(this);
+        
         StoryCompact.initialize(this);
     }
 
@@ -51,8 +48,6 @@ class StoryCompact {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new StoryCompact();
-            AsanaResource.constructFromObject(data, obj);
-            StoryCompactAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('gid')) {
                 obj['gid'] = ApiClient.convertToType(data['gid'], 'String');
@@ -64,7 +59,7 @@ class StoryCompact {
                 obj['created_at'] = ApiClient.convertToType(data['created_at'], 'Date');
             }
             if (data.hasOwnProperty('created_by')) {
-                obj['created_by'] = UserCompact.constructFromObject(data['created_by']);
+                obj['created_by'] = CustomFieldResponsePeopleValueInner.constructFromObject(data['created_by']);
             }
             if (data.hasOwnProperty('resource_subtype')) {
                 obj['resource_subtype'] = ApiClient.convertToType(data['resource_subtype'], 'String');
@@ -98,7 +93,7 @@ StoryCompact.prototype['resource_type'] = undefined;
 StoryCompact.prototype['created_at'] = undefined;
 
 /**
- * @member {module:model/UserCompact} created_by
+ * @member {module:model/CustomFieldResponsePeopleValueInner} created_by
  */
 StoryCompact.prototype['created_by'] = undefined;
 
@@ -115,37 +110,6 @@ StoryCompact.prototype['resource_subtype'] = undefined;
 StoryCompact.prototype['text'] = undefined;
 
 
-// Implement AsanaResource interface:
-/**
- * Globally unique identifier of the resource, as a string.
- * @member {String} gid
- */
-AsanaResource.prototype['gid'] = undefined;
-/**
- * The base type of this resource.
- * @member {String} resource_type
- */
-AsanaResource.prototype['resource_type'] = undefined;
-// Implement StoryCompactAllOf interface:
-/**
- * The time at which this resource was created.
- * @member {Date} created_at
- */
-StoryCompactAllOf.prototype['created_at'] = undefined;
-/**
- * @member {module:model/UserCompact} created_by
- */
-StoryCompactAllOf.prototype['created_by'] = undefined;
-/**
- * The subtype of this resource. Different subtypes retain many of the same fields and behavior, but may render differently in Asana or represent resources with different semantic meaning.
- * @member {String} resource_subtype
- */
-StoryCompactAllOf.prototype['resource_subtype'] = undefined;
-/**
- * *Create-only*. Human-readable text for the story or comment. This will not include the name of the creator. *Note: This is not guaranteed to be stable for a given type of story. For example, text for a reassignment may not always say “assigned to …” as the text for a story can both be edited and change based on the language settings of the user making the request.* Use the `resource_subtype` property to discover the action that created the story.
- * @member {String} text
- */
-StoryCompactAllOf.prototype['text'] = undefined;
 
 
 

@@ -12,12 +12,12 @@
  */
 
 import ApiClient from '../ApiClient';
-import TeamMembershipCompact from './TeamMembershipCompact';
+import TeamMembershipResponse from './TeamMembershipResponse';
 
 /**
  * The GetTeamMemberships200Response model module.
  * @module model/GetTeamMemberships200Response
- * @version 1.0.3
+ * @version 1.0.4
  */
 class GetTeamMemberships200Response {
     /**
@@ -49,7 +49,7 @@ class GetTeamMemberships200Response {
             obj = obj || new GetTeamMemberships200Response();
 
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [TeamMembershipCompact]);
+                obj['data'] = ApiClient.convertToType(data['data'], [TeamMembershipResponse]);
             }
         }
         return obj;
@@ -59,7 +59,7 @@ class GetTeamMemberships200Response {
 }
 
 /**
- * @member {Array.<module:model/TeamMembershipCompact>} data
+ * @member {Array.<module:model/TeamMembershipResponse>} data
  */
 GetTeamMemberships200Response.prototype['data'] = undefined;
 

@@ -12,12 +12,12 @@
  */
 
 import ApiClient from '../ApiClient';
-import ProjectStatusBase from './ProjectStatusBase';
+import ProjectStatusRequest from './ProjectStatusRequest';
 
 /**
  * The CreateProjectStatusForProjectRequest model module.
  * @module model/CreateProjectStatusForProjectRequest
- * @version 1.0.3
+ * @version 1.0.4
  */
 class CreateProjectStatusForProjectRequest {
     /**
@@ -49,7 +49,7 @@ class CreateProjectStatusForProjectRequest {
             obj = obj || new CreateProjectStatusForProjectRequest();
 
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ProjectStatusBase.constructFromObject(data['data']);
+                obj['data'] = ProjectStatusRequest.constructFromObject(data['data']);
             }
         }
         return obj;
@@ -59,7 +59,7 @@ class CreateProjectStatusForProjectRequest {
 }
 
 /**
- * @member {module:model/ProjectStatusBase} data
+ * @member {module:model/ProjectStatusRequest} data
  */
 CreateProjectStatusForProjectRequest.prototype['data'] = undefined;
 

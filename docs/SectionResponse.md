@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **resourceType** | **String** | The base type of this resource. | [optional] [readonly] 
 **name** | **String** | The name of the section (i.e. the text displayed as the section header). | [optional] 
 **createdAt** | **Date** | The time at which this resource was created. | [optional] [readonly] 
-**project** | [**ProjectCompact**](ProjectCompact.md) |  | [optional] 
-**projects** | [**[ProjectCompact]**](ProjectCompact.md) | *Deprecated - please use project instead* | [optional] [readonly] 
+**project** | [**JobBaseNewProject**](JobBaseNewProject.md) |  | [optional] 
+**projects** | [**[JobBaseNewProject]**](JobBaseNewProject.md) | *Deprecated - please use project instead* | [optional] [readonly] 
 
 

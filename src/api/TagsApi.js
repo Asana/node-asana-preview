@@ -22,7 +22,7 @@ import GetTags200Response from '../model/GetTags200Response';
 /**
 * Tags service.
 * @module api/TagsApi
-* @version 1.0.3
+* @version 1.0.4
 */
 export default class TagsApi {
 
@@ -76,8 +76,8 @@ export default class TagsApi {
       };
 
       let authNames = ['personalAccessToken'];
-      let contentTypes = ['application/json'];
-      let accepts = ['application/json'];
+      let contentTypes = ['application/json; charset=UTF-8'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = CreateTag201Response;
       return this.apiClient.callApi(
         '/tags', 'POST',
@@ -130,8 +130,8 @@ export default class TagsApi {
       };
 
       let authNames = ['personalAccessToken'];
-      let contentTypes = ['application/json'];
-      let accepts = ['application/json'];
+      let contentTypes = ['application/json; charset=UTF-8'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = CreateTag201Response;
       return this.apiClient.callApi(
         '/workspaces/{workspace_gid}/tags', 'POST',
@@ -182,7 +182,7 @@ export default class TagsApi {
 
       let authNames = ['personalAccessToken'];
       let contentTypes = [];
-      let accepts = ['application/json'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = DeleteAttachment200Response;
       return this.apiClient.callApi(
         '/tags/{tag_gid}', 'DELETE',
@@ -235,7 +235,7 @@ export default class TagsApi {
 
       let authNames = ['personalAccessToken'];
       let contentTypes = [];
-      let accepts = ['application/json'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = CreateTag201Response;
       return this.apiClient.callApi(
         '/tags/{tag_gid}', 'GET',
@@ -284,7 +284,7 @@ export default class TagsApi {
 
       let authNames = ['personalAccessToken'];
       let contentTypes = [];
-      let accepts = ['application/json'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = GetTags200Response;
       return this.apiClient.callApi(
         '/tags', 'GET',
@@ -337,7 +337,7 @@ export default class TagsApi {
 
       let authNames = ['personalAccessToken'];
       let contentTypes = [];
-      let accepts = ['application/json'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = GetTags200Response;
       return this.apiClient.callApi(
         '/tasks/{task_gid}/tags', 'GET',
@@ -390,7 +390,7 @@ export default class TagsApi {
 
       let authNames = ['personalAccessToken'];
       let contentTypes = [];
-      let accepts = ['application/json'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = GetTags200Response;
       return this.apiClient.callApi(
         '/workspaces/{workspace_gid}/tags', 'GET',
@@ -443,7 +443,7 @@ export default class TagsApi {
 
       let authNames = ['personalAccessToken'];
       let contentTypes = [];
-      let accepts = ['application/json'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = CreateTag201Response;
       return this.apiClient.callApi(
         '/tags/{tag_gid}', 'PUT',

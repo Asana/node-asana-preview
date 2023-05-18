@@ -4,6 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**[ProjectCompact]**](ProjectCompact.md) |  | [optional] 
+**data** | [**[ProjectResponse]**](ProjectResponse.md) |  | [optional] 
 
 

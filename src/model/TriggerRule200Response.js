@@ -17,7 +17,7 @@ import RuleTriggerResponse from './RuleTriggerResponse';
 /**
  * The TriggerRule200Response model module.
  * @module model/TriggerRule200Response
- * @version 1.0.3
+ * @version 1.0.4
  */
 class TriggerRule200Response {
     /**

@@ -17,7 +17,7 @@ import EnumOptionInsertRequest from './EnumOptionInsertRequest';
 /**
  * The InsertEnumOptionForCustomFieldRequest model module.
  * @module model/InsertEnumOptionForCustomFieldRequest
- * @version 1.0.3
+ * @version 1.0.4
  */
 class InsertEnumOptionForCustomFieldRequest {
     /**

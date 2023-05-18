@@ -23,7 +23,7 @@ import UpdateTimeTrackingEntryRequest from '../model/UpdateTimeTrackingEntryRequ
 /**
 * TimeTrackingEntries service.
 * @module api/TimeTrackingEntriesApi
-* @version 1.0.3
+* @version 1.0.4
 */
 export default class TimeTrackingEntriesApi {
 
@@ -83,8 +83,8 @@ export default class TimeTrackingEntriesApi {
       };
 
       let authNames = ['personalAccessToken'];
-      let contentTypes = ['application/json'];
-      let accepts = ['application/json'];
+      let contentTypes = ['application/json; charset=UTF-8'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = CreateTimeTrackingEntry201Response;
       return this.apiClient.callApi(
         '/tasks/{task_gid}/time_tracking_entries', 'POST',
@@ -131,7 +131,7 @@ export default class TimeTrackingEntriesApi {
 
       let authNames = ['personalAccessToken'];
       let contentTypes = [];
-      let accepts = ['application/json'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = DeleteAttachment200Response;
       return this.apiClient.callApi(
         '/time_tracking_entries/{time_tracking_entry_gid}', 'DELETE',
@@ -184,7 +184,7 @@ export default class TimeTrackingEntriesApi {
 
       let authNames = ['personalAccessToken'];
       let contentTypes = [];
-      let accepts = ['application/json'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = GetTimeTrackingEntriesForTask200Response;
       return this.apiClient.callApi(
         '/tasks/{task_gid}/time_tracking_entries', 'GET',
@@ -233,7 +233,7 @@ export default class TimeTrackingEntriesApi {
 
       let authNames = ['personalAccessToken'];
       let contentTypes = [];
-      let accepts = ['application/json'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = CreateTimeTrackingEntry201Response;
       return this.apiClient.callApi(
         '/time_tracking_entries/{time_tracking_entry_gid}', 'GET',
@@ -286,8 +286,8 @@ export default class TimeTrackingEntriesApi {
       };
 
       let authNames = ['personalAccessToken'];
-      let contentTypes = ['application/json'];
-      let accepts = ['application/json'];
+      let contentTypes = ['application/json; charset=UTF-8'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = CreateTimeTrackingEntry201Response;
       return this.apiClient.callApi(
         '/time_tracking_entries/{time_tracking_entry_gid}', 'PUT',

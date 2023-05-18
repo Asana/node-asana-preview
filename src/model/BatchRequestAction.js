@@ -12,12 +12,12 @@
  */
 
 import ApiClient from '../ApiClient';
-import BatchRequestActionOptions from './BatchRequestActionOptions';
+import BatchRequestActionsInnerOptions from './BatchRequestActionsInnerOptions';
 
 /**
  * The BatchRequestAction model module.
  * @module model/BatchRequestAction
- * @version 1.0.3
+ * @version 1.0.4
  */
 class BatchRequestAction {
     /**
@@ -63,7 +63,7 @@ class BatchRequestAction {
                 obj['data'] = ApiClient.convertToType(data['data'], Object);
             }
             if (data.hasOwnProperty('options')) {
-                obj['options'] = BatchRequestActionOptions.constructFromObject(data['options']);
+                obj['options'] = BatchRequestActionsInnerOptions.constructFromObject(data['options']);
             }
         }
         return obj;
@@ -91,7 +91,7 @@ BatchRequestAction.prototype['method'] = undefined;
 BatchRequestAction.prototype['data'] = undefined;
 
 /**
- * @member {module:model/BatchRequestActionOptions} options
+ * @member {module:model/BatchRequestActionsInnerOptions} options
  */
 BatchRequestAction.prototype['options'] = undefined;
 

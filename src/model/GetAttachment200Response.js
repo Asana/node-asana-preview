@@ -17,7 +17,7 @@ import AttachmentResponse from './AttachmentResponse';
 /**
  * The GetAttachment200Response model module.
  * @module model/GetAttachment200Response
- * @version 1.0.3
+ * @version 1.0.4
  */
 class GetAttachment200Response {
     /**

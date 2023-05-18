@@ -17,7 +17,7 @@ import GoalRelationshipRequest from './GoalRelationshipRequest';
 /**
  * The UpdateGoalRelationshipRequest model module.
  * @module model/UpdateGoalRelationshipRequest
- * @version 1.0.3
+ * @version 1.0.4
  */
 class UpdateGoalRelationshipRequest {
     /**

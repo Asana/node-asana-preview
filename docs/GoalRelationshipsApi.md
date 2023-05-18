@@ -35,7 +35,7 @@ let goalGid = 12345; // String | Globally unique identifier for the goal.
 let addSupportingRelationshipRequest = new AsanaPreview.AddSupportingRelationshipRequest(); // AddSupportingRelationshipRequest | The supporting resource to be added to the goal
 let opts = {
   'optPretty': true, // Boolean | Provides “pretty” output. Provides the response in a “pretty” format. In the case of JSON this means doing proper line breaking and indentation to make it readable. This will take extra time and increase the response size so it is advisable only to use this during debugging.
-  'optFields': ["supporting_resource","supported_goal","contribution_weight","resource_subtype"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
+  'optFields': ["supporting_resource","resource_subtype","supported_goal","contribution_weight"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
 };
 
 apiInstance.addSupportingRelationship(goalGid, addSupportingRelationshipRequest, opts, (error, data, response) => {
@@ -67,8 +67,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+- **Content-Type**: application/json; charset=UTF-8
+- **Accept**: application/json; charset=UTF-8
 
 
 ## getGoalRelationship
@@ -93,7 +93,7 @@ let apiInstance = new AsanaPreview.GoalRelationshipsApi();
 let goalRelationshipGid = 12345; // String | Globally unique identifier for the goal relationship.
 let opts = {
   'optPretty': true, // Boolean | Provides “pretty” output. Provides the response in a “pretty” format. In the case of JSON this means doing proper line breaking and indentation to make it readable. This will take extra time and increase the response size so it is advisable only to use this during debugging.
-  'optFields': ["supporting_resource","supported_goal","contribution_weight","resource_subtype"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
+  'optFields': ["supporting_resource","resource_subtype","supported_goal","contribution_weight"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
 };
 
 apiInstance.getGoalRelationship(goalRelationshipGid, opts, (error, data, response) => {
@@ -125,7 +125,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: application/json; charset=UTF-8
 
 
 ## getGoalRelationships
@@ -151,7 +151,7 @@ let supportedGoal = 12345; // String | Globally unique identifier for the suppor
 let opts = {
   'optPretty': true, // Boolean | Provides “pretty” output. Provides the response in a “pretty” format. In the case of JSON this means doing proper line breaking and indentation to make it readable. This will take extra time and increase the response size so it is advisable only to use this during debugging.
   'resourceSubtype': subgoal, // String | If provided, filter to goal relationships with a given resource_subtype.
-  'optFields': ["supporting_resource","supported_goal","contribution_weight","resource_subtype"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
+  'optFields': ["supporting_resource","resource_subtype","supported_goal","contribution_weight"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
 };
 
 apiInstance.getGoalRelationships(supportedGoal, opts, (error, data, response) => {
@@ -184,7 +184,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: application/json; charset=UTF-8
 
 
 ## removeSupportingRelationship
@@ -240,8 +240,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+- **Content-Type**: application/json; charset=UTF-8
+- **Accept**: application/json; charset=UTF-8
 
 
 ## updateGoalRelationship
@@ -267,7 +267,7 @@ let goalRelationshipGid = 12345; // String | Globally unique identifier for the 
 let updateGoalRelationshipRequest = new AsanaPreview.UpdateGoalRelationshipRequest(); // UpdateGoalRelationshipRequest | The updated fields for the goal relationship.
 let opts = {
   'optPretty': true, // Boolean | Provides “pretty” output. Provides the response in a “pretty” format. In the case of JSON this means doing proper line breaking and indentation to make it readable. This will take extra time and increase the response size so it is advisable only to use this during debugging.
-  'optFields': ["supporting_resource","supported_goal","contribution_weight","resource_subtype"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
+  'optFields': ["supporting_resource","resource_subtype","supported_goal","contribution_weight"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
 };
 
 apiInstance.updateGoalRelationship(goalRelationshipGid, updateGoalRelationshipRequest, opts, (error, data, response) => {
@@ -299,6 +299,6 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+- **Content-Type**: application/json; charset=UTF-8
+- **Accept**: application/json; charset=UTF-8
 

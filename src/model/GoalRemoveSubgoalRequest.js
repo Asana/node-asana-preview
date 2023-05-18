@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GoalRemoveSubgoalRequest model module.
  * @module model/GoalRemoveSubgoalRequest
- * @version 1.0.3
+ * @version 1.0.4
  */
 class GoalRemoveSubgoalRequest {
     /**

@@ -17,7 +17,7 @@ import RemoveCustomFieldSettingRequest from './RemoveCustomFieldSettingRequest';
 /**
  * The RemoveCustomFieldSettingForPortfolioRequest model module.
  * @module model/RemoveCustomFieldSettingForPortfolioRequest
- * @version 1.0.3
+ * @version 1.0.4
  */
 class RemoveCustomFieldSettingForPortfolioRequest {
     /**

@@ -12,23 +12,21 @@
  */
 
 import ApiClient from '../ApiClient';
-import TimePeriodBaseAllOf from './TimePeriodBaseAllOf';
-import TimePeriodCompact from './TimePeriodCompact';
+import TimePeriodBaseParent from './TimePeriodBaseParent';
 
 /**
  * The TimePeriodBase model module.
  * @module model/TimePeriodBase
- * @version 1.0.3
+ * @version 1.0.4
  */
 class TimePeriodBase {
     /**
      * Constructs a new <code>TimePeriodBase</code>.
+     * A generic Asana Resource, containing a globally unique identifier.
      * @alias module:model/TimePeriodBase
-     * @implements module:model/TimePeriodCompact
-     * @implements module:model/TimePeriodBaseAllOf
      */
     constructor() { 
-        TimePeriodCompact.initialize(this);TimePeriodBaseAllOf.initialize(this);
+        
         TimePeriodBase.initialize(this);
     }
 
@@ -50,8 +48,6 @@ class TimePeriodBase {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new TimePeriodBase();
-            TimePeriodCompact.constructFromObject(data, obj);
-            TimePeriodBaseAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('gid')) {
                 obj['gid'] = ApiClient.convertToType(data['gid'], 'String');
@@ -72,7 +68,7 @@ class TimePeriodBase {
                 obj['display_name'] = ApiClient.convertToType(data['display_name'], 'String');
             }
             if (data.hasOwnProperty('parent')) {
-                obj['parent'] = TimePeriodCompact.constructFromObject(data['parent']);
+                obj['parent'] = TimePeriodBaseParent.constructFromObject(data['parent']);
             }
         }
         return obj;
@@ -118,47 +114,11 @@ TimePeriodBase.prototype['period'] = undefined;
 TimePeriodBase.prototype['display_name'] = undefined;
 
 /**
- * @member {module:model/TimePeriodCompact} parent
+ * @member {module:model/TimePeriodBaseParent} parent
  */
 TimePeriodBase.prototype['parent'] = undefined;
 
 
-// Implement TimePeriodCompact interface:
-/**
- * Globally unique identifier of the resource, as a string.
- * @member {String} gid
- */
-TimePeriodCompact.prototype['gid'] = undefined;
-/**
- * The base type of this resource.
- * @member {String} resource_type
- */
-TimePeriodCompact.prototype['resource_type'] = undefined;
-/**
- * The localized end date of the time period in `YYYY-MM-DD` format.
- * @member {String} end_on
- */
-TimePeriodCompact.prototype['end_on'] = undefined;
-/**
- * The localized start date of the time period in `YYYY-MM-DD` format.
- * @member {String} start_on
- */
-TimePeriodCompact.prototype['start_on'] = undefined;
-/**
- * The cadence and index of the time period. The value is one of: `FY`, `H1`, `H2`, `Q1`, `Q2`, `Q3`, or `Q4`.
- * @member {module:model/TimePeriodCompact.PeriodEnum} period
- */
-TimePeriodCompact.prototype['period'] = undefined;
-/**
- * A string representing the cadence code and the fiscal year.
- * @member {String} display_name
- */
-TimePeriodCompact.prototype['display_name'] = undefined;
-// Implement TimePeriodBaseAllOf interface:
-/**
- * @member {module:model/TimePeriodCompact} parent
- */
-TimePeriodBaseAllOf.prototype['parent'] = undefined;
 
 
 

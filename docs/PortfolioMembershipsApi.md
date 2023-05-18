@@ -64,7 +64,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: application/json; charset=UTF-8
 
 
 ## getPortfolioMemberships
@@ -129,7 +129,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: application/json; charset=UTF-8
 
 
 ## getPortfolioMembershipsForPortfolio
@@ -192,5 +192,5 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: application/json; charset=UTF-8
 

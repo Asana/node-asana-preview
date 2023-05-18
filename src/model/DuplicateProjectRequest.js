@@ -17,7 +17,7 @@ import ProjectDuplicateRequest from './ProjectDuplicateRequest';
 /**
  * The DuplicateProjectRequest model module.
  * @module model/DuplicateProjectRequest
- * @version 1.0.3
+ * @version 1.0.4
  */
 class DuplicateProjectRequest {
     /**

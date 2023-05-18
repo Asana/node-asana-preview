@@ -17,7 +17,7 @@ import CustomFieldResponse from './CustomFieldResponse';
 /**
  * The GetCustomFieldsForWorkspace200Response model module.
  * @module model/GetCustomFieldsForWorkspace200Response
- * @version 1.0.3
+ * @version 1.0.4
  */
 class GetCustomFieldsForWorkspace200Response {
     /**

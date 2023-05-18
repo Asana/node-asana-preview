@@ -17,7 +17,7 @@ import TeamResponse from './TeamResponse';
 /**
  * The UpdateTeam200Response model module.
  * @module model/UpdateTeam200Response
- * @version 1.0.3
+ * @version 1.0.4
  */
 class UpdateTeam200Response {
     /**

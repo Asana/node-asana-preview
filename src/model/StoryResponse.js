@@ -12,34 +12,36 @@
  */
 
 import ApiClient from '../ApiClient';
-import CustomFieldCompact from './CustomFieldCompact';
-import EnumOption from './EnumOption';
-import Like from './Like';
-import Preview from './Preview';
-import ProjectCompact from './ProjectCompact';
-import SectionCompact from './SectionCompact';
-import StoryBase from './StoryBase';
-import StoryCompact from './StoryCompact';
-import StoryResponseAllOf from './StoryResponseAllOf';
-import StoryResponseDates from './StoryResponseDates';
-import TagCompact from './TagCompact';
-import TaskCompact from './TaskCompact';
-import UserCompact from './UserCompact';
+import CustomFieldBaseEnumOptionsInner from './CustomFieldBaseEnumOptionsInner';
+import CustomFieldResponsePeopleValueInner from './CustomFieldResponsePeopleValueInner';
+import GoalResponseLikesInner from './GoalResponseLikesInner';
+import StoryResponseAssignee from './StoryResponseAssignee';
+import StoryResponseCustomField from './StoryResponseCustomField';
+import StoryResponseNewDateValue from './StoryResponseNewDateValue';
+import StoryResponseOldDateValue from './StoryResponseOldDateValue';
+import StoryResponseOldDates from './StoryResponseOldDates';
+import StoryResponseOldEnumValue from './StoryResponseOldEnumValue';
+import StoryResponseOldSection from './StoryResponseOldSection';
+import StoryResponsePreviewsInner from './StoryResponsePreviewsInner';
+import StoryResponseProject from './StoryResponseProject';
+import StoryResponseStory from './StoryResponseStory';
+import StoryResponseTag from './StoryResponseTag';
+import StoryResponseTarget from './StoryResponseTarget';
+import StoryResponseTask from './StoryResponseTask';
 
 /**
  * The StoryResponse model module.
  * @module model/StoryResponse
- * @version 1.0.3
+ * @version 1.0.4
  */
 class StoryResponse {
     /**
      * Constructs a new <code>StoryResponse</code>.
+     * A generic Asana Resource, containing a globally unique identifier.A generic Asana Resource, containing a globally unique identifier. A story represents an activity associated with an object in the Asana system.
      * @alias module:model/StoryResponse
-     * @implements module:model/StoryBase
-     * @implements module:model/StoryResponseAllOf
      */
     constructor() { 
-        StoryBase.initialize(this);StoryResponseAllOf.initialize(this);
+        
         StoryResponse.initialize(this);
     }
 
@@ -61,8 +63,6 @@ class StoryResponse {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new StoryResponse();
-            StoryBase.constructFromObject(data, obj);
-            StoryResponseAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('gid')) {
                 obj['gid'] = ApiClient.convertToType(data['gid'], 'String');
@@ -89,7 +89,7 @@ class StoryResponse {
                 obj['sticker_name'] = ApiClient.convertToType(data['sticker_name'], 'String');
             }
             if (data.hasOwnProperty('created_by')) {
-                obj['created_by'] = UserCompact.constructFromObject(data['created_by']);
+                obj['created_by'] = CustomFieldResponsePeopleValueInner.constructFromObject(data['created_by']);
             }
             if (data.hasOwnProperty('type')) {
                 obj['type'] = ApiClient.convertToType(data['type'], 'String');
@@ -104,7 +104,7 @@ class StoryResponse {
                 obj['hearted'] = ApiClient.convertToType(data['hearted'], 'Boolean');
             }
             if (data.hasOwnProperty('hearts')) {
-                obj['hearts'] = ApiClient.convertToType(data['hearts'], [Like]);
+                obj['hearts'] = ApiClient.convertToType(data['hearts'], [GoalResponseLikesInner]);
             }
             if (data.hasOwnProperty('num_hearts')) {
                 obj['num_hearts'] = ApiClient.convertToType(data['num_hearts'], 'Number');
@@ -113,13 +113,13 @@ class StoryResponse {
                 obj['liked'] = ApiClient.convertToType(data['liked'], 'Boolean');
             }
             if (data.hasOwnProperty('likes')) {
-                obj['likes'] = ApiClient.convertToType(data['likes'], [Like]);
+                obj['likes'] = ApiClient.convertToType(data['likes'], [GoalResponseLikesInner]);
             }
             if (data.hasOwnProperty('num_likes')) {
                 obj['num_likes'] = ApiClient.convertToType(data['num_likes'], 'Number');
             }
             if (data.hasOwnProperty('previews')) {
-                obj['previews'] = ApiClient.convertToType(data['previews'], [Preview]);
+                obj['previews'] = ApiClient.convertToType(data['previews'], [StoryResponsePreviewsInner]);
             }
             if (data.hasOwnProperty('old_name')) {
                 obj['old_name'] = ApiClient.convertToType(data['old_name'], 'String');
@@ -128,10 +128,10 @@ class StoryResponse {
                 obj['new_name'] = ApiClient.convertToType(data['new_name'], 'String');
             }
             if (data.hasOwnProperty('old_dates')) {
-                obj['old_dates'] = StoryResponseDates.constructFromObject(data['old_dates']);
+                obj['old_dates'] = StoryResponseOldDates.constructFromObject(data['old_dates']);
             }
             if (data.hasOwnProperty('new_dates')) {
-                obj['new_dates'] = StoryResponseDates.constructFromObject(data['new_dates']);
+                obj['new_dates'] = StoryResponseOldDates.constructFromObject(data['new_dates']);
             }
             if (data.hasOwnProperty('old_resource_subtype')) {
                 obj['old_resource_subtype'] = ApiClient.convertToType(data['old_resource_subtype'], 'String');
@@ -140,31 +140,31 @@ class StoryResponse {
                 obj['new_resource_subtype'] = ApiClient.convertToType(data['new_resource_subtype'], 'String');
             }
             if (data.hasOwnProperty('story')) {
-                obj['story'] = StoryCompact.constructFromObject(data['story']);
+                obj['story'] = StoryResponseStory.constructFromObject(data['story']);
             }
             if (data.hasOwnProperty('assignee')) {
-                obj['assignee'] = UserCompact.constructFromObject(data['assignee']);
+                obj['assignee'] = StoryResponseAssignee.constructFromObject(data['assignee']);
             }
             if (data.hasOwnProperty('follower')) {
-                obj['follower'] = UserCompact.constructFromObject(data['follower']);
+                obj['follower'] = StoryResponseAssignee.constructFromObject(data['follower']);
             }
             if (data.hasOwnProperty('old_section')) {
-                obj['old_section'] = SectionCompact.constructFromObject(data['old_section']);
+                obj['old_section'] = StoryResponseOldSection.constructFromObject(data['old_section']);
             }
             if (data.hasOwnProperty('new_section')) {
-                obj['new_section'] = SectionCompact.constructFromObject(data['new_section']);
+                obj['new_section'] = StoryResponseOldSection.constructFromObject(data['new_section']);
             }
             if (data.hasOwnProperty('task')) {
-                obj['task'] = TaskCompact.constructFromObject(data['task']);
+                obj['task'] = StoryResponseTask.constructFromObject(data['task']);
             }
             if (data.hasOwnProperty('project')) {
-                obj['project'] = ProjectCompact.constructFromObject(data['project']);
+                obj['project'] = StoryResponseProject.constructFromObject(data['project']);
             }
             if (data.hasOwnProperty('tag')) {
-                obj['tag'] = TagCompact.constructFromObject(data['tag']);
+                obj['tag'] = StoryResponseTag.constructFromObject(data['tag']);
             }
             if (data.hasOwnProperty('custom_field')) {
-                obj['custom_field'] = CustomFieldCompact.constructFromObject(data['custom_field']);
+                obj['custom_field'] = StoryResponseCustomField.constructFromObject(data['custom_field']);
             }
             if (data.hasOwnProperty('old_text_value')) {
                 obj['old_text_value'] = ApiClient.convertToType(data['old_text_value'], 'String');
@@ -179,28 +179,28 @@ class StoryResponse {
                 obj['new_number_value'] = ApiClient.convertToType(data['new_number_value'], 'Number');
             }
             if (data.hasOwnProperty('old_enum_value')) {
-                obj['old_enum_value'] = EnumOption.constructFromObject(data['old_enum_value']);
+                obj['old_enum_value'] = StoryResponseOldEnumValue.constructFromObject(data['old_enum_value']);
             }
             if (data.hasOwnProperty('new_enum_value')) {
-                obj['new_enum_value'] = EnumOption.constructFromObject(data['new_enum_value']);
+                obj['new_enum_value'] = StoryResponseOldEnumValue.constructFromObject(data['new_enum_value']);
             }
             if (data.hasOwnProperty('old_date_value')) {
-                obj['old_date_value'] = ApiClient.convertToType(data['old_date_value'], StoryResponseDates);
+                obj['old_date_value'] = StoryResponseOldDateValue.constructFromObject(data['old_date_value']);
             }
             if (data.hasOwnProperty('new_date_value')) {
-                obj['new_date_value'] = ApiClient.convertToType(data['new_date_value'], StoryResponseDates);
+                obj['new_date_value'] = StoryResponseNewDateValue.constructFromObject(data['new_date_value']);
             }
             if (data.hasOwnProperty('old_people_value')) {
-                obj['old_people_value'] = ApiClient.convertToType(data['old_people_value'], [UserCompact]);
+                obj['old_people_value'] = ApiClient.convertToType(data['old_people_value'], [CustomFieldResponsePeopleValueInner]);
             }
             if (data.hasOwnProperty('new_people_value')) {
-                obj['new_people_value'] = ApiClient.convertToType(data['new_people_value'], [UserCompact]);
+                obj['new_people_value'] = ApiClient.convertToType(data['new_people_value'], [CustomFieldResponsePeopleValueInner]);
             }
             if (data.hasOwnProperty('old_multi_enum_values')) {
-                obj['old_multi_enum_values'] = ApiClient.convertToType(data['old_multi_enum_values'], [EnumOption]);
+                obj['old_multi_enum_values'] = ApiClient.convertToType(data['old_multi_enum_values'], [CustomFieldBaseEnumOptionsInner]);
             }
             if (data.hasOwnProperty('new_multi_enum_values')) {
-                obj['new_multi_enum_values'] = ApiClient.convertToType(data['new_multi_enum_values'], [EnumOption]);
+                obj['new_multi_enum_values'] = ApiClient.convertToType(data['new_multi_enum_values'], [CustomFieldBaseEnumOptionsInner]);
             }
             if (data.hasOwnProperty('new_approval_status')) {
                 obj['new_approval_status'] = ApiClient.convertToType(data['new_approval_status'], 'String');
@@ -209,19 +209,19 @@ class StoryResponse {
                 obj['old_approval_status'] = ApiClient.convertToType(data['old_approval_status'], 'String');
             }
             if (data.hasOwnProperty('duplicate_of')) {
-                obj['duplicate_of'] = TaskCompact.constructFromObject(data['duplicate_of']);
+                obj['duplicate_of'] = StoryResponseTask.constructFromObject(data['duplicate_of']);
             }
             if (data.hasOwnProperty('duplicated_from')) {
-                obj['duplicated_from'] = TaskCompact.constructFromObject(data['duplicated_from']);
+                obj['duplicated_from'] = StoryResponseTask.constructFromObject(data['duplicated_from']);
             }
             if (data.hasOwnProperty('dependency')) {
-                obj['dependency'] = TaskCompact.constructFromObject(data['dependency']);
+                obj['dependency'] = StoryResponseTask.constructFromObject(data['dependency']);
             }
             if (data.hasOwnProperty('source')) {
                 obj['source'] = ApiClient.convertToType(data['source'], 'String');
             }
             if (data.hasOwnProperty('target')) {
-                obj['target'] = ApiClient.convertToType(data['target'], TaskCompact);
+                obj['target'] = StoryResponseTarget.constructFromObject(data['target']);
             }
         }
         return obj;
@@ -279,7 +279,7 @@ StoryResponse.prototype['is_pinned'] = undefined;
 StoryResponse.prototype['sticker_name'] = undefined;
 
 /**
- * @member {module:model/UserCompact} created_by
+ * @member {module:model/CustomFieldResponsePeopleValueInner} created_by
  */
 StoryResponse.prototype['created_by'] = undefined;
 
@@ -308,7 +308,7 @@ StoryResponse.prototype['hearted'] = undefined;
 
 /**
  * *Deprecated - please use likes instead*  *Conditional*. Array of likes for users who have hearted this story.
- * @member {Array.<module:model/Like>} hearts
+ * @member {Array.<module:model/GoalResponseLikesInner>} hearts
  */
 StoryResponse.prototype['hearts'] = undefined;
 
@@ -326,7 +326,7 @@ StoryResponse.prototype['liked'] = undefined;
 
 /**
  * *Conditional*. Array of likes for users who have liked this story.
- * @member {Array.<module:model/Like>} likes
+ * @member {Array.<module:model/GoalResponseLikesInner>} likes
  */
 StoryResponse.prototype['likes'] = undefined;
 
@@ -338,7 +338,7 @@ StoryResponse.prototype['num_likes'] = undefined;
 
 /**
  * *Conditional*. A collection of previews to be displayed in the story.  *Note: This property only exists for comment stories.*
- * @member {Array.<module:model/Preview>} previews
+ * @member {Array.<module:model/StoryResponsePreviewsInner>} previews
  */
 StoryResponse.prototype['previews'] = undefined;
 
@@ -355,12 +355,12 @@ StoryResponse.prototype['old_name'] = undefined;
 StoryResponse.prototype['new_name'] = undefined;
 
 /**
- * @member {module:model/StoryResponseDates} old_dates
+ * @member {module:model/StoryResponseOldDates} old_dates
  */
 StoryResponse.prototype['old_dates'] = undefined;
 
 /**
- * @member {module:model/StoryResponseDates} new_dates
+ * @member {module:model/StoryResponseOldDates} new_dates
  */
 StoryResponse.prototype['new_dates'] = undefined;
 
@@ -377,47 +377,47 @@ StoryResponse.prototype['old_resource_subtype'] = undefined;
 StoryResponse.prototype['new_resource_subtype'] = undefined;
 
 /**
- * @member {module:model/StoryCompact} story
+ * @member {module:model/StoryResponseStory} story
  */
 StoryResponse.prototype['story'] = undefined;
 
 /**
- * @member {module:model/UserCompact} assignee
+ * @member {module:model/StoryResponseAssignee} assignee
  */
 StoryResponse.prototype['assignee'] = undefined;
 
 /**
- * @member {module:model/UserCompact} follower
+ * @member {module:model/StoryResponseAssignee} follower
  */
 StoryResponse.prototype['follower'] = undefined;
 
 /**
- * @member {module:model/SectionCompact} old_section
+ * @member {module:model/StoryResponseOldSection} old_section
  */
 StoryResponse.prototype['old_section'] = undefined;
 
 /**
- * @member {module:model/SectionCompact} new_section
+ * @member {module:model/StoryResponseOldSection} new_section
  */
 StoryResponse.prototype['new_section'] = undefined;
 
 /**
- * @member {module:model/TaskCompact} task
+ * @member {module:model/StoryResponseTask} task
  */
 StoryResponse.prototype['task'] = undefined;
 
 /**
- * @member {module:model/ProjectCompact} project
+ * @member {module:model/StoryResponseProject} project
  */
 StoryResponse.prototype['project'] = undefined;
 
 /**
- * @member {module:model/TagCompact} tag
+ * @member {module:model/StoryResponseTag} tag
  */
 StoryResponse.prototype['tag'] = undefined;
 
 /**
- * @member {module:model/CustomFieldCompact} custom_field
+ * @member {module:model/StoryResponseCustomField} custom_field
  */
 StoryResponse.prototype['custom_field'] = undefined;
 
@@ -446,46 +446,46 @@ StoryResponse.prototype['old_number_value'] = undefined;
 StoryResponse.prototype['new_number_value'] = undefined;
 
 /**
- * @member {module:model/EnumOption} old_enum_value
+ * @member {module:model/StoryResponseOldEnumValue} old_enum_value
  */
 StoryResponse.prototype['old_enum_value'] = undefined;
 
 /**
- * @member {module:model/EnumOption} new_enum_value
+ * @member {module:model/StoryResponseOldEnumValue} new_enum_value
  */
 StoryResponse.prototype['new_enum_value'] = undefined;
 
 /**
- * @member {module:model/StoryResponseDates} old_date_value
+ * @member {module:model/StoryResponseOldDateValue} old_date_value
  */
 StoryResponse.prototype['old_date_value'] = undefined;
 
 /**
- * @member {module:model/StoryResponseDates} new_date_value
+ * @member {module:model/StoryResponseNewDateValue} new_date_value
  */
 StoryResponse.prototype['new_date_value'] = undefined;
 
 /**
  * *Conditional*. The old value of a people custom field story.
- * @member {Array.<module:model/UserCompact>} old_people_value
+ * @member {Array.<module:model/CustomFieldResponsePeopleValueInner>} old_people_value
  */
 StoryResponse.prototype['old_people_value'] = undefined;
 
 /**
  * *Conditional*. The new value of a people custom field story.
- * @member {Array.<module:model/UserCompact>} new_people_value
+ * @member {Array.<module:model/CustomFieldResponsePeopleValueInner>} new_people_value
  */
 StoryResponse.prototype['new_people_value'] = undefined;
 
 /**
  * *Conditional*. The old value of a multi-enum custom field story.
- * @member {Array.<module:model/EnumOption>} old_multi_enum_values
+ * @member {Array.<module:model/CustomFieldBaseEnumOptionsInner>} old_multi_enum_values
  */
 StoryResponse.prototype['old_multi_enum_values'] = undefined;
 
 /**
  * *Conditional*. The new value of a multi-enum custom field story.
- * @member {Array.<module:model/EnumOption>} new_multi_enum_values
+ * @member {Array.<module:model/CustomFieldBaseEnumOptionsInner>} new_multi_enum_values
  */
 StoryResponse.prototype['new_multi_enum_values'] = undefined;
 
@@ -502,17 +502,17 @@ StoryResponse.prototype['new_approval_status'] = undefined;
 StoryResponse.prototype['old_approval_status'] = undefined;
 
 /**
- * @member {module:model/TaskCompact} duplicate_of
+ * @member {module:model/StoryResponseTask} duplicate_of
  */
 StoryResponse.prototype['duplicate_of'] = undefined;
 
 /**
- * @member {module:model/TaskCompact} duplicated_from
+ * @member {module:model/StoryResponseTask} duplicated_from
  */
 StoryResponse.prototype['duplicated_from'] = undefined;
 
 /**
- * @member {module:model/TaskCompact} dependency
+ * @member {module:model/StoryResponseTask} dependency
  */
 StoryResponse.prototype['dependency'] = undefined;
 
@@ -523,257 +523,11 @@ StoryResponse.prototype['dependency'] = undefined;
 StoryResponse.prototype['source'] = undefined;
 
 /**
- * @member {module:model/TaskCompact} target
+ * @member {module:model/StoryResponseTarget} target
  */
 StoryResponse.prototype['target'] = undefined;
 
 
-// Implement StoryBase interface:
-/**
- * Globally unique identifier of the resource, as a string.
- * @member {String} gid
- */
-StoryBase.prototype['gid'] = undefined;
-/**
- * The base type of this resource.
- * @member {String} resource_type
- */
-StoryBase.prototype['resource_type'] = undefined;
-/**
- * The time at which this resource was created.
- * @member {Date} created_at
- */
-StoryBase.prototype['created_at'] = undefined;
-/**
- * The subtype of this resource. Different subtypes retain many of the same fields and behavior, but may render differently in Asana or represent resources with different semantic meaning.
- * @member {String} resource_subtype
- */
-StoryBase.prototype['resource_subtype'] = undefined;
-/**
- * The plain text of the comment to add. Cannot be used with html_text.
- * @member {String} text
- */
-StoryBase.prototype['text'] = undefined;
-/**
- * [Opt In](/docs/inputoutput-options). HTML formatted text for a comment. This will not include the name of the creator.
- * @member {String} html_text
- */
-StoryBase.prototype['html_text'] = undefined;
-/**
- * *Conditional*. Whether the story should be pinned on the resource.
- * @member {Boolean} is_pinned
- */
-StoryBase.prototype['is_pinned'] = undefined;
-/**
- * The name of the sticker in this story. `null` if there is no sticker.
- * @member {module:model/StoryBase.StickerNameEnum} sticker_name
- */
-StoryBase.prototype['sticker_name'] = undefined;
-// Implement StoryResponseAllOf interface:
-/**
- * @member {module:model/UserCompact} created_by
- */
-StoryResponseAllOf.prototype['created_by'] = undefined;
-/**
- * @member {module:model/StoryResponseAllOf.TypeEnum} type
- */
-StoryResponseAllOf.prototype['type'] = undefined;
-/**
- * *Conditional*. Whether the text of the story can be edited after creation.
- * @member {Boolean} is_editable
- */
-StoryResponseAllOf.prototype['is_editable'] = undefined;
-/**
- * *Conditional*. Whether the text of the story has been edited after creation.
- * @member {Boolean} is_edited
- */
-StoryResponseAllOf.prototype['is_edited'] = undefined;
-/**
- * *Deprecated - please use likes instead* *Conditional*. True if the story is hearted by the authorized user, false if not.
- * @member {Boolean} hearted
- */
-StoryResponseAllOf.prototype['hearted'] = undefined;
-/**
- * *Deprecated - please use likes instead*  *Conditional*. Array of likes for users who have hearted this story.
- * @member {Array.<module:model/Like>} hearts
- */
-StoryResponseAllOf.prototype['hearts'] = undefined;
-/**
- * *Deprecated - please use likes instead*  *Conditional*. The number of users who have hearted this story.
- * @member {Number} num_hearts
- */
-StoryResponseAllOf.prototype['num_hearts'] = undefined;
-/**
- * *Conditional*. True if the story is liked by the authorized user, false if not.
- * @member {Boolean} liked
- */
-StoryResponseAllOf.prototype['liked'] = undefined;
-/**
- * *Conditional*. Array of likes for users who have liked this story.
- * @member {Array.<module:model/Like>} likes
- */
-StoryResponseAllOf.prototype['likes'] = undefined;
-/**
- * *Conditional*. The number of users who have liked this story.
- * @member {Number} num_likes
- */
-StoryResponseAllOf.prototype['num_likes'] = undefined;
-/**
- * *Conditional*. A collection of previews to be displayed in the story.  *Note: This property only exists for comment stories.*
- * @member {Array.<module:model/Preview>} previews
- */
-StoryResponseAllOf.prototype['previews'] = undefined;
-/**
- * *Conditional*'
- * @member {String} old_name
- */
-StoryResponseAllOf.prototype['old_name'] = undefined;
-/**
- * *Conditional*
- * @member {String} new_name
- */
-StoryResponseAllOf.prototype['new_name'] = undefined;
-/**
- * @member {module:model/StoryResponseDates} old_dates
- */
-StoryResponseAllOf.prototype['old_dates'] = undefined;
-/**
- * @member {module:model/StoryResponseDates} new_dates
- */
-StoryResponseAllOf.prototype['new_dates'] = undefined;
-/**
- * *Conditional*
- * @member {String} old_resource_subtype
- */
-StoryResponseAllOf.prototype['old_resource_subtype'] = undefined;
-/**
- * *Conditional*
- * @member {String} new_resource_subtype
- */
-StoryResponseAllOf.prototype['new_resource_subtype'] = undefined;
-/**
- * @member {module:model/StoryCompact} story
- */
-StoryResponseAllOf.prototype['story'] = undefined;
-/**
- * @member {module:model/UserCompact} assignee
- */
-StoryResponseAllOf.prototype['assignee'] = undefined;
-/**
- * @member {module:model/UserCompact} follower
- */
-StoryResponseAllOf.prototype['follower'] = undefined;
-/**
- * @member {module:model/SectionCompact} old_section
- */
-StoryResponseAllOf.prototype['old_section'] = undefined;
-/**
- * @member {module:model/SectionCompact} new_section
- */
-StoryResponseAllOf.prototype['new_section'] = undefined;
-/**
- * @member {module:model/TaskCompact} task
- */
-StoryResponseAllOf.prototype['task'] = undefined;
-/**
- * @member {module:model/ProjectCompact} project
- */
-StoryResponseAllOf.prototype['project'] = undefined;
-/**
- * @member {module:model/TagCompact} tag
- */
-StoryResponseAllOf.prototype['tag'] = undefined;
-/**
- * @member {module:model/CustomFieldCompact} custom_field
- */
-StoryResponseAllOf.prototype['custom_field'] = undefined;
-/**
- * *Conditional*
- * @member {String} old_text_value
- */
-StoryResponseAllOf.prototype['old_text_value'] = undefined;
-/**
- * *Conditional*
- * @member {String} new_text_value
- */
-StoryResponseAllOf.prototype['new_text_value'] = undefined;
-/**
- * *Conditional*
- * @member {Number} old_number_value
- */
-StoryResponseAllOf.prototype['old_number_value'] = undefined;
-/**
- * *Conditional*
- * @member {Number} new_number_value
- */
-StoryResponseAllOf.prototype['new_number_value'] = undefined;
-/**
- * @member {module:model/EnumOption} old_enum_value
- */
-StoryResponseAllOf.prototype['old_enum_value'] = undefined;
-/**
- * @member {module:model/EnumOption} new_enum_value
- */
-StoryResponseAllOf.prototype['new_enum_value'] = undefined;
-/**
- * @member {module:model/StoryResponseDates} old_date_value
- */
-StoryResponseAllOf.prototype['old_date_value'] = undefined;
-/**
- * @member {module:model/StoryResponseDates} new_date_value
- */
-StoryResponseAllOf.prototype['new_date_value'] = undefined;
-/**
- * *Conditional*. The old value of a people custom field story.
- * @member {Array.<module:model/UserCompact>} old_people_value
- */
-StoryResponseAllOf.prototype['old_people_value'] = undefined;
-/**
- * *Conditional*. The new value of a people custom field story.
- * @member {Array.<module:model/UserCompact>} new_people_value
- */
-StoryResponseAllOf.prototype['new_people_value'] = undefined;
-/**
- * *Conditional*. The old value of a multi-enum custom field story.
- * @member {Array.<module:model/EnumOption>} old_multi_enum_values
- */
-StoryResponseAllOf.prototype['old_multi_enum_values'] = undefined;
-/**
- * *Conditional*. The new value of a multi-enum custom field story.
- * @member {Array.<module:model/EnumOption>} new_multi_enum_values
- */
-StoryResponseAllOf.prototype['new_multi_enum_values'] = undefined;
-/**
- * *Conditional*. The new value of approval status.
- * @member {String} new_approval_status
- */
-StoryResponseAllOf.prototype['new_approval_status'] = undefined;
-/**
- * *Conditional*. The old value of approval status.
- * @member {String} old_approval_status
- */
-StoryResponseAllOf.prototype['old_approval_status'] = undefined;
-/**
- * @member {module:model/TaskCompact} duplicate_of
- */
-StoryResponseAllOf.prototype['duplicate_of'] = undefined;
-/**
- * @member {module:model/TaskCompact} duplicated_from
- */
-StoryResponseAllOf.prototype['duplicated_from'] = undefined;
-/**
- * @member {module:model/TaskCompact} dependency
- */
-StoryResponseAllOf.prototype['dependency'] = undefined;
-/**
- * The component of the Asana product the user used to trigger the story.
- * @member {module:model/StoryResponseAllOf.SourceEnum} source
- */
-StoryResponseAllOf.prototype['source'] = undefined;
-/**
- * @member {module:model/TaskCompact} target
- */
-StoryResponseAllOf.prototype['target'] = undefined;
 
 
 

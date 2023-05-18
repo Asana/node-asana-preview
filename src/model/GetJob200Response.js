@@ -12,12 +12,12 @@
  */
 
 import ApiClient from '../ApiClient';
-import JobCompact from './JobCompact';
+import JobResponse from './JobResponse';
 
 /**
  * The GetJob200Response model module.
  * @module model/GetJob200Response
- * @version 1.0.3
+ * @version 1.0.4
  */
 class GetJob200Response {
     /**
@@ -49,7 +49,7 @@ class GetJob200Response {
             obj = obj || new GetJob200Response();
 
             if (data.hasOwnProperty('data')) {
-                obj['data'] = JobCompact.constructFromObject(data['data']);
+                obj['data'] = JobResponse.constructFromObject(data['data']);
             }
         }
         return obj;
@@ -59,7 +59,7 @@ class GetJob200Response {
 }
 
 /**
- * @member {module:model/JobCompact} data
+ * @member {module:model/JobResponse} data
  */
 GetJob200Response.prototype['data'] = undefined;
 

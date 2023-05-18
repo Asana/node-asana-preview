@@ -17,7 +17,7 @@ import ProjectMembershipResponse from './ProjectMembershipResponse';
 /**
  * The GetProjectMembership200Response model module.
  * @module model/GetProjectMembership200Response
- * @version 1.0.3
+ * @version 1.0.4
  */
 class GetProjectMembership200Response {
     /**

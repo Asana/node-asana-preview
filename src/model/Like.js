@@ -12,12 +12,12 @@
  */
 
 import ApiClient from '../ApiClient';
-import UserCompact from './UserCompact';
+import CustomFieldResponsePeopleValueInner from './CustomFieldResponsePeopleValueInner';
 
 /**
  * The Like model module.
  * @module model/Like
- * @version 1.0.3
+ * @version 1.0.4
  */
 class Like {
     /**
@@ -53,7 +53,7 @@ class Like {
                 obj['gid'] = ApiClient.convertToType(data['gid'], 'String');
             }
             if (data.hasOwnProperty('user')) {
-                obj['user'] = UserCompact.constructFromObject(data['user']);
+                obj['user'] = CustomFieldResponsePeopleValueInner.constructFromObject(data['user']);
             }
         }
         return obj;
@@ -69,7 +69,7 @@ class Like {
 Like.prototype['gid'] = undefined;
 
 /**
- * @member {module:model/UserCompact} user
+ * @member {module:model/CustomFieldResponsePeopleValueInner} user
  */
 Like.prototype['user'] = undefined;
 

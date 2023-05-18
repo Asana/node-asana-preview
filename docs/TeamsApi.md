@@ -37,7 +37,7 @@ let teamGid = 159874; // String | Globally unique identifier for the team.
 let addUserForTeamRequest = new AsanaPreview.AddUserForTeamRequest(); // AddUserForTeamRequest | The user to add to the team.
 let opts = {
   'optPretty': true, // Boolean | Provides “pretty” output. Provides the response in a “pretty” format. In the case of JSON this means doing proper line breaking and indentation to make it readable. This will take extra time and increase the response size so it is advisable only to use this during debugging.
-  'optFields': ["is_admin","is_guest","team","is_limited_access","user"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
+  'optFields': ["is_admin","is_limited_access","team","is_guest","user"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
 };
 
 apiInstance.addUserForTeam(teamGid, addUserForTeamRequest, opts, (error, data, response) => {
@@ -69,8 +69,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+- **Content-Type**: application/json; charset=UTF-8
+- **Accept**: application/json; charset=UTF-8
 
 
 ## createTeam
@@ -97,7 +97,7 @@ let opts = {
   'optPretty': true, // Boolean | Provides “pretty” output. Provides the response in a “pretty” format. In the case of JSON this means doing proper line breaking and indentation to make it readable. This will take extra time and increase the response size so it is advisable only to use this during debugging.
   'limit': 50, // Number | Results per page. The number of objects to return per page. The value must be between 1 and 100.
   'offset': eyJ0eXAiOJiKV1iQLCJhbGciOiJIUzI1NiJ9, // String | Offset token. An offset to the next page returned by the API. A pagination request will return an offset token, which can be used as an input parameter to the next request. If an offset is not passed in, the API will return the first page of results. 'Note: You can only pass in an offset that was returned to you via a previously paginated request.'
-  'optFields': ["html_description","edit_team_name_or_description_access_level","member_invite_management_access_level","guest_invite_management_access_level","organization","name","join_request_management_access_level","team_member_removal_access_level","visibility","permalink_url","edit_team_visibility_or_trash_team_access_level","description"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
+  'optFields': ["guest_invite_management_access_level","member_invite_management_access_level","description","edit_team_name_or_description_access_level","name","html_description","edit_team_visibility_or_trash_team_access_level","permalink_url","organization","team_member_removal_access_level","join_request_management_access_level","visibility"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
 };
 
 apiInstance.createTeam(updateTeamRequest, opts, (error, data, response) => {
@@ -130,8 +130,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+- **Content-Type**: application/json; charset=UTF-8
+- **Accept**: application/json; charset=UTF-8
 
 
 ## getTeam
@@ -158,7 +158,7 @@ let opts = {
   'optPretty': true, // Boolean | Provides “pretty” output. Provides the response in a “pretty” format. In the case of JSON this means doing proper line breaking and indentation to make it readable. This will take extra time and increase the response size so it is advisable only to use this during debugging.
   'limit': 50, // Number | Results per page. The number of objects to return per page. The value must be between 1 and 100.
   'offset': eyJ0eXAiOJiKV1iQLCJhbGciOiJIUzI1NiJ9, // String | Offset token. An offset to the next page returned by the API. A pagination request will return an offset token, which can be used as an input parameter to the next request. If an offset is not passed in, the API will return the first page of results. 'Note: You can only pass in an offset that was returned to you via a previously paginated request.'
-  'optFields': ["html_description","edit_team_name_or_description_access_level","member_invite_management_access_level","guest_invite_management_access_level","organization","name","join_request_management_access_level","team_member_removal_access_level","visibility","permalink_url","edit_team_visibility_or_trash_team_access_level","description"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
+  'optFields': ["guest_invite_management_access_level","member_invite_management_access_level","description","edit_team_name_or_description_access_level","name","html_description","edit_team_visibility_or_trash_team_access_level","permalink_url","organization","team_member_removal_access_level","join_request_management_access_level","visibility"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
 };
 
 apiInstance.getTeam(teamGid, opts, (error, data, response) => {
@@ -192,7 +192,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: application/json; charset=UTF-8
 
 
 ## getTeamsForUser
@@ -220,7 +220,7 @@ let opts = {
   'optPretty': true, // Boolean | Provides “pretty” output. Provides the response in a “pretty” format. In the case of JSON this means doing proper line breaking and indentation to make it readable. This will take extra time and increase the response size so it is advisable only to use this during debugging.
   'limit': 50, // Number | Results per page. The number of objects to return per page. The value must be between 1 and 100.
   'offset': eyJ0eXAiOJiKV1iQLCJhbGciOiJIUzI1NiJ9, // String | Offset token. An offset to the next page returned by the API. A pagination request will return an offset token, which can be used as an input parameter to the next request. If an offset is not passed in, the API will return the first page of results. 'Note: You can only pass in an offset that was returned to you via a previously paginated request.'
-  'optFields': ["html_description","edit_team_name_or_description_access_level","member_invite_management_access_level","guest_invite_management_access_level","organization","name","join_request_management_access_level","team_member_removal_access_level","visibility","permalink_url","edit_team_visibility_or_trash_team_access_level","description"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
+  'optFields': ["guest_invite_management_access_level","member_invite_management_access_level","description","edit_team_name_or_description_access_level","name","html_description","edit_team_visibility_or_trash_team_access_level","permalink_url","organization","team_member_removal_access_level","join_request_management_access_level","visibility"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
 };
 
 apiInstance.getTeamsForUser(userGid, organization, opts, (error, data, response) => {
@@ -255,7 +255,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: application/json; charset=UTF-8
 
 
 ## getTeamsForWorkspace
@@ -282,7 +282,7 @@ let opts = {
   'optPretty': true, // Boolean | Provides “pretty” output. Provides the response in a “pretty” format. In the case of JSON this means doing proper line breaking and indentation to make it readable. This will take extra time and increase the response size so it is advisable only to use this during debugging.
   'limit': 50, // Number | Results per page. The number of objects to return per page. The value must be between 1 and 100.
   'offset': eyJ0eXAiOJiKV1iQLCJhbGciOiJIUzI1NiJ9, // String | Offset token. An offset to the next page returned by the API. A pagination request will return an offset token, which can be used as an input parameter to the next request. If an offset is not passed in, the API will return the first page of results. 'Note: You can only pass in an offset that was returned to you via a previously paginated request.'
-  'optFields': ["html_description","edit_team_name_or_description_access_level","member_invite_management_access_level","guest_invite_management_access_level","organization","name","join_request_management_access_level","team_member_removal_access_level","visibility","permalink_url","edit_team_visibility_or_trash_team_access_level","description"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
+  'optFields': ["guest_invite_management_access_level","member_invite_management_access_level","description","edit_team_name_or_description_access_level","name","html_description","edit_team_visibility_or_trash_team_access_level","permalink_url","organization","team_member_removal_access_level","join_request_management_access_level","visibility"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
 };
 
 apiInstance.getTeamsForWorkspace(workspaceGid, opts, (error, data, response) => {
@@ -316,7 +316,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: application/json; charset=UTF-8
 
 
 ## removeUserForTeam
@@ -372,8 +372,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+- **Content-Type**: application/json; charset=UTF-8
+- **Accept**: application/json; charset=UTF-8
 
 
 ## updateTeam
@@ -400,7 +400,7 @@ let opts = {
   'optPretty': true, // Boolean | Provides “pretty” output. Provides the response in a “pretty” format. In the case of JSON this means doing proper line breaking and indentation to make it readable. This will take extra time and increase the response size so it is advisable only to use this during debugging.
   'limit': 50, // Number | Results per page. The number of objects to return per page. The value must be between 1 and 100.
   'offset': eyJ0eXAiOJiKV1iQLCJhbGciOiJIUzI1NiJ9, // String | Offset token. An offset to the next page returned by the API. A pagination request will return an offset token, which can be used as an input parameter to the next request. If an offset is not passed in, the API will return the first page of results. 'Note: You can only pass in an offset that was returned to you via a previously paginated request.'
-  'optFields': ["html_description","edit_team_name_or_description_access_level","member_invite_management_access_level","guest_invite_management_access_level","organization","name","join_request_management_access_level","team_member_removal_access_level","visibility","permalink_url","edit_team_visibility_or_trash_team_access_level","description"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
+  'optFields': ["guest_invite_management_access_level","member_invite_management_access_level","description","edit_team_name_or_description_access_level","name","html_description","edit_team_visibility_or_trash_team_access_level","permalink_url","organization","team_member_removal_access_level","join_request_management_access_level","visibility"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
 };
 
 apiInstance.updateTeam(updateTeamRequest, opts, (error, data, response) => {
@@ -433,6 +433,6 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+- **Content-Type**: application/json; charset=UTF-8
+- **Accept**: application/json; charset=UTF-8
 

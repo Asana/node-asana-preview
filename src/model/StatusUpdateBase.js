@@ -12,25 +12,22 @@
  */
 
 import ApiClient from '../ApiClient';
-import StatusUpdateBaseAllOf from './StatusUpdateBaseAllOf';
-import StatusUpdateCompact from './StatusUpdateCompact';
 
 /**
  * The StatusUpdateBase model module.
  * @module model/StatusUpdateBase
- * @version 1.0.3
+ * @version 1.0.4
  */
 class StatusUpdateBase {
     /**
      * Constructs a new <code>StatusUpdateBase</code>.
+     * A generic Asana Resource, containing a globally unique identifier.A generic Asana Resource, containing a globally unique identifier. A *status update* is an update on the progress of a particular project, portfolio, or goal, and is sent out to all of its parent&#39;s followers when created. These updates include both text describing the update and a &#x60;status_type&#x60; intended to represent the overall state of the project.
      * @alias module:model/StatusUpdateBase
-     * @implements module:model/StatusUpdateCompact
-     * @implements module:model/StatusUpdateBaseAllOf
      * @param text {String} The text content of the status update.
      * @param statusType {module:model/StatusUpdateBase.StatusTypeEnum} The type associated with the status update. This represents the current state of the object this object is on.
      */
     constructor(text, statusType) { 
-        StatusUpdateCompact.initialize(this);StatusUpdateBaseAllOf.initialize(this, text, statusType);
+        
         StatusUpdateBase.initialize(this, text, statusType);
     }
 
@@ -54,8 +51,6 @@ class StatusUpdateBase {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new StatusUpdateBase();
-            StatusUpdateCompact.constructFromObject(data, obj);
-            StatusUpdateBaseAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('gid')) {
                 obj['gid'] = ApiClient.convertToType(data['gid'], 'String');
@@ -128,43 +123,6 @@ StatusUpdateBase.prototype['html_text'] = undefined;
 StatusUpdateBase.prototype['status_type'] = undefined;
 
 
-// Implement StatusUpdateCompact interface:
-/**
- * Globally unique identifier of the resource, as a string.
- * @member {String} gid
- */
-StatusUpdateCompact.prototype['gid'] = undefined;
-/**
- * The base type of this resource.
- * @member {String} resource_type
- */
-StatusUpdateCompact.prototype['resource_type'] = undefined;
-/**
- * The title of the status update.
- * @member {String} title
- */
-StatusUpdateCompact.prototype['title'] = undefined;
-/**
- * The subtype of this resource. Different subtypes retain many of the same fields and behavior, but may render differently in Asana or represent resources with different semantic meaning. The `resource_subtype`s for `status` objects represent the type of their parent.
- * @member {module:model/StatusUpdateCompact.ResourceSubtypeEnum} resource_subtype
- */
-StatusUpdateCompact.prototype['resource_subtype'] = undefined;
-// Implement StatusUpdateBaseAllOf interface:
-/**
- * The text content of the status update.
- * @member {String} text
- */
-StatusUpdateBaseAllOf.prototype['text'] = undefined;
-/**
- * [Opt In](/docs/inputoutput-options). The text content of the status update with formatting as HTML.
- * @member {String} html_text
- */
-StatusUpdateBaseAllOf.prototype['html_text'] = undefined;
-/**
- * The type associated with the status update. This represents the current state of the object this object is on.
- * @member {module:model/StatusUpdateBaseAllOf.StatusTypeEnum} status_type
- */
-StatusUpdateBaseAllOf.prototype['status_type'] = undefined;
 
 
 

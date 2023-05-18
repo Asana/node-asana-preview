@@ -20,7 +20,7 @@ import ErrorResponse from '../model/ErrorResponse';
 /**
 * OrganizationExports service.
 * @module api/OrganizationExportsApi
-* @version 1.0.3
+* @version 1.0.4
 */
 export default class OrganizationExportsApi {
 
@@ -78,8 +78,8 @@ export default class OrganizationExportsApi {
       };
 
       let authNames = ['personalAccessToken'];
-      let contentTypes = ['application/json'];
-      let accepts = ['application/json'];
+      let contentTypes = ['application/json; charset=UTF-8'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = CreateOrganizationExport201Response;
       return this.apiClient.callApi(
         '/organization_exports', 'POST',
@@ -128,7 +128,7 @@ export default class OrganizationExportsApi {
 
       let authNames = ['personalAccessToken'];
       let contentTypes = [];
-      let accepts = ['application/json'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = CreateOrganizationExport201Response;
       return this.apiClient.callApi(
         '/organization_exports/{organization_export_gid}', 'GET',

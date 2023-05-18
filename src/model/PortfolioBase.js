@@ -12,23 +12,20 @@
  */
 
 import ApiClient from '../ApiClient';
-import PortfolioBaseAllOf from './PortfolioBaseAllOf';
-import PortfolioCompact from './PortfolioCompact';
 
 /**
  * The PortfolioBase model module.
  * @module model/PortfolioBase
- * @version 1.0.3
+ * @version 1.0.4
  */
 class PortfolioBase {
     /**
      * Constructs a new <code>PortfolioBase</code>.
+     * A generic Asana Resource, containing a globally unique identifier.A generic Asana Resource, containing a globally unique identifier. A *portfolio* gives a high-level overview of the status of multiple initiatives in Asana. Portfolios provide a dashboard overview of the state of multiple projects, including a progress report and the most recent [project status](/reference/project-statuses) update. Portfolios have some restrictions on size. Each portfolio has a max of 500 items and, like projects, a max of 20 custom fields.
      * @alias module:model/PortfolioBase
-     * @implements module:model/PortfolioCompact
-     * @implements module:model/PortfolioBaseAllOf
      */
     constructor() { 
-        PortfolioCompact.initialize(this);PortfolioBaseAllOf.initialize(this);
+        
         PortfolioBase.initialize(this);
     }
 
@@ -50,8 +47,6 @@ class PortfolioBase {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new PortfolioBase();
-            PortfolioCompact.constructFromObject(data, obj);
-            PortfolioBaseAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('gid')) {
                 obj['gid'] = ApiClient.convertToType(data['gid'], 'String');
@@ -97,28 +92,6 @@ PortfolioBase.prototype['name'] = undefined;
 PortfolioBase.prototype['color'] = undefined;
 
 
-// Implement PortfolioCompact interface:
-/**
- * Globally unique identifier of the resource, as a string.
- * @member {String} gid
- */
-PortfolioCompact.prototype['gid'] = undefined;
-/**
- * The base type of this resource.
- * @member {String} resource_type
- */
-PortfolioCompact.prototype['resource_type'] = undefined;
-/**
- * The name of the portfolio.
- * @member {String} name
- */
-PortfolioCompact.prototype['name'] = undefined;
-// Implement PortfolioBaseAllOf interface:
-/**
- * Color of the portfolio.
- * @member {module:model/PortfolioBaseAllOf.ColorEnum} color
- */
-PortfolioBaseAllOf.prototype['color'] = undefined;
 
 
 

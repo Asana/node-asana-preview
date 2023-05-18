@@ -12,28 +12,25 @@
  */
 
 import ApiClient from '../ApiClient';
-import CustomFieldSettingResponse from './CustomFieldSettingResponse';
-import ProjectBase from './ProjectBase';
-import ProjectRequestAllOf from './ProjectRequestAllOf';
-import ProjectStatusResponse from './ProjectStatusResponse';
-import StatusUpdateCompact from './StatusUpdateCompact';
-import UserCompact from './UserCompact';
-import WorkspaceCompact from './WorkspaceCompact';
+import CreateProjectFromAsanaTemplateRequestAllOf1Workspace from './CreateProjectFromAsanaTemplateRequestAllOf1Workspace';
+import CustomFieldResponsePeopleValueInner from './CustomFieldResponsePeopleValueInner';
+import PortfolioResponseCustomFieldSettingsInner from './PortfolioResponseCustomFieldSettingsInner';
+import ProjectBaseCurrentStatus from './ProjectBaseCurrentStatus';
+import ProjectBaseCurrentStatusUpdate from './ProjectBaseCurrentStatusUpdate';
 
 /**
  * The ProjectRequest model module.
  * @module model/ProjectRequest
- * @version 1.0.3
+ * @version 1.0.4
  */
 class ProjectRequest {
     /**
      * Constructs a new <code>ProjectRequest</code>.
+     * A generic Asana Resource, containing a globally unique identifier.A generic Asana Resource, containing a globally unique identifier. A *project* represents a prioritized list of tasks in Asana or a board with columns of tasks represented as cards. It exists in a single workspace or organization and is accessible to a subset of users in that workspace or organization, depending on its permissions.
      * @alias module:model/ProjectRequest
-     * @implements module:model/ProjectBase
-     * @implements module:model/ProjectRequestAllOf
      */
     constructor() { 
-        ProjectBase.initialize(this);ProjectRequestAllOf.initialize(this);
+        
         ProjectRequest.initialize(this);
     }
 
@@ -55,8 +52,6 @@ class ProjectRequest {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new ProjectRequest();
-            ProjectBase.constructFromObject(data, obj);
-            ProjectRequestAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('gid')) {
                 obj['gid'] = ApiClient.convertToType(data['gid'], 'String');
@@ -77,13 +72,13 @@ class ProjectRequest {
                 obj['created_at'] = ApiClient.convertToType(data['created_at'], 'Date');
             }
             if (data.hasOwnProperty('current_status')) {
-                obj['current_status'] = ApiClient.convertToType(data['current_status'], ProjectStatusResponse);
+                obj['current_status'] = ProjectBaseCurrentStatus.constructFromObject(data['current_status']);
             }
             if (data.hasOwnProperty('current_status_update')) {
-                obj['current_status_update'] = ApiClient.convertToType(data['current_status_update'], StatusUpdateCompact);
+                obj['current_status_update'] = ProjectBaseCurrentStatusUpdate.constructFromObject(data['current_status_update']);
             }
             if (data.hasOwnProperty('custom_field_settings')) {
-                obj['custom_field_settings'] = ApiClient.convertToType(data['custom_field_settings'], [CustomFieldSettingResponse]);
+                obj['custom_field_settings'] = ApiClient.convertToType(data['custom_field_settings'], [PortfolioResponseCustomFieldSettingsInner]);
             }
             if (data.hasOwnProperty('default_view')) {
                 obj['default_view'] = ApiClient.convertToType(data['default_view'], 'String');
@@ -98,7 +93,7 @@ class ProjectRequest {
                 obj['html_notes'] = ApiClient.convertToType(data['html_notes'], 'String');
             }
             if (data.hasOwnProperty('members')) {
-                obj['members'] = ApiClient.convertToType(data['members'], [UserCompact]);
+                obj['members'] = ApiClient.convertToType(data['members'], [CustomFieldResponsePeopleValueInner]);
             }
             if (data.hasOwnProperty('modified_at')) {
                 obj['modified_at'] = ApiClient.convertToType(data['modified_at'], 'Date');
@@ -109,11 +104,14 @@ class ProjectRequest {
             if (data.hasOwnProperty('public')) {
                 obj['public'] = ApiClient.convertToType(data['public'], 'Boolean');
             }
+            if (data.hasOwnProperty('privacy_setting')) {
+                obj['privacy_setting'] = ApiClient.convertToType(data['privacy_setting'], 'String');
+            }
             if (data.hasOwnProperty('start_on')) {
                 obj['start_on'] = ApiClient.convertToType(data['start_on'], 'Date');
             }
             if (data.hasOwnProperty('workspace')) {
-                obj['workspace'] = ApiClient.convertToType(data['workspace'], WorkspaceCompact);
+                obj['workspace'] = CreateProjectFromAsanaTemplateRequestAllOf1Workspace.constructFromObject(data['workspace']);
             }
             if (data.hasOwnProperty('custom_fields')) {
                 obj['custom_fields'] = ApiClient.convertToType(data['custom_fields'], {'String': 'String'});
@@ -171,20 +169,18 @@ ProjectRequest.prototype['color'] = undefined;
 ProjectRequest.prototype['created_at'] = undefined;
 
 /**
- * *Deprecated: new integrations should prefer the `current_status_update` resource.*
- * @member {module:model/ProjectStatusResponse} current_status
+ * @member {module:model/ProjectBaseCurrentStatus} current_status
  */
 ProjectRequest.prototype['current_status'] = undefined;
 
 /**
- * The latest `status_update` posted to this project.
- * @member {module:model/StatusUpdateCompact} current_status_update
+ * @member {module:model/ProjectBaseCurrentStatusUpdate} current_status_update
  */
 ProjectRequest.prototype['current_status_update'] = undefined;
 
 /**
  * Array of Custom Field Settings (in compact form).
- * @member {Array.<module:model/CustomFieldSettingResponse>} custom_field_settings
+ * @member {Array.<module:model/PortfolioResponseCustomFieldSettingsInner>} custom_field_settings
  */
 ProjectRequest.prototype['custom_field_settings'] = undefined;
 
@@ -214,7 +210,7 @@ ProjectRequest.prototype['html_notes'] = undefined;
 
 /**
  * Array of users who are members of this project.
- * @member {Array.<module:model/UserCompact>} members
+ * @member {Array.<module:model/CustomFieldResponsePeopleValueInner>} members
  */
 ProjectRequest.prototype['members'] = undefined;
 
@@ -237,13 +233,19 @@ ProjectRequest.prototype['notes'] = undefined;
 ProjectRequest.prototype['public'] = undefined;
 
 /**
+ * The privacy setting of the project
+ * @member {module:model/ProjectRequest.PrivacySettingEnum} privacy_setting
+ */
+ProjectRequest.prototype['privacy_setting'] = undefined;
+
+/**
  * The day on which work for this project begins, or null if the project has no start date. This takes a date with `YYYY-MM-DD` format. *Note: `due_on` or `due_at` must be present in the request when setting or unsetting the `start_on` parameter. Additionally, `start_on` and `due_on` cannot be the same date.*
  * @member {Date} start_on
  */
 ProjectRequest.prototype['start_on'] = undefined;
 
 /**
- * @member {module:model/WorkspaceCompact} workspace
+ * @member {module:model/CreateProjectFromAsanaTemplateRequestAllOf1Workspace} workspace
  */
 ProjectRequest.prototype['workspace'] = undefined;
 
@@ -272,122 +274,6 @@ ProjectRequest.prototype['owner'] = undefined;
 ProjectRequest.prototype['team'] = undefined;
 
 
-// Implement ProjectBase interface:
-/**
- * Globally unique identifier of the resource, as a string.
- * @member {String} gid
- */
-ProjectBase.prototype['gid'] = undefined;
-/**
- * The base type of this resource.
- * @member {String} resource_type
- */
-ProjectBase.prototype['resource_type'] = undefined;
-/**
- * Name of the project. This is generally a short sentence fragment that fits on a line in the UI for maximum readability. However, it can be longer.
- * @member {String} name
- */
-ProjectBase.prototype['name'] = undefined;
-/**
- * True if the project is archived, false if not. Archived projects do not show in the UI by default and may be treated differently for queries.
- * @member {Boolean} archived
- */
-ProjectBase.prototype['archived'] = undefined;
-/**
- * Color of the project.
- * @member {module:model/ProjectBase.ColorEnum} color
- */
-ProjectBase.prototype['color'] = undefined;
-/**
- * The time at which this resource was created.
- * @member {Date} created_at
- */
-ProjectBase.prototype['created_at'] = undefined;
-/**
- * *Deprecated: new integrations should prefer the `current_status_update` resource.*
- * @member {module:model/ProjectStatusResponse} current_status
- */
-ProjectBase.prototype['current_status'] = undefined;
-/**
- * The latest `status_update` posted to this project.
- * @member {module:model/StatusUpdateCompact} current_status_update
- */
-ProjectBase.prototype['current_status_update'] = undefined;
-/**
- * Array of Custom Field Settings (in compact form).
- * @member {Array.<module:model/CustomFieldSettingResponse>} custom_field_settings
- */
-ProjectBase.prototype['custom_field_settings'] = undefined;
-/**
- * The default view (list, board, calendar, or timeline) of a project.
- * @member {module:model/ProjectBase.DefaultViewEnum} default_view
- */
-ProjectBase.prototype['default_view'] = undefined;
-/**
- * *Deprecated: new integrations should prefer the `due_on` field.*
- * @member {Date} due_date
- */
-ProjectBase.prototype['due_date'] = undefined;
-/**
- * The day on which this project is due. This takes a date with format YYYY-MM-DD.
- * @member {Date} due_on
- */
-ProjectBase.prototype['due_on'] = undefined;
-/**
- * [Opt In](/docs/inputoutput-options). The notes of the project with formatting as HTML.
- * @member {String} html_notes
- */
-ProjectBase.prototype['html_notes'] = undefined;
-/**
- * Array of users who are members of this project.
- * @member {Array.<module:model/UserCompact>} members
- */
-ProjectBase.prototype['members'] = undefined;
-/**
- * The time at which this project was last modified. *Note: This does not currently reflect any changes in associations such as tasks or comments that may have been added or removed from the project.*
- * @member {Date} modified_at
- */
-ProjectBase.prototype['modified_at'] = undefined;
-/**
- * Free-form textual information associated with the project (ie., its description).
- * @member {String} notes
- */
-ProjectBase.prototype['notes'] = undefined;
-/**
- * True if the project is public to its team.
- * @member {Boolean} public
- */
-ProjectBase.prototype['public'] = undefined;
-/**
- * The day on which work for this project begins, or null if the project has no start date. This takes a date with `YYYY-MM-DD` format. *Note: `due_on` or `due_at` must be present in the request when setting or unsetting the `start_on` parameter. Additionally, `start_on` and `due_on` cannot be the same date.*
- * @member {Date} start_on
- */
-ProjectBase.prototype['start_on'] = undefined;
-/**
- * @member {module:model/WorkspaceCompact} workspace
- */
-ProjectBase.prototype['workspace'] = undefined;
-// Implement ProjectRequestAllOf interface:
-/**
- * An object where each key is a Custom Field GID and each value is an enum GID, string, number, or object.
- * @member {Object.<String, String>} custom_fields
- */
-ProjectRequestAllOf.prototype['custom_fields'] = undefined;
-/**
- * *Create-only*. Comma separated string of users. Followers are a subset of members who have opted in to receive \"tasks added\" notifications for a project.
- * @member {String} followers
- */
-ProjectRequestAllOf.prototype['followers'] = undefined;
-/**
- * The current owner of the project, may be null.
- * @member {String} owner
- */
-ProjectRequestAllOf.prototype['owner'] = undefined;
-/**
- * The team that this project is shared with.
- * @member {String} team
- */
-ProjectRequestAllOf.prototype['team'] = undefined;
 
 
 
@@ -538,6 +424,33 @@ ProjectRequest['DefaultViewEnum'] = {
      * @const
      */
     "timeline": "timeline"
+};
+
+
+/**
+ * Allowed values for the <code>privacy_setting</code> property.
+ * @enum {String}
+ * @readonly
+ */
+ProjectRequest['PrivacySettingEnum'] = {
+
+    /**
+     * value: "public_to_workspace"
+     * @const
+     */
+    "public_to_workspace": "public_to_workspace",
+
+    /**
+     * value: "private_to_team"
+     * @const
+     */
+    "private_to_team": "private_to_team",
+
+    /**
+     * value: "private"
+     * @const
+     */
+    "private": "private"
 };
 
 

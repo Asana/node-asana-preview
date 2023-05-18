@@ -12,12 +12,12 @@
  */
 
 import ApiClient from '../ApiClient';
-import TagCompact from './TagCompact';
+import TagResponse from './TagResponse';
 
 /**
  * The GetTags200Response model module.
  * @module model/GetTags200Response
- * @version 1.0.3
+ * @version 1.0.4
  */
 class GetTags200Response {
     /**
@@ -49,7 +49,7 @@ class GetTags200Response {
             obj = obj || new GetTags200Response();
 
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [TagCompact]);
+                obj['data'] = ApiClient.convertToType(data['data'], [TagResponse]);
             }
         }
         return obj;
@@ -59,7 +59,7 @@ class GetTags200Response {
 }
 
 /**
- * @member {Array.<module:model/TagCompact>} data
+ * @member {Array.<module:model/TagResponse>} data
  */
 GetTags200Response.prototype['data'] = undefined;
 

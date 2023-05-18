@@ -12,28 +12,25 @@
  */
 
 import ApiClient from '../ApiClient';
-import Like from './Like';
-import ProjectCompact from './ProjectCompact';
-import StatusUpdateBase from './StatusUpdateBase';
-import StatusUpdateResponseAllOf from './StatusUpdateResponseAllOf';
-import UserCompact from './UserCompact';
+import CustomFieldResponsePeopleValueInner from './CustomFieldResponsePeopleValueInner';
+import GoalResponseLikesInner from './GoalResponseLikesInner';
+import StatusUpdateResponseParent from './StatusUpdateResponseParent';
 
 /**
  * The StatusUpdateResponse model module.
  * @module model/StatusUpdateResponse
- * @version 1.0.3
+ * @version 1.0.4
  */
 class StatusUpdateResponse {
     /**
      * Constructs a new <code>StatusUpdateResponse</code>.
+     * A generic Asana Resource, containing a globally unique identifier.A generic Asana Resource, containing a globally unique identifier. A *status update* is an update on the progress of a particular project, portfolio, or goal, and is sent out to all of its parent&#39;s followers when created. These updates include both text describing the update and a &#x60;status_type&#x60; intended to represent the overall state of the project.
      * @alias module:model/StatusUpdateResponse
-     * @implements module:model/StatusUpdateBase
-     * @implements module:model/StatusUpdateResponseAllOf
      * @param text {String} The text content of the status update.
      * @param statusType {module:model/StatusUpdateResponse.StatusTypeEnum} The type associated with the status update. This represents the current state of the object this object is on.
      */
     constructor(text, statusType) { 
-        StatusUpdateBase.initialize(this, text, statusType);StatusUpdateResponseAllOf.initialize(this);
+        
         StatusUpdateResponse.initialize(this, text, statusType);
     }
 
@@ -57,8 +54,6 @@ class StatusUpdateResponse {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new StatusUpdateResponse();
-            StatusUpdateBase.constructFromObject(data, obj);
-            StatusUpdateResponseAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('gid')) {
                 obj['gid'] = ApiClient.convertToType(data['gid'], 'String');
@@ -82,25 +77,25 @@ class StatusUpdateResponse {
                 obj['status_type'] = ApiClient.convertToType(data['status_type'], 'String');
             }
             if (data.hasOwnProperty('author')) {
-                obj['author'] = UserCompact.constructFromObject(data['author']);
+                obj['author'] = CustomFieldResponsePeopleValueInner.constructFromObject(data['author']);
             }
             if (data.hasOwnProperty('created_at')) {
                 obj['created_at'] = ApiClient.convertToType(data['created_at'], 'Date');
             }
             if (data.hasOwnProperty('created_by')) {
-                obj['created_by'] = UserCompact.constructFromObject(data['created_by']);
+                obj['created_by'] = CustomFieldResponsePeopleValueInner.constructFromObject(data['created_by']);
             }
             if (data.hasOwnProperty('hearted')) {
                 obj['hearted'] = ApiClient.convertToType(data['hearted'], 'Boolean');
             }
             if (data.hasOwnProperty('hearts')) {
-                obj['hearts'] = ApiClient.convertToType(data['hearts'], [Like]);
+                obj['hearts'] = ApiClient.convertToType(data['hearts'], [GoalResponseLikesInner]);
             }
             if (data.hasOwnProperty('liked')) {
                 obj['liked'] = ApiClient.convertToType(data['liked'], 'Boolean');
             }
             if (data.hasOwnProperty('likes')) {
-                obj['likes'] = ApiClient.convertToType(data['likes'], [Like]);
+                obj['likes'] = ApiClient.convertToType(data['likes'], [GoalResponseLikesInner]);
             }
             if (data.hasOwnProperty('modified_at')) {
                 obj['modified_at'] = ApiClient.convertToType(data['modified_at'], 'Date');
@@ -112,7 +107,7 @@ class StatusUpdateResponse {
                 obj['num_likes'] = ApiClient.convertToType(data['num_likes'], 'Number');
             }
             if (data.hasOwnProperty('parent')) {
-                obj['parent'] = ApiClient.convertToType(data['parent'], ProjectCompact);
+                obj['parent'] = StatusUpdateResponseParent.constructFromObject(data['parent']);
             }
         }
         return obj;
@@ -164,7 +159,7 @@ StatusUpdateResponse.prototype['html_text'] = undefined;
 StatusUpdateResponse.prototype['status_type'] = undefined;
 
 /**
- * @member {module:model/UserCompact} author
+ * @member {module:model/CustomFieldResponsePeopleValueInner} author
  */
 StatusUpdateResponse.prototype['author'] = undefined;
 
@@ -175,7 +170,7 @@ StatusUpdateResponse.prototype['author'] = undefined;
 StatusUpdateResponse.prototype['created_at'] = undefined;
 
 /**
- * @member {module:model/UserCompact} created_by
+ * @member {module:model/CustomFieldResponsePeopleValueInner} created_by
  */
 StatusUpdateResponse.prototype['created_by'] = undefined;
 
@@ -187,7 +182,7 @@ StatusUpdateResponse.prototype['hearted'] = undefined;
 
 /**
  * *Deprecated - please use likes instead* Array of likes for users who have hearted this status.
- * @member {Array.<module:model/Like>} hearts
+ * @member {Array.<module:model/GoalResponseLikesInner>} hearts
  */
 StatusUpdateResponse.prototype['hearts'] = undefined;
 
@@ -199,7 +194,7 @@ StatusUpdateResponse.prototype['liked'] = undefined;
 
 /**
  * Array of likes for users who have liked this status.
- * @member {Array.<module:model/Like>} likes
+ * @member {Array.<module:model/GoalResponseLikesInner>} likes
  */
 StatusUpdateResponse.prototype['likes'] = undefined;
 
@@ -222,100 +217,11 @@ StatusUpdateResponse.prototype['num_hearts'] = undefined;
 StatusUpdateResponse.prototype['num_likes'] = undefined;
 
 /**
- * @member {module:model/ProjectCompact} parent
+ * @member {module:model/StatusUpdateResponseParent} parent
  */
 StatusUpdateResponse.prototype['parent'] = undefined;
 
 
-// Implement StatusUpdateBase interface:
-/**
- * Globally unique identifier of the resource, as a string.
- * @member {String} gid
- */
-StatusUpdateBase.prototype['gid'] = undefined;
-/**
- * The base type of this resource.
- * @member {String} resource_type
- */
-StatusUpdateBase.prototype['resource_type'] = undefined;
-/**
- * The title of the status update.
- * @member {String} title
- */
-StatusUpdateBase.prototype['title'] = undefined;
-/**
- * The subtype of this resource. Different subtypes retain many of the same fields and behavior, but may render differently in Asana or represent resources with different semantic meaning. The `resource_subtype`s for `status` objects represent the type of their parent.
- * @member {module:model/StatusUpdateBase.ResourceSubtypeEnum} resource_subtype
- */
-StatusUpdateBase.prototype['resource_subtype'] = undefined;
-/**
- * The text content of the status update.
- * @member {String} text
- */
-StatusUpdateBase.prototype['text'] = undefined;
-/**
- * [Opt In](/docs/inputoutput-options). The text content of the status update with formatting as HTML.
- * @member {String} html_text
- */
-StatusUpdateBase.prototype['html_text'] = undefined;
-/**
- * The type associated with the status update. This represents the current state of the object this object is on.
- * @member {module:model/StatusUpdateBase.StatusTypeEnum} status_type
- */
-StatusUpdateBase.prototype['status_type'] = undefined;
-// Implement StatusUpdateResponseAllOf interface:
-/**
- * @member {module:model/UserCompact} author
- */
-StatusUpdateResponseAllOf.prototype['author'] = undefined;
-/**
- * The time at which this resource was created.
- * @member {Date} created_at
- */
-StatusUpdateResponseAllOf.prototype['created_at'] = undefined;
-/**
- * @member {module:model/UserCompact} created_by
- */
-StatusUpdateResponseAllOf.prototype['created_by'] = undefined;
-/**
- * *Deprecated - please use liked instead* True if the status is hearted by the authorized user, false if not.
- * @member {Boolean} hearted
- */
-StatusUpdateResponseAllOf.prototype['hearted'] = undefined;
-/**
- * *Deprecated - please use likes instead* Array of likes for users who have hearted this status.
- * @member {Array.<module:model/Like>} hearts
- */
-StatusUpdateResponseAllOf.prototype['hearts'] = undefined;
-/**
- * True if the status is liked by the authorized user, false if not.
- * @member {Boolean} liked
- */
-StatusUpdateResponseAllOf.prototype['liked'] = undefined;
-/**
- * Array of likes for users who have liked this status.
- * @member {Array.<module:model/Like>} likes
- */
-StatusUpdateResponseAllOf.prototype['likes'] = undefined;
-/**
- * The time at which this project status was last modified. *Note: This does not currently reflect any changes in associations such as comments that may have been added or removed from the status.*
- * @member {Date} modified_at
- */
-StatusUpdateResponseAllOf.prototype['modified_at'] = undefined;
-/**
- * *Deprecated - please use likes instead* The number of users who have hearted this status.
- * @member {Number} num_hearts
- */
-StatusUpdateResponseAllOf.prototype['num_hearts'] = undefined;
-/**
- * The number of users who have liked this status.
- * @member {Number} num_likes
- */
-StatusUpdateResponseAllOf.prototype['num_likes'] = undefined;
-/**
- * @member {module:model/ProjectCompact} parent
- */
-StatusUpdateResponseAllOf.prototype['parent'] = undefined;
 
 
 

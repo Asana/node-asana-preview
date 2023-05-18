@@ -22,7 +22,7 @@ import GetStatusesForObject200Response from '../model/GetStatusesForObject200Res
 /**
 * StatusUpdates service.
 * @module api/StatusUpdatesApi
-* @version 1.0.3
+* @version 1.0.4
 */
 export default class StatusUpdatesApi {
 
@@ -80,8 +80,8 @@ export default class StatusUpdatesApi {
       };
 
       let authNames = ['personalAccessToken'];
-      let contentTypes = ['application/json'];
-      let accepts = ['application/json'];
+      let contentTypes = ['application/json; charset=UTF-8'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = GetStatus200Response;
       return this.apiClient.callApi(
         '/status_updates', 'POST',
@@ -128,7 +128,7 @@ export default class StatusUpdatesApi {
 
       let authNames = ['personalAccessToken'];
       let contentTypes = [];
-      let accepts = ['application/json'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = DeleteAttachment200Response;
       return this.apiClient.callApi(
         '/status_updates/{status_gid}', 'DELETE',
@@ -177,7 +177,7 @@ export default class StatusUpdatesApi {
 
       let authNames = ['personalAccessToken'];
       let contentTypes = [];
-      let accepts = ['application/json'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = GetStatus200Response;
       return this.apiClient.callApi(
         '/status_updates/{status_gid}', 'GET',
@@ -232,7 +232,7 @@ export default class StatusUpdatesApi {
 
       let authNames = ['personalAccessToken'];
       let contentTypes = [];
-      let accepts = ['application/json'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = GetStatusesForObject200Response;
       return this.apiClient.callApi(
         '/status_updates', 'GET',

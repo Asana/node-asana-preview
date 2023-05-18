@@ -24,7 +24,7 @@ import UpdateSectionRequest from '../model/UpdateSectionRequest';
 /**
 * Sections service.
 * @module api/SectionsApi
-* @version 1.0.3
+* @version 1.0.4
 */
 export default class SectionsApi {
 
@@ -82,8 +82,8 @@ export default class SectionsApi {
       };
 
       let authNames = ['personalAccessToken'];
-      let contentTypes = ['application/json'];
-      let accepts = ['application/json'];
+      let contentTypes = ['application/json; charset=UTF-8'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = DeleteAttachment200Response;
       return this.apiClient.callApi(
         '/sections/{section_gid}/addTask', 'POST',
@@ -136,8 +136,8 @@ export default class SectionsApi {
       };
 
       let authNames = ['personalAccessToken'];
-      let contentTypes = ['application/json'];
-      let accepts = ['application/json'];
+      let contentTypes = ['application/json; charset=UTF-8'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = GetSection200Response;
       return this.apiClient.callApi(
         '/projects/{project_gid}/sections', 'POST',
@@ -184,7 +184,7 @@ export default class SectionsApi {
 
       let authNames = ['personalAccessToken'];
       let contentTypes = [];
-      let accepts = ['application/json'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = DeleteAttachment200Response;
       return this.apiClient.callApi(
         '/sections/{section_gid}', 'DELETE',
@@ -233,7 +233,7 @@ export default class SectionsApi {
 
       let authNames = ['personalAccessToken'];
       let contentTypes = [];
-      let accepts = ['application/json'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = GetSection200Response;
       return this.apiClient.callApi(
         '/sections/{section_gid}', 'GET',
@@ -286,7 +286,7 @@ export default class SectionsApi {
 
       let authNames = ['personalAccessToken'];
       let contentTypes = [];
-      let accepts = ['application/json'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = GetSectionsForProject200Response;
       return this.apiClient.callApi(
         '/projects/{project_gid}/sections', 'GET',
@@ -337,8 +337,8 @@ export default class SectionsApi {
       };
 
       let authNames = ['personalAccessToken'];
-      let contentTypes = ['application/json'];
-      let accepts = ['application/json'];
+      let contentTypes = ['application/json; charset=UTF-8'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = DeleteAttachment200Response;
       return this.apiClient.callApi(
         '/projects/{project_gid}/sections/insert', 'POST',
@@ -391,8 +391,8 @@ export default class SectionsApi {
       };
 
       let authNames = ['personalAccessToken'];
-      let contentTypes = ['application/json'];
-      let accepts = ['application/json'];
+      let contentTypes = ['application/json; charset=UTF-8'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = GetSection200Response;
       return this.apiClient.callApi(
         '/sections/{section_gid}', 'PUT',

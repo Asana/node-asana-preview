@@ -42,7 +42,7 @@ let portfolioGid = 12345; // String | Globally unique identifier for the portfol
 let addCustomFieldSettingForPortfolioRequest = new AsanaPreview.AddCustomFieldSettingForPortfolioRequest(); // AddCustomFieldSettingForPortfolioRequest | Information about the custom field setting.
 let opts = {
   'optPretty': true, // Boolean | Provides “pretty” output. Provides the response in a “pretty” format. In the case of JSON this means doing proper line breaking and indentation to make it readable. This will take extra time and increase the response size so it is advisable only to use this during debugging.
-  'optFields': ["is_important","custom_field","project","parent"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
+  'optFields': ["parent","is_important","custom_field","project"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
 };
 
 apiInstance.addCustomFieldSettingForPortfolio(portfolioGid, addCustomFieldSettingForPortfolioRequest, opts, (error, data, response) => {
@@ -74,8 +74,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+- **Content-Type**: application/json; charset=UTF-8
+- **Accept**: application/json; charset=UTF-8
 
 
 ## addItemForPortfolio
@@ -131,8 +131,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+- **Content-Type**: application/json; charset=UTF-8
+- **Accept**: application/json; charset=UTF-8
 
 
 ## addMembersForPortfolio
@@ -158,7 +158,7 @@ let portfolioGid = 12345; // String | Globally unique identifier for the portfol
 let addMembersForPortfolioRequest = new AsanaPreview.AddMembersForPortfolioRequest(); // AddMembersForPortfolioRequest | Information about the members being added.
 let opts = {
   'optPretty': true, // Boolean | Provides “pretty” output. Provides the response in a “pretty” format. In the case of JSON this means doing proper line breaking and indentation to make it readable. This will take extra time and increase the response size so it is advisable only to use this during debugging.
-  'optFields': ["created_at","custom_fields","created_by","color","project_templates","custom_field_settings","start_on","due_on","current_status_update","name","public","permalink_url","workspace","owner","members"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
+  'optFields': ["custom_field_settings","current_status_update","project_templates","name","created_at","public","custom_fields","color","owner","start_on","permalink_url","workspace","created_by","due_on","members"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
 };
 
 apiInstance.addMembersForPortfolio(portfolioGid, addMembersForPortfolioRequest, opts, (error, data, response) => {
@@ -190,8 +190,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+- **Content-Type**: application/json; charset=UTF-8
+- **Accept**: application/json; charset=UTF-8
 
 
 ## createPortfolio
@@ -216,7 +216,7 @@ let apiInstance = new AsanaPreview.PortfoliosApi();
 let createPortfolioRequest = new AsanaPreview.CreatePortfolioRequest(); // CreatePortfolioRequest | The portfolio to create.
 let opts = {
   'optPretty': true, // Boolean | Provides “pretty” output. Provides the response in a “pretty” format. In the case of JSON this means doing proper line breaking and indentation to make it readable. This will take extra time and increase the response size so it is advisable only to use this during debugging.
-  'optFields': ["created_at","custom_fields","created_by","color","project_templates","custom_field_settings","start_on","due_on","current_status_update","name","public","permalink_url","workspace","owner","members"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
+  'optFields': ["custom_field_settings","current_status_update","project_templates","name","created_at","public","custom_fields","color","owner","start_on","permalink_url","workspace","created_by","due_on","members"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
 };
 
 apiInstance.createPortfolio(createPortfolioRequest, opts, (error, data, response) => {
@@ -247,8 +247,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+- **Content-Type**: application/json; charset=UTF-8
+- **Accept**: application/json; charset=UTF-8
 
 
 ## deletePortfolio
@@ -303,7 +303,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: application/json; charset=UTF-8
 
 
 ## getItemsForPortfolio
@@ -330,7 +330,7 @@ let opts = {
   'optPretty': true, // Boolean | Provides “pretty” output. Provides the response in a “pretty” format. In the case of JSON this means doing proper line breaking and indentation to make it readable. This will take extra time and increase the response size so it is advisable only to use this during debugging.
   'limit': 50, // Number | Results per page. The number of objects to return per page. The value must be between 1 and 100.
   'offset': eyJ0eXAiOJiKV1iQLCJhbGciOiJIUzI1NiJ9, // String | Offset token. An offset to the next page returned by the API. A pagination request will return an offset token, which can be used as an input parameter to the next request. If an offset is not passed in, the API will return the first page of results. 'Note: You can only pass in an offset that was returned to you via a previously paginated request.'
-  'optFields': ["created_at","color","archived","icon","public","default_view","members","project_brief","custom_fields","html_notes","privacy_setting","name","due_on","permalink_url","owner","modified_at","current_status","completed_at","completed_by","current_status_update","workspace","due_date","completed","custom_field_settings","notes","followers","start_on","team","created_from_template"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
+  'optFields': ["created_at","modified_at","color","team","custom_field_settings","completed_by","name","privacy_setting","public","custom_fields","due_date","due_on","archived","project_brief","notes","created_from_template","start_on","workspace","followers","members","current_status","icon","current_status_update","completed_at","html_notes","permalink_url","owner","completed","default_view"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
 };
 
 apiInstance.getItemsForPortfolio(portfolioGid, opts, (error, data, response) => {
@@ -364,7 +364,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: application/json; charset=UTF-8
 
 
 ## getPortfolio
@@ -389,7 +389,7 @@ let apiInstance = new AsanaPreview.PortfoliosApi();
 let portfolioGid = 12345; // String | Globally unique identifier for the portfolio.
 let opts = {
   'optPretty': true, // Boolean | Provides “pretty” output. Provides the response in a “pretty” format. In the case of JSON this means doing proper line breaking and indentation to make it readable. This will take extra time and increase the response size so it is advisable only to use this during debugging.
-  'optFields': ["created_at","custom_fields","created_by","color","project_templates","custom_field_settings","start_on","due_on","current_status_update","name","public","permalink_url","workspace","owner","members"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
+  'optFields': ["custom_field_settings","current_status_update","project_templates","name","created_at","public","custom_fields","color","owner","start_on","permalink_url","workspace","created_by","due_on","members"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
 };
 
 apiInstance.getPortfolio(portfolioGid, opts, (error, data, response) => {
@@ -421,7 +421,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: application/json; charset=UTF-8
 
 
 ## getPortfolios
@@ -449,7 +449,7 @@ let opts = {
   'limit': 50, // Number | Results per page. The number of objects to return per page. The value must be between 1 and 100.
   'offset': eyJ0eXAiOJiKV1iQLCJhbGciOiJIUzI1NiJ9, // String | Offset token. An offset to the next page returned by the API. A pagination request will return an offset token, which can be used as an input parameter to the next request. If an offset is not passed in, the API will return the first page of results. 'Note: You can only pass in an offset that was returned to you via a previously paginated request.'
   'owner': 14916, // String | The user who owns the portfolio. Currently, API users can  only get a list of portfolios that they themselves own, unless the request is made from a Service Account. In the case of a Service Account, if this parameter is specified, then all portfolios owned by this parameter are returned. Otherwise, all portfolios across the workspace are returned.
-  'optFields': ["created_at","custom_fields","created_by","color","project_templates","custom_field_settings","start_on","name","current_status_update","due_on","public","permalink_url","workspace","owner","members"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
+  'optFields': ["custom_field_settings","current_status_update","project_templates","name","created_at","public","custom_fields","color","owner","start_on","permalink_url","workspace","created_by","due_on","members"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
 };
 
 apiInstance.getPortfolios(workspace, opts, (error, data, response) => {
@@ -484,7 +484,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: application/json; charset=UTF-8
 
 
 ## removeCustomFieldSettingForPortfolio
@@ -540,8 +540,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+- **Content-Type**: application/json; charset=UTF-8
+- **Accept**: application/json; charset=UTF-8
 
 
 ## removeItemForPortfolio
@@ -597,8 +597,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+- **Content-Type**: application/json; charset=UTF-8
+- **Accept**: application/json; charset=UTF-8
 
 
 ## removeMembersForPortfolio
@@ -624,7 +624,7 @@ let portfolioGid = 12345; // String | Globally unique identifier for the portfol
 let removeMembersForPortfolioRequest = new AsanaPreview.RemoveMembersForPortfolioRequest(); // RemoveMembersForPortfolioRequest | Information about the members being removed.
 let opts = {
   'optPretty': true, // Boolean | Provides “pretty” output. Provides the response in a “pretty” format. In the case of JSON this means doing proper line breaking and indentation to make it readable. This will take extra time and increase the response size so it is advisable only to use this during debugging.
-  'optFields': ["created_at","custom_fields","created_by","color","project_templates","custom_field_settings","start_on","due_on","current_status_update","name","public","permalink_url","workspace","owner","members"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
+  'optFields': ["custom_field_settings","current_status_update","project_templates","name","created_at","public","custom_fields","color","owner","start_on","permalink_url","workspace","created_by","due_on","members"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
 };
 
 apiInstance.removeMembersForPortfolio(portfolioGid, removeMembersForPortfolioRequest, opts, (error, data, response) => {
@@ -656,8 +656,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+- **Content-Type**: application/json; charset=UTF-8
+- **Accept**: application/json; charset=UTF-8
 
 
 ## updatePortfolio
@@ -683,7 +683,7 @@ let portfolioGid = 12345; // String | Globally unique identifier for the portfol
 let createPortfolioRequest = new AsanaPreview.CreatePortfolioRequest(); // CreatePortfolioRequest | The updated fields for the portfolio.
 let opts = {
   'optPretty': true, // Boolean | Provides “pretty” output. Provides the response in a “pretty” format. In the case of JSON this means doing proper line breaking and indentation to make it readable. This will take extra time and increase the response size so it is advisable only to use this during debugging.
-  'optFields': ["created_at","custom_fields","created_by","color","project_templates","custom_field_settings","start_on","due_on","current_status_update","name","public","permalink_url","workspace","owner","members"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
+  'optFields': ["custom_field_settings","current_status_update","project_templates","name","created_at","public","custom_fields","color","owner","start_on","permalink_url","workspace","created_by","due_on","members"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
 };
 
 apiInstance.updatePortfolio(portfolioGid, createPortfolioRequest, opts, (error, data, response) => {
@@ -715,6 +715,6 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+- **Content-Type**: application/json; charset=UTF-8
+- **Accept**: application/json; charset=UTF-8
 

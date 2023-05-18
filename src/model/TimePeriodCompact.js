@@ -12,23 +12,20 @@
  */
 
 import ApiClient from '../ApiClient';
-import AsanaResource from './AsanaResource';
-import TimePeriodCompactAllOf from './TimePeriodCompactAllOf';
 
 /**
  * The TimePeriodCompact model module.
  * @module model/TimePeriodCompact
- * @version 1.0.3
+ * @version 1.0.4
  */
 class TimePeriodCompact {
     /**
      * Constructs a new <code>TimePeriodCompact</code>.
+     * A generic Asana Resource, containing a globally unique identifier.
      * @alias module:model/TimePeriodCompact
-     * @implements module:model/AsanaResource
-     * @implements module:model/TimePeriodCompactAllOf
      */
     constructor() { 
-        AsanaResource.initialize(this);TimePeriodCompactAllOf.initialize(this);
+        
         TimePeriodCompact.initialize(this);
     }
 
@@ -50,8 +47,6 @@ class TimePeriodCompact {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new TimePeriodCompact();
-            AsanaResource.constructFromObject(data, obj);
-            TimePeriodCompactAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('gid')) {
                 obj['gid'] = ApiClient.convertToType(data['gid'], 'String');
@@ -115,38 +110,6 @@ TimePeriodCompact.prototype['period'] = undefined;
 TimePeriodCompact.prototype['display_name'] = undefined;
 
 
-// Implement AsanaResource interface:
-/**
- * Globally unique identifier of the resource, as a string.
- * @member {String} gid
- */
-AsanaResource.prototype['gid'] = undefined;
-/**
- * The base type of this resource.
- * @member {String} resource_type
- */
-AsanaResource.prototype['resource_type'] = undefined;
-// Implement TimePeriodCompactAllOf interface:
-/**
- * The localized end date of the time period in `YYYY-MM-DD` format.
- * @member {String} end_on
- */
-TimePeriodCompactAllOf.prototype['end_on'] = undefined;
-/**
- * The localized start date of the time period in `YYYY-MM-DD` format.
- * @member {String} start_on
- */
-TimePeriodCompactAllOf.prototype['start_on'] = undefined;
-/**
- * The cadence and index of the time period. The value is one of: `FY`, `H1`, `H2`, `Q1`, `Q2`, `Q3`, or `Q4`.
- * @member {module:model/TimePeriodCompactAllOf.PeriodEnum} period
- */
-TimePeriodCompactAllOf.prototype['period'] = undefined;
-/**
- * A string representing the cadence code and the fiscal year.
- * @member {String} display_name
- */
-TimePeriodCompactAllOf.prototype['display_name'] = undefined;
 
 
 

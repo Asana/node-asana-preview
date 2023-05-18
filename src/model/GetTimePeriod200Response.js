@@ -17,7 +17,7 @@ import TimePeriodResponse from './TimePeriodResponse';
 /**
  * The GetTimePeriod200Response model module.
  * @module model/GetTimePeriod200Response
- * @version 1.0.3
+ * @version 1.0.4
  */
 class GetTimePeriod200Response {
     /**

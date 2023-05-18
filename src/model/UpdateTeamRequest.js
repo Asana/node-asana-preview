@@ -17,7 +17,7 @@ import TeamRequest from './TeamRequest';
 /**
  * The UpdateTeamRequest model module.
  * @module model/UpdateTeamRequest
- * @version 1.0.3
+ * @version 1.0.4
  */
 class UpdateTeamRequest {
     /**

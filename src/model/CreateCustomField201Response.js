@@ -17,7 +17,7 @@ import CustomFieldResponse from './CustomFieldResponse';
 /**
  * The CreateCustomField201Response model module.
  * @module model/CreateCustomField201Response
- * @version 1.0.3
+ * @version 1.0.4
  */
 class CreateCustomField201Response {
     /**

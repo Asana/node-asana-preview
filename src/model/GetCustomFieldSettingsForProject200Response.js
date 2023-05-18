@@ -17,7 +17,7 @@ import CustomFieldSettingResponse from './CustomFieldSettingResponse';
 /**
  * The GetCustomFieldSettingsForProject200Response model module.
  * @module model/GetCustomFieldSettingsForProject200Response
- * @version 1.0.3
+ * @version 1.0.4
  */
 class GetCustomFieldSettingsForProject200Response {
     /**

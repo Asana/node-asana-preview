@@ -12,23 +12,20 @@
  */
 
 import ApiClient from '../ApiClient';
-import AsanaResource from './AsanaResource';
-import TagCompactAllOf from './TagCompactAllOf';
 
 /**
  * The TagCompact model module.
  * @module model/TagCompact
- * @version 1.0.3
+ * @version 1.0.4
  */
 class TagCompact {
     /**
      * Constructs a new <code>TagCompact</code>.
+     * A generic Asana Resource, containing a globally unique identifier.A generic Asana Resource, containing a globally unique identifier. A *tag* is a label that can be attached to any task in Asana. It exists in a single workspace or organization.
      * @alias module:model/TagCompact
-     * @implements module:model/AsanaResource
-     * @implements module:model/TagCompactAllOf
      */
     constructor() { 
-        AsanaResource.initialize(this);TagCompactAllOf.initialize(this);
+        
         TagCompact.initialize(this);
     }
 
@@ -50,8 +47,6 @@ class TagCompact {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new TagCompact();
-            AsanaResource.constructFromObject(data, obj);
-            TagCompactAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('gid')) {
                 obj['gid'] = ApiClient.convertToType(data['gid'], 'String');
@@ -88,23 +83,6 @@ TagCompact.prototype['resource_type'] = undefined;
 TagCompact.prototype['name'] = undefined;
 
 
-// Implement AsanaResource interface:
-/**
- * Globally unique identifier of the resource, as a string.
- * @member {String} gid
- */
-AsanaResource.prototype['gid'] = undefined;
-/**
- * The base type of this resource.
- * @member {String} resource_type
- */
-AsanaResource.prototype['resource_type'] = undefined;
-// Implement TagCompactAllOf interface:
-/**
- * Name of the tag. This is generally a short sentence fragment that fits on a line in the UI for maximum readability. However, it can be longer.
- * @member {String} name
- */
-TagCompactAllOf.prototype['name'] = undefined;
 
 
 

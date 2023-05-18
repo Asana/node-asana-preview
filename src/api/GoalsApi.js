@@ -13,6 +13,7 @@
 
 
 import ApiClient from "../ApiClient";
+import AddFollowersRequest from '../model/AddFollowersRequest';
 import CreateGoalMetricRequest from '../model/CreateGoalMetricRequest';
 import DeleteAttachment200Response from '../model/DeleteAttachment200Response';
 import ErrorResponse from '../model/ErrorResponse';
@@ -24,7 +25,7 @@ import UpdateGoalRequest from '../model/UpdateGoalRequest';
 /**
 * Goals service.
 * @module api/GoalsApi
-* @version 1.0.3
+* @version 1.0.4
 */
 export default class GoalsApi {
 
@@ -39,6 +40,60 @@ export default class GoalsApi {
         this.apiClient = apiClient || ApiClient.instance;
     }
 
+
+    /**
+     * Callback function to receive the result of the addFollowers operation.
+     * @callback module:api/GoalsApi~addFollowersCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/GetGoal200Response} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Add a collaborator to a goal
+     * Adds followers to a goal. Returns the goal the followers were added to. Each goal can be associated with zero or more followers in the system. Requests to add/remove followers, if successful, will return the complete updated goal record, described above.
+     * @param {String} goalGid Globally unique identifier for the goal.
+     * @param {module:model/AddFollowersRequest} addFollowersRequest The followers to be added as collaborators
+     * @param {Object} opts Optional parameters
+     * @param {Boolean} opts.optPretty Provides “pretty” output. Provides the response in a “pretty” format. In the case of JSON this means doing proper line breaking and indentation to make it readable. This will take extra time and increase the response size so it is advisable only to use this during debugging.
+     * @param {Array.<module:model/String>} opts.optFields This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
+     * @param {module:api/GoalsApi~addFollowersCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/GetGoal200Response}
+     */
+    addFollowers(goalGid, addFollowersRequest, opts, callback) {
+      opts = opts || {};
+      let postBody = addFollowersRequest;
+      // verify the required parameter 'goalGid' is set
+      if (goalGid === undefined || goalGid === null) {
+        throw new Error("Missing the required parameter 'goalGid' when calling addFollowers");
+      }
+      // verify the required parameter 'addFollowersRequest' is set
+      if (addFollowersRequest === undefined || addFollowersRequest === null) {
+        throw new Error("Missing the required parameter 'addFollowersRequest' when calling addFollowers");
+      }
+
+      let pathParams = {
+        'goal_gid': goalGid
+      };
+      let queryParams = {
+        'opt_pretty': opts['optPretty'],
+        'opt_fields': this.apiClient.buildCollectionParam(opts['optFields'], 'csv')
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['personalAccessToken'];
+      let contentTypes = ['application/json; charset=UTF-8'];
+      let accepts = ['application/json; charset=UTF-8'];
+      let returnType = GetGoal200Response;
+      return this.apiClient.callApi(
+        '/goals/{goal_gid}/addFollowers', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
 
     /**
      * Callback function to receive the result of the createGoal operation.
@@ -82,8 +137,8 @@ export default class GoalsApi {
       };
 
       let authNames = ['personalAccessToken'];
-      let contentTypes = ['application/json'];
-      let accepts = ['application/json'];
+      let contentTypes = ['application/json; charset=UTF-8'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = GetGoal200Response;
       return this.apiClient.callApi(
         '/goals', 'POST',
@@ -136,8 +191,8 @@ export default class GoalsApi {
       };
 
       let authNames = ['personalAccessToken'];
-      let contentTypes = ['application/json'];
-      let accepts = ['application/json'];
+      let contentTypes = ['application/json; charset=UTF-8'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = GetGoal200Response;
       return this.apiClient.callApi(
         '/goals/{goal_gid}/setMetric', 'POST',
@@ -184,7 +239,7 @@ export default class GoalsApi {
 
       let authNames = ['personalAccessToken'];
       let contentTypes = [];
-      let accepts = ['application/json'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = DeleteAttachment200Response;
       return this.apiClient.callApi(
         '/goals/{goal_gid}', 'DELETE',
@@ -233,7 +288,7 @@ export default class GoalsApi {
 
       let authNames = ['personalAccessToken'];
       let contentTypes = [];
-      let accepts = ['application/json'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = GetGoal200Response;
       return this.apiClient.callApi(
         '/goals/{goal_gid}', 'GET',
@@ -292,7 +347,7 @@ export default class GoalsApi {
 
       let authNames = ['personalAccessToken'];
       let contentTypes = [];
-      let accepts = ['application/json'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = GetGoals200Response;
       return this.apiClient.callApi(
         '/goals', 'GET',
@@ -341,10 +396,64 @@ export default class GoalsApi {
 
       let authNames = ['personalAccessToken'];
       let contentTypes = [];
-      let accepts = ['application/json'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = GetGoals200Response;
       return this.apiClient.callApi(
         '/goals/{goal_gid}/parentGoals', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the removeFollowers operation.
+     * @callback module:api/GoalsApi~removeFollowersCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/GetGoal200Response} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Remove a collaborator from a goal
+     * Removes followers from a goal. Returns the goal the followers were removed from. Each goal can be associated with zero or more followers in the system. Requests to add/remove followers, if successful, will return the complete updated goal record, described above.
+     * @param {String} goalGid Globally unique identifier for the goal.
+     * @param {module:model/AddFollowersRequest} addFollowersRequest The followers to be removed as collaborators
+     * @param {Object} opts Optional parameters
+     * @param {Boolean} opts.optPretty Provides “pretty” output. Provides the response in a “pretty” format. In the case of JSON this means doing proper line breaking and indentation to make it readable. This will take extra time and increase the response size so it is advisable only to use this during debugging.
+     * @param {Array.<module:model/String>} opts.optFields This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
+     * @param {module:api/GoalsApi~removeFollowersCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/GetGoal200Response}
+     */
+    removeFollowers(goalGid, addFollowersRequest, opts, callback) {
+      opts = opts || {};
+      let postBody = addFollowersRequest;
+      // verify the required parameter 'goalGid' is set
+      if (goalGid === undefined || goalGid === null) {
+        throw new Error("Missing the required parameter 'goalGid' when calling removeFollowers");
+      }
+      // verify the required parameter 'addFollowersRequest' is set
+      if (addFollowersRequest === undefined || addFollowersRequest === null) {
+        throw new Error("Missing the required parameter 'addFollowersRequest' when calling removeFollowers");
+      }
+
+      let pathParams = {
+        'goal_gid': goalGid
+      };
+      let queryParams = {
+        'opt_pretty': opts['optPretty'],
+        'opt_fields': this.apiClient.buildCollectionParam(opts['optFields'], 'csv')
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['personalAccessToken'];
+      let contentTypes = ['application/json; charset=UTF-8'];
+      let accepts = ['application/json; charset=UTF-8'];
+      let returnType = GetGoal200Response;
+      return this.apiClient.callApi(
+        '/goals/{goal_gid}/removeFollowers', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
@@ -394,8 +503,8 @@ export default class GoalsApi {
       };
 
       let authNames = ['personalAccessToken'];
-      let contentTypes = ['application/json'];
-      let accepts = ['application/json'];
+      let contentTypes = ['application/json; charset=UTF-8'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = GetGoal200Response;
       return this.apiClient.callApi(
         '/goals/{goal_gid}', 'PUT',
@@ -448,8 +557,8 @@ export default class GoalsApi {
       };
 
       let authNames = ['personalAccessToken'];
-      let contentTypes = ['application/json'];
-      let accepts = ['application/json'];
+      let contentTypes = ['application/json; charset=UTF-8'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = GetGoal200Response;
       return this.apiClient.callApi(
         '/goals/{goal_gid}/setMetricCurrentValue', 'POST',

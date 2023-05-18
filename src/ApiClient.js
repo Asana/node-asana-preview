@@ -17,7 +17,7 @@ import querystring from "querystring";
 
 /**
 * @module ApiClient
-* @version 1.0.3
+* @version 1.0.4
 */
 
 /**
@@ -55,13 +55,13 @@ class ApiClient {
          * @default {}
          */
         this.defaultHeaders = {
-            'User-Agent': 'OpenAPI-Generator/1.0.3/Javascript'
+            'User-Agent': 'OpenAPI-Generator/1.0.4/Javascript'
         };
 
         // Add custom header
         this.defaultHeaders['X-Asana-Client-Lib'] = querystring.stringify(
             {
-                'version': "1.0.3",
+                'version': "1.0.4",
                 'language': 'NodeJSPreview',
                 'language_version': process.version,
                 'os': process.platform

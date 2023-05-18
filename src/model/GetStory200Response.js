@@ -17,7 +17,7 @@ import StoryResponse from './StoryResponse';
 /**
  * The GetStory200Response model module.
  * @module model/GetStory200Response
- * @version 1.0.3
+ * @version 1.0.4
  */
 class GetStory200Response {
     /**

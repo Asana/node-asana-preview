@@ -32,13 +32,14 @@ personalAccessToken.accessToken = "PERSONAL_ACCESS_TOKEN"
 let apiInstance = new AsanaPreview.AttachmentsApi();
 let opts = {
   'optPretty': true, // Boolean | Provides “pretty” output. Provides the response in a “pretty” format. In the case of JSON this means doing proper line breaking and indentation to make it readable. This will take extra time and increase the response size so it is advisable only to use this during debugging.
-  'optFields': ["size","parent","connected_to_app","created_at","resource_subtype","view_url","host","name","permanent_url","download_url"], // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
+  'optFields': ["view_url","download_url","name","created_at","host","size","parent","connected_to_app","resource_subtype","permanent_url"], // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
   'resourceSubtype': "resourceSubtype_example", // String | The type of the attachment. Must be one of the given values. If not specified, a file attachment of type `asana` will be assumed. Note that if the value of `resource_subtype` is `external`, a `parent`, `name`, and `url` must also be provided. 
   'file': "/path/to/file", // File | Required for `asana` attachments. 
   'parent': "parent_example", // String | Required identifier of the parent task, project, or project_brief, as a string. 
   'url': "url_example", // String | The URL of the external resource being attached. Required for attachments of type `external`. 
   'name': "name_example", // String | The name of the external resource being attached. Required for attachments of type `external`. 
-  'connectToApp': true // Boolean | *Optional*. Only relevant for external attachments with a parent task. A boolean indicating whether the current app should be connected with the attachment for the purposes of showing an app components widget. Requires the app to have been added to a project the parent task is in. 
+  'connectToApp': true, // Boolean | *Optional*. Only relevant for external attachments with a parent task. A boolean indicating whether the current app should be connected with the attachment for the purposes of showing an app components widget. Requires the app to have been added to a project the parent task is in. 
+  'app': "app_example" // String | The ID of the App to associate this external attachement with. Internal-only. 
 };
 
 apiInstance.createAttachmentForObject(opts, (error, data, response) => {
@@ -63,6 +64,7 @@ Name | Type | Description  | Notes
  **url** | **String**| The URL of the external resource being attached. Required for attachments of type &#x60;external&#x60;.  | [optional] 
  **name** | **String**| The name of the external resource being attached. Required for attachments of type &#x60;external&#x60;.  | [optional] 
  **connectToApp** | **Boolean**| *Optional*. Only relevant for external attachments with a parent task. A boolean indicating whether the current app should be connected with the attachment for the purposes of showing an app components widget. Requires the app to have been added to a project the parent task is in.  | [optional] 
+ **app** | **String**| The ID of the App to associate this external attachement with. Internal-only.  | [optional] 
 
 ### Return type
 
@@ -75,7 +77,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: multipart/form-data
-- **Accept**: application/json
+- **Accept**: application/json; charset=UTF-8
 
 
 ## deleteAttachment
@@ -130,7 +132,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: application/json; charset=UTF-8
 
 
 ## getAttachment
@@ -155,7 +157,7 @@ let apiInstance = new AsanaPreview.AttachmentsApi();
 let attachmentGid = 12345; // String | Globally unique identifier for the attachment.
 let opts = {
   'optPretty': true, // Boolean | Provides “pretty” output. Provides the response in a “pretty” format. In the case of JSON this means doing proper line breaking and indentation to make it readable. This will take extra time and increase the response size so it is advisable only to use this during debugging.
-  'optFields': ["size","parent","connected_to_app","created_at","resource_subtype","view_url","host","name","permanent_url","download_url"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
+  'optFields': ["view_url","download_url","name","created_at","host","size","parent","connected_to_app","resource_subtype","permanent_url"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
 };
 
 apiInstance.getAttachment(attachmentGid, opts, (error, data, response) => {
@@ -187,7 +189,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: application/json; charset=UTF-8
 
 
 ## getAttachmentsForObject
@@ -214,7 +216,7 @@ let opts = {
   'optPretty': true, // Boolean | Provides “pretty” output. Provides the response in a “pretty” format. In the case of JSON this means doing proper line breaking and indentation to make it readable. This will take extra time and increase the response size so it is advisable only to use this during debugging.
   'limit': 50, // Number | Results per page. The number of objects to return per page. The value must be between 1 and 100.
   'offset': eyJ0eXAiOJiKV1iQLCJhbGciOiJIUzI1NiJ9, // String | Offset token. An offset to the next page returned by the API. A pagination request will return an offset token, which can be used as an input parameter to the next request. If an offset is not passed in, the API will return the first page of results. 'Note: You can only pass in an offset that was returned to you via a previously paginated request.'
-  'optFields': ["size","parent","created_at","connected_to_app","resource_subtype","view_url","host","name","permanent_url","download_url"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
+  'optFields': ["view_url","download_url","name","created_at","host","size","parent","connected_to_app","resource_subtype","permanent_url"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
 };
 
 apiInstance.getAttachmentsForObject(parent, opts, (error, data, response) => {
@@ -248,5 +250,5 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: application/json; charset=UTF-8
 

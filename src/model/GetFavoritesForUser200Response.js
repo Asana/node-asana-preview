@@ -17,7 +17,7 @@ import AsanaNamedResource from './AsanaNamedResource';
 /**
  * The GetFavoritesForUser200Response model module.
  * @module model/GetFavoritesForUser200Response
- * @version 1.0.3
+ * @version 1.0.4
  */
 class GetFavoritesForUser200Response {
     /**

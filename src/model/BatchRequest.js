@@ -12,12 +12,12 @@
  */
 
 import ApiClient from '../ApiClient';
-import BatchRequestAction from './BatchRequestAction';
+import BatchRequestActionsInner from './BatchRequestActionsInner';
 
 /**
  * The BatchRequest model module.
  * @module model/BatchRequest
- * @version 1.0.3
+ * @version 1.0.4
  */
 class BatchRequest {
     /**
@@ -50,7 +50,7 @@ class BatchRequest {
             obj = obj || new BatchRequest();
 
             if (data.hasOwnProperty('actions')) {
-                obj['actions'] = ApiClient.convertToType(data['actions'], [BatchRequestAction]);
+                obj['actions'] = ApiClient.convertToType(data['actions'], [BatchRequestActionsInner]);
             }
         }
         return obj;
@@ -60,7 +60,7 @@ class BatchRequest {
 }
 
 /**
- * @member {Array.<module:model/BatchRequestAction>} actions
+ * @member {Array.<module:model/BatchRequestActionsInner>} actions
  */
 BatchRequest.prototype['actions'] = undefined;
 

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AddMembersRequest model module.
  * @module model/AddMembersRequest
- * @version 1.0.3
+ * @version 1.0.4
  */
 class AddMembersRequest {
     /**

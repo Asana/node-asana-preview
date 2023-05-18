@@ -22,7 +22,7 @@ import GetProjectStatusesForProject200Response from '../model/GetProjectStatuses
 /**
 * ProjectStatuses service.
 * @module api/ProjectStatusesApi
-* @version 1.0.3
+* @version 1.0.4
 */
 export default class ProjectStatusesApi {
 
@@ -82,8 +82,8 @@ export default class ProjectStatusesApi {
       };
 
       let authNames = ['personalAccessToken'];
-      let contentTypes = ['application/json'];
-      let accepts = ['application/json'];
+      let contentTypes = ['application/json; charset=UTF-8'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = GetProjectStatus200Response;
       return this.apiClient.callApi(
         '/projects/{project_gid}/project_statuses', 'POST',
@@ -130,7 +130,7 @@ export default class ProjectStatusesApi {
 
       let authNames = ['personalAccessToken'];
       let contentTypes = [];
-      let accepts = ['application/json'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = DeleteAttachment200Response;
       return this.apiClient.callApi(
         '/project_statuses/{project_status_gid}', 'DELETE',
@@ -179,7 +179,7 @@ export default class ProjectStatusesApi {
 
       let authNames = ['personalAccessToken'];
       let contentTypes = [];
-      let accepts = ['application/json'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = GetProjectStatus200Response;
       return this.apiClient.callApi(
         '/project_statuses/{project_status_gid}', 'GET',
@@ -232,7 +232,7 @@ export default class ProjectStatusesApi {
 
       let authNames = ['personalAccessToken'];
       let contentTypes = [];
-      let accepts = ['application/json'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = GetProjectStatusesForProject200Response;
       return this.apiClient.callApi(
         '/projects/{project_gid}/project_statuses', 'GET',

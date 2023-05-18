@@ -12,12 +12,12 @@
  */
 
 import ApiClient from '../ApiClient';
-import ProjectTemplateCompact from './ProjectTemplateCompact';
+import ProjectTemplateResponse from './ProjectTemplateResponse';
 
 /**
  * The GetProjectTemplates200Response model module.
  * @module model/GetProjectTemplates200Response
- * @version 1.0.3
+ * @version 1.0.4
  */
 class GetProjectTemplates200Response {
     /**
@@ -49,7 +49,7 @@ class GetProjectTemplates200Response {
             obj = obj || new GetProjectTemplates200Response();
 
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [ProjectTemplateCompact]);
+                obj['data'] = ApiClient.convertToType(data['data'], [ProjectTemplateResponse]);
             }
         }
         return obj;
@@ -59,7 +59,7 @@ class GetProjectTemplates200Response {
 }
 
 /**
- * @member {Array.<module:model/ProjectTemplateCompact>} data
+ * @member {Array.<module:model/ProjectTemplateResponse>} data
  */
 GetProjectTemplates200Response.prototype['data'] = undefined;
 

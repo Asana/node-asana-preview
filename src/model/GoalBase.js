@@ -12,23 +12,20 @@
  */
 
 import ApiClient from '../ApiClient';
-import AsanaResource from './AsanaResource';
-import GoalBaseAllOf from './GoalBaseAllOf';
 
 /**
  * The GoalBase model module.
  * @module model/GoalBase
- * @version 1.0.3
+ * @version 1.0.4
  */
 class GoalBase {
     /**
      * Constructs a new <code>GoalBase</code>.
+     * A generic Asana Resource, containing a globally unique identifier.
      * @alias module:model/GoalBase
-     * @implements module:model/AsanaResource
-     * @implements module:model/GoalBaseAllOf
      */
     constructor() { 
-        AsanaResource.initialize(this);GoalBaseAllOf.initialize(this);
+        
         GoalBase.initialize(this);
     }
 
@@ -50,8 +47,6 @@ class GoalBase {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new GoalBase();
-            AsanaResource.constructFromObject(data, obj);
-            GoalBaseAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('gid')) {
                 obj['gid'] = ApiClient.convertToType(data['gid'], 'String');
@@ -151,58 +146,6 @@ GoalBase.prototype['is_workspace_level'] = undefined;
 GoalBase.prototype['liked'] = undefined;
 
 
-// Implement AsanaResource interface:
-/**
- * Globally unique identifier of the resource, as a string.
- * @member {String} gid
- */
-AsanaResource.prototype['gid'] = undefined;
-/**
- * The base type of this resource.
- * @member {String} resource_type
- */
-AsanaResource.prototype['resource_type'] = undefined;
-// Implement GoalBaseAllOf interface:
-/**
- * The name of the goal.
- * @member {String} name
- */
-GoalBaseAllOf.prototype['name'] = undefined;
-/**
- * The notes of the goal with formatting as HTML.
- * @member {String} html_notes
- */
-GoalBaseAllOf.prototype['html_notes'] = undefined;
-/**
- * Free-form textual information associated with the goal (i.e. its description).
- * @member {String} notes
- */
-GoalBaseAllOf.prototype['notes'] = undefined;
-/**
- * The localized day on which this goal is due. This takes a date with format `YYYY-MM-DD`.
- * @member {String} due_on
- */
-GoalBaseAllOf.prototype['due_on'] = undefined;
-/**
- * The day on which work for this goal begins, or null if the goal has no start date. This takes a date with `YYYY-MM-DD` format, and cannot be set unless there is an accompanying due date.
- * @member {String} start_on
- */
-GoalBaseAllOf.prototype['start_on'] = undefined;
-/**
- * The current status of this goal. When the goal is open, its status can be `green`, `yellow`, and `red` to reflect \"On Track\", \"At Risk\", and \"Off Track\", respectively. When the goal is closed, the value can be `missed`, `achieved`, `partial`, or `dropped`. *Note* you can only write to this property if `metric` is set.
- * @member {String} status
- */
-GoalBaseAllOf.prototype['status'] = undefined;
-/**
- * *Conditional*. This property is only present when the `workspace` provided is an organization. Whether the goal belongs to the `workspace` (and is listed as part of the workspace’s goals) or not. If it isn’t a workspace-level goal, it is a team-level goal, and is associated with the goal’s team.
- * @member {Boolean} is_workspace_level
- */
-GoalBaseAllOf.prototype['is_workspace_level'] = undefined;
-/**
- * True if the goal is liked by the authorized user, false if not.
- * @member {Boolean} liked
- */
-GoalBaseAllOf.prototype['liked'] = undefined;
 
 
 

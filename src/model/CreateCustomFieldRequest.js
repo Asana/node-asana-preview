@@ -17,7 +17,7 @@ import CustomFieldRequest from './CustomFieldRequest';
 /**
  * The CreateCustomFieldRequest model module.
  * @module model/CreateCustomFieldRequest
- * @version 1.0.3
+ * @version 1.0.4
  */
 class CreateCustomFieldRequest {
     /**

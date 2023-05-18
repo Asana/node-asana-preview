@@ -17,7 +17,7 @@ import AddCustomFieldSettingRequest from './AddCustomFieldSettingRequest';
 /**
  * The AddCustomFieldSettingForPortfolioRequest model module.
  * @module model/AddCustomFieldSettingForPortfolioRequest
- * @version 1.0.3
+ * @version 1.0.4
  */
 class AddCustomFieldSettingForPortfolioRequest {
     /**

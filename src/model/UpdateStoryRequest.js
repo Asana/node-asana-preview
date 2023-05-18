@@ -12,12 +12,12 @@
  */
 
 import ApiClient from '../ApiClient';
-import StoryBase from './StoryBase';
+import StoryRequest from './StoryRequest';
 
 /**
  * The UpdateStoryRequest model module.
  * @module model/UpdateStoryRequest
- * @version 1.0.3
+ * @version 1.0.4
  */
 class UpdateStoryRequest {
     /**
@@ -49,7 +49,7 @@ class UpdateStoryRequest {
             obj = obj || new UpdateStoryRequest();
 
             if (data.hasOwnProperty('data')) {
-                obj['data'] = StoryBase.constructFromObject(data['data']);
+                obj['data'] = StoryRequest.constructFromObject(data['data']);
             }
         }
         return obj;
@@ -59,7 +59,7 @@ class UpdateStoryRequest {
 }
 
 /**
- * @member {module:model/StoryBase} data
+ * @member {module:model/StoryRequest} data
  */
 UpdateStoryRequest.prototype['data'] = undefined;
 

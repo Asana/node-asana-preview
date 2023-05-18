@@ -12,12 +12,12 @@
  */
 
 import ApiClient from '../ApiClient';
-import OrganizationExportCompact from './OrganizationExportCompact';
+import OrganizationExportResponse from './OrganizationExportResponse';
 
 /**
  * The CreateOrganizationExport201Response model module.
  * @module model/CreateOrganizationExport201Response
- * @version 1.0.3
+ * @version 1.0.4
  */
 class CreateOrganizationExport201Response {
     /**
@@ -49,7 +49,7 @@ class CreateOrganizationExport201Response {
             obj = obj || new CreateOrganizationExport201Response();
 
             if (data.hasOwnProperty('data')) {
-                obj['data'] = OrganizationExportCompact.constructFromObject(data['data']);
+                obj['data'] = OrganizationExportResponse.constructFromObject(data['data']);
             }
         }
         return obj;
@@ -59,7 +59,7 @@ class CreateOrganizationExport201Response {
 }
 
 /**
- * @member {module:model/OrganizationExportCompact} data
+ * @member {module:model/OrganizationExportResponse} data
  */
 CreateOrganizationExport201Response.prototype['data'] = undefined;
 

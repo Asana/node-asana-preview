@@ -12,23 +12,20 @@
  */
 
 import ApiClient from '../ApiClient';
-import AsanaResource from './AsanaResource';
-import MemberCompactAllOf from './MemberCompactAllOf';
 
 /**
  * The MemberCompact model module.
  * @module model/MemberCompact
- * @version 1.0.3
+ * @version 1.0.4
  */
 class MemberCompact {
     /**
      * Constructs a new <code>MemberCompact</code>.
+     * A generic Asana Resource, containing a globally unique identifier.A generic Asana Resource, containing a globally unique identifier. A *member* object represents either a team or user.
      * @alias module:model/MemberCompact
-     * @implements module:model/AsanaResource
-     * @implements module:model/MemberCompactAllOf
      */
     constructor() { 
-        AsanaResource.initialize(this);MemberCompactAllOf.initialize(this);
+        
         MemberCompact.initialize(this);
     }
 
@@ -50,8 +47,6 @@ class MemberCompact {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new MemberCompact();
-            AsanaResource.constructFromObject(data, obj);
-            MemberCompactAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('gid')) {
                 obj['gid'] = ApiClient.convertToType(data['gid'], 'String');
@@ -88,28 +83,6 @@ MemberCompact.prototype['resource_type'] = undefined;
 MemberCompact.prototype['name'] = undefined;
 
 
-// Implement AsanaResource interface:
-/**
- * Globally unique identifier of the resource, as a string.
- * @member {String} gid
- */
-AsanaResource.prototype['gid'] = undefined;
-/**
- * The base type of this resource.
- * @member {String} resource_type
- */
-AsanaResource.prototype['resource_type'] = undefined;
-// Implement MemberCompactAllOf interface:
-/**
- * The name of the member
- * @member {String} name
- */
-MemberCompactAllOf.prototype['name'] = undefined;
-/**
- * The type of the member (team or user)
- * @member {String} resource_type
- */
-MemberCompactAllOf.prototype['resource_type'] = undefined;
 
 
 

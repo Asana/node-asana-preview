@@ -12,12 +12,12 @@
  */
 
 import ApiClient from '../ApiClient';
-import UserTaskListCompact from './UserTaskListCompact';
+import UserTaskListResponse from './UserTaskListResponse';
 
 /**
  * The GetUserTaskList200Response model module.
  * @module model/GetUserTaskList200Response
- * @version 1.0.3
+ * @version 1.0.4
  */
 class GetUserTaskList200Response {
     /**
@@ -49,7 +49,7 @@ class GetUserTaskList200Response {
             obj = obj || new GetUserTaskList200Response();
 
             if (data.hasOwnProperty('data')) {
-                obj['data'] = UserTaskListCompact.constructFromObject(data['data']);
+                obj['data'] = UserTaskListResponse.constructFromObject(data['data']);
             }
         }
         return obj;
@@ -59,7 +59,7 @@ class GetUserTaskList200Response {
 }
 
 /**
- * @member {module:model/UserTaskListCompact} data
+ * @member {module:model/UserTaskListResponse} data
  */
 GetUserTaskList200Response.prototype['data'] = undefined;
 

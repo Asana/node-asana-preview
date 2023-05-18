@@ -12,23 +12,20 @@
  */
 
 import ApiClient from '../ApiClient';
-import AsanaNamedResourceAllOf from './AsanaNamedResourceAllOf';
-import AsanaResource from './AsanaResource';
 
 /**
  * The AsanaNamedResource model module.
  * @module model/AsanaNamedResource
- * @version 1.0.3
+ * @version 1.0.4
  */
 class AsanaNamedResource {
     /**
      * Constructs a new <code>AsanaNamedResource</code>.
+     * A generic Asana Resource, containing a globally unique identifier.
      * @alias module:model/AsanaNamedResource
-     * @implements module:model/AsanaResource
-     * @implements module:model/AsanaNamedResourceAllOf
      */
     constructor() { 
-        AsanaResource.initialize(this);AsanaNamedResourceAllOf.initialize(this);
+        
         AsanaNamedResource.initialize(this);
     }
 
@@ -50,8 +47,6 @@ class AsanaNamedResource {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new AsanaNamedResource();
-            AsanaResource.constructFromObject(data, obj);
-            AsanaNamedResourceAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('gid')) {
                 obj['gid'] = ApiClient.convertToType(data['gid'], 'String');
@@ -88,23 +83,6 @@ AsanaNamedResource.prototype['resource_type'] = undefined;
 AsanaNamedResource.prototype['name'] = undefined;
 
 
-// Implement AsanaResource interface:
-/**
- * Globally unique identifier of the resource, as a string.
- * @member {String} gid
- */
-AsanaResource.prototype['gid'] = undefined;
-/**
- * The base type of this resource.
- * @member {String} resource_type
- */
-AsanaResource.prototype['resource_type'] = undefined;
-// Implement AsanaNamedResourceAllOf interface:
-/**
- * The name of the object.
- * @member {String} name
- */
-AsanaNamedResourceAllOf.prototype['name'] = undefined;
 
 
 

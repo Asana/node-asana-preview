@@ -10,11 +10,11 @@ Name | Type | Description | Notes
 **description** | **String** | Free-form textual information associated with the project template | [optional] 
 **htmlDescription** | **String** | The description of the project template with formatting as HTML. | [optional] 
 **_public** | **Boolean** | True if the project template is public to its team. | [optional] 
-**owner** | [**UserCompact**](UserCompact.md) | The current owner of the project template, may be null. | [optional] 
-**team** | [**TeamCompact**](TeamCompact.md) |  | [optional] 
-**requestedDates** | [**[DateVariableCompact]**](DateVariableCompact.md) | Array of date variables in this project template. Calendar dates must be provided for these variables when instantiating a project. | [optional] [readonly] 
+**owner** | [**ProjectTemplateBaseOwner**](ProjectTemplateBaseOwner.md) |  | [optional] 
+**team** | [**GoalResponseTeamAllOf**](GoalResponseTeamAllOf.md) |  | [optional] 
+**requestedDates** | [**[ProjectTemplateBaseRequestedDatesInner]**](ProjectTemplateBaseRequestedDatesInner.md) | Array of date variables in this project template. Calendar dates must be provided for these variables when instantiating a project. | [optional] [readonly] 
 **color** | **String** | Color of the project template. | [optional] 
-**requestedRoles** | [**[TemplateRole]**](TemplateRole.md) | Array of template roles in this project template. User Ids can be provided for these variables when instantiating a project to assign template tasks to the user. | [optional] 
+**requestedRoles** | [**[ProjectTemplateBaseRequestedRolesInner]**](ProjectTemplateBaseRequestedRolesInner.md) | Array of template roles in this project template. User Ids can be provided for these variables when instantiating a project to assign template tasks to the user. | [optional] 
 
 
 

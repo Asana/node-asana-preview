@@ -23,7 +23,7 @@ import UpdateMembershipRequest from '../model/UpdateMembershipRequest';
 /**
 * Memberships service.
 * @module api/MembershipsApi
-* @version 1.0.3
+* @version 1.0.4
 */
 export default class MembershipsApi {
 
@@ -71,8 +71,8 @@ export default class MembershipsApi {
       };
 
       let authNames = ['personalAccessToken'];
-      let contentTypes = ['application/json'];
-      let accepts = ['application/json'];
+      let contentTypes = ['application/json; charset=UTF-8'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = CreateMembership200Response;
       return this.apiClient.callApi(
         '/memberships', 'POST',
@@ -119,7 +119,7 @@ export default class MembershipsApi {
 
       let authNames = ['personalAccessToken'];
       let contentTypes = [];
-      let accepts = ['application/json'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = DeleteAttachment200Response;
       return this.apiClient.callApi(
         '/memberships/{membership_gid}', 'DELETE',
@@ -172,7 +172,7 @@ export default class MembershipsApi {
 
       let authNames = ['personalAccessToken'];
       let contentTypes = [];
-      let accepts = ['application/json'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = GetMemberships200Response;
       return this.apiClient.callApi(
         '/memberships', 'GET',
@@ -219,8 +219,8 @@ export default class MembershipsApi {
       };
 
       let authNames = ['personalAccessToken'];
-      let contentTypes = ['application/json'];
-      let accepts = ['application/json'];
+      let contentTypes = ['application/json; charset=UTF-8'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = CreateMembership200Response;
       return this.apiClient.callApi(
         '/memberships/{membership_gid}', 'PUT',

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TaskAddTagRequest model module.
  * @module model/TaskAddTagRequest
- * @version 1.0.3
+ * @version 1.0.4
  */
 class TaskAddTagRequest {
     /**

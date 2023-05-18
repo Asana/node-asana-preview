@@ -12,24 +12,21 @@
  */
 
 import ApiClient from '../ApiClient';
-import UserBaseResponseAllOf from './UserBaseResponseAllOf';
-import UserBaseResponseAllOfPhoto from './UserBaseResponseAllOfPhoto';
-import UserCompact from './UserCompact';
+import UserBaseResponsePhoto from './UserBaseResponsePhoto';
 
 /**
  * The UserBaseResponse model module.
  * @module model/UserBaseResponse
- * @version 1.0.3
+ * @version 1.0.4
  */
 class UserBaseResponse {
     /**
      * Constructs a new <code>UserBaseResponse</code>.
+     * A generic Asana Resource, containing a globally unique identifier.A generic Asana Resource, containing a globally unique identifier. A *user* object represents an account in Asana that can be given access to various workspaces, projects, and tasks.
      * @alias module:model/UserBaseResponse
-     * @implements module:model/UserCompact
-     * @implements module:model/UserBaseResponseAllOf
      */
     constructor() { 
-        UserCompact.initialize(this);UserBaseResponseAllOf.initialize(this);
+        
         UserBaseResponse.initialize(this);
     }
 
@@ -51,8 +48,6 @@ class UserBaseResponse {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new UserBaseResponse();
-            UserCompact.constructFromObject(data, obj);
-            UserBaseResponseAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('gid')) {
                 obj['gid'] = ApiClient.convertToType(data['gid'], 'String');
@@ -67,7 +62,7 @@ class UserBaseResponse {
                 obj['email'] = ApiClient.convertToType(data['email'], 'String');
             }
             if (data.hasOwnProperty('photo')) {
-                obj['photo'] = UserBaseResponseAllOfPhoto.constructFromObject(data['photo']);
+                obj['photo'] = UserBaseResponsePhoto.constructFromObject(data['photo']);
             }
         }
         return obj;
@@ -101,37 +96,11 @@ UserBaseResponse.prototype['name'] = undefined;
 UserBaseResponse.prototype['email'] = undefined;
 
 /**
- * @member {module:model/UserBaseResponseAllOfPhoto} photo
+ * @member {module:model/UserBaseResponsePhoto} photo
  */
 UserBaseResponse.prototype['photo'] = undefined;
 
 
-// Implement UserCompact interface:
-/**
- * Globally unique identifier of the resource, as a string.
- * @member {String} gid
- */
-UserCompact.prototype['gid'] = undefined;
-/**
- * The base type of this resource.
- * @member {String} resource_type
- */
-UserCompact.prototype['resource_type'] = undefined;
-/**
- * *Read-only except when same user as requester*. The user’s name.
- * @member {String} name
- */
-UserCompact.prototype['name'] = undefined;
-// Implement UserBaseResponseAllOf interface:
-/**
- * The user's email address.
- * @member {String} email
- */
-UserBaseResponseAllOf.prototype['email'] = undefined;
-/**
- * @member {module:model/UserBaseResponseAllOfPhoto} photo
- */
-UserBaseResponseAllOf.prototype['photo'] = undefined;
 
 
 

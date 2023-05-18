@@ -17,7 +17,7 @@ import BatchResponse from './BatchResponse';
 /**
  * The CreateBatchRequest200Response model module.
  * @module model/CreateBatchRequest200Response
- * @version 1.0.3
+ * @version 1.0.4
  */
 class CreateBatchRequest200Response {
     /**

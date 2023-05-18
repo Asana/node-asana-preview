@@ -21,7 +21,7 @@ import GetAttachmentsForObject200Response from '../model/GetAttachmentsForObject
 /**
 * Attachments service.
 * @module api/AttachmentsApi
-* @version 1.0.3
+* @version 1.0.4
 */
 export default class AttachmentsApi {
 
@@ -57,6 +57,7 @@ export default class AttachmentsApi {
      * @param {String} opts.url The URL of the external resource being attached. Required for attachments of type `external`. 
      * @param {String} opts.name The name of the external resource being attached. Required for attachments of type `external`. 
      * @param {Boolean} opts.connectToApp *Optional*. Only relevant for external attachments with a parent task. A boolean indicating whether the current app should be connected with the attachment for the purposes of showing an app components widget. Requires the app to have been added to a project the parent task is in. 
+     * @param {String} opts.app The ID of the App to associate this external attachement with. Internal-only. 
      * @param {module:api/AttachmentsApi~createAttachmentForObjectCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/GetAttachment200Response}
      */
@@ -78,12 +79,13 @@ export default class AttachmentsApi {
         'parent': opts['parent'],
         'url': opts['url'],
         'name': opts['name'],
-        'connect_to_app': opts['connectToApp']
+        'connect_to_app': opts['connectToApp'],
+        'app': opts['app']
       };
 
       let authNames = ['personalAccessToken'];
       let contentTypes = ['multipart/form-data'];
-      let accepts = ['application/json'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = GetAttachment200Response;
       return this.apiClient.callApi(
         '/attachments', 'POST',
@@ -130,7 +132,7 @@ export default class AttachmentsApi {
 
       let authNames = ['personalAccessToken'];
       let contentTypes = [];
-      let accepts = ['application/json'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = DeleteAttachment200Response;
       return this.apiClient.callApi(
         '/attachments/{attachment_gid}', 'DELETE',
@@ -179,7 +181,7 @@ export default class AttachmentsApi {
 
       let authNames = ['personalAccessToken'];
       let contentTypes = [];
-      let accepts = ['application/json'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = GetAttachment200Response;
       return this.apiClient.callApi(
         '/attachments/{attachment_gid}', 'GET',
@@ -232,7 +234,7 @@ export default class AttachmentsApi {
 
       let authNames = ['personalAccessToken'];
       let contentTypes = [];
-      let accepts = ['application/json'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = GetAttachmentsForObject200Response;
       return this.apiClient.callApi(
         '/attachments', 'GET',

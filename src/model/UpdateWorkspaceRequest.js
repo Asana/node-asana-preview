@@ -12,12 +12,12 @@
  */
 
 import ApiClient from '../ApiClient';
-import WorkspaceCompact from './WorkspaceCompact';
+import WorkspaceRequest from './WorkspaceRequest';
 
 /**
  * The UpdateWorkspaceRequest model module.
  * @module model/UpdateWorkspaceRequest
- * @version 1.0.3
+ * @version 1.0.4
  */
 class UpdateWorkspaceRequest {
     /**
@@ -49,7 +49,7 @@ class UpdateWorkspaceRequest {
             obj = obj || new UpdateWorkspaceRequest();
 
             if (data.hasOwnProperty('data')) {
-                obj['data'] = WorkspaceCompact.constructFromObject(data['data']);
+                obj['data'] = WorkspaceRequest.constructFromObject(data['data']);
             }
         }
         return obj;
@@ -59,7 +59,7 @@ class UpdateWorkspaceRequest {
 }
 
 /**
- * @member {module:model/WorkspaceCompact} data
+ * @member {module:model/WorkspaceRequest} data
  */
 UpdateWorkspaceRequest.prototype['data'] = undefined;
 

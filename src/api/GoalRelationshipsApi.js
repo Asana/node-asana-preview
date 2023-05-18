@@ -24,7 +24,7 @@ import UpdateGoalRelationshipRequest from '../model/UpdateGoalRelationshipReques
 /**
 * GoalRelationships service.
 * @module api/GoalRelationshipsApi
-* @version 1.0.3
+* @version 1.0.4
 */
 export default class GoalRelationshipsApi {
 
@@ -84,8 +84,8 @@ export default class GoalRelationshipsApi {
       };
 
       let authNames = ['personalAccessToken'];
-      let contentTypes = ['application/json'];
-      let accepts = ['application/json'];
+      let contentTypes = ['application/json; charset=UTF-8'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = GetGoalRelationship200Response;
       return this.apiClient.callApi(
         '/goals/{goal_gid}/addSupportingRelationship', 'POST',
@@ -134,7 +134,7 @@ export default class GoalRelationshipsApi {
 
       let authNames = ['personalAccessToken'];
       let contentTypes = [];
-      let accepts = ['application/json'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = GetGoalRelationship200Response;
       return this.apiClient.callApi(
         '/goal_relationships/{goal_relationship_gid}', 'GET',
@@ -185,7 +185,7 @@ export default class GoalRelationshipsApi {
 
       let authNames = ['personalAccessToken'];
       let contentTypes = [];
-      let accepts = ['application/json'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = GetGoalRelationships200Response;
       return this.apiClient.callApi(
         '/goal_relationships', 'GET',
@@ -236,8 +236,8 @@ export default class GoalRelationshipsApi {
       };
 
       let authNames = ['personalAccessToken'];
-      let contentTypes = ['application/json'];
-      let accepts = ['application/json'];
+      let contentTypes = ['application/json; charset=UTF-8'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = DeleteAttachment200Response;
       return this.apiClient.callApi(
         '/goals/{goal_gid}/removeSupportingRelationship', 'POST',
@@ -290,8 +290,8 @@ export default class GoalRelationshipsApi {
       };
 
       let authNames = ['personalAccessToken'];
-      let contentTypes = ['application/json'];
-      let accepts = ['application/json'];
+      let contentTypes = ['application/json; charset=UTF-8'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = GetGoalRelationship200Response;
       return this.apiClient.callApi(
         '/goal_relationships/{goal_relationship_gid}', 'PUT',

@@ -19,7 +19,7 @@ import GetAuditLogEvents200Response from '../model/GetAuditLogEvents200Response'
 /**
 * AuditLogAPI service.
 * @module api/AuditLogAPIApi
-* @version 1.0.3
+* @version 1.0.4
 */
 export default class AuditLogAPIApi {
 
@@ -89,7 +89,7 @@ export default class AuditLogAPIApi {
 
       let authNames = ['personalAccessToken'];
       let contentTypes = [];
-      let accepts = ['application/json'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = GetAuditLogEvents200Response;
       return this.apiClient.callApi(
         '/workspaces/{workspace_gid}/audit_log_events', 'GET',

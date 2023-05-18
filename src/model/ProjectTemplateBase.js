@@ -12,27 +12,24 @@
  */
 
 import ApiClient from '../ApiClient';
-import DateVariableCompact from './DateVariableCompact';
-import ProjectTemplateBaseAllOf from './ProjectTemplateBaseAllOf';
-import ProjectTemplateCompact from './ProjectTemplateCompact';
-import TeamCompact from './TeamCompact';
-import TemplateRole from './TemplateRole';
-import UserCompact from './UserCompact';
+import GoalResponseTeamAllOf from './GoalResponseTeamAllOf';
+import ProjectTemplateBaseOwner from './ProjectTemplateBaseOwner';
+import ProjectTemplateBaseRequestedDatesInner from './ProjectTemplateBaseRequestedDatesInner';
+import ProjectTemplateBaseRequestedRolesInner from './ProjectTemplateBaseRequestedRolesInner';
 
 /**
  * The ProjectTemplateBase model module.
  * @module model/ProjectTemplateBase
- * @version 1.0.3
+ * @version 1.0.4
  */
 class ProjectTemplateBase {
     /**
      * Constructs a new <code>ProjectTemplateBase</code>.
+     * A generic Asana Resource, containing a globally unique identifier.A generic Asana Resource, containing a globally unique identifier. A *project template* is an object that allows new projects to be created with a predefined setup, which may include tasks, sections, Rules, etc. It simplifies the process of running a workflow that involves a similar set of work every time.
      * @alias module:model/ProjectTemplateBase
-     * @implements module:model/ProjectTemplateCompact
-     * @implements module:model/ProjectTemplateBaseAllOf
      */
     constructor() { 
-        ProjectTemplateCompact.initialize(this);ProjectTemplateBaseAllOf.initialize(this);
+        
         ProjectTemplateBase.initialize(this);
     }
 
@@ -54,8 +51,6 @@ class ProjectTemplateBase {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new ProjectTemplateBase();
-            ProjectTemplateCompact.constructFromObject(data, obj);
-            ProjectTemplateBaseAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('gid')) {
                 obj['gid'] = ApiClient.convertToType(data['gid'], 'String');
@@ -76,19 +71,19 @@ class ProjectTemplateBase {
                 obj['public'] = ApiClient.convertToType(data['public'], 'Boolean');
             }
             if (data.hasOwnProperty('owner')) {
-                obj['owner'] = ApiClient.convertToType(data['owner'], UserCompact);
+                obj['owner'] = ProjectTemplateBaseOwner.constructFromObject(data['owner']);
             }
             if (data.hasOwnProperty('team')) {
-                obj['team'] = ApiClient.convertToType(data['team'], TeamCompact);
+                obj['team'] = GoalResponseTeamAllOf.constructFromObject(data['team']);
             }
             if (data.hasOwnProperty('requested_dates')) {
-                obj['requested_dates'] = ApiClient.convertToType(data['requested_dates'], [DateVariableCompact]);
+                obj['requested_dates'] = ApiClient.convertToType(data['requested_dates'], [ProjectTemplateBaseRequestedDatesInner]);
             }
             if (data.hasOwnProperty('color')) {
                 obj['color'] = ApiClient.convertToType(data['color'], 'String');
             }
             if (data.hasOwnProperty('requested_roles')) {
-                obj['requested_roles'] = ApiClient.convertToType(data['requested_roles'], [TemplateRole]);
+                obj['requested_roles'] = ApiClient.convertToType(data['requested_roles'], [ProjectTemplateBaseRequestedRolesInner]);
             }
         }
         return obj;
@@ -134,19 +129,18 @@ ProjectTemplateBase.prototype['html_description'] = undefined;
 ProjectTemplateBase.prototype['public'] = undefined;
 
 /**
- * The current owner of the project template, may be null.
- * @member {module:model/UserCompact} owner
+ * @member {module:model/ProjectTemplateBaseOwner} owner
  */
 ProjectTemplateBase.prototype['owner'] = undefined;
 
 /**
- * @member {module:model/TeamCompact} team
+ * @member {module:model/GoalResponseTeamAllOf} team
  */
 ProjectTemplateBase.prototype['team'] = undefined;
 
 /**
  * Array of date variables in this project template. Calendar dates must be provided for these variables when instantiating a project.
- * @member {Array.<module:model/DateVariableCompact>} requested_dates
+ * @member {Array.<module:model/ProjectTemplateBaseRequestedDatesInner>} requested_dates
  */
 ProjectTemplateBase.prototype['requested_dates'] = undefined;
 
@@ -158,67 +152,11 @@ ProjectTemplateBase.prototype['color'] = undefined;
 
 /**
  * Array of template roles in this project template. User Ids can be provided for these variables when instantiating a project to assign template tasks to the user.
- * @member {Array.<module:model/TemplateRole>} requested_roles
+ * @member {Array.<module:model/ProjectTemplateBaseRequestedRolesInner>} requested_roles
  */
 ProjectTemplateBase.prototype['requested_roles'] = undefined;
 
 
-// Implement ProjectTemplateCompact interface:
-/**
- * Globally unique identifier of the resource, as a string.
- * @member {String} gid
- */
-ProjectTemplateCompact.prototype['gid'] = undefined;
-/**
- * The base type of this resource.
- * @member {String} resource_type
- */
-ProjectTemplateCompact.prototype['resource_type'] = undefined;
-/**
- * Name of the project template.
- * @member {String} name
- */
-ProjectTemplateCompact.prototype['name'] = undefined;
-// Implement ProjectTemplateBaseAllOf interface:
-/**
- * Free-form textual information associated with the project template
- * @member {String} description
- */
-ProjectTemplateBaseAllOf.prototype['description'] = undefined;
-/**
- * The description of the project template with formatting as HTML.
- * @member {String} html_description
- */
-ProjectTemplateBaseAllOf.prototype['html_description'] = undefined;
-/**
- * True if the project template is public to its team.
- * @member {Boolean} public
- */
-ProjectTemplateBaseAllOf.prototype['public'] = undefined;
-/**
- * The current owner of the project template, may be null.
- * @member {module:model/UserCompact} owner
- */
-ProjectTemplateBaseAllOf.prototype['owner'] = undefined;
-/**
- * @member {module:model/TeamCompact} team
- */
-ProjectTemplateBaseAllOf.prototype['team'] = undefined;
-/**
- * Array of date variables in this project template. Calendar dates must be provided for these variables when instantiating a project.
- * @member {Array.<module:model/DateVariableCompact>} requested_dates
- */
-ProjectTemplateBaseAllOf.prototype['requested_dates'] = undefined;
-/**
- * Color of the project template.
- * @member {module:model/ProjectTemplateBaseAllOf.ColorEnum} color
- */
-ProjectTemplateBaseAllOf.prototype['color'] = undefined;
-/**
- * Array of template roles in this project template. User Ids can be provided for these variables when instantiating a project to assign template tasks to the user.
- * @member {Array.<module:model/TemplateRole>} requested_roles
- */
-ProjectTemplateBaseAllOf.prototype['requested_roles'] = undefined;
 
 
 

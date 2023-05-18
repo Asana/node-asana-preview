@@ -30,7 +30,7 @@ let apiInstance = new AsanaPreview.BatchAPIApi();
 let createBatchRequestRequest = new AsanaPreview.CreateBatchRequestRequest(); // CreateBatchRequestRequest | The requests to batch together via the Batch API.
 let opts = {
   'optPretty': true, // Boolean | Provides “pretty” output. Provides the response in a “pretty” format. In the case of JSON this means doing proper line breaking and indentation to make it readable. This will take extra time and increase the response size so it is advisable only to use this during debugging.
-  'optFields': ["headers","status_code","body"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
+  'optFields': ["headers","body","status_code"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
 };
 
 apiInstance.createBatchRequest(createBatchRequestRequest, opts, (error, data, response) => {
@@ -61,6 +61,6 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+- **Content-Type**: application/json; charset=UTF-8
+- **Accept**: application/json; charset=UTF-8
 

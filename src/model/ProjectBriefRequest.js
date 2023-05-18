@@ -12,23 +12,20 @@
  */
 
 import ApiClient from '../ApiClient';
-import ProjectBriefBase from './ProjectBriefBase';
-import ProjectBriefRequestAllOf from './ProjectBriefRequestAllOf';
 
 /**
  * The ProjectBriefRequest model module.
  * @module model/ProjectBriefRequest
- * @version 1.0.3
+ * @version 1.0.4
  */
 class ProjectBriefRequest {
     /**
      * Constructs a new <code>ProjectBriefRequest</code>.
+     * A generic Asana Resource, containing a globally unique identifier.A generic Asana Resource, containing a globally unique identifier. A *Project Brief* allows you to explain the what and why of the project to your team.
      * @alias module:model/ProjectBriefRequest
-     * @implements module:model/ProjectBriefBase
-     * @implements module:model/ProjectBriefRequestAllOf
      */
     constructor() { 
-        ProjectBriefBase.initialize(this);ProjectBriefRequestAllOf.initialize(this);
+        
         ProjectBriefRequest.initialize(this);
     }
 
@@ -50,8 +47,6 @@ class ProjectBriefRequest {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new ProjectBriefRequest();
-            ProjectBriefBase.constructFromObject(data, obj);
-            ProjectBriefRequestAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('gid')) {
                 obj['gid'] = ApiClient.convertToType(data['gid'], 'String');
@@ -106,33 +101,6 @@ ProjectBriefRequest.prototype['html_text'] = undefined;
 ProjectBriefRequest.prototype['text'] = undefined;
 
 
-// Implement ProjectBriefBase interface:
-/**
- * Globally unique identifier of the resource, as a string.
- * @member {String} gid
- */
-ProjectBriefBase.prototype['gid'] = undefined;
-/**
- * The base type of this resource.
- * @member {String} resource_type
- */
-ProjectBriefBase.prototype['resource_type'] = undefined;
-/**
- * The title of the project brief.
- * @member {String} title
- */
-ProjectBriefBase.prototype['title'] = undefined;
-/**
- * HTML formatted text for the project brief.
- * @member {String} html_text
- */
-ProjectBriefBase.prototype['html_text'] = undefined;
-// Implement ProjectBriefRequestAllOf interface:
-/**
- * The plain text of the project brief. When writing to a project brief, you can specify either `html_text` (preferred) or `text`, but not both.
- * @member {String} text
- */
-ProjectBriefRequestAllOf.prototype['text'] = undefined;
 
 
 

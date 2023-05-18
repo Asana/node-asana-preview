@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RemoveFollowersRequest model module.
  * @module model/RemoveFollowersRequest
- * @version 1.0.3
+ * @version 1.0.4
  */
 class RemoveFollowersRequest {
     /**

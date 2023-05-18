@@ -21,7 +21,7 @@ import UpdateProjectBriefRequest from '../model/UpdateProjectBriefRequest';
 /**
 * ProjectBriefs service.
 * @module api/ProjectBriefsApi
-* @version 1.0.3
+* @version 1.0.4
 */
 export default class ProjectBriefsApi {
 
@@ -81,8 +81,8 @@ export default class ProjectBriefsApi {
       };
 
       let authNames = ['personalAccessToken'];
-      let contentTypes = ['application/json'];
-      let accepts = ['application/json'];
+      let contentTypes = ['application/json; charset=UTF-8'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = GetProjectBrief200Response;
       return this.apiClient.callApi(
         '/projects/{project_gid}/project_briefs', 'POST',
@@ -129,7 +129,7 @@ export default class ProjectBriefsApi {
 
       let authNames = ['personalAccessToken'];
       let contentTypes = [];
-      let accepts = ['application/json'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = DeleteAttachment200Response;
       return this.apiClient.callApi(
         '/project_briefs/{project_brief_gid}', 'DELETE',
@@ -178,7 +178,7 @@ export default class ProjectBriefsApi {
 
       let authNames = ['personalAccessToken'];
       let contentTypes = [];
-      let accepts = ['application/json'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = GetProjectBrief200Response;
       return this.apiClient.callApi(
         '/project_briefs/{project_brief_gid}', 'GET',
@@ -231,8 +231,8 @@ export default class ProjectBriefsApi {
       };
 
       let authNames = ['personalAccessToken'];
-      let contentTypes = ['application/json'];
-      let accepts = ['application/json'];
+      let contentTypes = ['application/json; charset=UTF-8'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = GetProjectBrief200Response;
       return this.apiClient.callApi(
         '/project_briefs/{project_brief_gid}', 'PUT',

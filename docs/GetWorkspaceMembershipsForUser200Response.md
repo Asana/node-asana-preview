@@ -4,6 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**[WorkspaceMembershipCompact]**](WorkspaceMembershipCompact.md) |  | [optional] 
+**data** | [**[WorkspaceMembershipResponse]**](WorkspaceMembershipResponse.md) |  | [optional] 
 
 

@@ -12,24 +12,21 @@
  */
 
 import ApiClient from '../ApiClient';
-import AsanaResource from './AsanaResource';
-import OrganizationExportCompactAllOf from './OrganizationExportCompactAllOf';
-import WorkspaceCompact from './WorkspaceCompact';
+import GoalResponseWorkspace from './GoalResponseWorkspace';
 
 /**
  * The OrganizationExportCompact model module.
  * @module model/OrganizationExportCompact
- * @version 1.0.3
+ * @version 1.0.4
  */
 class OrganizationExportCompact {
     /**
      * Constructs a new <code>OrganizationExportCompact</code>.
+     * A generic Asana Resource, containing a globally unique identifier.A generic Asana Resource, containing a globally unique identifier. An *organization_export* object represents a request to export the complete data of an Organization in JSON format.
      * @alias module:model/OrganizationExportCompact
-     * @implements module:model/AsanaResource
-     * @implements module:model/OrganizationExportCompactAllOf
      */
     constructor() { 
-        AsanaResource.initialize(this);OrganizationExportCompactAllOf.initialize(this);
+        
         OrganizationExportCompact.initialize(this);
     }
 
@@ -51,8 +48,6 @@ class OrganizationExportCompact {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new OrganizationExportCompact();
-            AsanaResource.constructFromObject(data, obj);
-            OrganizationExportCompactAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('gid')) {
                 obj['gid'] = ApiClient.convertToType(data['gid'], 'String');
@@ -70,7 +65,7 @@ class OrganizationExportCompact {
                 obj['state'] = ApiClient.convertToType(data['state'], 'String');
             }
             if (data.hasOwnProperty('organization')) {
-                obj['organization'] = WorkspaceCompact.constructFromObject(data['organization']);
+                obj['organization'] = GoalResponseWorkspace.constructFromObject(data['organization']);
             }
         }
         return obj;
@@ -110,42 +105,11 @@ OrganizationExportCompact.prototype['download_url'] = undefined;
 OrganizationExportCompact.prototype['state'] = undefined;
 
 /**
- * @member {module:model/WorkspaceCompact} organization
+ * @member {module:model/GoalResponseWorkspace} organization
  */
 OrganizationExportCompact.prototype['organization'] = undefined;
 
 
-// Implement AsanaResource interface:
-/**
- * Globally unique identifier of the resource, as a string.
- * @member {String} gid
- */
-AsanaResource.prototype['gid'] = undefined;
-/**
- * The base type of this resource.
- * @member {String} resource_type
- */
-AsanaResource.prototype['resource_type'] = undefined;
-// Implement OrganizationExportCompactAllOf interface:
-/**
- * The time at which this resource was created.
- * @member {Date} created_at
- */
-OrganizationExportCompactAllOf.prototype['created_at'] = undefined;
-/**
- * Download this URL to retreive the full export of the organization in JSON format. It will be compressed in a gzip (.gz) container.  *Note: May be null if the export is still in progress or failed.  If present, this URL may only be valid for 1 hour from the time of retrieval. You should avoid persisting this URL somewhere and rather refresh on demand to ensure you do not keep stale URLs.*
- * @member {String} download_url
- */
-OrganizationExportCompactAllOf.prototype['download_url'] = undefined;
-/**
- * The current state of the export.
- * @member {module:model/OrganizationExportCompactAllOf.StateEnum} state
- */
-OrganizationExportCompactAllOf.prototype['state'] = undefined;
-/**
- * @member {module:model/WorkspaceCompact} organization
- */
-OrganizationExportCompactAllOf.prototype['organization'] = undefined;
 
 
 

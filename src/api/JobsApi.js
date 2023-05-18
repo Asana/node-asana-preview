@@ -19,7 +19,7 @@ import GetJob200Response from '../model/GetJob200Response';
 /**
 * Jobs service.
 * @module api/JobsApi
-* @version 1.0.3
+* @version 1.0.4
 */
 export default class JobsApi {
 
@@ -75,7 +75,7 @@ export default class JobsApi {
 
       let authNames = ['personalAccessToken'];
       let contentTypes = [];
-      let accepts = ['application/json'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = GetJob200Response;
       return this.apiClient.callApi(
         '/jobs/{job_gid}', 'GET',

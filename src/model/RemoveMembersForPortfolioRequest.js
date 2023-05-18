@@ -17,7 +17,7 @@ import RemoveMembersRequest from './RemoveMembersRequest';
 /**
  * The RemoveMembersForPortfolioRequest model module.
  * @module model/RemoveMembersForPortfolioRequest
- * @version 1.0.3
+ * @version 1.0.4
  */
 class RemoveMembersForPortfolioRequest {
     /**

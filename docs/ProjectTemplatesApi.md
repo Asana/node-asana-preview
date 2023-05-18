@@ -33,7 +33,7 @@ let apiInstance = new AsanaPreview.ProjectTemplatesApi();
 let projectTemplateGid = 1331; // String | Globally unique identifier for the project template.
 let opts = {
   'optPretty': true, // Boolean | Provides “pretty” output. Provides the response in a “pretty” format. In the case of JSON this means doing proper line breaking and indentation to make it readable. This will take extra time and increase the response size so it is advisable only to use this during debugging.
-  'optFields': ["requested_dates","html_description","color","name","public","team","requested_roles","owner","description"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
+  'optFields': ["requested_dates","description","name","html_description","public","color","team","owner","requested_roles"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
 };
 
 apiInstance.getProjectTemplate(projectTemplateGid, opts, (error, data, response) => {
@@ -65,7 +65,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: application/json; charset=UTF-8
 
 
 ## getProjectTemplates
@@ -93,7 +93,7 @@ let opts = {
   'team': 14916, // String | The team to filter projects on.
   'limit': 50, // Number | Results per page. The number of objects to return per page. The value must be between 1 and 100.
   'offset': eyJ0eXAiOJiKV1iQLCJhbGciOiJIUzI1NiJ9, // String | Offset token. An offset to the next page returned by the API. A pagination request will return an offset token, which can be used as an input parameter to the next request. If an offset is not passed in, the API will return the first page of results. 'Note: You can only pass in an offset that was returned to you via a previously paginated request.'
-  'optFields': ["requested_dates","html_description","color","name","public","team","requested_roles","owner","description"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
+  'optFields': ["requested_dates","description","name","html_description","public","color","team","owner","requested_roles"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
 };
 
 apiInstance.getProjectTemplates(opts, (error, data, response) => {
@@ -128,7 +128,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: application/json; charset=UTF-8
 
 
 ## getProjectTemplatesForTeam
@@ -155,7 +155,7 @@ let opts = {
   'optPretty': true, // Boolean | Provides “pretty” output. Provides the response in a “pretty” format. In the case of JSON this means doing proper line breaking and indentation to make it readable. This will take extra time and increase the response size so it is advisable only to use this during debugging.
   'limit': 50, // Number | Results per page. The number of objects to return per page. The value must be between 1 and 100.
   'offset': eyJ0eXAiOJiKV1iQLCJhbGciOiJIUzI1NiJ9, // String | Offset token. An offset to the next page returned by the API. A pagination request will return an offset token, which can be used as an input parameter to the next request. If an offset is not passed in, the API will return the first page of results. 'Note: You can only pass in an offset that was returned to you via a previously paginated request.'
-  'optFields': ["requested_dates","html_description","color","name","public","team","requested_roles","owner","description"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
+  'optFields': ["requested_dates","description","name","html_description","public","color","team","owner","requested_roles"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
 };
 
 apiInstance.getProjectTemplatesForTeam(teamGid, opts, (error, data, response) => {
@@ -189,7 +189,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: application/json; charset=UTF-8
 
 
 ## instantiateProject
@@ -214,7 +214,7 @@ let apiInstance = new AsanaPreview.ProjectTemplatesApi();
 let projectTemplateGid = 1331; // String | Globally unique identifier for the project template.
 let opts = {
   'optPretty': true, // Boolean | Provides “pretty” output. Provides the response in a “pretty” format. In the case of JSON this means doing proper line breaking and indentation to make it readable. This will take extra time and increase the response size so it is advisable only to use this during debugging.
-  'optFields': ["status","resource_subtype","new_project_template","new_task","new_task_template","new_project"], // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
+  'optFields': ["status","new_task","new_project","new_project_template","new_task_template","resource_subtype"], // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
   'instantiateProjectRequest': new AsanaPreview.InstantiateProjectRequest() // InstantiateProjectRequest | Describes the inputs used for instantiating a project, such as the resulting project's name, which team it should be created in, and values for date variables.
 };
 
@@ -247,6 +247,6 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+- **Content-Type**: application/json; charset=UTF-8
+- **Accept**: application/json; charset=UTF-8
 

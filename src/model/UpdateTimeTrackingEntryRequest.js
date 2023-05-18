@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateTimeTrackingEntryRequest model module.
  * @module model/UpdateTimeTrackingEntryRequest
- * @version 1.0.3
+ * @version 1.0.4
  */
 class UpdateTimeTrackingEntryRequest {
     /**

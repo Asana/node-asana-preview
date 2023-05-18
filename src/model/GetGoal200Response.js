@@ -17,7 +17,7 @@ import GoalResponse from './GoalResponse';
 /**
  * The GetGoal200Response model module.
  * @module model/GetGoal200Response
- * @version 1.0.3
+ * @version 1.0.4
  */
 class GetGoal200Response {
     /**

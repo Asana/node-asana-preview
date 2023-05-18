@@ -12,25 +12,22 @@
  */
 
 import ApiClient from '../ApiClient';
-import TaskCompact from './TaskCompact';
-import TimeTrackingEntryBaseAllOf from './TimeTrackingEntryBaseAllOf';
-import TimeTrackingEntryCompact from './TimeTrackingEntryCompact';
-import UserCompact from './UserCompact';
+import StoryResponseAssignee from './StoryResponseAssignee';
+import StoryResponseTask from './StoryResponseTask';
 
 /**
  * The TimeTrackingEntryBase model module.
  * @module model/TimeTrackingEntryBase
- * @version 1.0.3
+ * @version 1.0.4
  */
 class TimeTrackingEntryBase {
     /**
      * Constructs a new <code>TimeTrackingEntryBase</code>.
+     * A generic Asana Resource, containing a globally unique identifier.
      * @alias module:model/TimeTrackingEntryBase
-     * @implements module:model/TimeTrackingEntryCompact
-     * @implements module:model/TimeTrackingEntryBaseAllOf
      */
     constructor() { 
-        TimeTrackingEntryCompact.initialize(this);TimeTrackingEntryBaseAllOf.initialize(this);
+        
         TimeTrackingEntryBase.initialize(this);
     }
 
@@ -52,8 +49,6 @@ class TimeTrackingEntryBase {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new TimeTrackingEntryBase();
-            TimeTrackingEntryCompact.constructFromObject(data, obj);
-            TimeTrackingEntryBaseAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('gid')) {
                 obj['gid'] = ApiClient.convertToType(data['gid'], 'String');
@@ -68,10 +63,10 @@ class TimeTrackingEntryBase {
                 obj['entered_on'] = ApiClient.convertToType(data['entered_on'], 'Date');
             }
             if (data.hasOwnProperty('created_by')) {
-                obj['created_by'] = UserCompact.constructFromObject(data['created_by']);
+                obj['created_by'] = StoryResponseAssignee.constructFromObject(data['created_by']);
             }
             if (data.hasOwnProperty('task')) {
-                obj['task'] = TaskCompact.constructFromObject(data['task']);
+                obj['task'] = StoryResponseTask.constructFromObject(data['task']);
             }
             if (data.hasOwnProperty('created_at')) {
                 obj['created_at'] = ApiClient.convertToType(data['created_at'], 'Date');
@@ -108,12 +103,12 @@ TimeTrackingEntryBase.prototype['duration_minutes'] = undefined;
 TimeTrackingEntryBase.prototype['entered_on'] = undefined;
 
 /**
- * @member {module:model/UserCompact} created_by
+ * @member {module:model/StoryResponseAssignee} created_by
  */
 TimeTrackingEntryBase.prototype['created_by'] = undefined;
 
 /**
- * @member {module:model/TaskCompact} task
+ * @member {module:model/StoryResponseTask} task
  */
 TimeTrackingEntryBase.prototype['task'] = undefined;
 
@@ -124,41 +119,6 @@ TimeTrackingEntryBase.prototype['task'] = undefined;
 TimeTrackingEntryBase.prototype['created_at'] = undefined;
 
 
-// Implement TimeTrackingEntryCompact interface:
-/**
- * Globally unique identifier of the resource, as a string.
- * @member {String} gid
- */
-TimeTrackingEntryCompact.prototype['gid'] = undefined;
-/**
- * The base type of this resource.
- * @member {String} resource_type
- */
-TimeTrackingEntryCompact.prototype['resource_type'] = undefined;
-/**
- * Time in minutes tracked by the entry.
- * @member {Number} duration_minutes
- */
-TimeTrackingEntryCompact.prototype['duration_minutes'] = undefined;
-/**
- * The day that this entry is logged on.
- * @member {Date} entered_on
- */
-TimeTrackingEntryCompact.prototype['entered_on'] = undefined;
-/**
- * @member {module:model/UserCompact} created_by
- */
-TimeTrackingEntryCompact.prototype['created_by'] = undefined;
-// Implement TimeTrackingEntryBaseAllOf interface:
-/**
- * @member {module:model/TaskCompact} task
- */
-TimeTrackingEntryBaseAllOf.prototype['task'] = undefined;
-/**
- * The time at which this resource was created.
- * @member {Date} created_at
- */
-TimeTrackingEntryBaseAllOf.prototype['created_at'] = undefined;
 
 
 

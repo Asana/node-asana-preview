@@ -12,25 +12,22 @@
  */
 
 import ApiClient from '../ApiClient';
-import ProjectStatusBaseAllOf from './ProjectStatusBaseAllOf';
-import ProjectStatusCompact from './ProjectStatusCompact';
 
 /**
  * The ProjectStatusBase model module.
  * @module model/ProjectStatusBase
- * @version 1.0.3
+ * @version 1.0.4
  */
 class ProjectStatusBase {
     /**
      * Constructs a new <code>ProjectStatusBase</code>.
+     * A generic Asana Resource, containing a globally unique identifier.A generic Asana Resource, containing a globally unique identifier. *Deprecated: new integrations should prefer the &#x60;status_update&#x60; resource.* A *project status* is an update on the progress of a particular project, and is sent out to all project followers when created. These updates include both text describing the update and a color code intended to represent the overall state of the project: \&quot;green\&quot; for projects that are on track, \&quot;yellow\&quot; for projects at risk, and \&quot;red\&quot; for projects that are behind.
      * @alias module:model/ProjectStatusBase
-     * @implements module:model/ProjectStatusCompact
-     * @implements module:model/ProjectStatusBaseAllOf
      * @param text {String} The text content of the status update.
      * @param color {module:model/ProjectStatusBase.ColorEnum} The color associated with the status update.
      */
     constructor(text, color) { 
-        ProjectStatusCompact.initialize(this);ProjectStatusBaseAllOf.initialize(this, text, color);
+        
         ProjectStatusBase.initialize(this, text, color);
     }
 
@@ -54,8 +51,6 @@ class ProjectStatusBase {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new ProjectStatusBase();
-            ProjectStatusCompact.constructFromObject(data, obj);
-            ProjectStatusBaseAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('gid')) {
                 obj['gid'] = ApiClient.convertToType(data['gid'], 'String');
@@ -119,38 +114,6 @@ ProjectStatusBase.prototype['html_text'] = undefined;
 ProjectStatusBase.prototype['color'] = undefined;
 
 
-// Implement ProjectStatusCompact interface:
-/**
- * Globally unique identifier of the resource, as a string.
- * @member {String} gid
- */
-ProjectStatusCompact.prototype['gid'] = undefined;
-/**
- * The base type of this resource.
- * @member {String} resource_type
- */
-ProjectStatusCompact.prototype['resource_type'] = undefined;
-/**
- * The title of the project status update.
- * @member {String} title
- */
-ProjectStatusCompact.prototype['title'] = undefined;
-// Implement ProjectStatusBaseAllOf interface:
-/**
- * The text content of the status update.
- * @member {String} text
- */
-ProjectStatusBaseAllOf.prototype['text'] = undefined;
-/**
- * [Opt In](/docs/inputoutput-options). The text content of the status update with formatting as HTML.
- * @member {String} html_text
- */
-ProjectStatusBaseAllOf.prototype['html_text'] = undefined;
-/**
- * The color associated with the status update.
- * @member {module:model/ProjectStatusBaseAllOf.ColorEnum} color
- */
-ProjectStatusBaseAllOf.prototype['color'] = undefined;
 
 
 

@@ -22,7 +22,7 @@ import UpdateStoryRequest from '../model/UpdateStoryRequest';
 /**
 * Stories service.
 * @module api/StoriesApi
-* @version 1.0.3
+* @version 1.0.4
 */
 export default class StoriesApi {
 
@@ -82,8 +82,8 @@ export default class StoriesApi {
       };
 
       let authNames = ['personalAccessToken'];
-      let contentTypes = ['application/json'];
-      let accepts = ['application/json'];
+      let contentTypes = ['application/json; charset=UTF-8'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = GetStory200Response;
       return this.apiClient.callApi(
         '/tasks/{task_gid}/stories', 'POST',
@@ -130,7 +130,7 @@ export default class StoriesApi {
 
       let authNames = ['personalAccessToken'];
       let contentTypes = [];
-      let accepts = ['application/json'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = DeleteAttachment200Response;
       return this.apiClient.callApi(
         '/stories/{story_gid}', 'DELETE',
@@ -183,7 +183,7 @@ export default class StoriesApi {
 
       let authNames = ['personalAccessToken'];
       let contentTypes = [];
-      let accepts = ['application/json'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = GetStoriesForTask200Response;
       return this.apiClient.callApi(
         '/tasks/{task_gid}/stories', 'GET',
@@ -236,7 +236,7 @@ export default class StoriesApi {
 
       let authNames = ['personalAccessToken'];
       let contentTypes = [];
-      let accepts = ['application/json'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = GetStory200Response;
       return this.apiClient.callApi(
         '/stories/{story_gid}', 'GET',
@@ -289,8 +289,8 @@ export default class StoriesApi {
       };
 
       let authNames = ['personalAccessToken'];
-      let contentTypes = ['application/json'];
-      let accepts = ['application/json'];
+      let contentTypes = ['application/json; charset=UTF-8'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = GetStory200Response;
       return this.apiClient.callApi(
         '/stories/{story_gid}', 'PUT',

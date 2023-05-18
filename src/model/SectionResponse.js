@@ -12,24 +12,21 @@
  */
 
 import ApiClient from '../ApiClient';
-import ProjectCompact from './ProjectCompact';
-import SectionCompact from './SectionCompact';
-import SectionResponseAllOf from './SectionResponseAllOf';
+import JobBaseNewProject from './JobBaseNewProject';
 
 /**
  * The SectionResponse model module.
  * @module model/SectionResponse
- * @version 1.0.3
+ * @version 1.0.4
  */
 class SectionResponse {
     /**
      * Constructs a new <code>SectionResponse</code>.
+     * A generic Asana Resource, containing a globally unique identifier.A generic Asana Resource, containing a globally unique identifier. A *section* is a subdivision of a project that groups tasks together. It can either be a header above a list of tasks in a list view or a column in a board view of a project.
      * @alias module:model/SectionResponse
-     * @implements module:model/SectionCompact
-     * @implements module:model/SectionResponseAllOf
      */
     constructor() { 
-        SectionCompact.initialize(this);SectionResponseAllOf.initialize(this);
+        
         SectionResponse.initialize(this);
     }
 
@@ -51,8 +48,6 @@ class SectionResponse {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new SectionResponse();
-            SectionCompact.constructFromObject(data, obj);
-            SectionResponseAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('gid')) {
                 obj['gid'] = ApiClient.convertToType(data['gid'], 'String');
@@ -67,10 +62,10 @@ class SectionResponse {
                 obj['created_at'] = ApiClient.convertToType(data['created_at'], 'Date');
             }
             if (data.hasOwnProperty('project')) {
-                obj['project'] = ProjectCompact.constructFromObject(data['project']);
+                obj['project'] = JobBaseNewProject.constructFromObject(data['project']);
             }
             if (data.hasOwnProperty('projects')) {
-                obj['projects'] = ApiClient.convertToType(data['projects'], [ProjectCompact]);
+                obj['projects'] = ApiClient.convertToType(data['projects'], [JobBaseNewProject]);
             }
         }
         return obj;
@@ -104,48 +99,17 @@ SectionResponse.prototype['name'] = undefined;
 SectionResponse.prototype['created_at'] = undefined;
 
 /**
- * @member {module:model/ProjectCompact} project
+ * @member {module:model/JobBaseNewProject} project
  */
 SectionResponse.prototype['project'] = undefined;
 
 /**
  * *Deprecated - please use project instead*
- * @member {Array.<module:model/ProjectCompact>} projects
+ * @member {Array.<module:model/JobBaseNewProject>} projects
  */
 SectionResponse.prototype['projects'] = undefined;
 
 
-// Implement SectionCompact interface:
-/**
- * Globally unique identifier of the resource, as a string.
- * @member {String} gid
- */
-SectionCompact.prototype['gid'] = undefined;
-/**
- * The base type of this resource.
- * @member {String} resource_type
- */
-SectionCompact.prototype['resource_type'] = undefined;
-/**
- * The name of the section (i.e. the text displayed as the section header).
- * @member {String} name
- */
-SectionCompact.prototype['name'] = undefined;
-// Implement SectionResponseAllOf interface:
-/**
- * The time at which this resource was created.
- * @member {Date} created_at
- */
-SectionResponseAllOf.prototype['created_at'] = undefined;
-/**
- * @member {module:model/ProjectCompact} project
- */
-SectionResponseAllOf.prototype['project'] = undefined;
-/**
- * *Deprecated - please use project instead*
- * @member {Array.<module:model/ProjectCompact>} projects
- */
-SectionResponseAllOf.prototype['projects'] = undefined;
 
 
 

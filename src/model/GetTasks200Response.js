@@ -12,12 +12,12 @@
  */
 
 import ApiClient from '../ApiClient';
-import TaskCompact from './TaskCompact';
+import TaskResponse from './TaskResponse';
 
 /**
  * The GetTasks200Response model module.
  * @module model/GetTasks200Response
- * @version 1.0.3
+ * @version 1.0.4
  */
 class GetTasks200Response {
     /**
@@ -49,7 +49,7 @@ class GetTasks200Response {
             obj = obj || new GetTasks200Response();
 
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [TaskCompact]);
+                obj['data'] = ApiClient.convertToType(data['data'], [TaskResponse]);
             }
         }
         return obj;
@@ -59,7 +59,7 @@ class GetTasks200Response {
 }
 
 /**
- * @member {Array.<module:model/TaskCompact>} data
+ * @member {Array.<module:model/TaskResponse>} data
  */
 GetTasks200Response.prototype['data'] = undefined;
 

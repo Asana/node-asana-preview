@@ -17,7 +17,7 @@ import BatchRequest from './BatchRequest';
 /**
  * The CreateBatchRequestRequest model module.
  * @module model/CreateBatchRequestRequest
- * @version 1.0.3
+ * @version 1.0.4
  */
 class CreateBatchRequestRequest {
     /**

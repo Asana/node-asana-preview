@@ -17,7 +17,7 @@ import TaskRemoveTagRequest from './TaskRemoveTagRequest';
 /**
  * The RemoveTagForTaskRequest model module.
  * @module model/RemoveTagForTaskRequest
- * @version 1.0.3
+ * @version 1.0.4
  */
 class RemoveTagForTaskRequest {
     /**

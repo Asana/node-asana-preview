@@ -12,12 +12,12 @@
  */
 
 import ApiClient from '../ApiClient';
-import AttachmentCompact from './AttachmentCompact';
+import AttachmentResponse from './AttachmentResponse';
 
 /**
  * The GetAttachmentsForObject200Response model module.
  * @module model/GetAttachmentsForObject200Response
- * @version 1.0.3
+ * @version 1.0.4
  */
 class GetAttachmentsForObject200Response {
     /**
@@ -49,7 +49,7 @@ class GetAttachmentsForObject200Response {
             obj = obj || new GetAttachmentsForObject200Response();
 
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [AttachmentCompact]);
+                obj['data'] = ApiClient.convertToType(data['data'], [AttachmentResponse]);
             }
         }
         return obj;
@@ -59,7 +59,7 @@ class GetAttachmentsForObject200Response {
 }
 
 /**
- * @member {Array.<module:model/AttachmentCompact>} data
+ * @member {Array.<module:model/AttachmentResponse>} data
  */
 GetAttachmentsForObject200Response.prototype['data'] = undefined;
 

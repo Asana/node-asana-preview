@@ -12,25 +12,22 @@
  */
 
 import ApiClient from '../ApiClient';
-import AsanaResource from './AsanaResource';
-import GoalCompact from './GoalCompact';
-import GoalMembershipCompactAllOf from './GoalMembershipCompactAllOf';
-import MemberCompact from './MemberCompact';
+import GoalMembershipBaseGoal from './GoalMembershipBaseGoal';
+import ProjectMembershipResponseMember from './ProjectMembershipResponseMember';
 
 /**
  * The GoalMembershipCompact model module.
  * @module model/GoalMembershipCompact
- * @version 1.0.3
+ * @version 1.0.4
  */
 class GoalMembershipCompact {
     /**
      * Constructs a new <code>GoalMembershipCompact</code>.
+     * A generic Asana Resource, containing a globally unique identifier.A generic Asana Resource, containing a globally unique identifier. This object represents a user&#39;s connection to a goal.
      * @alias module:model/GoalMembershipCompact
-     * @implements module:model/AsanaResource
-     * @implements module:model/GoalMembershipCompactAllOf
      */
     constructor() { 
-        AsanaResource.initialize(this);GoalMembershipCompactAllOf.initialize(this);
+        
         GoalMembershipCompact.initialize(this);
     }
 
@@ -52,8 +49,6 @@ class GoalMembershipCompact {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new GoalMembershipCompact();
-            AsanaResource.constructFromObject(data, obj);
-            GoalMembershipCompactAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('gid')) {
                 obj['gid'] = ApiClient.convertToType(data['gid'], 'String');
@@ -62,10 +57,10 @@ class GoalMembershipCompact {
                 obj['resource_type'] = ApiClient.convertToType(data['resource_type'], 'String');
             }
             if (data.hasOwnProperty('member')) {
-                obj['member'] = MemberCompact.constructFromObject(data['member']);
+                obj['member'] = ProjectMembershipResponseMember.constructFromObject(data['member']);
             }
             if (data.hasOwnProperty('goal')) {
-                obj['goal'] = GoalCompact.constructFromObject(data['goal']);
+                obj['goal'] = GoalMembershipBaseGoal.constructFromObject(data['goal']);
             }
             if (data.hasOwnProperty('is_commenter')) {
                 obj['is_commenter'] = ApiClient.convertToType(data['is_commenter'], 'Boolean');
@@ -93,12 +88,12 @@ GoalMembershipCompact.prototype['gid'] = undefined;
 GoalMembershipCompact.prototype['resource_type'] = undefined;
 
 /**
- * @member {module:model/MemberCompact} member
+ * @member {module:model/ProjectMembershipResponseMember} member
  */
 GoalMembershipCompact.prototype['member'] = undefined;
 
 /**
- * @member {module:model/GoalCompact} goal
+ * @member {module:model/GoalMembershipBaseGoal} goal
  */
 GoalMembershipCompact.prototype['goal'] = undefined;
 
@@ -115,36 +110,6 @@ GoalMembershipCompact.prototype['is_commenter'] = undefined;
 GoalMembershipCompact.prototype['is_editor'] = undefined;
 
 
-// Implement AsanaResource interface:
-/**
- * Globally unique identifier of the resource, as a string.
- * @member {String} gid
- */
-AsanaResource.prototype['gid'] = undefined;
-/**
- * The base type of this resource.
- * @member {String} resource_type
- */
-AsanaResource.prototype['resource_type'] = undefined;
-// Implement GoalMembershipCompactAllOf interface:
-/**
- * @member {module:model/MemberCompact} member
- */
-GoalMembershipCompactAllOf.prototype['member'] = undefined;
-/**
- * @member {module:model/GoalCompact} goal
- */
-GoalMembershipCompactAllOf.prototype['goal'] = undefined;
-/**
- * Describes if the member is comment only in goal.
- * @member {Boolean} is_commenter
- */
-GoalMembershipCompactAllOf.prototype['is_commenter'] = undefined;
-/**
- * Describes if the member is editor in goal.
- * @member {Boolean} is_editor
- */
-GoalMembershipCompactAllOf.prototype['is_editor'] = undefined;
 
 
 

@@ -17,7 +17,7 @@ import GoalRequest from './GoalRequest';
 /**
  * The UpdateGoalRequest model module.
  * @module model/UpdateGoalRequest
- * @version 1.0.3
+ * @version 1.0.4
  */
 class UpdateGoalRequest {
     /**

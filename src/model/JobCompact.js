@@ -12,26 +12,24 @@
  */
 
 import ApiClient from '../ApiClient';
-import AsanaResource from './AsanaResource';
-import JobCompactAllOf from './JobCompactAllOf';
-import ProjectCompact from './ProjectCompact';
-import ProjectTemplateCompact from './ProjectTemplateCompact';
-import TaskCompact from './TaskCompact';
+import JobBaseNewProject from './JobBaseNewProject';
+import JobBaseNewProjectTemplate from './JobBaseNewProjectTemplate';
+import JobBaseNewTask from './JobBaseNewTask';
+import JobBaseNewTaskTemplate from './JobBaseNewTaskTemplate';
 
 /**
  * The JobCompact model module.
  * @module model/JobCompact
- * @version 1.0.3
+ * @version 1.0.4
  */
 class JobCompact {
     /**
      * Constructs a new <code>JobCompact</code>.
+     * A generic Asana Resource, containing a globally unique identifier.A generic Asana Resource, containing a globally unique identifier. A *job* is an object representing a process that handles asynchronous work.
      * @alias module:model/JobCompact
-     * @implements module:model/AsanaResource
-     * @implements module:model/JobCompactAllOf
      */
     constructor() { 
-        AsanaResource.initialize(this);JobCompactAllOf.initialize(this);
+        
         JobCompact.initialize(this);
     }
 
@@ -53,8 +51,6 @@ class JobCompact {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new JobCompact();
-            AsanaResource.constructFromObject(data, obj);
-            JobCompactAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('gid')) {
                 obj['gid'] = ApiClient.convertToType(data['gid'], 'String');
@@ -69,13 +65,16 @@ class JobCompact {
                 obj['status'] = ApiClient.convertToType(data['status'], 'String');
             }
             if (data.hasOwnProperty('new_project')) {
-                obj['new_project'] = ProjectCompact.constructFromObject(data['new_project']);
+                obj['new_project'] = JobBaseNewProject.constructFromObject(data['new_project']);
             }
             if (data.hasOwnProperty('new_task')) {
-                obj['new_task'] = TaskCompact.constructFromObject(data['new_task']);
+                obj['new_task'] = JobBaseNewTask.constructFromObject(data['new_task']);
             }
             if (data.hasOwnProperty('new_project_template')) {
-                obj['new_project_template'] = ProjectTemplateCompact.constructFromObject(data['new_project_template']);
+                obj['new_project_template'] = JobBaseNewProjectTemplate.constructFromObject(data['new_project_template']);
+            }
+            if (data.hasOwnProperty('new_task_template')) {
+                obj['new_task_template'] = JobBaseNewTaskTemplate.constructFromObject(data['new_task_template']);
             }
         }
         return obj;
@@ -109,55 +108,26 @@ JobCompact.prototype['resource_subtype'] = undefined;
 JobCompact.prototype['status'] = undefined;
 
 /**
- * @member {module:model/ProjectCompact} new_project
+ * @member {module:model/JobBaseNewProject} new_project
  */
 JobCompact.prototype['new_project'] = undefined;
 
 /**
- * @member {module:model/TaskCompact} new_task
+ * @member {module:model/JobBaseNewTask} new_task
  */
 JobCompact.prototype['new_task'] = undefined;
 
 /**
- * @member {module:model/ProjectTemplateCompact} new_project_template
+ * @member {module:model/JobBaseNewProjectTemplate} new_project_template
  */
 JobCompact.prototype['new_project_template'] = undefined;
 
+/**
+ * @member {module:model/JobBaseNewTaskTemplate} new_task_template
+ */
+JobCompact.prototype['new_task_template'] = undefined;
 
-// Implement AsanaResource interface:
-/**
- * Globally unique identifier of the resource, as a string.
- * @member {String} gid
- */
-AsanaResource.prototype['gid'] = undefined;
-/**
- * The base type of this resource.
- * @member {String} resource_type
- */
-AsanaResource.prototype['resource_type'] = undefined;
-// Implement JobCompactAllOf interface:
-/**
- * The subtype of this resource. Different subtypes retain many of the same fields and behavior, but may render differently in Asana or represent resources with different semantic meaning.
- * @member {String} resource_subtype
- */
-JobCompactAllOf.prototype['resource_subtype'] = undefined;
-/**
- * The current status of this job. The value is one of: `not_started`, `in_progress`, `succeeded`, or `failed`.
- * @member {module:model/JobCompactAllOf.StatusEnum} status
- */
-JobCompactAllOf.prototype['status'] = undefined;
-/**
- * @member {module:model/ProjectCompact} new_project
- */
-JobCompactAllOf.prototype['new_project'] = undefined;
-/**
- * @member {module:model/TaskCompact} new_task
- */
-JobCompactAllOf.prototype['new_task'] = undefined;
-/**
- * @member {module:model/ProjectTemplateCompact} new_project_template
- */
-JobCompactAllOf.prototype['new_project_template'] = undefined;
+
 
 
 

@@ -17,7 +17,7 @@ import TimeTrackingEntryCompact from './TimeTrackingEntryCompact';
 /**
  * The GetTimeTrackingEntriesForTask200Response model module.
  * @module model/GetTimeTrackingEntriesForTask200Response
- * @version 1.0.3
+ * @version 1.0.4
  */
 class GetTimeTrackingEntriesForTask200Response {
     /**

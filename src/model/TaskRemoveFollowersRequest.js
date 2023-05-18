@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TaskRemoveFollowersRequest model module.
  * @module model/TaskRemoveFollowersRequest
- * @version 1.0.3
+ * @version 1.0.4
  */
 class TaskRemoveFollowersRequest {
     /**

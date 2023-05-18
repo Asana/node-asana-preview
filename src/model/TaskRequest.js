@@ -12,28 +12,25 @@
  */
 
 import ApiClient from '../ApiClient';
-import AsanaResource from './AsanaResource';
-import Like from './Like';
-import TaskBase from './TaskBase';
-import TaskBaseAllOfExternal from './TaskBaseAllOfExternal';
-import TaskBaseAllOfMemberships from './TaskBaseAllOfMemberships';
-import TaskRequestAllOf from './TaskRequestAllOf';
-import UserCompact from './UserCompact';
+import CreateProjectFromAsanaTemplateRequestAllOf from './CreateProjectFromAsanaTemplateRequestAllOf';
+import GoalResponseLikesInner from './GoalResponseLikesInner';
+import StoryResponseAssignee from './StoryResponseAssignee';
+import TaskBaseExternal from './TaskBaseExternal';
+import TaskBaseMembershipsInner from './TaskBaseMembershipsInner';
 
 /**
  * The TaskRequest model module.
  * @module model/TaskRequest
- * @version 1.0.3
+ * @version 1.0.4
  */
 class TaskRequest {
     /**
      * Constructs a new <code>TaskRequest</code>.
+     * A generic Asana Resource, containing a globally unique identifier.A generic Asana Resource, containing a globally unique identifier. The *task* is the basic object around which many operations in Asana are centered.
      * @alias module:model/TaskRequest
-     * @implements module:model/TaskBase
-     * @implements module:model/TaskRequestAllOf
      */
     constructor() { 
-        TaskBase.initialize(this);TaskRequestAllOf.initialize(this);
+        
         TaskRequest.initialize(this);
     }
 
@@ -55,8 +52,6 @@ class TaskRequest {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new TaskRequest();
-            TaskBase.constructFromObject(data, obj);
-            TaskRequestAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('gid')) {
                 obj['gid'] = ApiClient.convertToType(data['gid'], 'String');
@@ -83,16 +78,16 @@ class TaskRequest {
                 obj['completed_at'] = ApiClient.convertToType(data['completed_at'], 'Date');
             }
             if (data.hasOwnProperty('completed_by')) {
-                obj['completed_by'] = UserCompact.constructFromObject(data['completed_by']);
+                obj['completed_by'] = StoryResponseAssignee.constructFromObject(data['completed_by']);
             }
             if (data.hasOwnProperty('created_at')) {
                 obj['created_at'] = ApiClient.convertToType(data['created_at'], 'Date');
             }
             if (data.hasOwnProperty('dependencies')) {
-                obj['dependencies'] = ApiClient.convertToType(data['dependencies'], [AsanaResource]);
+                obj['dependencies'] = ApiClient.convertToType(data['dependencies'], [CreateProjectFromAsanaTemplateRequestAllOf]);
             }
             if (data.hasOwnProperty('dependents')) {
-                obj['dependents'] = ApiClient.convertToType(data['dependents'], [AsanaResource]);
+                obj['dependents'] = ApiClient.convertToType(data['dependents'], [CreateProjectFromAsanaTemplateRequestAllOf]);
             }
             if (data.hasOwnProperty('due_at')) {
                 obj['due_at'] = ApiClient.convertToType(data['due_at'], 'Date');
@@ -101,7 +96,7 @@ class TaskRequest {
                 obj['due_on'] = ApiClient.convertToType(data['due_on'], 'Date');
             }
             if (data.hasOwnProperty('external')) {
-                obj['external'] = TaskBaseAllOfExternal.constructFromObject(data['external']);
+                obj['external'] = TaskBaseExternal.constructFromObject(data['external']);
             }
             if (data.hasOwnProperty('html_notes')) {
                 obj['html_notes'] = ApiClient.convertToType(data['html_notes'], 'String');
@@ -110,7 +105,7 @@ class TaskRequest {
                 obj['hearted'] = ApiClient.convertToType(data['hearted'], 'Boolean');
             }
             if (data.hasOwnProperty('hearts')) {
-                obj['hearts'] = ApiClient.convertToType(data['hearts'], [Like]);
+                obj['hearts'] = ApiClient.convertToType(data['hearts'], [GoalResponseLikesInner]);
             }
             if (data.hasOwnProperty('is_rendered_as_separator')) {
                 obj['is_rendered_as_separator'] = ApiClient.convertToType(data['is_rendered_as_separator'], 'Boolean');
@@ -119,10 +114,10 @@ class TaskRequest {
                 obj['liked'] = ApiClient.convertToType(data['liked'], 'Boolean');
             }
             if (data.hasOwnProperty('likes')) {
-                obj['likes'] = ApiClient.convertToType(data['likes'], [Like]);
+                obj['likes'] = ApiClient.convertToType(data['likes'], [GoalResponseLikesInner]);
             }
             if (data.hasOwnProperty('memberships')) {
-                obj['memberships'] = ApiClient.convertToType(data['memberships'], [TaskBaseAllOfMemberships]);
+                obj['memberships'] = ApiClient.convertToType(data['memberships'], [TaskBaseMembershipsInner]);
             }
             if (data.hasOwnProperty('modified_at')) {
                 obj['modified_at'] = ApiClient.convertToType(data['modified_at'], 'Date');
@@ -228,7 +223,7 @@ TaskRequest.prototype['completed'] = undefined;
 TaskRequest.prototype['completed_at'] = undefined;
 
 /**
- * @member {module:model/UserCompact} completed_by
+ * @member {module:model/StoryResponseAssignee} completed_by
  */
 TaskRequest.prototype['completed_by'] = undefined;
 
@@ -240,13 +235,13 @@ TaskRequest.prototype['created_at'] = undefined;
 
 /**
  * [Opt In](/docs/inputoutput-options). Array of resources referencing tasks that this task depends on. The objects contain only the gid of the dependency.
- * @member {Array.<module:model/AsanaResource>} dependencies
+ * @member {Array.<module:model/CreateProjectFromAsanaTemplateRequestAllOf>} dependencies
  */
 TaskRequest.prototype['dependencies'] = undefined;
 
 /**
  * [Opt In](/docs/inputoutput-options). Array of resources referencing tasks that depend on this task. The objects contain only the ID of the dependent.
- * @member {Array.<module:model/AsanaResource>} dependents
+ * @member {Array.<module:model/CreateProjectFromAsanaTemplateRequestAllOf>} dependents
  */
 TaskRequest.prototype['dependents'] = undefined;
 
@@ -263,7 +258,7 @@ TaskRequest.prototype['due_at'] = undefined;
 TaskRequest.prototype['due_on'] = undefined;
 
 /**
- * @member {module:model/TaskBaseAllOfExternal} external
+ * @member {module:model/TaskBaseExternal} external
  */
 TaskRequest.prototype['external'] = undefined;
 
@@ -281,7 +276,7 @@ TaskRequest.prototype['hearted'] = undefined;
 
 /**
  * *Deprecated - please use likes instead* Array of likes for users who have hearted this task.
- * @member {Array.<module:model/Like>} hearts
+ * @member {Array.<module:model/GoalResponseLikesInner>} hearts
  */
 TaskRequest.prototype['hearts'] = undefined;
 
@@ -299,13 +294,13 @@ TaskRequest.prototype['liked'] = undefined;
 
 /**
  * Array of likes for users who have liked this task.
- * @member {Array.<module:model/Like>} likes
+ * @member {Array.<module:model/GoalResponseLikesInner>} likes
  */
 TaskRequest.prototype['likes'] = undefined;
 
 /**
  * *Create-only*. Array of projects this task is associated with and the section it is in. At task creation time, this array can be used to add the task to specific sections. After task creation, these associations can be modified using the `addProject` and `removeProject` endpoints. Note that over time, more types of memberships may be added to this property.
- * @member {Array.<module:model/TaskBaseAllOfMemberships>} memberships
+ * @member {Array.<module:model/TaskBaseMembershipsInner>} memberships
  */
 TaskRequest.prototype['memberships'] = undefined;
 
@@ -406,196 +401,6 @@ TaskRequest.prototype['tags'] = undefined;
 TaskRequest.prototype['workspace'] = undefined;
 
 
-// Implement TaskBase interface:
-/**
- * Globally unique identifier of the resource, as a string.
- * @member {String} gid
- */
-TaskBase.prototype['gid'] = undefined;
-/**
- * The base type of this resource.
- * @member {String} resource_type
- */
-TaskBase.prototype['resource_type'] = undefined;
-/**
- * Name of the task. This is generally a short sentence fragment that fits on a line in the UI for maximum readability. However, it can be longer.
- * @member {String} name
- */
-TaskBase.prototype['name'] = undefined;
-/**
- * The subtype of this resource. Different subtypes retain many of the same fields and behavior, but may render differently in Asana or represent resources with different semantic meaning. The resource_subtype `milestone` represent a single moment in time. This means tasks with this subtype cannot have a start_date.
- * @member {module:model/TaskBase.ResourceSubtypeEnum} resource_subtype
- */
-TaskBase.prototype['resource_subtype'] = undefined;
-/**
- * *Conditional* Reflects the approval status of this task. This field is kept in sync with `completed`, meaning `pending` translates to false while `approved`, `rejected`, and `changes_requested` translate to true. If you set completed to true, this field will be set to `approved`.
- * @member {module:model/TaskBase.ApprovalStatusEnum} approval_status
- */
-TaskBase.prototype['approval_status'] = undefined;
-/**
- * *Deprecated* Scheduling status of this task for the user it is assigned to. This field can only be set if the assignee is non-null. Setting this field to \"inbox\" or \"upcoming\" inserts it at the top of the section, while the other options will insert at the bottom.
- * @member {module:model/TaskBase.AssigneeStatusEnum} assignee_status
- */
-TaskBase.prototype['assignee_status'] = undefined;
-/**
- * True if the task is currently marked complete, false if not.
- * @member {Boolean} completed
- */
-TaskBase.prototype['completed'] = undefined;
-/**
- * The time at which this task was completed, or null if the task is incomplete.
- * @member {Date} completed_at
- */
-TaskBase.prototype['completed_at'] = undefined;
-/**
- * @member {module:model/UserCompact} completed_by
- */
-TaskBase.prototype['completed_by'] = undefined;
-/**
- * The time at which this resource was created.
- * @member {Date} created_at
- */
-TaskBase.prototype['created_at'] = undefined;
-/**
- * [Opt In](/docs/inputoutput-options). Array of resources referencing tasks that this task depends on. The objects contain only the gid of the dependency.
- * @member {Array.<module:model/AsanaResource>} dependencies
- */
-TaskBase.prototype['dependencies'] = undefined;
-/**
- * [Opt In](/docs/inputoutput-options). Array of resources referencing tasks that depend on this task. The objects contain only the ID of the dependent.
- * @member {Array.<module:model/AsanaResource>} dependents
- */
-TaskBase.prototype['dependents'] = undefined;
-/**
- * The UTC date and time on which this task is due, or null if the task has no due time. This takes an ISO 8601 date string in UTC and should not be used together with `due_on`.
- * @member {Date} due_at
- */
-TaskBase.prototype['due_at'] = undefined;
-/**
- * The localized date on which this task is due, or null if the task has no due date. This takes a date with `YYYY-MM-DD` format and should not be used together with `due_at`.
- * @member {Date} due_on
- */
-TaskBase.prototype['due_on'] = undefined;
-/**
- * @member {module:model/TaskBaseAllOfExternal} external
- */
-TaskBase.prototype['external'] = undefined;
-/**
- * [Opt In](/docs/inputoutput-options). The notes of the text with formatting as HTML.
- * @member {String} html_notes
- */
-TaskBase.prototype['html_notes'] = undefined;
-/**
- * *Deprecated - please use liked instead* True if the task is hearted by the authorized user, false if not.
- * @member {Boolean} hearted
- */
-TaskBase.prototype['hearted'] = undefined;
-/**
- * *Deprecated - please use likes instead* Array of likes for users who have hearted this task.
- * @member {Array.<module:model/Like>} hearts
- */
-TaskBase.prototype['hearts'] = undefined;
-/**
- * [Opt In](/docs/inputoutput-options). In some contexts tasks can be rendered as a visual separator; for instance, subtasks can appear similar to [sections](/reference/sections) without being true `section` objects. If a `task` object is rendered this way in any context it will have the property `is_rendered_as_separator` set to `true`.
- * @member {Boolean} is_rendered_as_separator
- */
-TaskBase.prototype['is_rendered_as_separator'] = undefined;
-/**
- * True if the task is liked by the authorized user, false if not.
- * @member {Boolean} liked
- */
-TaskBase.prototype['liked'] = undefined;
-/**
- * Array of likes for users who have liked this task.
- * @member {Array.<module:model/Like>} likes
- */
-TaskBase.prototype['likes'] = undefined;
-/**
- * *Create-only*. Array of projects this task is associated with and the section it is in. At task creation time, this array can be used to add the task to specific sections. After task creation, these associations can be modified using the `addProject` and `removeProject` endpoints. Note that over time, more types of memberships may be added to this property.
- * @member {Array.<module:model/TaskBaseAllOfMemberships>} memberships
- */
-TaskBase.prototype['memberships'] = undefined;
-/**
- * The time at which this task was last modified.  The following conditions will change `modified_at`:  - story is created on a task - story is trashed on a task - attachment is trashed on a task - task is assigned or unassigned - custom field value is changed - the task itself is trashed - Or if any of the following fields are updated:   - completed   - name   - due_date   - description   - attachments   - items   - schedule_status  The following conditions will _not_ change `modified_at`:  - moving to a new container (project, portfolio, etc) - comments being added to the task (but the stories they generate   _will_ affect `modified_at`)
- * @member {Date} modified_at
- */
-TaskBase.prototype['modified_at'] = undefined;
-/**
- * Free-form textual information associated with the task (i.e. its description).
- * @member {String} notes
- */
-TaskBase.prototype['notes'] = undefined;
-/**
- * *Deprecated - please use likes instead* The number of users who have hearted this task.
- * @member {Number} num_hearts
- */
-TaskBase.prototype['num_hearts'] = undefined;
-/**
- * The number of users who have liked this task.
- * @member {Number} num_likes
- */
-TaskBase.prototype['num_likes'] = undefined;
-/**
- * [Opt In](/docs/inputoutput-options). The number of subtasks on this task. 
- * @member {Number} num_subtasks
- */
-TaskBase.prototype['num_subtasks'] = undefined;
-/**
- * Date and time on which work begins for the task, or null if the task has no start time. This takes an ISO 8601 date string in UTC and should not be used together with `start_on`. *Note: `due_at` must be present in the request when setting or unsetting the `start_at` parameter.*
- * @member {Date} start_at
- */
-TaskBase.prototype['start_at'] = undefined;
-/**
- * The day on which work begins for the task , or null if the task has no start date. This takes a date with `YYYY-MM-DD` format and should not be used together with `start_at`. *Note: `due_on` or `due_at` must be present in the request when setting or unsetting the `start_on` parameter.*
- * @member {Date} start_on
- */
-TaskBase.prototype['start_on'] = undefined;
-/**
- * This value represents the sum of all the Time Tracking entries in the Actual Time field on a given Task. It is represented as a nullable long value.
- * @member {Number} actual_time_minutes
- */
-TaskBase.prototype['actual_time_minutes'] = undefined;
-// Implement TaskRequestAllOf interface:
-/**
- * Gid of a user.
- * @member {String} assignee
- */
-TaskRequestAllOf.prototype['assignee'] = undefined;
-/**
- * The *assignee section* is a subdivision of a project that groups tasks together in the assignee's \"My Tasks\" list. It can either be a header above a list of tasks in a list view or a column in a board view of \"My Tasks.\" The `assignee_section` property will be returned in the response only if the request was sent by the user who is the assignee of the task. Note that you can only write to `assignee_section` with the gid of an existing section visible in the user's \"My Tasks\" list.
- * @member {String} assignee_section
- */
-TaskRequestAllOf.prototype['assignee_section'] = undefined;
-/**
- * An object where each key is a Custom Field GID and each value is an enum GID, string, number, object, or array.
- * @member {Object.<String, String>} custom_fields
- */
-TaskRequestAllOf.prototype['custom_fields'] = undefined;
-/**
- * *Create-Only* An array of strings identifying users. These can either be the string \"me\", an email, or the gid of a user. In order to change followers on an existing task use `addFollowers` and `removeFollowers`.
- * @member {Array.<String>} followers
- */
-TaskRequestAllOf.prototype['followers'] = undefined;
-/**
- * Gid of a task.
- * @member {String} parent
- */
-TaskRequestAllOf.prototype['parent'] = undefined;
-/**
- * *Create-Only* Array of project gids. In order to change projects on an existing task use `addProject` and `removeProject`.
- * @member {Array.<String>} projects
- */
-TaskRequestAllOf.prototype['projects'] = undefined;
-/**
- * *Create-Only* Array of tag gids. In order to change tags on an existing task use `addTag` and `removeTag`.
- * @member {Array.<String>} tags
- */
-TaskRequestAllOf.prototype['tags'] = undefined;
-/**
- * Gid of a workspace.
- * @member {String} workspace
- */
-TaskRequestAllOf.prototype['workspace'] = undefined;
 
 
 

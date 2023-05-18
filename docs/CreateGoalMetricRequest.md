@@ -4,6 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**GoalMetricBase**](GoalMetricBase.md) |  | [optional] 
+**data** | [**GoalMetricRequest**](GoalMetricRequest.md) |  | [optional] 
 
 

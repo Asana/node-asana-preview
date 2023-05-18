@@ -17,7 +17,7 @@ import CustomFieldSettingResponse from './CustomFieldSettingResponse';
 /**
  * The AddCustomFieldSettingForPortfolio200Response model module.
  * @module model/AddCustomFieldSettingForPortfolio200Response
- * @version 1.0.3
+ * @version 1.0.4
  */
 class AddCustomFieldSettingForPortfolio200Response {
     /**

@@ -17,7 +17,7 @@ import PortfolioRequest from './PortfolioRequest';
 /**
  * The CreatePortfolioRequest model module.
  * @module model/CreatePortfolioRequest
- * @version 1.0.3
+ * @version 1.0.4
  */
 class CreatePortfolioRequest {
     /**

@@ -17,7 +17,7 @@ import ModifyDependentsRequest from './ModifyDependentsRequest';
 /**
  * The AddDependentsForTaskRequest model module.
  * @module model/AddDependentsForTaskRequest
- * @version 1.0.3
+ * @version 1.0.4
  */
 class AddDependentsForTaskRequest {
     /**

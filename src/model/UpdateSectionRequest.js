@@ -17,7 +17,7 @@ import SectionRequest from './SectionRequest';
 /**
  * The UpdateSectionRequest model module.
  * @module model/UpdateSectionRequest
- * @version 1.0.3
+ * @version 1.0.4
  */
 class UpdateSectionRequest {
     /**

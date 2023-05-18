@@ -17,7 +17,7 @@ import EnumOption from './EnumOption';
 /**
  * The CreateEnumOptionForCustomField201Response model module.
  * @module model/CreateEnumOptionForCustomField201Response
- * @version 1.0.3
+ * @version 1.0.4
  */
 class CreateEnumOptionForCustomField201Response {
     /**

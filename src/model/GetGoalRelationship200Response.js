@@ -17,7 +17,7 @@ import GoalRelationshipResponse from './GoalRelationshipResponse';
 /**
  * The GetGoalRelationship200Response model module.
  * @module model/GetGoalRelationship200Response
- * @version 1.0.3
+ * @version 1.0.4
  */
 class GetGoalRelationship200Response {
     /**

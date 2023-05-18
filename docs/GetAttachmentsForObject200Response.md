@@ -4,6 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**[AttachmentCompact]**](AttachmentCompact.md) |  | [optional] 
+**data** | [**[AttachmentResponse]**](AttachmentResponse.md) |  | [optional] 
 
 

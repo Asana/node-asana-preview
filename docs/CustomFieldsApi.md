@@ -38,7 +38,7 @@ let opts = {
   'optPretty': true, // Boolean | Provides “pretty” output. Provides the response in a “pretty” format. In the case of JSON this means doing proper line breaking and indentation to make it readable. This will take extra time and increase the response size so it is advisable only to use this during debugging.
   'limit': 50, // Number | Results per page. The number of objects to return per page. The value must be between 1 and 100.
   'offset': eyJ0eXAiOJiKV1iQLCJhbGciOiJIUzI1NiJ9, // String | Offset token. An offset to the next page returned by the API. A pagination request will return an offset token, which can be used as an input parameter to the next request. If an offset is not passed in, the API will return the first page of results. 'Note: You can only pass in an offset that was returned to you via a previously paginated request.'
-  'optFields': ["currency_code","created_by","is_global_to_workspace","enum_options","text_value","display_value","is_value_read_only","is_formula_field","name","multi_enum_values","custom_label","resource_subtype","has_notifications_enabled","precision","enum_value","custom_label_position","type","people_value","number_value","format","date_value","enabled","asana_created_field","description"], // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
+  'optFields': ["description","type","precision","is_value_read_only","has_notifications_enabled","enum_options","number_value","asana_created_field","enabled","name","custom_label","multi_enum_values","format","created_by","is_global_to_workspace","resource_subtype","display_value","text_value","is_formula_field","currency_code","people_value","enum_value","date_value","custom_label_position"], // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
   'createCustomFieldRequest': new AsanaPreview.CreateCustomFieldRequest() // CreateCustomFieldRequest | The custom field object to create.
 };
 
@@ -72,8 +72,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+- **Content-Type**: application/json; charset=UTF-8
+- **Accept**: application/json; charset=UTF-8
 
 
 ## createEnumOptionForCustomField
@@ -100,7 +100,7 @@ let opts = {
   'optPretty': true, // Boolean | Provides “pretty” output. Provides the response in a “pretty” format. In the case of JSON this means doing proper line breaking and indentation to make it readable. This will take extra time and increase the response size so it is advisable only to use this during debugging.
   'limit': 50, // Number | Results per page. The number of objects to return per page. The value must be between 1 and 100.
   'offset': eyJ0eXAiOJiKV1iQLCJhbGciOiJIUzI1NiJ9, // String | Offset token. An offset to the next page returned by the API. A pagination request will return an offset token, which can be used as an input parameter to the next request. If an offset is not passed in, the API will return the first page of results. 'Note: You can only pass in an offset that was returned to you via a previously paginated request.'
-  'optFields': ["color","enabled","name"], // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
+  'optFields': ["enabled","color","name"], // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
   'createEnumOptionForCustomFieldRequest': new AsanaPreview.CreateEnumOptionForCustomFieldRequest() // CreateEnumOptionForCustomFieldRequest | The enum option object to create.
 };
 
@@ -135,8 +135,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+- **Content-Type**: application/json; charset=UTF-8
+- **Accept**: application/json; charset=UTF-8
 
 
 ## deleteCustomField
@@ -191,7 +191,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: application/json; charset=UTF-8
 
 
 ## getCustomField
@@ -216,7 +216,7 @@ let apiInstance = new AsanaPreview.CustomFieldsApi();
 let customFieldGid = 12345; // String | Globally unique identifier for the custom field.
 let opts = {
   'optPretty': true, // Boolean | Provides “pretty” output. Provides the response in a “pretty” format. In the case of JSON this means doing proper line breaking and indentation to make it readable. This will take extra time and increase the response size so it is advisable only to use this during debugging.
-  'optFields': ["currency_code","created_by","is_global_to_workspace","enum_options","text_value","display_value","is_value_read_only","is_formula_field","name","multi_enum_values","custom_label","resource_subtype","has_notifications_enabled","precision","enum_value","custom_label_position","type","people_value","number_value","format","date_value","enabled","asana_created_field","description"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
+  'optFields': ["description","type","precision","is_value_read_only","has_notifications_enabled","enum_options","number_value","asana_created_field","enabled","name","custom_label","multi_enum_values","format","created_by","is_global_to_workspace","resource_subtype","display_value","text_value","is_formula_field","currency_code","people_value","enum_value","date_value","custom_label_position"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
 };
 
 apiInstance.getCustomField(customFieldGid, opts, (error, data, response) => {
@@ -248,7 +248,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: application/json; charset=UTF-8
 
 
 ## getCustomFieldsForWorkspace
@@ -275,7 +275,7 @@ let opts = {
   'optPretty': true, // Boolean | Provides “pretty” output. Provides the response in a “pretty” format. In the case of JSON this means doing proper line breaking and indentation to make it readable. This will take extra time and increase the response size so it is advisable only to use this during debugging.
   'limit': 50, // Number | Results per page. The number of objects to return per page. The value must be between 1 and 100.
   'offset': eyJ0eXAiOJiKV1iQLCJhbGciOiJIUzI1NiJ9, // String | Offset token. An offset to the next page returned by the API. A pagination request will return an offset token, which can be used as an input parameter to the next request. If an offset is not passed in, the API will return the first page of results. 'Note: You can only pass in an offset that was returned to you via a previously paginated request.'
-  'optFields': ["currency_code","created_by","is_global_to_workspace","enum_options","text_value","display_value","is_value_read_only","is_formula_field","name","multi_enum_values","custom_label","resource_subtype","has_notifications_enabled","precision","enum_value","custom_label_position","type","people_value","number_value","format","date_value","enabled","asana_created_field","description"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
+  'optFields': ["description","type","precision","is_value_read_only","has_notifications_enabled","enum_options","number_value","asana_created_field","enabled","name","custom_label","multi_enum_values","format","created_by","is_global_to_workspace","resource_subtype","display_value","text_value","is_formula_field","currency_code","people_value","enum_value","date_value","custom_label_position"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
 };
 
 apiInstance.getCustomFieldsForWorkspace(workspaceGid, opts, (error, data, response) => {
@@ -309,7 +309,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: application/json; charset=UTF-8
 
 
 ## insertEnumOptionForCustomField
@@ -334,7 +334,7 @@ let apiInstance = new AsanaPreview.CustomFieldsApi();
 let customFieldGid = 12345; // String | Globally unique identifier for the custom field.
 let opts = {
   'optPretty': true, // Boolean | Provides “pretty” output. Provides the response in a “pretty” format. In the case of JSON this means doing proper line breaking and indentation to make it readable. This will take extra time and increase the response size so it is advisable only to use this during debugging.
-  'optFields': ["color","enabled","name"], // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
+  'optFields': ["enabled","color","name"], // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
   'insertEnumOptionForCustomFieldRequest': new AsanaPreview.InsertEnumOptionForCustomFieldRequest() // InsertEnumOptionForCustomFieldRequest | The enum option object to create.
 };
 
@@ -367,8 +367,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+- **Content-Type**: application/json; charset=UTF-8
+- **Accept**: application/json; charset=UTF-8
 
 
 ## updateCustomField
@@ -393,7 +393,7 @@ let apiInstance = new AsanaPreview.CustomFieldsApi();
 let customFieldGid = 12345; // String | Globally unique identifier for the custom field.
 let opts = {
   'optPretty': true, // Boolean | Provides “pretty” output. Provides the response in a “pretty” format. In the case of JSON this means doing proper line breaking and indentation to make it readable. This will take extra time and increase the response size so it is advisable only to use this during debugging.
-  'optFields': ["currency_code","created_by","is_global_to_workspace","enum_options","text_value","display_value","is_value_read_only","is_formula_field","name","multi_enum_values","custom_label","resource_subtype","has_notifications_enabled","precision","enum_value","custom_label_position","type","people_value","number_value","format","date_value","enabled","asana_created_field","description"], // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
+  'optFields': ["description","type","precision","is_value_read_only","has_notifications_enabled","enum_options","number_value","asana_created_field","enabled","name","custom_label","multi_enum_values","format","created_by","is_global_to_workspace","resource_subtype","display_value","text_value","is_formula_field","currency_code","people_value","enum_value","date_value","custom_label_position"], // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
   'createCustomFieldRequest': new AsanaPreview.CreateCustomFieldRequest() // CreateCustomFieldRequest | The custom field object with all updated properties.
 };
 
@@ -426,8 +426,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+- **Content-Type**: application/json; charset=UTF-8
+- **Accept**: application/json; charset=UTF-8
 
 
 ## updateEnumOption
@@ -452,7 +452,7 @@ let apiInstance = new AsanaPreview.CustomFieldsApi();
 let enumOptionGid = 124578; // String | Globally unique identifier for the enum option.
 let opts = {
   'optPretty': true, // Boolean | Provides “pretty” output. Provides the response in a “pretty” format. In the case of JSON this means doing proper line breaking and indentation to make it readable. This will take extra time and increase the response size so it is advisable only to use this during debugging.
-  'optFields': ["color","enabled","name"], // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
+  'optFields': ["enabled","color","name"], // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
   'createEnumOptionForCustomFieldRequest': new AsanaPreview.CreateEnumOptionForCustomFieldRequest() // CreateEnumOptionForCustomFieldRequest | The enum option object to update
 };
 
@@ -485,6 +485,6 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+- **Content-Type**: application/json; charset=UTF-8
+- **Accept**: application/json; charset=UTF-8
 

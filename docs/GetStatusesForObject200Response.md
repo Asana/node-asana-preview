@@ -4,6 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**[StatusUpdateCompact]**](StatusUpdateCompact.md) |  | [optional] 
+**data** | [**[StatusUpdateResponse]**](StatusUpdateResponse.md) |  | [optional] 
 
 

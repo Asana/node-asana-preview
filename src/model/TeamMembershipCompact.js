@@ -12,25 +12,22 @@
  */
 
 import ApiClient from '../ApiClient';
-import AsanaResource from './AsanaResource';
-import TeamCompact from './TeamCompact';
-import TeamMembershipCompactAllOf from './TeamMembershipCompactAllOf';
-import UserCompact from './UserCompact';
+import CustomFieldResponsePeopleValueInner from './CustomFieldResponsePeopleValueInner';
+import GoalResponseTeamAllOf from './GoalResponseTeamAllOf';
 
 /**
  * The TeamMembershipCompact model module.
  * @module model/TeamMembershipCompact
- * @version 1.0.3
+ * @version 1.0.4
  */
 class TeamMembershipCompact {
     /**
      * Constructs a new <code>TeamMembershipCompact</code>.
+     * A generic Asana Resource, containing a globally unique identifier.A generic Asana Resource, containing a globally unique identifier. This object represents a user&#39;s connection to a team.
      * @alias module:model/TeamMembershipCompact
-     * @implements module:model/AsanaResource
-     * @implements module:model/TeamMembershipCompactAllOf
      */
     constructor() { 
-        AsanaResource.initialize(this);TeamMembershipCompactAllOf.initialize(this);
+        
         TeamMembershipCompact.initialize(this);
     }
 
@@ -52,8 +49,6 @@ class TeamMembershipCompact {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new TeamMembershipCompact();
-            AsanaResource.constructFromObject(data, obj);
-            TeamMembershipCompactAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('gid')) {
                 obj['gid'] = ApiClient.convertToType(data['gid'], 'String');
@@ -62,10 +57,10 @@ class TeamMembershipCompact {
                 obj['resource_type'] = ApiClient.convertToType(data['resource_type'], 'String');
             }
             if (data.hasOwnProperty('user')) {
-                obj['user'] = UserCompact.constructFromObject(data['user']);
+                obj['user'] = CustomFieldResponsePeopleValueInner.constructFromObject(data['user']);
             }
             if (data.hasOwnProperty('team')) {
-                obj['team'] = TeamCompact.constructFromObject(data['team']);
+                obj['team'] = GoalResponseTeamAllOf.constructFromObject(data['team']);
             }
             if (data.hasOwnProperty('is_guest')) {
                 obj['is_guest'] = ApiClient.convertToType(data['is_guest'], 'Boolean');
@@ -96,12 +91,12 @@ TeamMembershipCompact.prototype['gid'] = undefined;
 TeamMembershipCompact.prototype['resource_type'] = undefined;
 
 /**
- * @member {module:model/UserCompact} user
+ * @member {module:model/CustomFieldResponsePeopleValueInner} user
  */
 TeamMembershipCompact.prototype['user'] = undefined;
 
 /**
- * @member {module:model/TeamCompact} team
+ * @member {module:model/GoalResponseTeamAllOf} team
  */
 TeamMembershipCompact.prototype['team'] = undefined;
 
@@ -124,41 +119,6 @@ TeamMembershipCompact.prototype['is_limited_access'] = undefined;
 TeamMembershipCompact.prototype['is_admin'] = undefined;
 
 
-// Implement AsanaResource interface:
-/**
- * Globally unique identifier of the resource, as a string.
- * @member {String} gid
- */
-AsanaResource.prototype['gid'] = undefined;
-/**
- * The base type of this resource.
- * @member {String} resource_type
- */
-AsanaResource.prototype['resource_type'] = undefined;
-// Implement TeamMembershipCompactAllOf interface:
-/**
- * @member {module:model/UserCompact} user
- */
-TeamMembershipCompactAllOf.prototype['user'] = undefined;
-/**
- * @member {module:model/TeamCompact} team
- */
-TeamMembershipCompactAllOf.prototype['team'] = undefined;
-/**
- * Describes if the user is a guest in the team.
- * @member {Boolean} is_guest
- */
-TeamMembershipCompactAllOf.prototype['is_guest'] = undefined;
-/**
- * Describes if the user has limited access to the team.
- * @member {Boolean} is_limited_access
- */
-TeamMembershipCompactAllOf.prototype['is_limited_access'] = undefined;
-/**
- * Describes if the user is a team admin.
- * @member {Boolean} is_admin
- */
-TeamMembershipCompactAllOf.prototype['is_admin'] = undefined;
 
 
 

@@ -17,7 +17,7 @@ import ProjectStatusResponse from './ProjectStatusResponse';
 /**
  * The GetProjectStatus200Response model module.
  * @module model/GetProjectStatus200Response
- * @version 1.0.3
+ * @version 1.0.4
  */
 class GetProjectStatus200Response {
     /**

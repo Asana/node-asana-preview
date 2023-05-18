@@ -12,30 +12,28 @@
  */
 
 import ApiClient from '../ApiClient';
-import GoalBase from './GoalBase';
-import GoalMetricBase from './GoalMetricBase';
-import GoalResponseAllOf from './GoalResponseAllOf';
-import Like from './Like';
-import StatusUpdateCompact from './StatusUpdateCompact';
-import TeamCompact from './TeamCompact';
-import TimePeriodCompact from './TimePeriodCompact';
-import UserCompact from './UserCompact';
-import WorkspaceCompact from './WorkspaceCompact';
+import CustomFieldResponseCreatedBy from './CustomFieldResponseCreatedBy';
+import CustomFieldResponsePeopleValueInner from './CustomFieldResponsePeopleValueInner';
+import GoalResponseCurrentStatusUpdate from './GoalResponseCurrentStatusUpdate';
+import GoalResponseLikesInner from './GoalResponseLikesInner';
+import GoalResponseMetric from './GoalResponseMetric';
+import GoalResponseTeam from './GoalResponseTeam';
+import GoalResponseTimePeriod from './GoalResponseTimePeriod';
+import GoalResponseWorkspace from './GoalResponseWorkspace';
 
 /**
  * The GoalResponse model module.
  * @module model/GoalResponse
- * @version 1.0.3
+ * @version 1.0.4
  */
 class GoalResponse {
     /**
      * Constructs a new <code>GoalResponse</code>.
+     * A generic Asana Resource, containing a globally unique identifier.
      * @alias module:model/GoalResponse
-     * @implements module:model/GoalBase
-     * @implements module:model/GoalResponseAllOf
      */
     constructor() { 
-        GoalBase.initialize(this);GoalResponseAllOf.initialize(this);
+        
         GoalResponse.initialize(this);
     }
 
@@ -57,8 +55,6 @@ class GoalResponse {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new GoalResponse();
-            GoalBase.constructFromObject(data, obj);
-            GoalResponseAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('gid')) {
                 obj['gid'] = ApiClient.convertToType(data['gid'], 'String');
@@ -91,31 +87,31 @@ class GoalResponse {
                 obj['liked'] = ApiClient.convertToType(data['liked'], 'Boolean');
             }
             if (data.hasOwnProperty('likes')) {
-                obj['likes'] = ApiClient.convertToType(data['likes'], [Like]);
+                obj['likes'] = ApiClient.convertToType(data['likes'], [GoalResponseLikesInner]);
             }
             if (data.hasOwnProperty('num_likes')) {
                 obj['num_likes'] = ApiClient.convertToType(data['num_likes'], 'Number');
             }
             if (data.hasOwnProperty('team')) {
-                obj['team'] = ApiClient.convertToType(data['team'], TeamCompact);
+                obj['team'] = GoalResponseTeam.constructFromObject(data['team']);
             }
             if (data.hasOwnProperty('workspace')) {
-                obj['workspace'] = ApiClient.convertToType(data['workspace'], WorkspaceCompact);
+                obj['workspace'] = GoalResponseWorkspace.constructFromObject(data['workspace']);
             }
             if (data.hasOwnProperty('followers')) {
-                obj['followers'] = ApiClient.convertToType(data['followers'], [UserCompact]);
+                obj['followers'] = ApiClient.convertToType(data['followers'], [CustomFieldResponsePeopleValueInner]);
             }
             if (data.hasOwnProperty('time_period')) {
-                obj['time_period'] = ApiClient.convertToType(data['time_period'], TimePeriodCompact);
+                obj['time_period'] = GoalResponseTimePeriod.constructFromObject(data['time_period']);
             }
             if (data.hasOwnProperty('metric')) {
-                obj['metric'] = ApiClient.convertToType(data['metric'], GoalMetricBase);
+                obj['metric'] = GoalResponseMetric.constructFromObject(data['metric']);
             }
             if (data.hasOwnProperty('owner')) {
-                obj['owner'] = ApiClient.convertToType(data['owner'], UserCompact);
+                obj['owner'] = CustomFieldResponseCreatedBy.constructFromObject(data['owner']);
             }
             if (data.hasOwnProperty('current_status_update')) {
-                obj['current_status_update'] = ApiClient.convertToType(data['current_status_update'], StatusUpdateCompact);
+                obj['current_status_update'] = GoalResponseCurrentStatusUpdate.constructFromObject(data['current_status_update']);
             }
         }
         return obj;
@@ -186,7 +182,7 @@ GoalResponse.prototype['liked'] = undefined;
 
 /**
  * Array of likes for users who have liked this goal.
- * @member {Array.<module:model/Like>} likes
+ * @member {Array.<module:model/GoalResponseLikesInner>} likes
  */
 GoalResponse.prototype['likes'] = undefined;
 
@@ -197,137 +193,42 @@ GoalResponse.prototype['likes'] = undefined;
 GoalResponse.prototype['num_likes'] = undefined;
 
 /**
- * *Conditional*. This property is only present when the `workspace` provided is an organization.
- * @member {module:model/TeamCompact} team
+ * @member {module:model/GoalResponseTeam} team
  */
 GoalResponse.prototype['team'] = undefined;
 
 /**
- * @member {module:model/WorkspaceCompact} workspace
+ * @member {module:model/GoalResponseWorkspace} workspace
  */
 GoalResponse.prototype['workspace'] = undefined;
 
 /**
  * Array of users who are members of this goal.
- * @member {Array.<module:model/UserCompact>} followers
+ * @member {Array.<module:model/CustomFieldResponsePeopleValueInner>} followers
  */
 GoalResponse.prototype['followers'] = undefined;
 
 /**
- * @member {module:model/TimePeriodCompact} time_period
+ * @member {module:model/GoalResponseTimePeriod} time_period
  */
 GoalResponse.prototype['time_period'] = undefined;
 
 /**
- * @member {module:model/GoalMetricBase} metric
+ * @member {module:model/GoalResponseMetric} metric
  */
 GoalResponse.prototype['metric'] = undefined;
 
 /**
- * @member {module:model/UserCompact} owner
+ * @member {module:model/CustomFieldResponseCreatedBy} owner
  */
 GoalResponse.prototype['owner'] = undefined;
 
 /**
- * The latest `status_update` posted to this goal.
- * @member {module:model/StatusUpdateCompact} current_status_update
+ * @member {module:model/GoalResponseCurrentStatusUpdate} current_status_update
  */
 GoalResponse.prototype['current_status_update'] = undefined;
 
 
-// Implement GoalBase interface:
-/**
- * Globally unique identifier of the resource, as a string.
- * @member {String} gid
- */
-GoalBase.prototype['gid'] = undefined;
-/**
- * The base type of this resource.
- * @member {String} resource_type
- */
-GoalBase.prototype['resource_type'] = undefined;
-/**
- * The name of the goal.
- * @member {String} name
- */
-GoalBase.prototype['name'] = undefined;
-/**
- * The notes of the goal with formatting as HTML.
- * @member {String} html_notes
- */
-GoalBase.prototype['html_notes'] = undefined;
-/**
- * Free-form textual information associated with the goal (i.e. its description).
- * @member {String} notes
- */
-GoalBase.prototype['notes'] = undefined;
-/**
- * The localized day on which this goal is due. This takes a date with format `YYYY-MM-DD`.
- * @member {String} due_on
- */
-GoalBase.prototype['due_on'] = undefined;
-/**
- * The day on which work for this goal begins, or null if the goal has no start date. This takes a date with `YYYY-MM-DD` format, and cannot be set unless there is an accompanying due date.
- * @member {String} start_on
- */
-GoalBase.prototype['start_on'] = undefined;
-/**
- * The current status of this goal. When the goal is open, its status can be `green`, `yellow`, and `red` to reflect \"On Track\", \"At Risk\", and \"Off Track\", respectively. When the goal is closed, the value can be `missed`, `achieved`, `partial`, or `dropped`. *Note* you can only write to this property if `metric` is set.
- * @member {String} status
- */
-GoalBase.prototype['status'] = undefined;
-/**
- * *Conditional*. This property is only present when the `workspace` provided is an organization. Whether the goal belongs to the `workspace` (and is listed as part of the workspace’s goals) or not. If it isn’t a workspace-level goal, it is a team-level goal, and is associated with the goal’s team.
- * @member {Boolean} is_workspace_level
- */
-GoalBase.prototype['is_workspace_level'] = undefined;
-/**
- * True if the goal is liked by the authorized user, false if not.
- * @member {Boolean} liked
- */
-GoalBase.prototype['liked'] = undefined;
-// Implement GoalResponseAllOf interface:
-/**
- * Array of likes for users who have liked this goal.
- * @member {Array.<module:model/Like>} likes
- */
-GoalResponseAllOf.prototype['likes'] = undefined;
-/**
- * The number of users who have liked this goal.
- * @member {Number} num_likes
- */
-GoalResponseAllOf.prototype['num_likes'] = undefined;
-/**
- * *Conditional*. This property is only present when the `workspace` provided is an organization.
- * @member {module:model/TeamCompact} team
- */
-GoalResponseAllOf.prototype['team'] = undefined;
-/**
- * @member {module:model/WorkspaceCompact} workspace
- */
-GoalResponseAllOf.prototype['workspace'] = undefined;
-/**
- * Array of users who are members of this goal.
- * @member {Array.<module:model/UserCompact>} followers
- */
-GoalResponseAllOf.prototype['followers'] = undefined;
-/**
- * @member {module:model/TimePeriodCompact} time_period
- */
-GoalResponseAllOf.prototype['time_period'] = undefined;
-/**
- * @member {module:model/GoalMetricBase} metric
- */
-GoalResponseAllOf.prototype['metric'] = undefined;
-/**
- * @member {module:model/UserCompact} owner
- */
-GoalResponseAllOf.prototype['owner'] = undefined;
-/**
- * The latest `status_update` posted to this goal.
- * @member {module:model/StatusUpdateCompact} current_status_update
- */
-GoalResponseAllOf.prototype['current_status_update'] = undefined;
 
 
 

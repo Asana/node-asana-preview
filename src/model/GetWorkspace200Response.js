@@ -17,7 +17,7 @@ import WorkspaceResponse from './WorkspaceResponse';
 /**
  * The GetWorkspace200Response model module.
  * @module model/GetWorkspace200Response
- * @version 1.0.3
+ * @version 1.0.4
  */
 class GetWorkspace200Response {
     /**

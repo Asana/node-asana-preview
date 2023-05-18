@@ -4,6 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**UserTaskListCompact**](UserTaskListCompact.md) |  | [optional] 
+**data** | [**UserTaskListResponse**](UserTaskListResponse.md) |  | [optional] 
 
 

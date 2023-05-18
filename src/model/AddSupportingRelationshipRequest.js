@@ -17,7 +17,7 @@ import GoalAddSupportingRelationshipRequest from './GoalAddSupportingRelationshi
 /**
  * The AddSupportingRelationshipRequest model module.
  * @module model/AddSupportingRelationshipRequest
- * @version 1.0.3
+ * @version 1.0.4
  */
 class AddSupportingRelationshipRequest {
     /**

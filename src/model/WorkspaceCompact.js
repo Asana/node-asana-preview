@@ -12,23 +12,20 @@
  */
 
 import ApiClient from '../ApiClient';
-import AsanaResource from './AsanaResource';
-import WorkspaceCompactAllOf from './WorkspaceCompactAllOf';
 
 /**
  * The WorkspaceCompact model module.
  * @module model/WorkspaceCompact
- * @version 1.0.3
+ * @version 1.0.4
  */
 class WorkspaceCompact {
     /**
      * Constructs a new <code>WorkspaceCompact</code>.
+     * A generic Asana Resource, containing a globally unique identifier.A generic Asana Resource, containing a globally unique identifier. A *workspace* is the highest-level organizational unit in Asana. All projects and tasks have an associated workspace.
      * @alias module:model/WorkspaceCompact
-     * @implements module:model/AsanaResource
-     * @implements module:model/WorkspaceCompactAllOf
      */
     constructor() { 
-        AsanaResource.initialize(this);WorkspaceCompactAllOf.initialize(this);
+        
         WorkspaceCompact.initialize(this);
     }
 
@@ -50,8 +47,6 @@ class WorkspaceCompact {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new WorkspaceCompact();
-            AsanaResource.constructFromObject(data, obj);
-            WorkspaceCompactAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('gid')) {
                 obj['gid'] = ApiClient.convertToType(data['gid'], 'String');
@@ -88,23 +83,6 @@ WorkspaceCompact.prototype['resource_type'] = undefined;
 WorkspaceCompact.prototype['name'] = undefined;
 
 
-// Implement AsanaResource interface:
-/**
- * Globally unique identifier of the resource, as a string.
- * @member {String} gid
- */
-AsanaResource.prototype['gid'] = undefined;
-/**
- * The base type of this resource.
- * @member {String} resource_type
- */
-AsanaResource.prototype['resource_type'] = undefined;
-// Implement WorkspaceCompactAllOf interface:
-/**
- * The name of the workspace.
- * @member {String} name
- */
-WorkspaceCompactAllOf.prototype['name'] = undefined;
 
 
 

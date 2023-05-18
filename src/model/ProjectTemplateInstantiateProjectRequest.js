@@ -12,13 +12,13 @@
  */
 
 import ApiClient from '../ApiClient';
-import DateVariableRequest from './DateVariableRequest';
-import RequestedRoleRequest from './RequestedRoleRequest';
+import ProjectTemplateInstantiateProjectRequestRequestedDatesInner from './ProjectTemplateInstantiateProjectRequestRequestedDatesInner';
+import ProjectTemplateInstantiateProjectRequestRequestedRolesInner from './ProjectTemplateInstantiateProjectRequestRequestedRolesInner';
 
 /**
  * The ProjectTemplateInstantiateProjectRequest model module.
  * @module model/ProjectTemplateInstantiateProjectRequest
- * @version 1.0.3
+ * @version 1.0.4
  */
 class ProjectTemplateInstantiateProjectRequest {
     /**
@@ -60,14 +60,17 @@ class ProjectTemplateInstantiateProjectRequest {
             if (data.hasOwnProperty('public')) {
                 obj['public'] = ApiClient.convertToType(data['public'], 'Boolean');
             }
+            if (data.hasOwnProperty('privacy_setting')) {
+                obj['privacy_setting'] = ApiClient.convertToType(data['privacy_setting'], 'String');
+            }
             if (data.hasOwnProperty('is_strict')) {
                 obj['is_strict'] = ApiClient.convertToType(data['is_strict'], 'Boolean');
             }
             if (data.hasOwnProperty('requested_dates')) {
-                obj['requested_dates'] = ApiClient.convertToType(data['requested_dates'], [DateVariableRequest]);
+                obj['requested_dates'] = ApiClient.convertToType(data['requested_dates'], [ProjectTemplateInstantiateProjectRequestRequestedDatesInner]);
             }
             if (data.hasOwnProperty('requested_roles')) {
-                obj['requested_roles'] = ApiClient.convertToType(data['requested_roles'], [RequestedRoleRequest]);
+                obj['requested_roles'] = ApiClient.convertToType(data['requested_roles'], [ProjectTemplateInstantiateProjectRequestRequestedRolesInner]);
             }
         }
         return obj;
@@ -95,6 +98,12 @@ ProjectTemplateInstantiateProjectRequest.prototype['team'] = undefined;
 ProjectTemplateInstantiateProjectRequest.prototype['public'] = undefined;
 
 /**
+ * The privacy setting of the project
+ * @member {module:model/ProjectTemplateInstantiateProjectRequest.PrivacySettingEnum} privacy_setting
+ */
+ProjectTemplateInstantiateProjectRequest.prototype['privacy_setting'] = undefined;
+
+/**
  * *Optional*. If set to `true`, the endpoint returns an \"Unprocessable Entity\" error if you fail to provide a calendar date value for any date variable. If set to `false`, a default date is used for each unfulfilled date variable (e.g., the current date is used as the Start Date of a project).
  * @member {Boolean} is_strict
  */
@@ -102,18 +111,45 @@ ProjectTemplateInstantiateProjectRequest.prototype['is_strict'] = undefined;
 
 /**
  * Array of mappings of date variables to calendar dates.
- * @member {Array.<module:model/DateVariableRequest>} requested_dates
+ * @member {Array.<module:model/ProjectTemplateInstantiateProjectRequestRequestedDatesInner>} requested_dates
  */
 ProjectTemplateInstantiateProjectRequest.prototype['requested_dates'] = undefined;
 
 /**
  * Array of mappings of template roles to user ids
- * @member {Array.<module:model/RequestedRoleRequest>} requested_roles
+ * @member {Array.<module:model/ProjectTemplateInstantiateProjectRequestRequestedRolesInner>} requested_roles
  */
 ProjectTemplateInstantiateProjectRequest.prototype['requested_roles'] = undefined;
 
 
 
+
+
+/**
+ * Allowed values for the <code>privacy_setting</code> property.
+ * @enum {String}
+ * @readonly
+ */
+ProjectTemplateInstantiateProjectRequest['PrivacySettingEnum'] = {
+
+    /**
+     * value: "public_to_workspace"
+     * @const
+     */
+    "public_to_workspace": "public_to_workspace",
+
+    /**
+     * value: "private_to_team"
+     * @const
+     */
+    "private_to_team": "private_to_team",
+
+    /**
+     * value: "private"
+     * @const
+     */
+    "private": "private"
+};
 
 
 

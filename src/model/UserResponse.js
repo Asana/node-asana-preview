@@ -12,25 +12,22 @@
  */
 
 import ApiClient from '../ApiClient';
-import UserBaseResponse from './UserBaseResponse';
-import UserBaseResponseAllOfPhoto from './UserBaseResponseAllOfPhoto';
-import UserResponseAllOf from './UserResponseAllOf';
-import WorkspaceCompact from './WorkspaceCompact';
+import GoalResponseWorkspace from './GoalResponseWorkspace';
+import UserBaseResponsePhoto from './UserBaseResponsePhoto';
 
 /**
  * The UserResponse model module.
  * @module model/UserResponse
- * @version 1.0.3
+ * @version 1.0.4
  */
 class UserResponse {
     /**
      * Constructs a new <code>UserResponse</code>.
+     * A generic Asana Resource, containing a globally unique identifier.A generic Asana Resource, containing a globally unique identifier. A *user* object represents an account in Asana that can be given access to various workspaces, projects, and tasks.
      * @alias module:model/UserResponse
-     * @implements module:model/UserBaseResponse
-     * @implements module:model/UserResponseAllOf
      */
     constructor() { 
-        UserBaseResponse.initialize(this);UserResponseAllOf.initialize(this);
+        
         UserResponse.initialize(this);
     }
 
@@ -52,8 +49,6 @@ class UserResponse {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new UserResponse();
-            UserBaseResponse.constructFromObject(data, obj);
-            UserResponseAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('gid')) {
                 obj['gid'] = ApiClient.convertToType(data['gid'], 'String');
@@ -68,10 +63,10 @@ class UserResponse {
                 obj['email'] = ApiClient.convertToType(data['email'], 'String');
             }
             if (data.hasOwnProperty('photo')) {
-                obj['photo'] = UserBaseResponseAllOfPhoto.constructFromObject(data['photo']);
+                obj['photo'] = UserBaseResponsePhoto.constructFromObject(data['photo']);
             }
             if (data.hasOwnProperty('workspaces')) {
-                obj['workspaces'] = ApiClient.convertToType(data['workspaces'], [WorkspaceCompact]);
+                obj['workspaces'] = ApiClient.convertToType(data['workspaces'], [GoalResponseWorkspace]);
             }
         }
         return obj;
@@ -105,48 +100,17 @@ UserResponse.prototype['name'] = undefined;
 UserResponse.prototype['email'] = undefined;
 
 /**
- * @member {module:model/UserBaseResponseAllOfPhoto} photo
+ * @member {module:model/UserBaseResponsePhoto} photo
  */
 UserResponse.prototype['photo'] = undefined;
 
 /**
  * Workspaces and organizations this user may access. Note\\: The API will only return workspaces and organizations that also contain the authenticated user.
- * @member {Array.<module:model/WorkspaceCompact>} workspaces
+ * @member {Array.<module:model/GoalResponseWorkspace>} workspaces
  */
 UserResponse.prototype['workspaces'] = undefined;
 
 
-// Implement UserBaseResponse interface:
-/**
- * Globally unique identifier of the resource, as a string.
- * @member {String} gid
- */
-UserBaseResponse.prototype['gid'] = undefined;
-/**
- * The base type of this resource.
- * @member {String} resource_type
- */
-UserBaseResponse.prototype['resource_type'] = undefined;
-/**
- * *Read-only except when same user as requester*. The user’s name.
- * @member {String} name
- */
-UserBaseResponse.prototype['name'] = undefined;
-/**
- * The user's email address.
- * @member {String} email
- */
-UserBaseResponse.prototype['email'] = undefined;
-/**
- * @member {module:model/UserBaseResponseAllOfPhoto} photo
- */
-UserBaseResponse.prototype['photo'] = undefined;
-// Implement UserResponseAllOf interface:
-/**
- * Workspaces and organizations this user may access. Note\\: The API will only return workspaces and organizations that also contain the authenticated user.
- * @member {Array.<module:model/WorkspaceCompact>} workspaces
- */
-UserResponseAllOf.prototype['workspaces'] = undefined;
 
 
 

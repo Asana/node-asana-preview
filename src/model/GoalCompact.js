@@ -12,24 +12,21 @@
  */
 
 import ApiClient from '../ApiClient';
-import AsanaResource from './AsanaResource';
-import GoalCompactAllOf from './GoalCompactAllOf';
-import UserCompact from './UserCompact';
+import CustomFieldResponseCreatedBy from './CustomFieldResponseCreatedBy';
 
 /**
  * The GoalCompact model module.
  * @module model/GoalCompact
- * @version 1.0.3
+ * @version 1.0.4
  */
 class GoalCompact {
     /**
      * Constructs a new <code>GoalCompact</code>.
+     * A generic Asana Resource, containing a globally unique identifier.
      * @alias module:model/GoalCompact
-     * @implements module:model/AsanaResource
-     * @implements module:model/GoalCompactAllOf
      */
     constructor() { 
-        AsanaResource.initialize(this);GoalCompactAllOf.initialize(this);
+        
         GoalCompact.initialize(this);
     }
 
@@ -51,8 +48,6 @@ class GoalCompact {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new GoalCompact();
-            AsanaResource.constructFromObject(data, obj);
-            GoalCompactAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('gid')) {
                 obj['gid'] = ApiClient.convertToType(data['gid'], 'String');
@@ -64,7 +59,7 @@ class GoalCompact {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
             if (data.hasOwnProperty('owner')) {
-                obj['owner'] = ApiClient.convertToType(data['owner'], UserCompact);
+                obj['owner'] = CustomFieldResponseCreatedBy.constructFromObject(data['owner']);
             }
         }
         return obj;
@@ -92,32 +87,11 @@ GoalCompact.prototype['resource_type'] = undefined;
 GoalCompact.prototype['name'] = undefined;
 
 /**
- * @member {module:model/UserCompact} owner
+ * @member {module:model/CustomFieldResponseCreatedBy} owner
  */
 GoalCompact.prototype['owner'] = undefined;
 
 
-// Implement AsanaResource interface:
-/**
- * Globally unique identifier of the resource, as a string.
- * @member {String} gid
- */
-AsanaResource.prototype['gid'] = undefined;
-/**
- * The base type of this resource.
- * @member {String} resource_type
- */
-AsanaResource.prototype['resource_type'] = undefined;
-// Implement GoalCompactAllOf interface:
-/**
- * The name of the goal.
- * @member {String} name
- */
-GoalCompactAllOf.prototype['name'] = undefined;
-/**
- * @member {module:model/UserCompact} owner
- */
-GoalCompactAllOf.prototype['owner'] = undefined;
 
 
 

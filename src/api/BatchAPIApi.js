@@ -20,7 +20,7 @@ import ErrorResponse from '../model/ErrorResponse';
 /**
 * BatchAPI service.
 * @module api/BatchAPIApi
-* @version 1.0.3
+* @version 1.0.4
 */
 export default class BatchAPIApi {
 
@@ -74,8 +74,8 @@ export default class BatchAPIApi {
       };
 
       let authNames = ['personalAccessToken'];
-      let contentTypes = ['application/json'];
-      let accepts = ['application/json'];
+      let contentTypes = ['application/json; charset=UTF-8'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = CreateBatchRequest200Response;
       return this.apiClient.callApi(
         '/batch', 'POST',

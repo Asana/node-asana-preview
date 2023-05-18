@@ -4,6 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**[TagCompact]**](TagCompact.md) |  | [optional] 
+**data** | [**[TagResponse]**](TagResponse.md) |  | [optional] 
 
 

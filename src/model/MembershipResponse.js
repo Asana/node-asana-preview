@@ -12,38 +12,38 @@
  */
 
 import ApiClient from '../ApiClient';
-import GoalCompact from './GoalCompact';
-import GoalMembershipCompact from './GoalMembershipCompact';
-import MemberCompact from './MemberCompact';
-import PortfolioCompact from './PortfolioCompact';
-import PortfolioMembershipCompact from './PortfolioMembershipCompact';
-import ProjectCompact from './ProjectCompact';
-import ProjectMembershipResponse from './ProjectMembershipResponse';
-import TeamCompact from './TeamCompact';
-import TeamMembershipCompact from './TeamMembershipCompact';
-import UserCompact from './UserCompact';
-import UserTaskListCompact from './UserTaskListCompact';
-import WorkspaceCompact from './WorkspaceCompact';
-import WorkspaceMembershipResponse from './WorkspaceMembershipResponse';
-import WorkspaceMembershipResponseAllOfVacationDates from './WorkspaceMembershipResponseAllOfVacationDates';
+import CustomFieldResponsePeopleValueInner from './CustomFieldResponsePeopleValueInner';
+import GoalMembershipBaseGoal from './GoalMembershipBaseGoal';
+import GoalResponseTeamAllOf from './GoalResponseTeamAllOf';
+import GoalResponseWorkspace from './GoalResponseWorkspace';
+import JobBaseNewProject from './JobBaseNewProject';
+import MembershipResponseAnyOf from './MembershipResponseAnyOf';
+import MembershipResponseAnyOf1 from './MembershipResponseAnyOf1';
+import MembershipResponseAnyOf2 from './MembershipResponseAnyOf2';
+import MembershipResponseAnyOf3 from './MembershipResponseAnyOf3';
+import MembershipResponseAnyOf4 from './MembershipResponseAnyOf4';
+import MembershipResponseAnyOf4UserTaskList from './MembershipResponseAnyOf4UserTaskList';
+import PortfolioMembershipBasePortfolio from './PortfolioMembershipBasePortfolio';
+import ProjectMembershipResponseMember from './ProjectMembershipResponseMember';
+import WorkspaceMembershipResponseVacationDates from './WorkspaceMembershipResponseVacationDates';
 
 /**
  * The MembershipResponse model module.
  * @module model/MembershipResponse
- * @version 1.0.3
+ * @version 1.0.4
  */
 class MembershipResponse {
     /**
      * Constructs a new <code>MembershipResponse</code>.
      * @alias module:model/MembershipResponse
-     * @implements module:model/ProjectMembershipResponse
-     * @implements module:model/PortfolioMembershipCompact
-     * @implements module:model/TeamMembershipCompact
-     * @implements module:model/GoalMembershipCompact
-     * @implements module:model/WorkspaceMembershipResponse
+     * @implements module:model/MembershipResponseAnyOf
+     * @implements module:model/MembershipResponseAnyOf1
+     * @implements module:model/MembershipResponseAnyOf2
+     * @implements module:model/MembershipResponseAnyOf3
+     * @implements module:model/MembershipResponseAnyOf4
      */
     constructor() { 
-        ProjectMembershipResponse.initialize(this);PortfolioMembershipCompact.initialize(this);TeamMembershipCompact.initialize(this);GoalMembershipCompact.initialize(this);WorkspaceMembershipResponse.initialize(this);
+        MembershipResponseAnyOf.initialize(this);MembershipResponseAnyOf1.initialize(this);MembershipResponseAnyOf2.initialize(this);MembershipResponseAnyOf3.initialize(this);MembershipResponseAnyOf4.initialize(this);
         MembershipResponse.initialize(this);
     }
 
@@ -65,11 +65,11 @@ class MembershipResponse {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new MembershipResponse();
-            ProjectMembershipResponse.constructFromObject(data, obj);
-            PortfolioMembershipCompact.constructFromObject(data, obj);
-            TeamMembershipCompact.constructFromObject(data, obj);
-            GoalMembershipCompact.constructFromObject(data, obj);
-            WorkspaceMembershipResponse.constructFromObject(data, obj);
+            MembershipResponseAnyOf.constructFromObject(data, obj);
+            MembershipResponseAnyOf1.constructFromObject(data, obj);
+            MembershipResponseAnyOf2.constructFromObject(data, obj);
+            MembershipResponseAnyOf3.constructFromObject(data, obj);
+            MembershipResponseAnyOf4.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('gid')) {
                 obj['gid'] = ApiClient.convertToType(data['gid'], 'String');
@@ -78,22 +78,22 @@ class MembershipResponse {
                 obj['resource_type'] = ApiClient.convertToType(data['resource_type'], 'String');
             }
             if (data.hasOwnProperty('user')) {
-                obj['user'] = UserCompact.constructFromObject(data['user']);
+                obj['user'] = CustomFieldResponsePeopleValueInner.constructFromObject(data['user']);
             }
             if (data.hasOwnProperty('project')) {
-                obj['project'] = ProjectCompact.constructFromObject(data['project']);
+                obj['project'] = JobBaseNewProject.constructFromObject(data['project']);
             }
             if (data.hasOwnProperty('member')) {
-                obj['member'] = MemberCompact.constructFromObject(data['member']);
+                obj['member'] = ProjectMembershipResponseMember.constructFromObject(data['member']);
             }
             if (data.hasOwnProperty('write_access')) {
                 obj['write_access'] = ApiClient.convertToType(data['write_access'], 'String');
             }
             if (data.hasOwnProperty('portfolio')) {
-                obj['portfolio'] = PortfolioCompact.constructFromObject(data['portfolio']);
+                obj['portfolio'] = PortfolioMembershipBasePortfolio.constructFromObject(data['portfolio']);
             }
             if (data.hasOwnProperty('team')) {
-                obj['team'] = TeamCompact.constructFromObject(data['team']);
+                obj['team'] = GoalResponseTeamAllOf.constructFromObject(data['team']);
             }
             if (data.hasOwnProperty('is_guest')) {
                 obj['is_guest'] = ApiClient.convertToType(data['is_guest'], 'Boolean');
@@ -105,7 +105,7 @@ class MembershipResponse {
                 obj['is_admin'] = ApiClient.convertToType(data['is_admin'], 'Boolean');
             }
             if (data.hasOwnProperty('goal')) {
-                obj['goal'] = GoalCompact.constructFromObject(data['goal']);
+                obj['goal'] = GoalMembershipBaseGoal.constructFromObject(data['goal']);
             }
             if (data.hasOwnProperty('is_commenter')) {
                 obj['is_commenter'] = ApiClient.convertToType(data['is_commenter'], 'Boolean');
@@ -114,16 +114,16 @@ class MembershipResponse {
                 obj['is_editor'] = ApiClient.convertToType(data['is_editor'], 'Boolean');
             }
             if (data.hasOwnProperty('workspace')) {
-                obj['workspace'] = WorkspaceCompact.constructFromObject(data['workspace']);
+                obj['workspace'] = GoalResponseWorkspace.constructFromObject(data['workspace']);
             }
             if (data.hasOwnProperty('user_task_list')) {
-                obj['user_task_list'] = UserTaskListCompact.constructFromObject(data['user_task_list']);
+                obj['user_task_list'] = MembershipResponseAnyOf4UserTaskList.constructFromObject(data['user_task_list']);
             }
             if (data.hasOwnProperty('is_active')) {
                 obj['is_active'] = ApiClient.convertToType(data['is_active'], 'Boolean');
             }
             if (data.hasOwnProperty('vacation_dates')) {
-                obj['vacation_dates'] = WorkspaceMembershipResponseAllOfVacationDates.constructFromObject(data['vacation_dates']);
+                obj['vacation_dates'] = WorkspaceMembershipResponseVacationDates.constructFromObject(data['vacation_dates']);
             }
             if (data.hasOwnProperty('created_at')) {
                 obj['created_at'] = ApiClient.convertToType(data['created_at'], 'Date');
@@ -148,17 +148,17 @@ MembershipResponse.prototype['gid'] = undefined;
 MembershipResponse.prototype['resource_type'] = undefined;
 
 /**
- * @member {module:model/UserCompact} user
+ * @member {module:model/CustomFieldResponsePeopleValueInner} user
  */
 MembershipResponse.prototype['user'] = undefined;
 
 /**
- * @member {module:model/ProjectCompact} project
+ * @member {module:model/JobBaseNewProject} project
  */
 MembershipResponse.prototype['project'] = undefined;
 
 /**
- * @member {module:model/MemberCompact} member
+ * @member {module:model/ProjectMembershipResponseMember} member
  */
 MembershipResponse.prototype['member'] = undefined;
 
@@ -169,12 +169,12 @@ MembershipResponse.prototype['member'] = undefined;
 MembershipResponse.prototype['write_access'] = undefined;
 
 /**
- * @member {module:model/PortfolioCompact} portfolio
+ * @member {module:model/PortfolioMembershipBasePortfolio} portfolio
  */
 MembershipResponse.prototype['portfolio'] = undefined;
 
 /**
- * @member {module:model/TeamCompact} team
+ * @member {module:model/GoalResponseTeamAllOf} team
  */
 MembershipResponse.prototype['team'] = undefined;
 
@@ -197,7 +197,7 @@ MembershipResponse.prototype['is_limited_access'] = undefined;
 MembershipResponse.prototype['is_admin'] = undefined;
 
 /**
- * @member {module:model/GoalCompact} goal
+ * @member {module:model/GoalMembershipBaseGoal} goal
  */
 MembershipResponse.prototype['goal'] = undefined;
 
@@ -214,12 +214,12 @@ MembershipResponse.prototype['is_commenter'] = undefined;
 MembershipResponse.prototype['is_editor'] = undefined;
 
 /**
- * @member {module:model/WorkspaceCompact} workspace
+ * @member {module:model/GoalResponseWorkspace} workspace
  */
 MembershipResponse.prototype['workspace'] = undefined;
 
 /**
- * @member {module:model/UserTaskListCompact} user_task_list
+ * @member {module:model/MembershipResponseAnyOf4UserTaskList} user_task_list
  */
 MembershipResponse.prototype['user_task_list'] = undefined;
 
@@ -230,7 +230,7 @@ MembershipResponse.prototype['user_task_list'] = undefined;
 MembershipResponse.prototype['is_active'] = undefined;
 
 /**
- * @member {module:model/WorkspaceMembershipResponseAllOfVacationDates} vacation_dates
+ * @member {module:model/WorkspaceMembershipResponseVacationDates} vacation_dates
  */
 MembershipResponse.prototype['vacation_dates'] = undefined;
 
@@ -241,163 +241,163 @@ MembershipResponse.prototype['vacation_dates'] = undefined;
 MembershipResponse.prototype['created_at'] = undefined;
 
 
-// Implement ProjectMembershipResponse interface:
+// Implement MembershipResponseAnyOf interface:
 /**
  * Globally unique identifier of the resource, as a string.
  * @member {String} gid
  */
-ProjectMembershipResponse.prototype['gid'] = undefined;
+MembershipResponseAnyOf.prototype['gid'] = undefined;
 /**
  * Type of the membership.
  * @member {String} resource_type
  */
-ProjectMembershipResponse.prototype['resource_type'] = undefined;
+MembershipResponseAnyOf.prototype['resource_type'] = undefined;
 /**
- * @member {module:model/UserCompact} user
+ * @member {module:model/CustomFieldResponsePeopleValueInner} user
  */
-ProjectMembershipResponse.prototype['user'] = undefined;
+MembershipResponseAnyOf.prototype['user'] = undefined;
 /**
- * @member {module:model/ProjectCompact} project
+ * @member {module:model/JobBaseNewProject} project
  */
-ProjectMembershipResponse.prototype['project'] = undefined;
+MembershipResponseAnyOf.prototype['project'] = undefined;
 /**
- * @member {module:model/MemberCompact} member
+ * @member {module:model/ProjectMembershipResponseMember} member
  */
-ProjectMembershipResponse.prototype['member'] = undefined;
+MembershipResponseAnyOf.prototype['member'] = undefined;
 /**
  * Whether the member has full access, edit access, or comment-only access to the project.
- * @member {module:model/ProjectMembershipResponse.WriteAccessEnum} write_access
+ * @member {module:model/MembershipResponseAnyOf.WriteAccessEnum} write_access
  */
-ProjectMembershipResponse.prototype['write_access'] = undefined;
-// Implement PortfolioMembershipCompact interface:
+MembershipResponseAnyOf.prototype['write_access'] = undefined;
+// Implement MembershipResponseAnyOf1 interface:
 /**
  * Globally unique identifier of the resource, as a string.
  * @member {String} gid
  */
-PortfolioMembershipCompact.prototype['gid'] = undefined;
+MembershipResponseAnyOf1.prototype['gid'] = undefined;
 /**
  * The base type of this resource.
  * @member {String} resource_type
  */
-PortfolioMembershipCompact.prototype['resource_type'] = undefined;
+MembershipResponseAnyOf1.prototype['resource_type'] = undefined;
 /**
- * @member {module:model/PortfolioCompact} portfolio
+ * @member {module:model/PortfolioMembershipBasePortfolio} portfolio
  */
-PortfolioMembershipCompact.prototype['portfolio'] = undefined;
+MembershipResponseAnyOf1.prototype['portfolio'] = undefined;
 /**
- * @member {module:model/UserCompact} user
+ * @member {module:model/CustomFieldResponsePeopleValueInner} user
  */
-PortfolioMembershipCompact.prototype['user'] = undefined;
-// Implement TeamMembershipCompact interface:
+MembershipResponseAnyOf1.prototype['user'] = undefined;
+// Implement MembershipResponseAnyOf2 interface:
 /**
  * Globally unique identifier of the resource, as a string.
  * @member {String} gid
  */
-TeamMembershipCompact.prototype['gid'] = undefined;
+MembershipResponseAnyOf2.prototype['gid'] = undefined;
 /**
  * The base type of this resource.
  * @member {String} resource_type
  */
-TeamMembershipCompact.prototype['resource_type'] = undefined;
+MembershipResponseAnyOf2.prototype['resource_type'] = undefined;
 /**
- * @member {module:model/UserCompact} user
+ * @member {module:model/CustomFieldResponsePeopleValueInner} user
  */
-TeamMembershipCompact.prototype['user'] = undefined;
+MembershipResponseAnyOf2.prototype['user'] = undefined;
 /**
- * @member {module:model/TeamCompact} team
+ * @member {module:model/GoalResponseTeamAllOf} team
  */
-TeamMembershipCompact.prototype['team'] = undefined;
+MembershipResponseAnyOf2.prototype['team'] = undefined;
 /**
  * Describes if the user is a guest in the team.
  * @member {Boolean} is_guest
  */
-TeamMembershipCompact.prototype['is_guest'] = undefined;
+MembershipResponseAnyOf2.prototype['is_guest'] = undefined;
 /**
  * Describes if the user has limited access to the team.
  * @member {Boolean} is_limited_access
  */
-TeamMembershipCompact.prototype['is_limited_access'] = undefined;
+MembershipResponseAnyOf2.prototype['is_limited_access'] = undefined;
 /**
  * Describes if the user is a team admin.
  * @member {Boolean} is_admin
  */
-TeamMembershipCompact.prototype['is_admin'] = undefined;
-// Implement GoalMembershipCompact interface:
+MembershipResponseAnyOf2.prototype['is_admin'] = undefined;
+// Implement MembershipResponseAnyOf3 interface:
 /**
  * Globally unique identifier of the resource, as a string.
  * @member {String} gid
  */
-GoalMembershipCompact.prototype['gid'] = undefined;
+MembershipResponseAnyOf3.prototype['gid'] = undefined;
 /**
  * The base type of this resource.
  * @member {String} resource_type
  */
-GoalMembershipCompact.prototype['resource_type'] = undefined;
+MembershipResponseAnyOf3.prototype['resource_type'] = undefined;
 /**
- * @member {module:model/MemberCompact} member
+ * @member {module:model/ProjectMembershipResponseMember} member
  */
-GoalMembershipCompact.prototype['member'] = undefined;
+MembershipResponseAnyOf3.prototype['member'] = undefined;
 /**
- * @member {module:model/GoalCompact} goal
+ * @member {module:model/GoalMembershipBaseGoal} goal
  */
-GoalMembershipCompact.prototype['goal'] = undefined;
+MembershipResponseAnyOf3.prototype['goal'] = undefined;
 /**
  * Describes if the member is comment only in goal.
  * @member {Boolean} is_commenter
  */
-GoalMembershipCompact.prototype['is_commenter'] = undefined;
+MembershipResponseAnyOf3.prototype['is_commenter'] = undefined;
 /**
  * Describes if the member is editor in goal.
  * @member {Boolean} is_editor
  */
-GoalMembershipCompact.prototype['is_editor'] = undefined;
-// Implement WorkspaceMembershipResponse interface:
+MembershipResponseAnyOf3.prototype['is_editor'] = undefined;
+// Implement MembershipResponseAnyOf4 interface:
 /**
  * Globally unique identifier of the resource, as a string.
  * @member {String} gid
  */
-WorkspaceMembershipResponse.prototype['gid'] = undefined;
+MembershipResponseAnyOf4.prototype['gid'] = undefined;
 /**
  * The base type of this resource.
  * @member {String} resource_type
  */
-WorkspaceMembershipResponse.prototype['resource_type'] = undefined;
+MembershipResponseAnyOf4.prototype['resource_type'] = undefined;
 /**
- * @member {module:model/UserCompact} user
+ * @member {module:model/CustomFieldResponsePeopleValueInner} user
  */
-WorkspaceMembershipResponse.prototype['user'] = undefined;
+MembershipResponseAnyOf4.prototype['user'] = undefined;
 /**
- * @member {module:model/WorkspaceCompact} workspace
+ * @member {module:model/GoalResponseWorkspace} workspace
  */
-WorkspaceMembershipResponse.prototype['workspace'] = undefined;
+MembershipResponseAnyOf4.prototype['workspace'] = undefined;
 /**
- * @member {module:model/UserTaskListCompact} user_task_list
+ * @member {module:model/MembershipResponseAnyOf4UserTaskList} user_task_list
  */
-WorkspaceMembershipResponse.prototype['user_task_list'] = undefined;
+MembershipResponseAnyOf4.prototype['user_task_list'] = undefined;
 /**
  * Reflects if this user still a member of the workspace.
  * @member {Boolean} is_active
  */
-WorkspaceMembershipResponse.prototype['is_active'] = undefined;
+MembershipResponseAnyOf4.prototype['is_active'] = undefined;
 /**
  * Reflects if this user is an admin of the workspace.
  * @member {Boolean} is_admin
  */
-WorkspaceMembershipResponse.prototype['is_admin'] = undefined;
+MembershipResponseAnyOf4.prototype['is_admin'] = undefined;
 /**
  * Reflects if this user is a guest of the workspace.
  * @member {Boolean} is_guest
  */
-WorkspaceMembershipResponse.prototype['is_guest'] = undefined;
+MembershipResponseAnyOf4.prototype['is_guest'] = undefined;
 /**
- * @member {module:model/WorkspaceMembershipResponseAllOfVacationDates} vacation_dates
+ * @member {module:model/WorkspaceMembershipResponseVacationDates} vacation_dates
  */
-WorkspaceMembershipResponse.prototype['vacation_dates'] = undefined;
+MembershipResponseAnyOf4.prototype['vacation_dates'] = undefined;
 /**
  * The time at which this resource was created.
  * @member {Date} created_at
  */
-WorkspaceMembershipResponse.prototype['created_at'] = undefined;
+MembershipResponseAnyOf4.prototype['created_at'] = undefined;
 
 
 

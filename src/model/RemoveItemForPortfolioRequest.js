@@ -17,7 +17,7 @@ import PortfolioRemoveItemRequest from './PortfolioRemoveItemRequest';
 /**
  * The RemoveItemForPortfolioRequest model module.
  * @module model/RemoveItemForPortfolioRequest
- * @version 1.0.3
+ * @version 1.0.4
  */
 class RemoveItemForPortfolioRequest {
     /**

@@ -17,7 +17,7 @@ import PortfolioAddItemRequest from './PortfolioAddItemRequest';
 /**
  * The AddItemForPortfolioRequest model module.
  * @module model/AddItemForPortfolioRequest
- * @version 1.0.3
+ * @version 1.0.4
  */
 class AddItemForPortfolioRequest {
     /**

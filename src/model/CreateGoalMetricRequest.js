@@ -12,12 +12,12 @@
  */
 
 import ApiClient from '../ApiClient';
-import GoalMetricBase from './GoalMetricBase';
+import GoalMetricRequest from './GoalMetricRequest';
 
 /**
  * The CreateGoalMetricRequest model module.
  * @module model/CreateGoalMetricRequest
- * @version 1.0.3
+ * @version 1.0.4
  */
 class CreateGoalMetricRequest {
     /**
@@ -49,7 +49,7 @@ class CreateGoalMetricRequest {
             obj = obj || new CreateGoalMetricRequest();
 
             if (data.hasOwnProperty('data')) {
-                obj['data'] = GoalMetricBase.constructFromObject(data['data']);
+                obj['data'] = GoalMetricRequest.constructFromObject(data['data']);
             }
         }
         return obj;
@@ -59,7 +59,7 @@ class CreateGoalMetricRequest {
 }
 
 /**
- * @member {module:model/GoalMetricBase} data
+ * @member {module:model/GoalMetricRequest} data
  */
 CreateGoalMetricRequest.prototype['data'] = undefined;
 

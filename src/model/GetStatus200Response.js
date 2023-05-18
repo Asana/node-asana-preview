@@ -17,7 +17,7 @@ import StatusUpdateResponse from './StatusUpdateResponse';
 /**
  * The GetStatus200Response model module.
  * @module model/GetStatus200Response
- * @version 1.0.3
+ * @version 1.0.4
  */
 class GetStatus200Response {
     /**

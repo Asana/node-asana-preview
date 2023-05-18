@@ -4,6 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**OrganizationExportCompact**](OrganizationExportCompact.md) |  | [optional] 
+**data** | [**OrganizationExportResponse**](OrganizationExportResponse.md) |  | [optional] 
 
 

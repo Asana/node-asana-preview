@@ -20,7 +20,7 @@ import GetTeamMemberships200Response from '../model/GetTeamMemberships200Respons
 /**
 * TeamMemberships service.
 * @module api/TeamMembershipsApi
-* @version 1.0.3
+* @version 1.0.4
 */
 export default class TeamMembershipsApi {
 
@@ -76,7 +76,7 @@ export default class TeamMembershipsApi {
 
       let authNames = ['personalAccessToken'];
       let contentTypes = [];
-      let accepts = ['application/json'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = GetTeamMembership200Response;
       return this.apiClient.callApi(
         '/team_memberships/{team_membership_gid}', 'GET',
@@ -129,7 +129,7 @@ export default class TeamMembershipsApi {
 
       let authNames = ['personalAccessToken'];
       let contentTypes = [];
-      let accepts = ['application/json'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = GetTeamMemberships200Response;
       return this.apiClient.callApi(
         '/team_memberships', 'GET',
@@ -182,7 +182,7 @@ export default class TeamMembershipsApi {
 
       let authNames = ['personalAccessToken'];
       let contentTypes = [];
-      let accepts = ['application/json'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = GetTeamMemberships200Response;
       return this.apiClient.callApi(
         '/teams/{team_gid}/team_memberships', 'GET',
@@ -241,7 +241,7 @@ export default class TeamMembershipsApi {
 
       let authNames = ['personalAccessToken'];
       let contentTypes = [];
-      let accepts = ['application/json'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = GetTeamMemberships200Response;
       return this.apiClient.callApi(
         '/users/{user_gid}/team_memberships', 'GET',

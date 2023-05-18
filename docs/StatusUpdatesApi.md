@@ -35,7 +35,7 @@ let opts = {
   'optPretty': true, // Boolean | Provides “pretty” output. Provides the response in a “pretty” format. In the case of JSON this means doing proper line breaking and indentation to make it readable. This will take extra time and increase the response size so it is advisable only to use this during debugging.
   'limit': 50, // Number | Results per page. The number of objects to return per page. The value must be between 1 and 100.
   'offset': eyJ0eXAiOJiKV1iQLCJhbGciOiJIUzI1NiJ9, // String | Offset token. An offset to the next page returned by the API. A pagination request will return an offset token, which can be used as an input parameter to the next request. If an offset is not passed in, the API will return the first page of results. 'Note: You can only pass in an offset that was returned to you via a previously paginated request.'
-  'optFields': ["parent","num_likes","author","created_at","created_by","modified_at","num_hearts","resource_subtype","status_type","text","html_text","hearts","likes","liked","title","hearted"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
+  'optFields': ["hearted","title","author","num_likes","created_at","parent","text","modified_at","html_text","status_type","likes","hearts","liked","created_by","resource_subtype","num_hearts"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
 };
 
 apiInstance.createStatusForObject(createStatusForObjectRequest, opts, (error, data, response) => {
@@ -68,8 +68,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+- **Content-Type**: application/json; charset=UTF-8
+- **Accept**: application/json; charset=UTF-8
 
 
 ## deleteStatus
@@ -124,7 +124,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: application/json; charset=UTF-8
 
 
 ## getStatus
@@ -149,7 +149,7 @@ let apiInstance = new AsanaPreview.StatusUpdatesApi();
 let statusGid = 321654; // String | The status update to get.
 let opts = {
   'optPretty': true, // Boolean | Provides “pretty” output. Provides the response in a “pretty” format. In the case of JSON this means doing proper line breaking and indentation to make it readable. This will take extra time and increase the response size so it is advisable only to use this during debugging.
-  'optFields': ["parent","num_likes","author","created_at","created_by","modified_at","num_hearts","resource_subtype","status_type","text","html_text","hearts","likes","liked","title","hearted"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
+  'optFields': ["hearted","title","author","num_likes","created_at","parent","text","modified_at","html_text","status_type","likes","hearts","liked","created_by","resource_subtype","num_hearts"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
 };
 
 apiInstance.getStatus(statusGid, opts, (error, data, response) => {
@@ -181,7 +181,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: application/json; charset=UTF-8
 
 
 ## getStatusesForObject
@@ -209,7 +209,7 @@ let opts = {
   'limit': 50, // Number | Results per page. The number of objects to return per page. The value must be between 1 and 100.
   'offset': eyJ0eXAiOJiKV1iQLCJhbGciOiJIUzI1NiJ9, // String | Offset token. An offset to the next page returned by the API. A pagination request will return an offset token, which can be used as an input parameter to the next request. If an offset is not passed in, the API will return the first page of results. 'Note: You can only pass in an offset that was returned to you via a previously paginated request.'
   'createdSince': 2012-02-22T02:06:58.158Z, // Date | Only return statuses that have been created since the given time.
-  'optFields': ["parent","num_likes","created_at","author","created_by","modified_at","resource_subtype","num_hearts","status_type","text","html_text","hearts","likes","liked","title","hearted"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
+  'optFields': ["hearted","title","author","num_likes","created_at","parent","text","modified_at","html_text","status_type","likes","hearts","liked","created_by","resource_subtype","num_hearts"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
 };
 
 apiInstance.getStatusesForObject(parent, opts, (error, data, response) => {
@@ -244,5 +244,5 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: application/json; charset=UTF-8
 

@@ -12,23 +12,20 @@
  */
 
 import ApiClient from '../ApiClient';
-import TeamCompact from './TeamCompact';
-import TeamRequestAllOf from './TeamRequestAllOf';
 
 /**
  * The TeamRequest model module.
  * @module model/TeamRequest
- * @version 1.0.3
+ * @version 1.0.4
  */
 class TeamRequest {
     /**
      * Constructs a new <code>TeamRequest</code>.
+     * A generic Asana Resource, containing a globally unique identifier.A generic Asana Resource, containing a globally unique identifier. A *team* is used to group related projects and people together within an organization. Each project in an organization is associated with a team.
      * @alias module:model/TeamRequest
-     * @implements module:model/TeamCompact
-     * @implements module:model/TeamRequestAllOf
      */
     constructor() { 
-        TeamCompact.initialize(this);TeamRequestAllOf.initialize(this);
+        
         TeamRequest.initialize(this);
     }
 
@@ -50,8 +47,6 @@ class TeamRequest {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new TeamRequest();
-            TeamCompact.constructFromObject(data, obj);
-            TeamRequestAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('gid')) {
                 obj['gid'] = ApiClient.convertToType(data['gid'], 'String');
@@ -178,73 +173,6 @@ TeamRequest.prototype['join_request_management_access_level'] = undefined;
 TeamRequest.prototype['team_member_removal_access_level'] = undefined;
 
 
-// Implement TeamCompact interface:
-/**
- * Globally unique identifier of the resource, as a string.
- * @member {String} gid
- */
-TeamCompact.prototype['gid'] = undefined;
-/**
- * The base type of this resource.
- * @member {String} resource_type
- */
-TeamCompact.prototype['resource_type'] = undefined;
-/**
- * The name of the team.
- * @member {String} name
- */
-TeamCompact.prototype['name'] = undefined;
-// Implement TeamRequestAllOf interface:
-/**
- * The description of the team. 
- * @member {String} description
- */
-TeamRequestAllOf.prototype['description'] = undefined;
-/**
- * The description of the team with formatting as HTML. 
- * @member {String} html_description
- */
-TeamRequestAllOf.prototype['html_description'] = undefined;
-/**
- * The organization/workspace the team belongs to. This must be the same organization you are in and cannot be changed once set. 
- * @member {String} organization
- */
-TeamRequestAllOf.prototype['organization'] = undefined;
-/**
- * The visibility of the team to users in the same organization 
- * @member {module:model/TeamRequestAllOf.VisibilityEnum} visibility
- */
-TeamRequestAllOf.prototype['visibility'] = undefined;
-/**
- * Controls who can edit team name and description 
- * @member {module:model/TeamRequestAllOf.EditTeamNameOrDescriptionAccessLevelEnum} edit_team_name_or_description_access_level
- */
-TeamRequestAllOf.prototype['edit_team_name_or_description_access_level'] = undefined;
-/**
- * Controls who can edit team visibility and trash teams 
- * @member {module:model/TeamRequestAllOf.EditTeamVisibilityOrTrashTeamAccessLevelEnum} edit_team_visibility_or_trash_team_access_level
- */
-TeamRequestAllOf.prototype['edit_team_visibility_or_trash_team_access_level'] = undefined;
-/**
- * Controls who can accept or deny member invites for a given team 
- * @member {module:model/TeamRequestAllOf.MemberInviteManagementAccessLevelEnum} member_invite_management_access_level
- */
-TeamRequestAllOf.prototype['member_invite_management_access_level'] = undefined;
-/**
- * Controls who can accept or deny guest invites for a given team 
- * @member {module:model/TeamRequestAllOf.GuestInviteManagementAccessLevelEnum} guest_invite_management_access_level
- */
-TeamRequestAllOf.prototype['guest_invite_management_access_level'] = undefined;
-/**
- * Controls who can accept or deny join team requests for a Membership by Request team 
- * @member {module:model/TeamRequestAllOf.JoinRequestManagementAccessLevelEnum} join_request_management_access_level
- */
-TeamRequestAllOf.prototype['join_request_management_access_level'] = undefined;
-/**
- * Controls who can remove team members 
- * @member {module:model/TeamRequestAllOf.TeamMemberRemovalAccessLevelEnum} team_member_removal_access_level
- */
-TeamRequestAllOf.prototype['team_member_removal_access_level'] = undefined;
 
 
 

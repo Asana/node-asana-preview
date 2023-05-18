@@ -12,25 +12,22 @@
  */
 
 import ApiClient from '../ApiClient';
-import AsanaNamedResource from './AsanaNamedResource';
-import WebhookCompact from './WebhookCompact';
-import WebhookFilter from './WebhookFilter';
-import WebhookResponseAllOf from './WebhookResponseAllOf';
+import MessageParentAllOf from './MessageParentAllOf';
+import WebhookRequestFiltersInner from './WebhookRequestFiltersInner';
 
 /**
  * The WebhookResponse model module.
  * @module model/WebhookResponse
- * @version 1.0.3
+ * @version 1.0.4
  */
 class WebhookResponse {
     /**
      * Constructs a new <code>WebhookResponse</code>.
+     * A generic Asana Resource, containing a globally unique identifier.A generic Asana Resource, containing a globally unique identifier. Webhook objects represent the state of an active subscription for a server to be updated with information from Asana. This schema represents the subscription itself, not the objects that are sent to the server. For information on those please refer to the [event](/reference/events) schema.
      * @alias module:model/WebhookResponse
-     * @implements module:model/WebhookCompact
-     * @implements module:model/WebhookResponseAllOf
      */
     constructor() { 
-        WebhookCompact.initialize(this);WebhookResponseAllOf.initialize(this);
+        
         WebhookResponse.initialize(this);
     }
 
@@ -52,8 +49,6 @@ class WebhookResponse {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new WebhookResponse();
-            WebhookCompact.constructFromObject(data, obj);
-            WebhookResponseAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('gid')) {
                 obj['gid'] = ApiClient.convertToType(data['gid'], 'String');
@@ -65,7 +60,7 @@ class WebhookResponse {
                 obj['active'] = ApiClient.convertToType(data['active'], 'Boolean');
             }
             if (data.hasOwnProperty('resource')) {
-                obj['resource'] = AsanaNamedResource.constructFromObject(data['resource']);
+                obj['resource'] = MessageParentAllOf.constructFromObject(data['resource']);
             }
             if (data.hasOwnProperty('target')) {
                 obj['target'] = ApiClient.convertToType(data['target'], 'String');
@@ -83,7 +78,7 @@ class WebhookResponse {
                 obj['last_success_at'] = ApiClient.convertToType(data['last_success_at'], 'Date');
             }
             if (data.hasOwnProperty('filters')) {
-                obj['filters'] = ApiClient.convertToType(data['filters'], [WebhookFilter]);
+                obj['filters'] = ApiClient.convertToType(data['filters'], [WebhookRequestFiltersInner]);
             }
         }
         return obj;
@@ -111,7 +106,7 @@ WebhookResponse.prototype['resource_type'] = undefined;
 WebhookResponse.prototype['active'] = undefined;
 
 /**
- * @member {module:model/AsanaNamedResource} resource
+ * @member {module:model/MessageParentAllOf} resource
  */
 WebhookResponse.prototype['resource'] = undefined;
 
@@ -147,62 +142,11 @@ WebhookResponse.prototype['last_success_at'] = undefined;
 
 /**
  * Whitelist of filters to apply to events from this webhook. If a webhook event passes any of the filters the event will be delivered; otherwise no event will be sent to the receiving server.
- * @member {Array.<module:model/WebhookFilter>} filters
+ * @member {Array.<module:model/WebhookRequestFiltersInner>} filters
  */
 WebhookResponse.prototype['filters'] = undefined;
 
 
-// Implement WebhookCompact interface:
-/**
- * Globally unique identifier of the resource, as a string.
- * @member {String} gid
- */
-WebhookCompact.prototype['gid'] = undefined;
-/**
- * The base type of this resource.
- * @member {String} resource_type
- */
-WebhookCompact.prototype['resource_type'] = undefined;
-/**
- * If true, the webhook will send events - if false it is considered inactive and will not generate events.
- * @member {Boolean} active
- */
-WebhookCompact.prototype['active'] = undefined;
-/**
- * @member {module:model/AsanaNamedResource} resource
- */
-WebhookCompact.prototype['resource'] = undefined;
-/**
- * The URL to receive the HTTP POST.
- * @member {String} target
- */
-WebhookCompact.prototype['target'] = undefined;
-// Implement WebhookResponseAllOf interface:
-/**
- * The time at which this resource was created.
- * @member {Date} created_at
- */
-WebhookResponseAllOf.prototype['created_at'] = undefined;
-/**
- * The timestamp when the webhook last received an error when sending an event to the target.
- * @member {Date} last_failure_at
- */
-WebhookResponseAllOf.prototype['last_failure_at'] = undefined;
-/**
- * The contents of the last error response sent to the webhook when attempting to deliver events to the target.
- * @member {String} last_failure_content
- */
-WebhookResponseAllOf.prototype['last_failure_content'] = undefined;
-/**
- * The timestamp when the webhook last successfully sent an event to the target.
- * @member {Date} last_success_at
- */
-WebhookResponseAllOf.prototype['last_success_at'] = undefined;
-/**
- * Whitelist of filters to apply to events from this webhook. If a webhook event passes any of the filters the event will be delivered; otherwise no event will be sent to the receiving server.
- * @member {Array.<module:model/WebhookFilter>} filters
- */
-WebhookResponseAllOf.prototype['filters'] = undefined;
 
 
 

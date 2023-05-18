@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AddCustomFieldSettingRequest model module.
  * @module model/AddCustomFieldSettingRequest
- * @version 1.0.3
+ * @version 1.0.4
  */
 class AddCustomFieldSettingRequest {
     /**

@@ -17,7 +17,7 @@ import UserBaseResponse from './UserBaseResponse';
 /**
  * The AddUserForWorkspace200Response model module.
  * @module model/AddUserForWorkspace200Response
- * @version 1.0.3
+ * @version 1.0.4
  */
 class AddUserForWorkspace200Response {
     /**

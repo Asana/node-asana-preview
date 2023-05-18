@@ -17,7 +17,7 @@ import TimeTrackingEntryBase from './TimeTrackingEntryBase';
 /**
  * The CreateTimeTrackingEntry201Response model module.
  * @module model/CreateTimeTrackingEntry201Response
- * @version 1.0.3
+ * @version 1.0.4
  */
 class CreateTimeTrackingEntry201Response {
     /**

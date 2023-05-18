@@ -12,21 +12,20 @@
  */
 
 import ApiClient from '../ApiClient';
-import AsanaNamedResource from './AsanaNamedResource';
 
 /**
  * The EventResponseParent model module.
  * @module model/EventResponseParent
- * @version 1.0.3
+ * @version 1.0.4
  */
 class EventResponseParent {
     /**
      * Constructs a new <code>EventResponseParent</code>.
+     * A generic Asana Resource, containing a globally unique identifier.A generic Asana Resource, containing a globally unique identifier. For added/removed events, the parent object that resource was added to or removed from. The parent will be &#x60;null&#x60; for other event types.
      * @alias module:model/EventResponseParent
-     * @implements module:model/AsanaNamedResource
      */
     constructor() { 
-        AsanaNamedResource.initialize(this);
+        
         EventResponseParent.initialize(this);
     }
 
@@ -48,7 +47,6 @@ class EventResponseParent {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new EventResponseParent();
-            AsanaNamedResource.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('gid')) {
                 obj['gid'] = ApiClient.convertToType(data['gid'], 'String');
@@ -85,22 +83,6 @@ EventResponseParent.prototype['resource_type'] = undefined;
 EventResponseParent.prototype['name'] = undefined;
 
 
-// Implement AsanaNamedResource interface:
-/**
- * Globally unique identifier of the resource, as a string.
- * @member {String} gid
- */
-AsanaNamedResource.prototype['gid'] = undefined;
-/**
- * The base type of this resource.
- * @member {String} resource_type
- */
-AsanaNamedResource.prototype['resource_type'] = undefined;
-/**
- * The name of the object.
- * @member {String} name
- */
-AsanaNamedResource.prototype['name'] = undefined;
 
 
 

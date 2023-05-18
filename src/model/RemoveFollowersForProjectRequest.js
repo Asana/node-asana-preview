@@ -17,7 +17,7 @@ import RemoveFollowersRequest from './RemoveFollowersRequest';
 /**
  * The RemoveFollowersForProjectRequest model module.
  * @module model/RemoveFollowersForProjectRequest
- * @version 1.0.3
+ * @version 1.0.4
  */
 class RemoveFollowersForProjectRequest {
     /**

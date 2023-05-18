@@ -17,7 +17,7 @@ import GoalRemoveSupportingRelationshipRequest from './GoalRemoveSupportingRelat
 /**
  * The RemoveSupportingRelationshipRequest model module.
  * @module model/RemoveSupportingRelationshipRequest
- * @version 1.0.3
+ * @version 1.0.4
  */
 class RemoveSupportingRelationshipRequest {
     /**

@@ -12,25 +12,22 @@
  */
 
 import ApiClient from '../ApiClient';
-import AsanaResource from './AsanaResource';
-import UserCompact from './UserCompact';
-import WorkspaceCompact from './WorkspaceCompact';
-import WorkspaceMembershipCompactAllOf from './WorkspaceMembershipCompactAllOf';
+import CustomFieldResponsePeopleValueInner from './CustomFieldResponsePeopleValueInner';
+import GoalResponseWorkspace from './GoalResponseWorkspace';
 
 /**
  * The WorkspaceMembershipCompact model module.
  * @module model/WorkspaceMembershipCompact
- * @version 1.0.3
+ * @version 1.0.4
  */
 class WorkspaceMembershipCompact {
     /**
      * Constructs a new <code>WorkspaceMembershipCompact</code>.
+     * A generic Asana Resource, containing a globally unique identifier.A generic Asana Resource, containing a globally unique identifier. This object determines if a user is a member of a workspace.
      * @alias module:model/WorkspaceMembershipCompact
-     * @implements module:model/AsanaResource
-     * @implements module:model/WorkspaceMembershipCompactAllOf
      */
     constructor() { 
-        AsanaResource.initialize(this);WorkspaceMembershipCompactAllOf.initialize(this);
+        
         WorkspaceMembershipCompact.initialize(this);
     }
 
@@ -52,8 +49,6 @@ class WorkspaceMembershipCompact {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new WorkspaceMembershipCompact();
-            AsanaResource.constructFromObject(data, obj);
-            WorkspaceMembershipCompactAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('gid')) {
                 obj['gid'] = ApiClient.convertToType(data['gid'], 'String');
@@ -62,10 +57,10 @@ class WorkspaceMembershipCompact {
                 obj['resource_type'] = ApiClient.convertToType(data['resource_type'], 'String');
             }
             if (data.hasOwnProperty('user')) {
-                obj['user'] = UserCompact.constructFromObject(data['user']);
+                obj['user'] = CustomFieldResponsePeopleValueInner.constructFromObject(data['user']);
             }
             if (data.hasOwnProperty('workspace')) {
-                obj['workspace'] = WorkspaceCompact.constructFromObject(data['workspace']);
+                obj['workspace'] = GoalResponseWorkspace.constructFromObject(data['workspace']);
             }
         }
         return obj;
@@ -87,36 +82,16 @@ WorkspaceMembershipCompact.prototype['gid'] = undefined;
 WorkspaceMembershipCompact.prototype['resource_type'] = undefined;
 
 /**
- * @member {module:model/UserCompact} user
+ * @member {module:model/CustomFieldResponsePeopleValueInner} user
  */
 WorkspaceMembershipCompact.prototype['user'] = undefined;
 
 /**
- * @member {module:model/WorkspaceCompact} workspace
+ * @member {module:model/GoalResponseWorkspace} workspace
  */
 WorkspaceMembershipCompact.prototype['workspace'] = undefined;
 
 
-// Implement AsanaResource interface:
-/**
- * Globally unique identifier of the resource, as a string.
- * @member {String} gid
- */
-AsanaResource.prototype['gid'] = undefined;
-/**
- * The base type of this resource.
- * @member {String} resource_type
- */
-AsanaResource.prototype['resource_type'] = undefined;
-// Implement WorkspaceMembershipCompactAllOf interface:
-/**
- * @member {module:model/UserCompact} user
- */
-WorkspaceMembershipCompactAllOf.prototype['user'] = undefined;
-/**
- * @member {module:model/WorkspaceCompact} workspace
- */
-WorkspaceMembershipCompactAllOf.prototype['workspace'] = undefined;
 
 
 

@@ -12,23 +12,22 @@
  */
 
 import ApiClient from '../ApiClient';
-import GoalCompact from './GoalCompact';
-import GoalRelationshipBase from './GoalRelationshipBase';
-import ProjectCompact from './ProjectCompact';
+import GoalRelationshipBaseSupportedGoal from './GoalRelationshipBaseSupportedGoal';
+import GoalRelationshipBaseSupportingResource from './GoalRelationshipBaseSupportingResource';
 
 /**
  * The GoalRelationshipResponse model module.
  * @module model/GoalRelationshipResponse
- * @version 1.0.3
+ * @version 1.0.4
  */
 class GoalRelationshipResponse {
     /**
      * Constructs a new <code>GoalRelationshipResponse</code>.
+     * A generic Asana Resource, containing a globally unique identifier.A generic Asana Resource, containing a globally unique identifier. A *goal relationship* is an object representing the relationship between a goal and another goal, a project, or a portfolio.
      * @alias module:model/GoalRelationshipResponse
-     * @implements module:model/GoalRelationshipBase
      */
     constructor() { 
-        GoalRelationshipBase.initialize(this);
+        
         GoalRelationshipResponse.initialize(this);
     }
 
@@ -50,7 +49,6 @@ class GoalRelationshipResponse {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new GoalRelationshipResponse();
-            GoalRelationshipBase.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('gid')) {
                 obj['gid'] = ApiClient.convertToType(data['gid'], 'String');
@@ -62,13 +60,13 @@ class GoalRelationshipResponse {
                 obj['resource_subtype'] = ApiClient.convertToType(data['resource_subtype'], 'String');
             }
             if (data.hasOwnProperty('supporting_resource')) {
-                obj['supporting_resource'] = ApiClient.convertToType(data['supporting_resource'], ProjectCompact);
+                obj['supporting_resource'] = GoalRelationshipBaseSupportingResource.constructFromObject(data['supporting_resource']);
             }
             if (data.hasOwnProperty('contribution_weight')) {
                 obj['contribution_weight'] = ApiClient.convertToType(data['contribution_weight'], 'Number');
             }
             if (data.hasOwnProperty('supported_goal')) {
-                obj['supported_goal'] = ApiClient.convertToType(data['supported_goal'], GoalCompact);
+                obj['supported_goal'] = GoalRelationshipBaseSupportedGoal.constructFromObject(data['supported_goal']);
             }
         }
         return obj;
@@ -96,7 +94,7 @@ GoalRelationshipResponse.prototype['resource_type'] = undefined;
 GoalRelationshipResponse.prototype['resource_subtype'] = undefined;
 
 /**
- * @member {module:model/ProjectCompact} supporting_resource
+ * @member {module:model/GoalRelationshipBaseSupportingResource} supporting_resource
  */
 GoalRelationshipResponse.prototype['supporting_resource'] = undefined;
 
@@ -107,40 +105,11 @@ GoalRelationshipResponse.prototype['supporting_resource'] = undefined;
 GoalRelationshipResponse.prototype['contribution_weight'] = undefined;
 
 /**
- * @member {module:model/GoalCompact} supported_goal
+ * @member {module:model/GoalRelationshipBaseSupportedGoal} supported_goal
  */
 GoalRelationshipResponse.prototype['supported_goal'] = undefined;
 
 
-// Implement GoalRelationshipBase interface:
-/**
- * Globally unique identifier of the resource, as a string.
- * @member {String} gid
- */
-GoalRelationshipBase.prototype['gid'] = undefined;
-/**
- * The base type of this resource.
- * @member {String} resource_type
- */
-GoalRelationshipBase.prototype['resource_type'] = undefined;
-/**
- * The subtype of this resource. Different subtypes retain many of the same fields and behavior, but may render differently in Asana or represent resources with different semantic meaning.
- * @member {module:model/GoalRelationshipBase.ResourceSubtypeEnum} resource_subtype
- */
-GoalRelationshipBase.prototype['resource_subtype'] = undefined;
-/**
- * @member {module:model/ProjectCompact} supporting_resource
- */
-GoalRelationshipBase.prototype['supporting_resource'] = undefined;
-/**
- * The weight that the supporting resource's progress contributes to the supported goal's progress. This can only be 0 or 1.
- * @member {Number} contribution_weight
- */
-GoalRelationshipBase.prototype['contribution_weight'] = undefined;
-/**
- * @member {module:model/GoalCompact} supported_goal
- */
-GoalRelationshipBase.prototype['supported_goal'] = undefined;
 
 
 

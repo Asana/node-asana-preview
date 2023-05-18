@@ -12,21 +12,20 @@
  */
 
 import ApiClient from '../ApiClient';
-import AsanaResource from './AsanaResource';
 
 /**
  * The ProjectBriefCompact model module.
  * @module model/ProjectBriefCompact
- * @version 1.0.3
+ * @version 1.0.4
  */
 class ProjectBriefCompact {
     /**
      * Constructs a new <code>ProjectBriefCompact</code>.
+     * A generic Asana Resource, containing a globally unique identifier.A generic Asana Resource, containing a globally unique identifier. A *Project Brief* allows you to explain the what and why of the project to your team.
      * @alias module:model/ProjectBriefCompact
-     * @implements module:model/AsanaResource
      */
     constructor() { 
-        AsanaResource.initialize(this);
+        
         ProjectBriefCompact.initialize(this);
     }
 
@@ -48,7 +47,6 @@ class ProjectBriefCompact {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new ProjectBriefCompact();
-            AsanaResource.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('gid')) {
                 obj['gid'] = ApiClient.convertToType(data['gid'], 'String');
@@ -76,17 +74,6 @@ ProjectBriefCompact.prototype['gid'] = undefined;
 ProjectBriefCompact.prototype['resource_type'] = undefined;
 
 
-// Implement AsanaResource interface:
-/**
- * Globally unique identifier of the resource, as a string.
- * @member {String} gid
- */
-AsanaResource.prototype['gid'] = undefined;
-/**
- * The base type of this resource.
- * @member {String} resource_type
- */
-AsanaResource.prototype['resource_type'] = undefined;
 
 
 

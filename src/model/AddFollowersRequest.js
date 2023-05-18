@@ -12,21 +12,21 @@
  */
 
 import ApiClient from '../ApiClient';
+import TaskAddFollowersRequest from './TaskAddFollowersRequest';
 
 /**
  * The AddFollowersRequest model module.
  * @module model/AddFollowersRequest
- * @version 1.0.3
+ * @version 1.0.4
  */
 class AddFollowersRequest {
     /**
      * Constructs a new <code>AddFollowersRequest</code>.
      * @alias module:model/AddFollowersRequest
-     * @param followers {String} An array of strings identifying users. These can either be the string \"me\", an email, or the gid of a user.
      */
-    constructor(followers) { 
+    constructor() { 
         
-        AddFollowersRequest.initialize(this, followers);
+        AddFollowersRequest.initialize(this);
     }
 
     /**
@@ -34,8 +34,7 @@ class AddFollowersRequest {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, followers) { 
-        obj['followers'] = followers;
+    static initialize(obj) { 
     }
 
     /**
@@ -49,8 +48,8 @@ class AddFollowersRequest {
         if (data) {
             obj = obj || new AddFollowersRequest();
 
-            if (data.hasOwnProperty('followers')) {
-                obj['followers'] = ApiClient.convertToType(data['followers'], 'String');
+            if (data.hasOwnProperty('data')) {
+                obj['data'] = TaskAddFollowersRequest.constructFromObject(data['data']);
             }
         }
         return obj;
@@ -60,10 +59,9 @@ class AddFollowersRequest {
 }
 
 /**
- * An array of strings identifying users. These can either be the string \"me\", an email, or the gid of a user.
- * @member {String} followers
+ * @member {module:model/TaskAddFollowersRequest} data
  */
-AddFollowersRequest.prototype['followers'] = undefined;
+AddFollowersRequest.prototype['data'] = undefined;
 
 
 

@@ -12,23 +12,20 @@
  */
 
 import ApiClient from '../ApiClient';
-import ProjectBriefBaseAllOf from './ProjectBriefBaseAllOf';
-import ProjectBriefCompact from './ProjectBriefCompact';
 
 /**
  * The ProjectBriefBase model module.
  * @module model/ProjectBriefBase
- * @version 1.0.3
+ * @version 1.0.4
  */
 class ProjectBriefBase {
     /**
      * Constructs a new <code>ProjectBriefBase</code>.
+     * A generic Asana Resource, containing a globally unique identifier.A generic Asana Resource, containing a globally unique identifier. A *Project Brief* allows you to explain the what and why of the project to your team.
      * @alias module:model/ProjectBriefBase
-     * @implements module:model/ProjectBriefCompact
-     * @implements module:model/ProjectBriefBaseAllOf
      */
     constructor() { 
-        ProjectBriefCompact.initialize(this);ProjectBriefBaseAllOf.initialize(this);
+        
         ProjectBriefBase.initialize(this);
     }
 
@@ -50,8 +47,6 @@ class ProjectBriefBase {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new ProjectBriefBase();
-            ProjectBriefCompact.constructFromObject(data, obj);
-            ProjectBriefBaseAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('gid')) {
                 obj['gid'] = ApiClient.convertToType(data['gid'], 'String');
@@ -97,28 +92,6 @@ ProjectBriefBase.prototype['title'] = undefined;
 ProjectBriefBase.prototype['html_text'] = undefined;
 
 
-// Implement ProjectBriefCompact interface:
-/**
- * Globally unique identifier of the resource, as a string.
- * @member {String} gid
- */
-ProjectBriefCompact.prototype['gid'] = undefined;
-/**
- * The base type of this resource.
- * @member {String} resource_type
- */
-ProjectBriefCompact.prototype['resource_type'] = undefined;
-// Implement ProjectBriefBaseAllOf interface:
-/**
- * The title of the project brief.
- * @member {String} title
- */
-ProjectBriefBaseAllOf.prototype['title'] = undefined;
-/**
- * HTML formatted text for the project brief.
- * @member {String} html_text
- */
-ProjectBriefBaseAllOf.prototype['html_text'] = undefined;
 
 
 

@@ -12,23 +12,20 @@
  */
 
 import ApiClient from '../ApiClient';
-import TagBase from './TagBase';
-import TagRequestAllOf from './TagRequestAllOf';
 
 /**
  * The TagRequest model module.
  * @module model/TagRequest
- * @version 1.0.3
+ * @version 1.0.4
  */
 class TagRequest {
     /**
      * Constructs a new <code>TagRequest</code>.
+     * A generic Asana Resource, containing a globally unique identifier.A generic Asana Resource, containing a globally unique identifier. A *tag* is a label that can be attached to any task in Asana. It exists in a single workspace or organization.
      * @alias module:model/TagRequest
-     * @implements module:model/TagBase
-     * @implements module:model/TagRequestAllOf
      */
     constructor() { 
-        TagBase.initialize(this);TagRequestAllOf.initialize(this);
+        
         TagRequest.initialize(this);
     }
 
@@ -50,8 +47,6 @@ class TagRequest {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new TagRequest();
-            TagBase.constructFromObject(data, obj);
-            TagRequestAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('gid')) {
                 obj['gid'] = ApiClient.convertToType(data['gid'], 'String');
@@ -124,43 +119,6 @@ TagRequest.prototype['followers'] = undefined;
 TagRequest.prototype['workspace'] = undefined;
 
 
-// Implement TagBase interface:
-/**
- * Globally unique identifier of the resource, as a string.
- * @member {String} gid
- */
-TagBase.prototype['gid'] = undefined;
-/**
- * The base type of this resource.
- * @member {String} resource_type
- */
-TagBase.prototype['resource_type'] = undefined;
-/**
- * Name of the tag. This is generally a short sentence fragment that fits on a line in the UI for maximum readability. However, it can be longer.
- * @member {String} name
- */
-TagBase.prototype['name'] = undefined;
-/**
- * Color of the tag.
- * @member {module:model/TagBase.ColorEnum} color
- */
-TagBase.prototype['color'] = undefined;
-/**
- * Free-form textual information associated with the tag (i.e. its description).
- * @member {String} notes
- */
-TagBase.prototype['notes'] = undefined;
-// Implement TagRequestAllOf interface:
-/**
- * An array of strings identifying users. These can either be the string \"me\", an email, or the gid of a user.
- * @member {Array.<String>} followers
- */
-TagRequestAllOf.prototype['followers'] = undefined;
-/**
- * Gid of an object.
- * @member {String} workspace
- */
-TagRequestAllOf.prototype['workspace'] = undefined;
 
 
 

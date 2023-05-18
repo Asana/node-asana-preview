@@ -12,12 +12,12 @@
  */
 
 import ApiClient from '../ApiClient';
-import StoryCompact from './StoryCompact';
+import StoryResponse from './StoryResponse';
 
 /**
  * The GetStoriesForTask200Response model module.
  * @module model/GetStoriesForTask200Response
- * @version 1.0.3
+ * @version 1.0.4
  */
 class GetStoriesForTask200Response {
     /**
@@ -49,7 +49,7 @@ class GetStoriesForTask200Response {
             obj = obj || new GetStoriesForTask200Response();
 
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [StoryCompact]);
+                obj['data'] = ApiClient.convertToType(data['data'], [StoryResponse]);
             }
         }
         return obj;
@@ -59,7 +59,7 @@ class GetStoriesForTask200Response {
 }
 
 /**
- * @member {Array.<module:model/StoryCompact>} data
+ * @member {Array.<module:model/StoryResponse>} data
  */
 GetStoriesForTask200Response.prototype['data'] = undefined;
 

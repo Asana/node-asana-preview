@@ -12,21 +12,20 @@
  */
 
 import ApiClient from '../ApiClient';
-import UserCompact from './UserCompact';
 
 /**
  * The EventResponseUser model module.
  * @module model/EventResponseUser
- * @version 1.0.3
+ * @version 1.0.4
  */
 class EventResponseUser {
     /**
      * Constructs a new <code>EventResponseUser</code>.
+     * A generic Asana Resource, containing a globally unique identifier.A generic Asana Resource, containing a globally unique identifier. A *user* object represents an account in Asana that can be given access to various workspaces, projects, and tasks.A generic Asana Resource, containing a globally unique identifier.A generic Asana Resource, containing a globally unique identifier. A *user* object represents an account in Asana that can be given access to various workspaces, projects, and tasks. The user who triggered the event.
      * @alias module:model/EventResponseUser
-     * @implements module:model/UserCompact
      */
     constructor() { 
-        UserCompact.initialize(this);
+        
         EventResponseUser.initialize(this);
     }
 
@@ -48,7 +47,6 @@ class EventResponseUser {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new EventResponseUser();
-            UserCompact.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('gid')) {
                 obj['gid'] = ApiClient.convertToType(data['gid'], 'String');
@@ -85,22 +83,6 @@ EventResponseUser.prototype['resource_type'] = undefined;
 EventResponseUser.prototype['name'] = undefined;
 
 
-// Implement UserCompact interface:
-/**
- * Globally unique identifier of the resource, as a string.
- * @member {String} gid
- */
-UserCompact.prototype['gid'] = undefined;
-/**
- * The base type of this resource.
- * @member {String} resource_type
- */
-UserCompact.prototype['resource_type'] = undefined;
-/**
- * *Read-only except when same user as requester*. The user’s name.
- * @member {String} name
- */
-UserCompact.prototype['name'] = undefined;
 
 
 

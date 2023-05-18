@@ -17,7 +17,7 @@ import WorkspaceRemoveUserRequest from './WorkspaceRemoveUserRequest';
 /**
  * The RemoveUserForWorkspaceRequest model module.
  * @module model/RemoveUserForWorkspaceRequest
- * @version 1.0.3
+ * @version 1.0.4
  */
 class RemoveUserForWorkspaceRequest {
     /**

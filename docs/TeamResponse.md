@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **name** | **String** | The name of the team. | [optional] 
 **description** | **String** | [Opt In](/docs/inputoutput-options). The description of the team.  | [optional] 
 **htmlDescription** | **String** | [Opt In](/docs/inputoutput-options). The description of the team with formatting as HTML.  | [optional] 
-**organization** | [**WorkspaceCompact**](WorkspaceCompact.md) |  | [optional] 
+**organization** | [**TeamResponseOrganization**](TeamResponseOrganization.md) |  | [optional] 
 **permalinkUrl** | **String** | A url that points directly to the object within Asana. | [optional] [readonly] 
 **visibility** | **String** | The visibility of the team to users in the same organization  | [optional] 
 **editTeamNameOrDescriptionAccessLevel** | **String** | Controls who can edit team name and description  | [optional] 

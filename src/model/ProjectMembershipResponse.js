@@ -12,26 +12,23 @@
  */
 
 import ApiClient from '../ApiClient';
-import MemberCompact from './MemberCompact';
-import ProjectCompact from './ProjectCompact';
-import ProjectMembershipCompact from './ProjectMembershipCompact';
-import ProjectMembershipResponseAllOf from './ProjectMembershipResponseAllOf';
-import UserCompact from './UserCompact';
+import CustomFieldResponsePeopleValueInner from './CustomFieldResponsePeopleValueInner';
+import JobBaseNewProject from './JobBaseNewProject';
+import ProjectMembershipResponseMember from './ProjectMembershipResponseMember';
 
 /**
  * The ProjectMembershipResponse model module.
  * @module model/ProjectMembershipResponse
- * @version 1.0.3
+ * @version 1.0.4
  */
 class ProjectMembershipResponse {
     /**
      * Constructs a new <code>ProjectMembershipResponse</code>.
+     * A generic Asana Resource, containing a globally unique identifier.A generic Asana Resource, containing a globally unique identifier. With the introduction of “comment-only” projects in Asana, a user’s membership in a project comes with associated permissions. These permissions (whether a user has full access to the project or comment-only access) are accessible through the project memberships endpoints described here.
      * @alias module:model/ProjectMembershipResponse
-     * @implements module:model/ProjectMembershipCompact
-     * @implements module:model/ProjectMembershipResponseAllOf
      */
     constructor() { 
-        ProjectMembershipCompact.initialize(this);ProjectMembershipResponseAllOf.initialize(this);
+        
         ProjectMembershipResponse.initialize(this);
     }
 
@@ -53,8 +50,6 @@ class ProjectMembershipResponse {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new ProjectMembershipResponse();
-            ProjectMembershipCompact.constructFromObject(data, obj);
-            ProjectMembershipResponseAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('gid')) {
                 obj['gid'] = ApiClient.convertToType(data['gid'], 'String');
@@ -63,13 +58,13 @@ class ProjectMembershipResponse {
                 obj['resource_type'] = ApiClient.convertToType(data['resource_type'], 'String');
             }
             if (data.hasOwnProperty('user')) {
-                obj['user'] = UserCompact.constructFromObject(data['user']);
+                obj['user'] = CustomFieldResponsePeopleValueInner.constructFromObject(data['user']);
             }
             if (data.hasOwnProperty('project')) {
-                obj['project'] = ProjectCompact.constructFromObject(data['project']);
+                obj['project'] = JobBaseNewProject.constructFromObject(data['project']);
             }
             if (data.hasOwnProperty('member')) {
-                obj['member'] = MemberCompact.constructFromObject(data['member']);
+                obj['member'] = ProjectMembershipResponseMember.constructFromObject(data['member']);
             }
             if (data.hasOwnProperty('write_access')) {
                 obj['write_access'] = ApiClient.convertToType(data['write_access'], 'String');
@@ -94,17 +89,17 @@ ProjectMembershipResponse.prototype['gid'] = undefined;
 ProjectMembershipResponse.prototype['resource_type'] = undefined;
 
 /**
- * @member {module:model/UserCompact} user
+ * @member {module:model/CustomFieldResponsePeopleValueInner} user
  */
 ProjectMembershipResponse.prototype['user'] = undefined;
 
 /**
- * @member {module:model/ProjectCompact} project
+ * @member {module:model/JobBaseNewProject} project
  */
 ProjectMembershipResponse.prototype['project'] = undefined;
 
 /**
- * @member {module:model/MemberCompact} member
+ * @member {module:model/ProjectMembershipResponseMember} member
  */
 ProjectMembershipResponse.prototype['member'] = undefined;
 
@@ -115,40 +110,6 @@ ProjectMembershipResponse.prototype['member'] = undefined;
 ProjectMembershipResponse.prototype['write_access'] = undefined;
 
 
-// Implement ProjectMembershipCompact interface:
-/**
- * Globally unique identifier of the resource, as a string.
- * @member {String} gid
- */
-ProjectMembershipCompact.prototype['gid'] = undefined;
-/**
- * The base type of this resource.
- * @member {String} resource_type
- */
-ProjectMembershipCompact.prototype['resource_type'] = undefined;
-/**
- * @member {module:model/UserCompact} user
- */
-ProjectMembershipCompact.prototype['user'] = undefined;
-// Implement ProjectMembershipResponseAllOf interface:
-/**
- * @member {module:model/ProjectCompact} project
- */
-ProjectMembershipResponseAllOf.prototype['project'] = undefined;
-/**
- * @member {module:model/MemberCompact} member
- */
-ProjectMembershipResponseAllOf.prototype['member'] = undefined;
-/**
- * Type of the membership.
- * @member {String} resource_type
- */
-ProjectMembershipResponseAllOf.prototype['resource_type'] = undefined;
-/**
- * Whether the member has full access, edit access, or comment-only access to the project.
- * @member {module:model/ProjectMembershipResponseAllOf.WriteAccessEnum} write_access
- */
-ProjectMembershipResponseAllOf.prototype['write_access'] = undefined;
 
 
 

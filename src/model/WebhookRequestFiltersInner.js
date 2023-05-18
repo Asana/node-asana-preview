@@ -12,21 +12,20 @@
  */
 
 import ApiClient from '../ApiClient';
-import WebhookFilter from './WebhookFilter';
 
 /**
  * The WebhookRequestFiltersInner model module.
  * @module model/WebhookRequestFiltersInner
- * @version 1.0.3
+ * @version 1.0.4
  */
 class WebhookRequestFiltersInner {
     /**
      * Constructs a new <code>WebhookRequestFiltersInner</code>.
+     * A WebhookFilter can be passed on creation of a webhook in order to filter the types of actions that trigger delivery of an [event](/reference/events)A WebhookFilter can be passed on creation of a webhook in order to filter the types of actions that trigger delivery of an [event](/reference/events) A set of filters to specify a whitelist for what types of events will be delivered.
      * @alias module:model/WebhookRequestFiltersInner
-     * @implements module:model/WebhookFilter
      */
     constructor() { 
-        WebhookFilter.initialize(this);
+        
         WebhookRequestFiltersInner.initialize(this);
     }
 
@@ -48,7 +47,6 @@ class WebhookRequestFiltersInner {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new WebhookRequestFiltersInner();
-            WebhookFilter.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('resource_type')) {
                 obj['resource_type'] = ApiClient.convertToType(data['resource_type'], 'String');
@@ -94,27 +92,6 @@ WebhookRequestFiltersInner.prototype['action'] = undefined;
 WebhookRequestFiltersInner.prototype['fields'] = undefined;
 
 
-// Implement WebhookFilter interface:
-/**
- * The type of the resource which created the event when modified; for example, to filter to changes on regular tasks this field should be set to `task`.
- * @member {String} resource_type
- */
-WebhookFilter.prototype['resource_type'] = undefined;
-/**
- * The resource subtype of the resource that the filter applies to. This should be set to the same value as is returned on the `resource_subtype` field on the resources themselves.
- * @member {String} resource_subtype
- */
-WebhookFilter.prototype['resource_subtype'] = undefined;
-/**
- * The type of change on the **resource** to pass through the filter. For more information refer to `Event.action` in the [event](/reference/events) schema. This can be one of `changed`, `added`, `removed`, `deleted`, and `undeleted` depending on the nature of what has occurred on the resource.
- * @member {String} action
- */
-WebhookFilter.prototype['action'] = undefined;
-/**
- * *Conditional.* A whitelist of fields for events which will pass the filter when the resource is changed. These can be any combination of the fields on the resources themselves. This field is only valid for `action` of type `changed`
- * @member {Array.<String>} fields
- */
-WebhookFilter.prototype['fields'] = undefined;
 
 
 

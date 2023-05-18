@@ -12,23 +12,20 @@
  */
 
 import ApiClient from '../ApiClient';
-import AsanaResource from './AsanaResource';
-import PortfolioCompactAllOf from './PortfolioCompactAllOf';
 
 /**
  * The PortfolioCompact model module.
  * @module model/PortfolioCompact
- * @version 1.0.3
+ * @version 1.0.4
  */
 class PortfolioCompact {
     /**
      * Constructs a new <code>PortfolioCompact</code>.
+     * A generic Asana Resource, containing a globally unique identifier.A generic Asana Resource, containing a globally unique identifier. A *portfolio* gives a high-level overview of the status of multiple initiatives in Asana. Portfolios provide a dashboard overview of the state of multiple projects, including a progress report and the most recent [project status](/reference/project-statuses) update. Portfolios have some restrictions on size. Each portfolio has a max of 500 items and, like projects, a max of 20 custom fields.
      * @alias module:model/PortfolioCompact
-     * @implements module:model/AsanaResource
-     * @implements module:model/PortfolioCompactAllOf
      */
     constructor() { 
-        AsanaResource.initialize(this);PortfolioCompactAllOf.initialize(this);
+        
         PortfolioCompact.initialize(this);
     }
 
@@ -50,8 +47,6 @@ class PortfolioCompact {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new PortfolioCompact();
-            AsanaResource.constructFromObject(data, obj);
-            PortfolioCompactAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('gid')) {
                 obj['gid'] = ApiClient.convertToType(data['gid'], 'String');
@@ -88,23 +83,6 @@ PortfolioCompact.prototype['resource_type'] = undefined;
 PortfolioCompact.prototype['name'] = undefined;
 
 
-// Implement AsanaResource interface:
-/**
- * Globally unique identifier of the resource, as a string.
- * @member {String} gid
- */
-AsanaResource.prototype['gid'] = undefined;
-/**
- * The base type of this resource.
- * @member {String} resource_type
- */
-AsanaResource.prototype['resource_type'] = undefined;
-// Implement PortfolioCompactAllOf interface:
-/**
- * The name of the portfolio.
- * @member {String} name
- */
-PortfolioCompactAllOf.prototype['name'] = undefined;
 
 
 

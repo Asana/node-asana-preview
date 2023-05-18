@@ -12,23 +12,20 @@
  */
 
 import ApiClient from '../ApiClient';
-import AsanaResource from './AsanaResource';
-import TemplateRoleAllOf from './TemplateRoleAllOf';
 
 /**
  * The TemplateRole model module.
  * @module model/TemplateRole
- * @version 1.0.3
+ * @version 1.0.4
  */
 class TemplateRole {
     /**
      * Constructs a new <code>TemplateRole</code>.
+     * A generic Asana Resource, containing a globally unique identifier.
      * @alias module:model/TemplateRole
-     * @implements module:model/AsanaResource
-     * @implements module:model/TemplateRoleAllOf
      */
     constructor() { 
-        AsanaResource.initialize(this);TemplateRoleAllOf.initialize(this);
+        
         TemplateRole.initialize(this);
     }
 
@@ -50,8 +47,6 @@ class TemplateRole {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new TemplateRole();
-            AsanaResource.constructFromObject(data, obj);
-            TemplateRoleAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('gid')) {
                 obj['gid'] = ApiClient.convertToType(data['gid'], 'String');
@@ -88,23 +83,6 @@ TemplateRole.prototype['resource_type'] = undefined;
 TemplateRole.prototype['name'] = undefined;
 
 
-// Implement AsanaResource interface:
-/**
- * Globally unique identifier of the resource, as a string.
- * @member {String} gid
- */
-AsanaResource.prototype['gid'] = undefined;
-/**
- * The base type of this resource.
- * @member {String} resource_type
- */
-AsanaResource.prototype['resource_type'] = undefined;
-// Implement TemplateRoleAllOf interface:
-/**
- * Name of the template role.
- * @member {String} name
- */
-TemplateRoleAllOf.prototype['name'] = undefined;
 
 
 

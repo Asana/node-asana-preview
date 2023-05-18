@@ -25,7 +25,7 @@ import InsertEnumOptionForCustomFieldRequest from '../model/InsertEnumOptionForC
 /**
 * CustomFields service.
 * @module api/CustomFieldsApi
-* @version 1.0.3
+* @version 1.0.4
 */
 export default class CustomFieldsApi {
 
@@ -79,8 +79,8 @@ export default class CustomFieldsApi {
       };
 
       let authNames = ['personalAccessToken'];
-      let contentTypes = ['application/json'];
-      let accepts = ['application/json'];
+      let contentTypes = ['application/json; charset=UTF-8'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = CreateCustomField201Response;
       return this.apiClient.callApi(
         '/custom_fields', 'POST',
@@ -133,8 +133,8 @@ export default class CustomFieldsApi {
       };
 
       let authNames = ['personalAccessToken'];
-      let contentTypes = ['application/json'];
-      let accepts = ['application/json'];
+      let contentTypes = ['application/json; charset=UTF-8'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = CreateEnumOptionForCustomField201Response;
       return this.apiClient.callApi(
         '/custom_fields/{custom_field_gid}/enum_options', 'POST',
@@ -181,7 +181,7 @@ export default class CustomFieldsApi {
 
       let authNames = ['personalAccessToken'];
       let contentTypes = [];
-      let accepts = ['application/json'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = DeleteAttachment200Response;
       return this.apiClient.callApi(
         '/custom_fields/{custom_field_gid}', 'DELETE',
@@ -230,7 +230,7 @@ export default class CustomFieldsApi {
 
       let authNames = ['personalAccessToken'];
       let contentTypes = [];
-      let accepts = ['application/json'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = CreateCustomField201Response;
       return this.apiClient.callApi(
         '/custom_fields/{custom_field_gid}', 'GET',
@@ -283,7 +283,7 @@ export default class CustomFieldsApi {
 
       let authNames = ['personalAccessToken'];
       let contentTypes = [];
-      let accepts = ['application/json'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = GetCustomFieldsForWorkspace200Response;
       return this.apiClient.callApi(
         '/workspaces/{workspace_gid}/custom_fields', 'GET',
@@ -332,8 +332,8 @@ export default class CustomFieldsApi {
       };
 
       let authNames = ['personalAccessToken'];
-      let contentTypes = ['application/json'];
-      let accepts = ['application/json'];
+      let contentTypes = ['application/json; charset=UTF-8'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = CreateEnumOptionForCustomField201Response;
       return this.apiClient.callApi(
         '/custom_fields/{custom_field_gid}/enum_options/insert', 'POST',
@@ -382,8 +382,8 @@ export default class CustomFieldsApi {
       };
 
       let authNames = ['personalAccessToken'];
-      let contentTypes = ['application/json'];
-      let accepts = ['application/json'];
+      let contentTypes = ['application/json; charset=UTF-8'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = CreateCustomField201Response;
       return this.apiClient.callApi(
         '/custom_fields/{custom_field_gid}', 'PUT',
@@ -432,8 +432,8 @@ export default class CustomFieldsApi {
       };
 
       let authNames = ['personalAccessToken'];
-      let contentTypes = ['application/json'];
-      let accepts = ['application/json'];
+      let contentTypes = ['application/json; charset=UTF-8'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = CreateEnumOptionForCustomField201Response;
       return this.apiClient.callApi(
         '/enum_options/{enum_option_gid}', 'PUT',

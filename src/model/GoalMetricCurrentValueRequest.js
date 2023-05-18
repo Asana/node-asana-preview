@@ -12,23 +12,20 @@
  */
 
 import ApiClient from '../ApiClient';
-import AsanaResource from './AsanaResource';
-import GoalMetricCurrentValueRequestAllOf from './GoalMetricCurrentValueRequestAllOf';
 
 /**
  * The GoalMetricCurrentValueRequest model module.
  * @module model/GoalMetricCurrentValueRequest
- * @version 1.0.3
+ * @version 1.0.4
  */
 class GoalMetricCurrentValueRequest {
     /**
      * Constructs a new <code>GoalMetricCurrentValueRequest</code>.
+     * A generic Asana Resource, containing a globally unique identifier.
      * @alias module:model/GoalMetricCurrentValueRequest
-     * @implements module:model/AsanaResource
-     * @implements module:model/GoalMetricCurrentValueRequestAllOf
      */
     constructor() { 
-        AsanaResource.initialize(this);GoalMetricCurrentValueRequestAllOf.initialize(this);
+        
         GoalMetricCurrentValueRequest.initialize(this);
     }
 
@@ -50,8 +47,6 @@ class GoalMetricCurrentValueRequest {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new GoalMetricCurrentValueRequest();
-            AsanaResource.constructFromObject(data, obj);
-            GoalMetricCurrentValueRequestAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('gid')) {
                 obj['gid'] = ApiClient.convertToType(data['gid'], 'String');
@@ -88,23 +83,6 @@ GoalMetricCurrentValueRequest.prototype['resource_type'] = undefined;
 GoalMetricCurrentValueRequest.prototype['current_number_value'] = undefined;
 
 
-// Implement AsanaResource interface:
-/**
- * Globally unique identifier of the resource, as a string.
- * @member {String} gid
- */
-AsanaResource.prototype['gid'] = undefined;
-/**
- * The base type of this resource.
- * @member {String} resource_type
- */
-AsanaResource.prototype['resource_type'] = undefined;
-// Implement GoalMetricCurrentValueRequestAllOf interface:
-/**
- * *Conditional*. This number is the current value of a goal metric of type number.
- * @member {Number} current_number_value
- */
-GoalMetricCurrentValueRequestAllOf.prototype['current_number_value'] = undefined;
 
 
 

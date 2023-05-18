@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateMembershipRequest model module.
  * @module model/CreateMembershipRequest
- * @version 1.0.3
+ * @version 1.0.4
  */
 class CreateMembershipRequest {
     /**

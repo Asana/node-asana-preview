@@ -17,7 +17,7 @@ import TaskResponse from './TaskResponse';
 /**
  * The CreateTask201Response model module.
  * @module model/CreateTask201Response
- * @version 1.0.3
+ * @version 1.0.4
  */
 class CreateTask201Response {
     /**

@@ -12,23 +12,20 @@
  */
 
 import ApiClient from '../ApiClient';
-import AsanaResource from './AsanaResource';
-import GoalMetricBaseAllOf from './GoalMetricBaseAllOf';
 
 /**
  * The GoalMetricBase model module.
  * @module model/GoalMetricBase
- * @version 1.0.3
+ * @version 1.0.4
  */
 class GoalMetricBase {
     /**
      * Constructs a new <code>GoalMetricBase</code>.
+     * A generic Asana Resource, containing a globally unique identifier.
      * @alias module:model/GoalMetricBase
-     * @implements module:model/AsanaResource
-     * @implements module:model/GoalMetricBaseAllOf
      */
     constructor() { 
-        AsanaResource.initialize(this);GoalMetricBaseAllOf.initialize(this);
+        
         GoalMetricBase.initialize(this);
     }
 
@@ -50,8 +47,6 @@ class GoalMetricBase {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new GoalMetricBase();
-            AsanaResource.constructFromObject(data, obj);
-            GoalMetricBaseAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('gid')) {
                 obj['gid'] = ApiClient.convertToType(data['gid'], 'String');
@@ -160,63 +155,6 @@ GoalMetricBase.prototype['current_display_value'] = undefined;
 GoalMetricBase.prototype['progress_source'] = undefined;
 
 
-// Implement AsanaResource interface:
-/**
- * Globally unique identifier of the resource, as a string.
- * @member {String} gid
- */
-AsanaResource.prototype['gid'] = undefined;
-/**
- * The base type of this resource.
- * @member {String} resource_type
- */
-AsanaResource.prototype['resource_type'] = undefined;
-// Implement GoalMetricBaseAllOf interface:
-/**
- * The subtype of this resource. Different subtypes retain many of the same fields and behavior, but may render differently in Asana or represent resources with different semantic meaning.
- * @member {module:model/GoalMetricBaseAllOf.ResourceSubtypeEnum} resource_subtype
- */
-GoalMetricBaseAllOf.prototype['resource_subtype'] = undefined;
-/**
- * *Conditional*. Only relevant for goal metrics of type ‘Number’. This field dictates the number of places after the decimal to round to, i.e. 0 is integer values, 1 rounds to the nearest tenth, and so on. Must be between 0 and 6, inclusive. For percentage format, this may be unintuitive, as a value of 0.25 has a precision of 0, while a value of 0.251 has a precision of 1. This is due to 0.25 being displayed as 25%.
- * @member {Number} precision
- */
-GoalMetricBaseAllOf.prototype['precision'] = undefined;
-/**
- * A supported unit of measure for the goal metric, or none.
- * @member {module:model/GoalMetricBaseAllOf.UnitEnum} unit
- */
-GoalMetricBaseAllOf.prototype['unit'] = undefined;
-/**
- * ISO 4217 currency code to format this custom field. This will be null if the `unit` is not `currency`.
- * @member {String} currency_code
- */
-GoalMetricBaseAllOf.prototype['currency_code'] = undefined;
-/**
- * This number is the start value of a goal metric of type number.
- * @member {Number} initial_number_value
- */
-GoalMetricBaseAllOf.prototype['initial_number_value'] = undefined;
-/**
- * This number is the end value of a goal metric of type number. This number cannot equal `initial_number_value`.
- * @member {Number} target_number_value
- */
-GoalMetricBaseAllOf.prototype['target_number_value'] = undefined;
-/**
- * This number is the current value of a goal metric of type number.
- * @member {Number} current_number_value
- */
-GoalMetricBaseAllOf.prototype['current_number_value'] = undefined;
-/**
- * This string is the current value of a goal metric of type string.
- * @member {String} current_display_value
- */
-GoalMetricBaseAllOf.prototype['current_display_value'] = undefined;
-/**
- * This field defines how the progress value of a goal metric is being calculated. A goal's progress can be provided manually by the user, calculated automatically from contributing subgoals or projects, or managed by an integration with an external data source, such as Salesforce.
- * @member {module:model/GoalMetricBaseAllOf.ProgressSourceEnum} progress_source
- */
-GoalMetricBaseAllOf.prototype['progress_source'] = undefined;
 
 
 

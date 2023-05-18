@@ -17,7 +17,7 @@ import PortfolioResponse from './PortfolioResponse';
 /**
  * The CreatePortfolio201Response model module.
  * @module model/CreatePortfolio201Response
- * @version 1.0.3
+ * @version 1.0.4
  */
 class CreatePortfolio201Response {
     /**

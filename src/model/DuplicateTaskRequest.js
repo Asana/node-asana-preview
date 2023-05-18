@@ -17,7 +17,7 @@ import TaskDuplicateRequest from './TaskDuplicateRequest';
 /**
  * The DuplicateTaskRequest model module.
  * @module model/DuplicateTaskRequest
- * @version 1.0.3
+ * @version 1.0.4
  */
 class DuplicateTaskRequest {
     /**

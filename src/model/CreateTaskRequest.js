@@ -17,7 +17,7 @@ import TaskRequest from './TaskRequest';
 /**
  * The CreateTaskRequest model module.
  * @module model/CreateTaskRequest
- * @version 1.0.3
+ * @version 1.0.4
  */
 class CreateTaskRequest {
     /**

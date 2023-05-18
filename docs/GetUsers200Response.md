@@ -4,6 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**[UserCompact]**](UserCompact.md) |  | [optional] 
+**data** | [**[UserResponse]**](UserResponse.md) |  | [optional] 
 
 

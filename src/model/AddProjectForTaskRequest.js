@@ -17,7 +17,7 @@ import TaskAddProjectRequest from './TaskAddProjectRequest';
 /**
  * The AddProjectForTaskRequest model module.
  * @module model/AddProjectForTaskRequest
- * @version 1.0.3
+ * @version 1.0.4
  */
 class AddProjectForTaskRequest {
     /**

@@ -12,12 +12,12 @@
  */
 
 import ApiClient from '../ApiClient';
-import ProjectStatusCompact from './ProjectStatusCompact';
+import ProjectStatusResponse from './ProjectStatusResponse';
 
 /**
  * The GetProjectStatusesForProject200Response model module.
  * @module model/GetProjectStatusesForProject200Response
- * @version 1.0.3
+ * @version 1.0.4
  */
 class GetProjectStatusesForProject200Response {
     /**
@@ -49,7 +49,7 @@ class GetProjectStatusesForProject200Response {
             obj = obj || new GetProjectStatusesForProject200Response();
 
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [ProjectStatusCompact]);
+                obj['data'] = ApiClient.convertToType(data['data'], [ProjectStatusResponse]);
             }
         }
         return obj;
@@ -59,7 +59,7 @@ class GetProjectStatusesForProject200Response {
 }
 
 /**
- * @member {Array.<module:model/ProjectStatusCompact>} data
+ * @member {Array.<module:model/ProjectStatusResponse>} data
  */
 GetProjectStatusesForProject200Response.prototype['data'] = undefined;
 

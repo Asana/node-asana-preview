@@ -17,7 +17,7 @@ import GoalMetricCurrentValueRequest from './GoalMetricCurrentValueRequest';
 /**
  * The UpdateGoalMetricRequest model module.
  * @module model/UpdateGoalMetricRequest
- * @version 1.0.3
+ * @version 1.0.4
  */
 class UpdateGoalMetricRequest {
     /**

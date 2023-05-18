@@ -17,7 +17,7 @@ import ProjectBriefRequest from './ProjectBriefRequest';
 /**
  * The UpdateProjectBriefRequest model module.
  * @module model/UpdateProjectBriefRequest
- * @version 1.0.3
+ * @version 1.0.4
  */
 class UpdateProjectBriefRequest {
     /**

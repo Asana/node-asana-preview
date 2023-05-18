@@ -12,12 +12,12 @@
  */
 
 import ApiClient from '../ApiClient';
-import WorkspaceCompact from './WorkspaceCompact';
+import WorkspaceResponse from './WorkspaceResponse';
 
 /**
  * The GetWorkspaces200Response model module.
  * @module model/GetWorkspaces200Response
- * @version 1.0.3
+ * @version 1.0.4
  */
 class GetWorkspaces200Response {
     /**
@@ -49,7 +49,7 @@ class GetWorkspaces200Response {
             obj = obj || new GetWorkspaces200Response();
 
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [WorkspaceCompact]);
+                obj['data'] = ApiClient.convertToType(data['data'], [WorkspaceResponse]);
             }
         }
         return obj;
@@ -59,7 +59,7 @@ class GetWorkspaces200Response {
 }
 
 /**
- * @member {Array.<module:model/WorkspaceCompact>} data
+ * @member {Array.<module:model/WorkspaceResponse>} data
  */
 GetWorkspaces200Response.prototype['data'] = undefined;
 

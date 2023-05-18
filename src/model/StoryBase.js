@@ -12,23 +12,20 @@
  */
 
 import ApiClient from '../ApiClient';
-import AsanaResource from './AsanaResource';
-import StoryBaseAllOf from './StoryBaseAllOf';
 
 /**
  * The StoryBase model module.
  * @module model/StoryBase
- * @version 1.0.3
+ * @version 1.0.4
  */
 class StoryBase {
     /**
      * Constructs a new <code>StoryBase</code>.
+     * A generic Asana Resource, containing a globally unique identifier.A generic Asana Resource, containing a globally unique identifier. A story represents an activity associated with an object in the Asana system.
      * @alias module:model/StoryBase
-     * @implements module:model/AsanaResource
-     * @implements module:model/StoryBaseAllOf
      */
     constructor() { 
-        AsanaResource.initialize(this);StoryBaseAllOf.initialize(this);
+        
         StoryBase.initialize(this);
     }
 
@@ -50,8 +47,6 @@ class StoryBase {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new StoryBase();
-            AsanaResource.constructFromObject(data, obj);
-            StoryBaseAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('gid')) {
                 obj['gid'] = ApiClient.convertToType(data['gid'], 'String');
@@ -133,48 +128,6 @@ StoryBase.prototype['is_pinned'] = undefined;
 StoryBase.prototype['sticker_name'] = undefined;
 
 
-// Implement AsanaResource interface:
-/**
- * Globally unique identifier of the resource, as a string.
- * @member {String} gid
- */
-AsanaResource.prototype['gid'] = undefined;
-/**
- * The base type of this resource.
- * @member {String} resource_type
- */
-AsanaResource.prototype['resource_type'] = undefined;
-// Implement StoryBaseAllOf interface:
-/**
- * The time at which this resource was created.
- * @member {Date} created_at
- */
-StoryBaseAllOf.prototype['created_at'] = undefined;
-/**
- * The subtype of this resource. Different subtypes retain many of the same fields and behavior, but may render differently in Asana or represent resources with different semantic meaning.
- * @member {String} resource_subtype
- */
-StoryBaseAllOf.prototype['resource_subtype'] = undefined;
-/**
- * The plain text of the comment to add. Cannot be used with html_text.
- * @member {String} text
- */
-StoryBaseAllOf.prototype['text'] = undefined;
-/**
- * [Opt In](/docs/inputoutput-options). HTML formatted text for a comment. This will not include the name of the creator.
- * @member {String} html_text
- */
-StoryBaseAllOf.prototype['html_text'] = undefined;
-/**
- * *Conditional*. Whether the story should be pinned on the resource.
- * @member {Boolean} is_pinned
- */
-StoryBaseAllOf.prototype['is_pinned'] = undefined;
-/**
- * The name of the sticker in this story. `null` if there is no sticker.
- * @member {module:model/StoryBaseAllOf.StickerNameEnum} sticker_name
- */
-StoryBaseAllOf.prototype['sticker_name'] = undefined;
 
 
 

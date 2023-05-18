@@ -17,7 +17,7 @@ import WorkspaceAddUserRequest from './WorkspaceAddUserRequest';
 /**
  * The AddUserForWorkspaceRequest model module.
  * @module model/AddUserForWorkspaceRequest
- * @version 1.0.3
+ * @version 1.0.4
  */
 class AddUserForWorkspaceRequest {
     /**

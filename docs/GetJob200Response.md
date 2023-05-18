@@ -4,6 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**JobCompact**](JobCompact.md) |  | [optional] 
+**data** | [**JobResponse**](JobResponse.md) |  | [optional] 
 
 

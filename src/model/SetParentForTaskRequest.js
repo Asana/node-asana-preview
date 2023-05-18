@@ -17,7 +17,7 @@ import TaskSetParentRequest from './TaskSetParentRequest';
 /**
  * The SetParentForTaskRequest model module.
  * @module model/SetParentForTaskRequest
- * @version 1.0.3
+ * @version 1.0.4
  */
 class SetParentForTaskRequest {
     /**

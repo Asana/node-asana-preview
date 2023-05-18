@@ -19,7 +19,7 @@ import TypeaheadForWorkspace200Response from '../model/TypeaheadForWorkspace200R
 /**
 * Typeahead service.
 * @module api/TypeaheadApi
-* @version 1.0.3
+* @version 1.0.4
 */
 export default class TypeaheadApi {
 
@@ -87,7 +87,7 @@ export default class TypeaheadApi {
 
       let authNames = ['personalAccessToken'];
       let contentTypes = [];
-      let accepts = ['application/json'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = TypeaheadForWorkspace200Response;
       return this.apiClient.callApi(
         '/workspaces/{workspace_gid}/typeahead', 'GET',

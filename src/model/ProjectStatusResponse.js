@@ -12,26 +12,23 @@
  */
 
 import ApiClient from '../ApiClient';
-import ProjectStatusBase from './ProjectStatusBase';
-import ProjectStatusResponseAllOf from './ProjectStatusResponseAllOf';
-import UserCompact from './UserCompact';
+import CustomFieldResponsePeopleValueInner from './CustomFieldResponsePeopleValueInner';
 
 /**
  * The ProjectStatusResponse model module.
  * @module model/ProjectStatusResponse
- * @version 1.0.3
+ * @version 1.0.4
  */
 class ProjectStatusResponse {
     /**
      * Constructs a new <code>ProjectStatusResponse</code>.
+     * A generic Asana Resource, containing a globally unique identifier.A generic Asana Resource, containing a globally unique identifier. *Deprecated: new integrations should prefer the &#x60;status_update&#x60; resource.* A *project status* is an update on the progress of a particular project, and is sent out to all project followers when created. These updates include both text describing the update and a color code intended to represent the overall state of the project: \&quot;green\&quot; for projects that are on track, \&quot;yellow\&quot; for projects at risk, and \&quot;red\&quot; for projects that are behind.
      * @alias module:model/ProjectStatusResponse
-     * @implements module:model/ProjectStatusBase
-     * @implements module:model/ProjectStatusResponseAllOf
      * @param text {String} The text content of the status update.
      * @param color {module:model/ProjectStatusResponse.ColorEnum} The color associated with the status update.
      */
     constructor(text, color) { 
-        ProjectStatusBase.initialize(this, text, color);ProjectStatusResponseAllOf.initialize(this);
+        
         ProjectStatusResponse.initialize(this, text, color);
     }
 
@@ -55,8 +52,6 @@ class ProjectStatusResponse {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new ProjectStatusResponse();
-            ProjectStatusBase.constructFromObject(data, obj);
-            ProjectStatusResponseAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('gid')) {
                 obj['gid'] = ApiClient.convertToType(data['gid'], 'String');
@@ -77,13 +72,13 @@ class ProjectStatusResponse {
                 obj['color'] = ApiClient.convertToType(data['color'], 'String');
             }
             if (data.hasOwnProperty('author')) {
-                obj['author'] = UserCompact.constructFromObject(data['author']);
+                obj['author'] = CustomFieldResponsePeopleValueInner.constructFromObject(data['author']);
             }
             if (data.hasOwnProperty('created_at')) {
                 obj['created_at'] = ApiClient.convertToType(data['created_at'], 'Date');
             }
             if (data.hasOwnProperty('created_by')) {
-                obj['created_by'] = UserCompact.constructFromObject(data['created_by']);
+                obj['created_by'] = CustomFieldResponsePeopleValueInner.constructFromObject(data['created_by']);
             }
             if (data.hasOwnProperty('modified_at')) {
                 obj['modified_at'] = ApiClient.convertToType(data['modified_at'], 'Date');
@@ -132,7 +127,7 @@ ProjectStatusResponse.prototype['html_text'] = undefined;
 ProjectStatusResponse.prototype['color'] = undefined;
 
 /**
- * @member {module:model/UserCompact} author
+ * @member {module:model/CustomFieldResponsePeopleValueInner} author
  */
 ProjectStatusResponse.prototype['author'] = undefined;
 
@@ -143,7 +138,7 @@ ProjectStatusResponse.prototype['author'] = undefined;
 ProjectStatusResponse.prototype['created_at'] = undefined;
 
 /**
- * @member {module:model/UserCompact} created_by
+ * @member {module:model/CustomFieldResponsePeopleValueInner} created_by
  */
 ProjectStatusResponse.prototype['created_by'] = undefined;
 
@@ -154,56 +149,6 @@ ProjectStatusResponse.prototype['created_by'] = undefined;
 ProjectStatusResponse.prototype['modified_at'] = undefined;
 
 
-// Implement ProjectStatusBase interface:
-/**
- * Globally unique identifier of the resource, as a string.
- * @member {String} gid
- */
-ProjectStatusBase.prototype['gid'] = undefined;
-/**
- * The base type of this resource.
- * @member {String} resource_type
- */
-ProjectStatusBase.prototype['resource_type'] = undefined;
-/**
- * The title of the project status update.
- * @member {String} title
- */
-ProjectStatusBase.prototype['title'] = undefined;
-/**
- * The text content of the status update.
- * @member {String} text
- */
-ProjectStatusBase.prototype['text'] = undefined;
-/**
- * [Opt In](/docs/inputoutput-options). The text content of the status update with formatting as HTML.
- * @member {String} html_text
- */
-ProjectStatusBase.prototype['html_text'] = undefined;
-/**
- * The color associated with the status update.
- * @member {module:model/ProjectStatusBase.ColorEnum} color
- */
-ProjectStatusBase.prototype['color'] = undefined;
-// Implement ProjectStatusResponseAllOf interface:
-/**
- * @member {module:model/UserCompact} author
- */
-ProjectStatusResponseAllOf.prototype['author'] = undefined;
-/**
- * The time at which this resource was created.
- * @member {Date} created_at
- */
-ProjectStatusResponseAllOf.prototype['created_at'] = undefined;
-/**
- * @member {module:model/UserCompact} created_by
- */
-ProjectStatusResponseAllOf.prototype['created_by'] = undefined;
-/**
- * The time at which this project status was last modified. *Note: This does not currently reflect any changes in associations such as comments that may have been added or removed from the project status.*
- * @member {Date} modified_at
- */
-ProjectStatusResponseAllOf.prototype['modified_at'] = undefined;
 
 
 

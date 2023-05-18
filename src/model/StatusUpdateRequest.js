@@ -12,26 +12,23 @@
  */
 
 import ApiClient from '../ApiClient';
-import StatusUpdateBase from './StatusUpdateBase';
-import StatusUpdateRequestAllOf from './StatusUpdateRequestAllOf';
 
 /**
  * The StatusUpdateRequest model module.
  * @module model/StatusUpdateRequest
- * @version 1.0.3
+ * @version 1.0.4
  */
 class StatusUpdateRequest {
     /**
      * Constructs a new <code>StatusUpdateRequest</code>.
+     * A generic Asana Resource, containing a globally unique identifier.A generic Asana Resource, containing a globally unique identifier. A *status update* is an update on the progress of a particular project, portfolio, or goal, and is sent out to all of its parent&#39;s followers when created. These updates include both text describing the update and a &#x60;status_type&#x60; intended to represent the overall state of the project.
      * @alias module:model/StatusUpdateRequest
-     * @implements module:model/StatusUpdateBase
-     * @implements module:model/StatusUpdateRequestAllOf
      * @param text {String} The text content of the status update.
      * @param statusType {module:model/StatusUpdateRequest.StatusTypeEnum} The type associated with the status update. This represents the current state of the object this object is on.
-     * @param parent {String} 
+     * @param parent {String} The id of parent to send this status update to. This can be a project, goal or portfolio.
      */
     constructor(text, statusType, parent) { 
-        StatusUpdateBase.initialize(this, text, statusType);StatusUpdateRequestAllOf.initialize(this, parent);
+        
         StatusUpdateRequest.initialize(this, text, statusType, parent);
     }
 
@@ -56,8 +53,6 @@ class StatusUpdateRequest {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new StatusUpdateRequest();
-            StatusUpdateBase.constructFromObject(data, obj);
-            StatusUpdateRequestAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('gid')) {
                 obj['gid'] = ApiClient.convertToType(data['gid'], 'String');
@@ -133,52 +128,12 @@ StatusUpdateRequest.prototype['html_text'] = undefined;
 StatusUpdateRequest.prototype['status_type'] = undefined;
 
 /**
+ * The id of parent to send this status update to. This can be a project, goal or portfolio.
  * @member {String} parent
  */
 StatusUpdateRequest.prototype['parent'] = undefined;
 
 
-// Implement StatusUpdateBase interface:
-/**
- * Globally unique identifier of the resource, as a string.
- * @member {String} gid
- */
-StatusUpdateBase.prototype['gid'] = undefined;
-/**
- * The base type of this resource.
- * @member {String} resource_type
- */
-StatusUpdateBase.prototype['resource_type'] = undefined;
-/**
- * The title of the status update.
- * @member {String} title
- */
-StatusUpdateBase.prototype['title'] = undefined;
-/**
- * The subtype of this resource. Different subtypes retain many of the same fields and behavior, but may render differently in Asana or represent resources with different semantic meaning. The `resource_subtype`s for `status` objects represent the type of their parent.
- * @member {module:model/StatusUpdateBase.ResourceSubtypeEnum} resource_subtype
- */
-StatusUpdateBase.prototype['resource_subtype'] = undefined;
-/**
- * The text content of the status update.
- * @member {String} text
- */
-StatusUpdateBase.prototype['text'] = undefined;
-/**
- * [Opt In](/docs/inputoutput-options). The text content of the status update with formatting as HTML.
- * @member {String} html_text
- */
-StatusUpdateBase.prototype['html_text'] = undefined;
-/**
- * The type associated with the status update. This represents the current state of the object this object is on.
- * @member {module:model/StatusUpdateBase.StatusTypeEnum} status_type
- */
-StatusUpdateBase.prototype['status_type'] = undefined;
-// Implement StatusUpdateRequestAllOf interface:
-/**
- * @member {String} parent
- */
-StatusUpdateRequestAllOf.prototype['parent'] = undefined;
 
 
 

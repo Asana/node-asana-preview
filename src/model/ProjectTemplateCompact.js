@@ -12,23 +12,20 @@
  */
 
 import ApiClient from '../ApiClient';
-import AsanaResource from './AsanaResource';
-import ProjectTemplateCompactAllOf from './ProjectTemplateCompactAllOf';
 
 /**
  * The ProjectTemplateCompact model module.
  * @module model/ProjectTemplateCompact
- * @version 1.0.3
+ * @version 1.0.4
  */
 class ProjectTemplateCompact {
     /**
      * Constructs a new <code>ProjectTemplateCompact</code>.
+     * A generic Asana Resource, containing a globally unique identifier.A generic Asana Resource, containing a globally unique identifier. A *project template* is an object that allows new projects to be created with a predefined setup, which may include tasks, sections, Rules, etc. It simplifies the process of running a workflow that involves a similar set of work every time.
      * @alias module:model/ProjectTemplateCompact
-     * @implements module:model/AsanaResource
-     * @implements module:model/ProjectTemplateCompactAllOf
      */
     constructor() { 
-        AsanaResource.initialize(this);ProjectTemplateCompactAllOf.initialize(this);
+        
         ProjectTemplateCompact.initialize(this);
     }
 
@@ -50,8 +47,6 @@ class ProjectTemplateCompact {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new ProjectTemplateCompact();
-            AsanaResource.constructFromObject(data, obj);
-            ProjectTemplateCompactAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('gid')) {
                 obj['gid'] = ApiClient.convertToType(data['gid'], 'String');
@@ -88,23 +83,6 @@ ProjectTemplateCompact.prototype['resource_type'] = undefined;
 ProjectTemplateCompact.prototype['name'] = undefined;
 
 
-// Implement AsanaResource interface:
-/**
- * Globally unique identifier of the resource, as a string.
- * @member {String} gid
- */
-AsanaResource.prototype['gid'] = undefined;
-/**
- * The base type of this resource.
- * @member {String} resource_type
- */
-AsanaResource.prototype['resource_type'] = undefined;
-// Implement ProjectTemplateCompactAllOf interface:
-/**
- * Name of the project template.
- * @member {String} name
- */
-ProjectTemplateCompactAllOf.prototype['name'] = undefined;
 
 
 

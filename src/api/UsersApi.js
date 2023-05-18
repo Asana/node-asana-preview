@@ -21,7 +21,7 @@ import GetUsers200Response from '../model/GetUsers200Response';
 /**
 * Users service.
 * @module api/UsersApi
-* @version 1.0.3
+* @version 1.0.4
 */
 export default class UsersApi {
 
@@ -89,7 +89,7 @@ export default class UsersApi {
 
       let authNames = ['personalAccessToken'];
       let contentTypes = [];
-      let accepts = ['application/json'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = GetFavoritesForUser200Response;
       return this.apiClient.callApi(
         '/users/{user_gid}/favorites', 'GET',
@@ -138,7 +138,7 @@ export default class UsersApi {
 
       let authNames = ['personalAccessToken'];
       let contentTypes = [];
-      let accepts = ['application/json'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = GetUser200Response;
       return this.apiClient.callApi(
         '/users/{user_gid}', 'GET',
@@ -189,7 +189,7 @@ export default class UsersApi {
 
       let authNames = ['personalAccessToken'];
       let contentTypes = [];
-      let accepts = ['application/json'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = GetUsers200Response;
       return this.apiClient.callApi(
         '/users', 'GET',
@@ -240,7 +240,7 @@ export default class UsersApi {
 
       let authNames = ['personalAccessToken'];
       let contentTypes = [];
-      let accepts = ['application/json'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = GetUsers200Response;
       return this.apiClient.callApi(
         '/teams/{team_gid}/users', 'GET',
@@ -291,7 +291,7 @@ export default class UsersApi {
 
       let authNames = ['personalAccessToken'];
       let contentTypes = [];
-      let accepts = ['application/json'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = GetUsers200Response;
       return this.apiClient.callApi(
         '/workspaces/{workspace_gid}/users', 'GET',

@@ -17,7 +17,7 @@ import WebhookResponse from './WebhookResponse';
 /**
  * The CreateWebhook201Response model module.
  * @module model/CreateWebhook201Response
- * @version 1.0.3
+ * @version 1.0.4
  */
 class CreateWebhook201Response {
     /**

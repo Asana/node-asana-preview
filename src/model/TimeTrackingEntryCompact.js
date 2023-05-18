@@ -12,24 +12,21 @@
  */
 
 import ApiClient from '../ApiClient';
-import AsanaResource from './AsanaResource';
-import TimeTrackingEntryCompactAllOf from './TimeTrackingEntryCompactAllOf';
-import UserCompact from './UserCompact';
+import StoryResponseAssignee from './StoryResponseAssignee';
 
 /**
  * The TimeTrackingEntryCompact model module.
  * @module model/TimeTrackingEntryCompact
- * @version 1.0.3
+ * @version 1.0.4
  */
 class TimeTrackingEntryCompact {
     /**
      * Constructs a new <code>TimeTrackingEntryCompact</code>.
+     * A generic Asana Resource, containing a globally unique identifier.
      * @alias module:model/TimeTrackingEntryCompact
-     * @implements module:model/AsanaResource
-     * @implements module:model/TimeTrackingEntryCompactAllOf
      */
     constructor() { 
-        AsanaResource.initialize(this);TimeTrackingEntryCompactAllOf.initialize(this);
+        
         TimeTrackingEntryCompact.initialize(this);
     }
 
@@ -51,8 +48,6 @@ class TimeTrackingEntryCompact {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new TimeTrackingEntryCompact();
-            AsanaResource.constructFromObject(data, obj);
-            TimeTrackingEntryCompactAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('gid')) {
                 obj['gid'] = ApiClient.convertToType(data['gid'], 'String');
@@ -67,7 +62,7 @@ class TimeTrackingEntryCompact {
                 obj['entered_on'] = ApiClient.convertToType(data['entered_on'], 'Date');
             }
             if (data.hasOwnProperty('created_by')) {
-                obj['created_by'] = UserCompact.constructFromObject(data['created_by']);
+                obj['created_by'] = StoryResponseAssignee.constructFromObject(data['created_by']);
             }
         }
         return obj;
@@ -101,37 +96,11 @@ TimeTrackingEntryCompact.prototype['duration_minutes'] = undefined;
 TimeTrackingEntryCompact.prototype['entered_on'] = undefined;
 
 /**
- * @member {module:model/UserCompact} created_by
+ * @member {module:model/StoryResponseAssignee} created_by
  */
 TimeTrackingEntryCompact.prototype['created_by'] = undefined;
 
 
-// Implement AsanaResource interface:
-/**
- * Globally unique identifier of the resource, as a string.
- * @member {String} gid
- */
-AsanaResource.prototype['gid'] = undefined;
-/**
- * The base type of this resource.
- * @member {String} resource_type
- */
-AsanaResource.prototype['resource_type'] = undefined;
-// Implement TimeTrackingEntryCompactAllOf interface:
-/**
- * Time in minutes tracked by the entry.
- * @member {Number} duration_minutes
- */
-TimeTrackingEntryCompactAllOf.prototype['duration_minutes'] = undefined;
-/**
- * The day that this entry is logged on.
- * @member {Date} entered_on
- */
-TimeTrackingEntryCompactAllOf.prototype['entered_on'] = undefined;
-/**
- * @member {module:model/UserCompact} created_by
- */
-TimeTrackingEntryCompactAllOf.prototype['created_by'] = undefined;
 
 
 

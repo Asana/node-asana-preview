@@ -12,12 +12,12 @@
  */
 
 import ApiClient from '../ApiClient';
-import PortfolioMembershipCompact from './PortfolioMembershipCompact';
+import PortfolioMembershipResponse from './PortfolioMembershipResponse';
 
 /**
  * The GetPortfolioMembership200Response model module.
  * @module model/GetPortfolioMembership200Response
- * @version 1.0.3
+ * @version 1.0.4
  */
 class GetPortfolioMembership200Response {
     /**
@@ -49,7 +49,7 @@ class GetPortfolioMembership200Response {
             obj = obj || new GetPortfolioMembership200Response();
 
             if (data.hasOwnProperty('data')) {
-                obj['data'] = PortfolioMembershipCompact.constructFromObject(data['data']);
+                obj['data'] = PortfolioMembershipResponse.constructFromObject(data['data']);
             }
         }
         return obj;
@@ -59,7 +59,7 @@ class GetPortfolioMembership200Response {
 }
 
 /**
- * @member {module:model/PortfolioMembershipCompact} data
+ * @member {module:model/PortfolioMembershipResponse} data
  */
 GetPortfolioMembership200Response.prototype['data'] = undefined;
 

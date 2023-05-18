@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **startOn** | **String** | The localized start date of the time period in &#x60;YYYY-MM-DD&#x60; format. | [optional] 
 **period** | **String** | The cadence and index of the time period. The value is one of: &#x60;FY&#x60;, &#x60;H1&#x60;, &#x60;H2&#x60;, &#x60;Q1&#x60;, &#x60;Q2&#x60;, &#x60;Q3&#x60;, or &#x60;Q4&#x60;. | [optional] 
 **displayName** | **String** | A string representing the cadence code and the fiscal year. | [optional] 
-**parent** | [**TimePeriodCompact**](TimePeriodCompact.md) |  | [optional] 
+**parent** | [**TimePeriodBaseParent**](TimePeriodBaseParent.md) |  | [optional] 
 
 
 

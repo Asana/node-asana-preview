@@ -20,7 +20,7 @@ import GetWorkspaceMembershipsForUser200Response from '../model/GetWorkspaceMemb
 /**
 * WorkspaceMemberships service.
 * @module api/WorkspaceMembershipsApi
-* @version 1.0.3
+* @version 1.0.4
 */
 export default class WorkspaceMembershipsApi {
 
@@ -76,7 +76,7 @@ export default class WorkspaceMembershipsApi {
 
       let authNames = ['personalAccessToken'];
       let contentTypes = [];
-      let accepts = ['application/json'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = GetWorkspaceMembership200Response;
       return this.apiClient.callApi(
         '/workspace_memberships/{workspace_membership_gid}', 'GET',
@@ -129,7 +129,7 @@ export default class WorkspaceMembershipsApi {
 
       let authNames = ['personalAccessToken'];
       let contentTypes = [];
-      let accepts = ['application/json'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = GetWorkspaceMembershipsForUser200Response;
       return this.apiClient.callApi(
         '/users/{user_gid}/workspace_memberships', 'GET',
@@ -184,7 +184,7 @@ export default class WorkspaceMembershipsApi {
 
       let authNames = ['personalAccessToken'];
       let contentTypes = [];
-      let accepts = ['application/json'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = GetWorkspaceMembershipsForUser200Response;
       return this.apiClient.callApi(
         '/workspaces/{workspace_gid}/workspace_memberships', 'GET',

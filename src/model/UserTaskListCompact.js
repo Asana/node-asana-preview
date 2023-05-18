@@ -12,25 +12,22 @@
  */
 
 import ApiClient from '../ApiClient';
-import AsanaResource from './AsanaResource';
-import UserCompact from './UserCompact';
-import UserTaskListCompactAllOf from './UserTaskListCompactAllOf';
-import WorkspaceCompact from './WorkspaceCompact';
+import UserTaskListBaseOwner from './UserTaskListBaseOwner';
+import UserTaskListBaseWorkspace from './UserTaskListBaseWorkspace';
 
 /**
  * The UserTaskListCompact model module.
  * @module model/UserTaskListCompact
- * @version 1.0.3
+ * @version 1.0.4
  */
 class UserTaskListCompact {
     /**
      * Constructs a new <code>UserTaskListCompact</code>.
+     * A generic Asana Resource, containing a globally unique identifier.A generic Asana Resource, containing a globally unique identifier. A user task list represents the tasks assigned to a particular user. It provides API access to a user’s [My Tasks](https://asana.com/guide/help/fundamentals/my-tasks) view in Asana.
      * @alias module:model/UserTaskListCompact
-     * @implements module:model/AsanaResource
-     * @implements module:model/UserTaskListCompactAllOf
      */
     constructor() { 
-        AsanaResource.initialize(this);UserTaskListCompactAllOf.initialize(this);
+        
         UserTaskListCompact.initialize(this);
     }
 
@@ -52,8 +49,6 @@ class UserTaskListCompact {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new UserTaskListCompact();
-            AsanaResource.constructFromObject(data, obj);
-            UserTaskListCompactAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('gid')) {
                 obj['gid'] = ApiClient.convertToType(data['gid'], 'String');
@@ -65,10 +60,10 @@ class UserTaskListCompact {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
             if (data.hasOwnProperty('owner')) {
-                obj['owner'] = ApiClient.convertToType(data['owner'], UserCompact);
+                obj['owner'] = UserTaskListBaseOwner.constructFromObject(data['owner']);
             }
             if (data.hasOwnProperty('workspace')) {
-                obj['workspace'] = ApiClient.convertToType(data['workspace'], WorkspaceCompact);
+                obj['workspace'] = UserTaskListBaseWorkspace.constructFromObject(data['workspace']);
             }
         }
         return obj;
@@ -96,45 +91,16 @@ UserTaskListCompact.prototype['resource_type'] = undefined;
 UserTaskListCompact.prototype['name'] = undefined;
 
 /**
- * The owner of the user task list, i.e. the person whose My Tasks is represented by this resource.
- * @member {module:model/UserCompact} owner
+ * @member {module:model/UserTaskListBaseOwner} owner
  */
 UserTaskListCompact.prototype['owner'] = undefined;
 
 /**
- * The workspace in which the user task list is located.
- * @member {module:model/WorkspaceCompact} workspace
+ * @member {module:model/UserTaskListBaseWorkspace} workspace
  */
 UserTaskListCompact.prototype['workspace'] = undefined;
 
 
-// Implement AsanaResource interface:
-/**
- * Globally unique identifier of the resource, as a string.
- * @member {String} gid
- */
-AsanaResource.prototype['gid'] = undefined;
-/**
- * The base type of this resource.
- * @member {String} resource_type
- */
-AsanaResource.prototype['resource_type'] = undefined;
-// Implement UserTaskListCompactAllOf interface:
-/**
- * The name of the user task list.
- * @member {String} name
- */
-UserTaskListCompactAllOf.prototype['name'] = undefined;
-/**
- * The owner of the user task list, i.e. the person whose My Tasks is represented by this resource.
- * @member {module:model/UserCompact} owner
- */
-UserTaskListCompactAllOf.prototype['owner'] = undefined;
-/**
- * The workspace in which the user task list is located.
- * @member {module:model/WorkspaceCompact} workspace
- */
-UserTaskListCompactAllOf.prototype['workspace'] = undefined;
 
 
 

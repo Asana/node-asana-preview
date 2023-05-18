@@ -12,12 +12,12 @@
  */
 
 import ApiClient from '../ApiClient';
-import SectionCompact from './SectionCompact';
+import SectionResponse from './SectionResponse';
 
 /**
  * The GetSectionsForProject200Response model module.
  * @module model/GetSectionsForProject200Response
- * @version 1.0.3
+ * @version 1.0.4
  */
 class GetSectionsForProject200Response {
     /**
@@ -49,7 +49,7 @@ class GetSectionsForProject200Response {
             obj = obj || new GetSectionsForProject200Response();
 
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [SectionCompact]);
+                obj['data'] = ApiClient.convertToType(data['data'], [SectionResponse]);
             }
         }
         return obj;
@@ -59,7 +59,7 @@ class GetSectionsForProject200Response {
 }
 
 /**
- * @member {Array.<module:model/SectionCompact>} data
+ * @member {Array.<module:model/SectionResponse>} data
  */
 GetSectionsForProject200Response.prototype['data'] = undefined;
 

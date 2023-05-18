@@ -4,6 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**actions** | [**[BatchRequestAction]**](BatchRequestAction.md) |  | [optional] 
+**actions** | [**[BatchRequestActionsInner]**](BatchRequestActionsInner.md) |  | [optional] 
 
 

@@ -17,7 +17,7 @@ import MembershipResponse from './MembershipResponse';
 /**
  * The CreateMembership200Response model module.
  * @module model/CreateMembership200Response
- * @version 1.0.3
+ * @version 1.0.4
  */
 class CreateMembership200Response {
     /**

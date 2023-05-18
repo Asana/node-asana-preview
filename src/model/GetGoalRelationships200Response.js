@@ -12,12 +12,12 @@
  */
 
 import ApiClient from '../ApiClient';
-import GoalRelationshipCompact from './GoalRelationshipCompact';
+import GoalRelationshipResponse from './GoalRelationshipResponse';
 
 /**
  * The GetGoalRelationships200Response model module.
  * @module model/GetGoalRelationships200Response
- * @version 1.0.3
+ * @version 1.0.4
  */
 class GetGoalRelationships200Response {
     /**
@@ -49,7 +49,7 @@ class GetGoalRelationships200Response {
             obj = obj || new GetGoalRelationships200Response();
 
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [GoalRelationshipCompact]);
+                obj['data'] = ApiClient.convertToType(data['data'], [GoalRelationshipResponse]);
             }
         }
         return obj;
@@ -59,7 +59,7 @@ class GetGoalRelationships200Response {
 }
 
 /**
- * @member {Array.<module:model/GoalRelationshipCompact>} data
+ * @member {Array.<module:model/GoalRelationshipResponse>} data
  */
 GetGoalRelationships200Response.prototype['data'] = undefined;
 

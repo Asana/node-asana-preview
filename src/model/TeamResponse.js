@@ -12,24 +12,21 @@
  */
 
 import ApiClient from '../ApiClient';
-import TeamCompact from './TeamCompact';
-import TeamResponseAllOf from './TeamResponseAllOf';
-import WorkspaceCompact from './WorkspaceCompact';
+import TeamResponseOrganization from './TeamResponseOrganization';
 
 /**
  * The TeamResponse model module.
  * @module model/TeamResponse
- * @version 1.0.3
+ * @version 1.0.4
  */
 class TeamResponse {
     /**
      * Constructs a new <code>TeamResponse</code>.
+     * A generic Asana Resource, containing a globally unique identifier.A generic Asana Resource, containing a globally unique identifier. A *team* is used to group related projects and people together within an organization. Each project in an organization is associated with a team.
      * @alias module:model/TeamResponse
-     * @implements module:model/TeamCompact
-     * @implements module:model/TeamResponseAllOf
      */
     constructor() { 
-        TeamCompact.initialize(this);TeamResponseAllOf.initialize(this);
+        
         TeamResponse.initialize(this);
     }
 
@@ -51,8 +48,6 @@ class TeamResponse {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new TeamResponse();
-            TeamCompact.constructFromObject(data, obj);
-            TeamResponseAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('gid')) {
                 obj['gid'] = ApiClient.convertToType(data['gid'], 'String');
@@ -70,7 +65,7 @@ class TeamResponse {
                 obj['html_description'] = ApiClient.convertToType(data['html_description'], 'String');
             }
             if (data.hasOwnProperty('organization')) {
-                obj['organization'] = ApiClient.convertToType(data['organization'], WorkspaceCompact);
+                obj['organization'] = TeamResponseOrganization.constructFromObject(data['organization']);
             }
             if (data.hasOwnProperty('permalink_url')) {
                 obj['permalink_url'] = ApiClient.convertToType(data['permalink_url'], 'String');
@@ -134,7 +129,7 @@ TeamResponse.prototype['description'] = undefined;
 TeamResponse.prototype['html_description'] = undefined;
 
 /**
- * @member {module:model/WorkspaceCompact} organization
+ * @member {module:model/TeamResponseOrganization} organization
  */
 TeamResponse.prototype['organization'] = undefined;
 
@@ -187,77 +182,6 @@ TeamResponse.prototype['join_request_management_access_level'] = undefined;
 TeamResponse.prototype['team_member_removal_access_level'] = undefined;
 
 
-// Implement TeamCompact interface:
-/**
- * Globally unique identifier of the resource, as a string.
- * @member {String} gid
- */
-TeamCompact.prototype['gid'] = undefined;
-/**
- * The base type of this resource.
- * @member {String} resource_type
- */
-TeamCompact.prototype['resource_type'] = undefined;
-/**
- * The name of the team.
- * @member {String} name
- */
-TeamCompact.prototype['name'] = undefined;
-// Implement TeamResponseAllOf interface:
-/**
- * [Opt In](/docs/inputoutput-options). The description of the team. 
- * @member {String} description
- */
-TeamResponseAllOf.prototype['description'] = undefined;
-/**
- * [Opt In](/docs/inputoutput-options). The description of the team with formatting as HTML. 
- * @member {String} html_description
- */
-TeamResponseAllOf.prototype['html_description'] = undefined;
-/**
- * @member {module:model/WorkspaceCompact} organization
- */
-TeamResponseAllOf.prototype['organization'] = undefined;
-/**
- * A url that points directly to the object within Asana.
- * @member {String} permalink_url
- */
-TeamResponseAllOf.prototype['permalink_url'] = undefined;
-/**
- * The visibility of the team to users in the same organization 
- * @member {module:model/TeamResponseAllOf.VisibilityEnum} visibility
- */
-TeamResponseAllOf.prototype['visibility'] = undefined;
-/**
- * Controls who can edit team name and description 
- * @member {module:model/TeamResponseAllOf.EditTeamNameOrDescriptionAccessLevelEnum} edit_team_name_or_description_access_level
- */
-TeamResponseAllOf.prototype['edit_team_name_or_description_access_level'] = undefined;
-/**
- * Controls who can edit team visibility and trash teams 
- * @member {module:model/TeamResponseAllOf.EditTeamVisibilityOrTrashTeamAccessLevelEnum} edit_team_visibility_or_trash_team_access_level
- */
-TeamResponseAllOf.prototype['edit_team_visibility_or_trash_team_access_level'] = undefined;
-/**
- * Controls who can accept or deny member invites for a given team 
- * @member {module:model/TeamResponseAllOf.MemberInviteManagementAccessLevelEnum} member_invite_management_access_level
- */
-TeamResponseAllOf.prototype['member_invite_management_access_level'] = undefined;
-/**
- * Controls who can accept or deny guest invites for a given team 
- * @member {module:model/TeamResponseAllOf.GuestInviteManagementAccessLevelEnum} guest_invite_management_access_level
- */
-TeamResponseAllOf.prototype['guest_invite_management_access_level'] = undefined;
-/**
- * Controls who can accept or deny join team requests for a Membership by Request team 
- * @member {module:model/TeamResponseAllOf.JoinRequestManagementAccessLevelEnum} join_request_management_access_level
- */
-TeamResponseAllOf.prototype['join_request_management_access_level'] = undefined;
-/**
- * Controls who can remove team members 
- * @member {module:model/TeamResponseAllOf.TeamMemberRemovalAccessLevelEnum} team_member_removal_access_level
- */
-TeamResponseAllOf.prototype['team_member_removal_access_level'] = undefined;
 
 
 

@@ -20,7 +20,7 @@ import TriggerRuleRequest from '../model/TriggerRuleRequest';
 /**
 * Rules service.
 * @module api/RulesApi
-* @version 1.0.3
+* @version 1.0.4
 */
 export default class RulesApi {
 
@@ -78,8 +78,8 @@ export default class RulesApi {
       };
 
       let authNames = ['personalAccessToken'];
-      let contentTypes = ['application/json'];
-      let accepts = ['application/json'];
+      let contentTypes = ['application/json; charset=UTF-8'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = TriggerRule200Response;
       return this.apiClient.callApi(
         '/rule_triggers/{rule_trigger_gid}/run', 'POST',

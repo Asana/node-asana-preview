@@ -4,6 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**[SectionCompact]**](SectionCompact.md) |  | [optional] 
+**data** | [**[SectionResponse]**](SectionResponse.md) |  | [optional] 
 
 

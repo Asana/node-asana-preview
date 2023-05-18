@@ -17,7 +17,7 @@ import WorkspaceMembershipResponse from './WorkspaceMembershipResponse';
 /**
  * The GetWorkspaceMembership200Response model module.
  * @module model/GetWorkspaceMembership200Response
- * @version 1.0.3
+ * @version 1.0.4
  */
 class GetWorkspaceMembership200Response {
     /**

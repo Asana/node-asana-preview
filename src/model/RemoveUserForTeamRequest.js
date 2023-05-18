@@ -17,7 +17,7 @@ import TeamRemoveUserRequest from './TeamRemoveUserRequest';
 /**
  * The RemoveUserForTeamRequest model module.
  * @module model/RemoveUserForTeamRequest
- * @version 1.0.3
+ * @version 1.0.4
  */
 class RemoveUserForTeamRequest {
     /**

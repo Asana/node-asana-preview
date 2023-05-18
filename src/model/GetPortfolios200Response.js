@@ -12,12 +12,12 @@
  */
 
 import ApiClient from '../ApiClient';
-import PortfolioCompact from './PortfolioCompact';
+import PortfolioResponse from './PortfolioResponse';
 
 /**
  * The GetPortfolios200Response model module.
  * @module model/GetPortfolios200Response
- * @version 1.0.3
+ * @version 1.0.4
  */
 class GetPortfolios200Response {
     /**
@@ -49,7 +49,7 @@ class GetPortfolios200Response {
             obj = obj || new GetPortfolios200Response();
 
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [PortfolioCompact]);
+                obj['data'] = ApiClient.convertToType(data['data'], [PortfolioResponse]);
             }
         }
         return obj;
@@ -59,7 +59,7 @@ class GetPortfolios200Response {
 }
 
 /**
- * @member {Array.<module:model/PortfolioCompact>} data
+ * @member {Array.<module:model/PortfolioResponse>} data
  */
 GetPortfolios200Response.prototype['data'] = undefined;
 

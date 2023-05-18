@@ -17,7 +17,7 @@ import ProjectBriefResponse from './ProjectBriefResponse';
 /**
  * The GetProjectBrief200Response model module.
  * @module model/GetProjectBrief200Response
- * @version 1.0.3
+ * @version 1.0.4
  */
 class GetProjectBrief200Response {
     /**

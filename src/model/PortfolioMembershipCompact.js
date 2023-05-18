@@ -12,25 +12,22 @@
  */
 
 import ApiClient from '../ApiClient';
-import AsanaResource from './AsanaResource';
-import PortfolioCompact from './PortfolioCompact';
-import PortfolioMembershipCompactAllOf from './PortfolioMembershipCompactAllOf';
-import UserCompact from './UserCompact';
+import CustomFieldResponsePeopleValueInner from './CustomFieldResponsePeopleValueInner';
+import PortfolioMembershipBasePortfolio from './PortfolioMembershipBasePortfolio';
 
 /**
  * The PortfolioMembershipCompact model module.
  * @module model/PortfolioMembershipCompact
- * @version 1.0.3
+ * @version 1.0.4
  */
 class PortfolioMembershipCompact {
     /**
      * Constructs a new <code>PortfolioMembershipCompact</code>.
+     * A generic Asana Resource, containing a globally unique identifier.A generic Asana Resource, containing a globally unique identifier. This object determines if a user is a member of a portfolio.
      * @alias module:model/PortfolioMembershipCompact
-     * @implements module:model/AsanaResource
-     * @implements module:model/PortfolioMembershipCompactAllOf
      */
     constructor() { 
-        AsanaResource.initialize(this);PortfolioMembershipCompactAllOf.initialize(this);
+        
         PortfolioMembershipCompact.initialize(this);
     }
 
@@ -52,8 +49,6 @@ class PortfolioMembershipCompact {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new PortfolioMembershipCompact();
-            AsanaResource.constructFromObject(data, obj);
-            PortfolioMembershipCompactAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('gid')) {
                 obj['gid'] = ApiClient.convertToType(data['gid'], 'String');
@@ -62,10 +57,10 @@ class PortfolioMembershipCompact {
                 obj['resource_type'] = ApiClient.convertToType(data['resource_type'], 'String');
             }
             if (data.hasOwnProperty('portfolio')) {
-                obj['portfolio'] = PortfolioCompact.constructFromObject(data['portfolio']);
+                obj['portfolio'] = PortfolioMembershipBasePortfolio.constructFromObject(data['portfolio']);
             }
             if (data.hasOwnProperty('user')) {
-                obj['user'] = UserCompact.constructFromObject(data['user']);
+                obj['user'] = CustomFieldResponsePeopleValueInner.constructFromObject(data['user']);
             }
         }
         return obj;
@@ -87,36 +82,16 @@ PortfolioMembershipCompact.prototype['gid'] = undefined;
 PortfolioMembershipCompact.prototype['resource_type'] = undefined;
 
 /**
- * @member {module:model/PortfolioCompact} portfolio
+ * @member {module:model/PortfolioMembershipBasePortfolio} portfolio
  */
 PortfolioMembershipCompact.prototype['portfolio'] = undefined;
 
 /**
- * @member {module:model/UserCompact} user
+ * @member {module:model/CustomFieldResponsePeopleValueInner} user
  */
 PortfolioMembershipCompact.prototype['user'] = undefined;
 
 
-// Implement AsanaResource interface:
-/**
- * Globally unique identifier of the resource, as a string.
- * @member {String} gid
- */
-AsanaResource.prototype['gid'] = undefined;
-/**
- * The base type of this resource.
- * @member {String} resource_type
- */
-AsanaResource.prototype['resource_type'] = undefined;
-// Implement PortfolioMembershipCompactAllOf interface:
-/**
- * @member {module:model/PortfolioCompact} portfolio
- */
-PortfolioMembershipCompactAllOf.prototype['portfolio'] = undefined;
-/**
- * @member {module:model/UserCompact} user
- */
-PortfolioMembershipCompactAllOf.prototype['user'] = undefined;
 
 
 

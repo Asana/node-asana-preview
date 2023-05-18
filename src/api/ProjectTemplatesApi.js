@@ -22,7 +22,7 @@ import InstantiateProjectRequest from '../model/InstantiateProjectRequest';
 /**
 * ProjectTemplates service.
 * @module api/ProjectTemplatesApi
-* @version 1.0.3
+* @version 1.0.4
 */
 export default class ProjectTemplatesApi {
 
@@ -78,7 +78,7 @@ export default class ProjectTemplatesApi {
 
       let authNames = ['personalAccessToken'];
       let contentTypes = [];
-      let accepts = ['application/json'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = GetProjectTemplate200Response;
       return this.apiClient.callApi(
         '/project_templates/{project_template_gid}', 'GET',
@@ -129,7 +129,7 @@ export default class ProjectTemplatesApi {
 
       let authNames = ['personalAccessToken'];
       let contentTypes = [];
-      let accepts = ['application/json'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = GetProjectTemplates200Response;
       return this.apiClient.callApi(
         '/project_templates', 'GET',
@@ -182,7 +182,7 @@ export default class ProjectTemplatesApi {
 
       let authNames = ['personalAccessToken'];
       let contentTypes = [];
-      let accepts = ['application/json'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = GetProjectTemplates200Response;
       return this.apiClient.callApi(
         '/teams/{team_gid}/project_templates', 'GET',
@@ -231,8 +231,8 @@ export default class ProjectTemplatesApi {
       };
 
       let authNames = ['personalAccessToken'];
-      let contentTypes = ['application/json'];
-      let accepts = ['application/json'];
+      let contentTypes = ['application/json; charset=UTF-8'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = GetJob200Response;
       return this.apiClient.callApi(
         '/project_templates/{project_template_gid}/instantiateProject', 'POST',

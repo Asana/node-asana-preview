@@ -12,12 +12,12 @@
  */
 
 import ApiClient from '../ApiClient';
-import UserCompact from './UserCompact';
+import UserResponse from './UserResponse';
 
 /**
  * The GetUsers200Response model module.
  * @module model/GetUsers200Response
- * @version 1.0.3
+ * @version 1.0.4
  */
 class GetUsers200Response {
     /**
@@ -49,7 +49,7 @@ class GetUsers200Response {
             obj = obj || new GetUsers200Response();
 
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [UserCompact]);
+                obj['data'] = ApiClient.convertToType(data['data'], [UserResponse]);
             }
         }
         return obj;
@@ -59,7 +59,7 @@ class GetUsers200Response {
 }
 
 /**
- * @member {Array.<module:model/UserCompact>} data
+ * @member {Array.<module:model/UserResponse>} data
  */
 GetUsers200Response.prototype['data'] = undefined;
 

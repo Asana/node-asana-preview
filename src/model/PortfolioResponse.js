@@ -12,29 +12,26 @@
  */
 
 import ApiClient from '../ApiClient';
-import CustomFieldCompact from './CustomFieldCompact';
-import CustomFieldSettingResponse from './CustomFieldSettingResponse';
-import PortfolioBase from './PortfolioBase';
-import PortfolioResponseAllOf from './PortfolioResponseAllOf';
-import ProjectTemplateCompact from './ProjectTemplateCompact';
-import StatusUpdateCompact from './StatusUpdateCompact';
-import UserCompact from './UserCompact';
-import WorkspaceCompact from './WorkspaceCompact';
+import CustomFieldResponsePeopleValueInner from './CustomFieldResponsePeopleValueInner';
+import JobBaseNewProjectTemplate from './JobBaseNewProjectTemplate';
+import PortfolioResponseCurrentStatusUpdate from './PortfolioResponseCurrentStatusUpdate';
+import PortfolioResponseCustomFieldSettingsInner from './PortfolioResponseCustomFieldSettingsInner';
+import PortfolioResponseCustomFieldsInner from './PortfolioResponseCustomFieldsInner';
+import PortfolioResponseWorkspace from './PortfolioResponseWorkspace';
 
 /**
  * The PortfolioResponse model module.
  * @module model/PortfolioResponse
- * @version 1.0.3
+ * @version 1.0.4
  */
 class PortfolioResponse {
     /**
      * Constructs a new <code>PortfolioResponse</code>.
+     * A generic Asana Resource, containing a globally unique identifier.A generic Asana Resource, containing a globally unique identifier. A *portfolio* gives a high-level overview of the status of multiple initiatives in Asana. Portfolios provide a dashboard overview of the state of multiple projects, including a progress report and the most recent [project status](/reference/project-statuses) update. Portfolios have some restrictions on size. Each portfolio has a max of 500 items and, like projects, a max of 20 custom fields.
      * @alias module:model/PortfolioResponse
-     * @implements module:model/PortfolioBase
-     * @implements module:model/PortfolioResponseAllOf
      */
     constructor() { 
-        PortfolioBase.initialize(this);PortfolioResponseAllOf.initialize(this);
+        
         PortfolioResponse.initialize(this);
     }
 
@@ -56,8 +53,6 @@ class PortfolioResponse {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new PortfolioResponse();
-            PortfolioBase.constructFromObject(data, obj);
-            PortfolioResponseAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('gid')) {
                 obj['gid'] = ApiClient.convertToType(data['gid'], 'String');
@@ -75,31 +70,31 @@ class PortfolioResponse {
                 obj['created_at'] = ApiClient.convertToType(data['created_at'], 'Date');
             }
             if (data.hasOwnProperty('created_by')) {
-                obj['created_by'] = UserCompact.constructFromObject(data['created_by']);
+                obj['created_by'] = CustomFieldResponsePeopleValueInner.constructFromObject(data['created_by']);
             }
             if (data.hasOwnProperty('custom_field_settings')) {
-                obj['custom_field_settings'] = ApiClient.convertToType(data['custom_field_settings'], [CustomFieldSettingResponse]);
+                obj['custom_field_settings'] = ApiClient.convertToType(data['custom_field_settings'], [PortfolioResponseCustomFieldSettingsInner]);
             }
             if (data.hasOwnProperty('current_status_update')) {
-                obj['current_status_update'] = ApiClient.convertToType(data['current_status_update'], StatusUpdateCompact);
+                obj['current_status_update'] = PortfolioResponseCurrentStatusUpdate.constructFromObject(data['current_status_update']);
             }
             if (data.hasOwnProperty('due_on')) {
                 obj['due_on'] = ApiClient.convertToType(data['due_on'], 'Date');
             }
             if (data.hasOwnProperty('custom_fields')) {
-                obj['custom_fields'] = ApiClient.convertToType(data['custom_fields'], [CustomFieldCompact]);
+                obj['custom_fields'] = ApiClient.convertToType(data['custom_fields'], [PortfolioResponseCustomFieldsInner]);
             }
             if (data.hasOwnProperty('members')) {
-                obj['members'] = ApiClient.convertToType(data['members'], [UserCompact]);
+                obj['members'] = ApiClient.convertToType(data['members'], [CustomFieldResponsePeopleValueInner]);
             }
             if (data.hasOwnProperty('owner')) {
-                obj['owner'] = UserCompact.constructFromObject(data['owner']);
+                obj['owner'] = CustomFieldResponsePeopleValueInner.constructFromObject(data['owner']);
             }
             if (data.hasOwnProperty('start_on')) {
                 obj['start_on'] = ApiClient.convertToType(data['start_on'], 'Date');
             }
             if (data.hasOwnProperty('workspace')) {
-                obj['workspace'] = ApiClient.convertToType(data['workspace'], WorkspaceCompact);
+                obj['workspace'] = PortfolioResponseWorkspace.constructFromObject(data['workspace']);
             }
             if (data.hasOwnProperty('permalink_url')) {
                 obj['permalink_url'] = ApiClient.convertToType(data['permalink_url'], 'String');
@@ -108,7 +103,7 @@ class PortfolioResponse {
                 obj['public'] = ApiClient.convertToType(data['public'], 'Boolean');
             }
             if (data.hasOwnProperty('project_templates')) {
-                obj['project_templates'] = ApiClient.convertToType(data['project_templates'], [ProjectTemplateCompact]);
+                obj['project_templates'] = ApiClient.convertToType(data['project_templates'], [JobBaseNewProjectTemplate]);
             }
         }
         return obj;
@@ -148,19 +143,18 @@ PortfolioResponse.prototype['color'] = undefined;
 PortfolioResponse.prototype['created_at'] = undefined;
 
 /**
- * @member {module:model/UserCompact} created_by
+ * @member {module:model/CustomFieldResponsePeopleValueInner} created_by
  */
 PortfolioResponse.prototype['created_by'] = undefined;
 
 /**
  * Array of custom field settings applied to the portfolio.
- * @member {Array.<module:model/CustomFieldSettingResponse>} custom_field_settings
+ * @member {Array.<module:model/PortfolioResponseCustomFieldSettingsInner>} custom_field_settings
  */
 PortfolioResponse.prototype['custom_field_settings'] = undefined;
 
 /**
- * The latest `status_update` posted to this portfolio.
- * @member {module:model/StatusUpdateCompact} current_status_update
+ * @member {module:model/PortfolioResponseCurrentStatusUpdate} current_status_update
  */
 PortfolioResponse.prototype['current_status_update'] = undefined;
 
@@ -172,17 +166,17 @@ PortfolioResponse.prototype['due_on'] = undefined;
 
 /**
  * Array of Custom Fields.
- * @member {Array.<module:model/CustomFieldCompact>} custom_fields
+ * @member {Array.<module:model/PortfolioResponseCustomFieldsInner>} custom_fields
  */
 PortfolioResponse.prototype['custom_fields'] = undefined;
 
 /**
- * @member {Array.<module:model/UserCompact>} members
+ * @member {Array.<module:model/CustomFieldResponsePeopleValueInner>} members
  */
 PortfolioResponse.prototype['members'] = undefined;
 
 /**
- * @member {module:model/UserCompact} owner
+ * @member {module:model/CustomFieldResponsePeopleValueInner} owner
  */
 PortfolioResponse.prototype['owner'] = undefined;
 
@@ -193,7 +187,7 @@ PortfolioResponse.prototype['owner'] = undefined;
 PortfolioResponse.prototype['start_on'] = undefined;
 
 /**
- * @member {module:model/WorkspaceCompact} workspace
+ * @member {module:model/PortfolioResponseWorkspace} workspace
  */
 PortfolioResponse.prototype['workspace'] = undefined;
 
@@ -211,94 +205,11 @@ PortfolioResponse.prototype['public'] = undefined;
 
 /**
  * Array of project templates that are in the portfolio
- * @member {Array.<module:model/ProjectTemplateCompact>} project_templates
+ * @member {Array.<module:model/JobBaseNewProjectTemplate>} project_templates
  */
 PortfolioResponse.prototype['project_templates'] = undefined;
 
 
-// Implement PortfolioBase interface:
-/**
- * Globally unique identifier of the resource, as a string.
- * @member {String} gid
- */
-PortfolioBase.prototype['gid'] = undefined;
-/**
- * The base type of this resource.
- * @member {String} resource_type
- */
-PortfolioBase.prototype['resource_type'] = undefined;
-/**
- * The name of the portfolio.
- * @member {String} name
- */
-PortfolioBase.prototype['name'] = undefined;
-/**
- * Color of the portfolio.
- * @member {module:model/PortfolioBase.ColorEnum} color
- */
-PortfolioBase.prototype['color'] = undefined;
-// Implement PortfolioResponseAllOf interface:
-/**
- * The time at which this resource was created.
- * @member {Date} created_at
- */
-PortfolioResponseAllOf.prototype['created_at'] = undefined;
-/**
- * @member {module:model/UserCompact} created_by
- */
-PortfolioResponseAllOf.prototype['created_by'] = undefined;
-/**
- * Array of custom field settings applied to the portfolio.
- * @member {Array.<module:model/CustomFieldSettingResponse>} custom_field_settings
- */
-PortfolioResponseAllOf.prototype['custom_field_settings'] = undefined;
-/**
- * The latest `status_update` posted to this portfolio.
- * @member {module:model/StatusUpdateCompact} current_status_update
- */
-PortfolioResponseAllOf.prototype['current_status_update'] = undefined;
-/**
- * The localized day on which this portfolio is due. This takes a date with format YYYY-MM-DD.
- * @member {Date} due_on
- */
-PortfolioResponseAllOf.prototype['due_on'] = undefined;
-/**
- * Array of Custom Fields.
- * @member {Array.<module:model/CustomFieldCompact>} custom_fields
- */
-PortfolioResponseAllOf.prototype['custom_fields'] = undefined;
-/**
- * @member {Array.<module:model/UserCompact>} members
- */
-PortfolioResponseAllOf.prototype['members'] = undefined;
-/**
- * @member {module:model/UserCompact} owner
- */
-PortfolioResponseAllOf.prototype['owner'] = undefined;
-/**
- * The day on which work for this portfolio begins, or null if the portfolio has no start date. This takes a date with `YYYY-MM-DD` format. *Note: `due_on` must be present in the request when setting or unsetting the `start_on` parameter. Additionally, `start_on` and `due_on` cannot be the same date.*
- * @member {Date} start_on
- */
-PortfolioResponseAllOf.prototype['start_on'] = undefined;
-/**
- * @member {module:model/WorkspaceCompact} workspace
- */
-PortfolioResponseAllOf.prototype['workspace'] = undefined;
-/**
- * A url that points directly to the object within Asana.
- * @member {String} permalink_url
- */
-PortfolioResponseAllOf.prototype['permalink_url'] = undefined;
-/**
- * True if the portfolio is public to its workspace members.
- * @member {Boolean} public
- */
-PortfolioResponseAllOf.prototype['public'] = undefined;
-/**
- * Array of project templates that are in the portfolio
- * @member {Array.<module:model/ProjectTemplateCompact>} project_templates
- */
-PortfolioResponseAllOf.prototype['project_templates'] = undefined;
 
 
 

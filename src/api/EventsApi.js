@@ -19,7 +19,7 @@ import GetEvents200Response from '../model/GetEvents200Response';
 /**
 * Events service.
 * @module api/EventsApi
-* @version 1.0.3
+* @version 1.0.4
 */
 export default class EventsApi {
 
@@ -77,7 +77,7 @@ export default class EventsApi {
 
       let authNames = ['personalAccessToken'];
       let contentTypes = [];
-      let accepts = ['application/json'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = GetEvents200Response;
       return this.apiClient.callApi(
         '/events', 'GET',

@@ -12,25 +12,23 @@
  */
 
 import ApiClient from '../ApiClient';
-import AsanaResource from './AsanaResource';
-import CustomFieldCompactAllOf from './CustomFieldCompactAllOf';
-import CustomFieldCompactAllOfDateValue from './CustomFieldCompactAllOfDateValue';
-import EnumOption from './EnumOption';
+import CustomFieldBaseDateValue from './CustomFieldBaseDateValue';
+import CustomFieldBaseEnumOptionsInner from './CustomFieldBaseEnumOptionsInner';
+import CustomFieldBaseEnumValue from './CustomFieldBaseEnumValue';
 
 /**
  * The CustomFieldCompact model module.
  * @module model/CustomFieldCompact
- * @version 1.0.3
+ * @version 1.0.4
  */
 class CustomFieldCompact {
     /**
      * Constructs a new <code>CustomFieldCompact</code>.
+     * A generic Asana Resource, containing a globally unique identifier.A generic Asana Resource, containing a globally unique identifier. Custom Fields store the metadata that is used in order to add user-specified information to tasks in Asana. Be sure to reference the [custom fields](/reference/custom-fields) developer documentation for more information about how custom fields relate to various resources in Asana.  Users in Asana can [lock custom fields](https://asana.com/guide/help/premium/custom-fields#gl-lock-fields), which will make them read-only when accessed by other users. Attempting to edit a locked custom field will return HTTP error code &#x60;403 Forbidden&#x60;.
      * @alias module:model/CustomFieldCompact
-     * @implements module:model/AsanaResource
-     * @implements module:model/CustomFieldCompactAllOf
      */
     constructor() { 
-        AsanaResource.initialize(this);CustomFieldCompactAllOf.initialize(this);
+        
         CustomFieldCompact.initialize(this);
     }
 
@@ -52,8 +50,6 @@ class CustomFieldCompact {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new CustomFieldCompact();
-            AsanaResource.constructFromObject(data, obj);
-            CustomFieldCompactAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('gid')) {
                 obj['gid'] = ApiClient.convertToType(data['gid'], 'String');
@@ -71,7 +67,7 @@ class CustomFieldCompact {
                 obj['type'] = ApiClient.convertToType(data['type'], 'String');
             }
             if (data.hasOwnProperty('enum_options')) {
-                obj['enum_options'] = ApiClient.convertToType(data['enum_options'], [EnumOption]);
+                obj['enum_options'] = ApiClient.convertToType(data['enum_options'], [CustomFieldBaseEnumOptionsInner]);
             }
             if (data.hasOwnProperty('enabled')) {
                 obj['enabled'] = ApiClient.convertToType(data['enabled'], 'Boolean');
@@ -80,13 +76,13 @@ class CustomFieldCompact {
                 obj['is_formula_field'] = ApiClient.convertToType(data['is_formula_field'], 'Boolean');
             }
             if (data.hasOwnProperty('date_value')) {
-                obj['date_value'] = CustomFieldCompactAllOfDateValue.constructFromObject(data['date_value']);
+                obj['date_value'] = CustomFieldBaseDateValue.constructFromObject(data['date_value']);
             }
             if (data.hasOwnProperty('enum_value')) {
-                obj['enum_value'] = ApiClient.convertToType(data['enum_value'], EnumOption);
+                obj['enum_value'] = CustomFieldBaseEnumValue.constructFromObject(data['enum_value']);
             }
             if (data.hasOwnProperty('multi_enum_values')) {
-                obj['multi_enum_values'] = ApiClient.convertToType(data['multi_enum_values'], [EnumOption]);
+                obj['multi_enum_values'] = ApiClient.convertToType(data['multi_enum_values'], [CustomFieldBaseEnumOptionsInner]);
             }
             if (data.hasOwnProperty('number_value')) {
                 obj['number_value'] = ApiClient.convertToType(data['number_value'], 'Number');
@@ -136,7 +132,7 @@ CustomFieldCompact.prototype['type'] = undefined;
 
 /**
  * *Conditional*. Only relevant for custom fields of type `enum`. This array specifies the possible values which an `enum` custom field can adopt. To modify the enum options, refer to [working with enum options](/reference/createenumoptionforcustomfield).
- * @member {Array.<module:model/EnumOption>} enum_options
+ * @member {Array.<module:model/CustomFieldBaseEnumOptionsInner>} enum_options
  */
 CustomFieldCompact.prototype['enum_options'] = undefined;
 
@@ -153,18 +149,18 @@ CustomFieldCompact.prototype['enabled'] = undefined;
 CustomFieldCompact.prototype['is_formula_field'] = undefined;
 
 /**
- * @member {module:model/CustomFieldCompactAllOfDateValue} date_value
+ * @member {module:model/CustomFieldBaseDateValue} date_value
  */
 CustomFieldCompact.prototype['date_value'] = undefined;
 
 /**
- * @member {module:model/EnumOption} enum_value
+ * @member {module:model/CustomFieldBaseEnumValue} enum_value
  */
 CustomFieldCompact.prototype['enum_value'] = undefined;
 
 /**
  * *Conditional*. Only relevant for custom fields of type `multi_enum`. This object is the chosen values of a `multi_enum` custom field.
- * @member {Array.<module:model/EnumOption>} multi_enum_values
+ * @member {Array.<module:model/CustomFieldBaseEnumOptionsInner>} multi_enum_values
  */
 CustomFieldCompact.prototype['multi_enum_values'] = undefined;
 
@@ -187,76 +183,6 @@ CustomFieldCompact.prototype['text_value'] = undefined;
 CustomFieldCompact.prototype['display_value'] = undefined;
 
 
-// Implement AsanaResource interface:
-/**
- * Globally unique identifier of the resource, as a string.
- * @member {String} gid
- */
-AsanaResource.prototype['gid'] = undefined;
-/**
- * The base type of this resource.
- * @member {String} resource_type
- */
-AsanaResource.prototype['resource_type'] = undefined;
-// Implement CustomFieldCompactAllOf interface:
-/**
- * The name of the custom field.
- * @member {String} name
- */
-CustomFieldCompactAllOf.prototype['name'] = undefined;
-/**
- * The type of the custom field. Must be one of the given values. 
- * @member {module:model/CustomFieldCompactAllOf.ResourceSubtypeEnum} resource_subtype
- */
-CustomFieldCompactAllOf.prototype['resource_subtype'] = undefined;
-/**
- * *Deprecated: new integrations should prefer the resource_subtype field.* The type of the custom field. Must be one of the given values. 
- * @member {module:model/CustomFieldCompactAllOf.TypeEnum} type
- */
-CustomFieldCompactAllOf.prototype['type'] = undefined;
-/**
- * *Conditional*. Only relevant for custom fields of type `enum`. This array specifies the possible values which an `enum` custom field can adopt. To modify the enum options, refer to [working with enum options](/reference/createenumoptionforcustomfield).
- * @member {Array.<module:model/EnumOption>} enum_options
- */
-CustomFieldCompactAllOf.prototype['enum_options'] = undefined;
-/**
- * *Conditional*. Determines if the custom field is enabled or not.
- * @member {Boolean} enabled
- */
-CustomFieldCompactAllOf.prototype['enabled'] = undefined;
-/**
- * *Conditional*. This flag describes whether a custom field is a formula custom field.
- * @member {Boolean} is_formula_field
- */
-CustomFieldCompactAllOf.prototype['is_formula_field'] = undefined;
-/**
- * @member {module:model/CustomFieldCompactAllOfDateValue} date_value
- */
-CustomFieldCompactAllOf.prototype['date_value'] = undefined;
-/**
- * @member {module:model/EnumOption} enum_value
- */
-CustomFieldCompactAllOf.prototype['enum_value'] = undefined;
-/**
- * *Conditional*. Only relevant for custom fields of type `multi_enum`. This object is the chosen values of a `multi_enum` custom field.
- * @member {Array.<module:model/EnumOption>} multi_enum_values
- */
-CustomFieldCompactAllOf.prototype['multi_enum_values'] = undefined;
-/**
- * *Conditional*. This number is the value of a `number` custom field.
- * @member {Number} number_value
- */
-CustomFieldCompactAllOf.prototype['number_value'] = undefined;
-/**
- * *Conditional*. This string is the value of a `text` custom field.
- * @member {String} text_value
- */
-CustomFieldCompactAllOf.prototype['text_value'] = undefined;
-/**
- * A string representation for the value of the custom field. Integrations that don't require the underlying type should use this field to read values. Using this field will future-proof an app against new custom field types.
- * @member {String} display_value
- */
-CustomFieldCompactAllOf.prototype['display_value'] = undefined;
 
 
 

@@ -12,23 +12,20 @@
  */
 
 import ApiClient from '../ApiClient';
-import AsanaResource from './AsanaResource';
-import TeamCompactAllOf from './TeamCompactAllOf';
 
 /**
  * The TeamCompact model module.
  * @module model/TeamCompact
- * @version 1.0.3
+ * @version 1.0.4
  */
 class TeamCompact {
     /**
      * Constructs a new <code>TeamCompact</code>.
+     * A generic Asana Resource, containing a globally unique identifier.A generic Asana Resource, containing a globally unique identifier. A *team* is used to group related projects and people together within an organization. Each project in an organization is associated with a team.
      * @alias module:model/TeamCompact
-     * @implements module:model/AsanaResource
-     * @implements module:model/TeamCompactAllOf
      */
     constructor() { 
-        AsanaResource.initialize(this);TeamCompactAllOf.initialize(this);
+        
         TeamCompact.initialize(this);
     }
 
@@ -50,8 +47,6 @@ class TeamCompact {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new TeamCompact();
-            AsanaResource.constructFromObject(data, obj);
-            TeamCompactAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('gid')) {
                 obj['gid'] = ApiClient.convertToType(data['gid'], 'String');
@@ -88,23 +83,6 @@ TeamCompact.prototype['resource_type'] = undefined;
 TeamCompact.prototype['name'] = undefined;
 
 
-// Implement AsanaResource interface:
-/**
- * Globally unique identifier of the resource, as a string.
- * @member {String} gid
- */
-AsanaResource.prototype['gid'] = undefined;
-/**
- * The base type of this resource.
- * @member {String} resource_type
- */
-AsanaResource.prototype['resource_type'] = undefined;
-// Implement TeamCompactAllOf interface:
-/**
- * The name of the team.
- * @member {String} name
- */
-TeamCompactAllOf.prototype['name'] = undefined;
 
 
 

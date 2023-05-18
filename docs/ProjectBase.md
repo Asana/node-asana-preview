@@ -10,19 +10,20 @@ Name | Type | Description | Notes
 **archived** | **Boolean** | True if the project is archived, false if not. Archived projects do not show in the UI by default and may be treated differently for queries. | [optional] 
 **color** | **String** | Color of the project. | [optional] 
 **createdAt** | **Date** | The time at which this resource was created. | [optional] [readonly] 
-**currentStatus** | [**ProjectStatusResponse**](ProjectStatusResponse.md) | *Deprecated: new integrations should prefer the &#x60;current_status_update&#x60; resource.* | [optional] 
-**currentStatusUpdate** | [**StatusUpdateCompact**](StatusUpdateCompact.md) | The latest &#x60;status_update&#x60; posted to this project. | [optional] 
-**customFieldSettings** | [**[CustomFieldSettingResponse]**](CustomFieldSettingResponse.md) | Array of Custom Field Settings (in compact form). | [optional] [readonly] 
+**currentStatus** | [**ProjectBaseCurrentStatus**](ProjectBaseCurrentStatus.md) |  | [optional] 
+**currentStatusUpdate** | [**ProjectBaseCurrentStatusUpdate**](ProjectBaseCurrentStatusUpdate.md) |  | [optional] 
+**customFieldSettings** | [**[PortfolioResponseCustomFieldSettingsInner]**](PortfolioResponseCustomFieldSettingsInner.md) | Array of Custom Field Settings (in compact form). | [optional] [readonly] 
 **defaultView** | **String** | The default view (list, board, calendar, or timeline) of a project. | [optional] 
 **dueDate** | **Date** | *Deprecated: new integrations should prefer the &#x60;due_on&#x60; field.* | [optional] 
 **dueOn** | **Date** | The day on which this project is due. This takes a date with format YYYY-MM-DD. | [optional] 
 **htmlNotes** | **String** | [Opt In](/docs/inputoutput-options). The notes of the project with formatting as HTML. | [optional] 
-**members** | [**[UserCompact]**](UserCompact.md) | Array of users who are members of this project. | [optional] [readonly] 
+**members** | [**[CustomFieldResponsePeopleValueInner]**](CustomFieldResponsePeopleValueInner.md) | Array of users who are members of this project. | [optional] [readonly] 
 **modifiedAt** | **Date** | The time at which this project was last modified. *Note: This does not currently reflect any changes in associations such as tasks or comments that may have been added or removed from the project.* | [optional] [readonly] 
 **notes** | **String** | Free-form textual information associated with the project (ie., its description). | [optional] 
 **_public** | **Boolean** | True if the project is public to its team. | [optional] 
+**privacySetting** | **String** | The privacy setting of the project | [optional] 
 **startOn** | **Date** | The day on which work for this project begins, or null if the project has no start date. This takes a date with &#x60;YYYY-MM-DD&#x60; format. *Note: &#x60;due_on&#x60; or &#x60;due_at&#x60; must be present in the request when setting or unsetting the &#x60;start_on&#x60; parameter. Additionally, &#x60;start_on&#x60; and &#x60;due_on&#x60; cannot be the same date.* | [optional] 
-**workspace** | [**WorkspaceCompact**](WorkspaceCompact.md) |  | [optional] 
+**workspace** | [**CreateProjectFromAsanaTemplateRequestAllOf1Workspace**](CreateProjectFromAsanaTemplateRequestAllOf1Workspace.md) |  | [optional] 
 
 
 
@@ -79,6 +80,19 @@ Name | Type | Description | Notes
 * `calendar` (value: `"calendar"`)
 
 * `timeline` (value: `"timeline"`)
+
+
+
+
+
+## Enum: PrivacySettingEnum
+
+
+* `public_to_workspace` (value: `"public_to_workspace"`)
+
+* `private_to_team` (value: `"private_to_team"`)
+
+* `private` (value: `"private"`)
 
 
 

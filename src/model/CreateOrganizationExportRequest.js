@@ -17,7 +17,7 @@ import OrganizationExportRequest from './OrganizationExportRequest';
 /**
  * The CreateOrganizationExportRequest model module.
  * @module model/CreateOrganizationExportRequest
- * @version 1.0.3
+ * @version 1.0.4
  */
 class CreateOrganizationExportRequest {
     /**

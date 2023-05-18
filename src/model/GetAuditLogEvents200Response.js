@@ -17,7 +17,7 @@ import AuditLogEvent from './AuditLogEvent';
 /**
  * The GetAuditLogEvents200Response model module.
  * @module model/GetAuditLogEvents200Response
- * @version 1.0.3
+ * @version 1.0.4
  */
 class GetAuditLogEvents200Response {
     /**

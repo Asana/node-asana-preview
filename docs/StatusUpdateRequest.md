@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **text** | **String** | The text content of the status update. | 
 **htmlText** | **String** | [Opt In](/docs/inputoutput-options). The text content of the status update with formatting as HTML. | [optional] 
 **statusType** | **String** | The type associated with the status update. This represents the current state of the object this object is on. | 
-**parent** | **String** |  | 
+**parent** | **String** | The id of parent to send this status update to. This can be a project, goal or portfolio. | 
 
 
 

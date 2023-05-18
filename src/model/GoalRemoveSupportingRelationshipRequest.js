@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GoalRemoveSupportingRelationshipRequest model module.
  * @module model/GoalRemoveSupportingRelationshipRequest
- * @version 1.0.3
+ * @version 1.0.4
  */
 class GoalRemoveSupportingRelationshipRequest {
     /**

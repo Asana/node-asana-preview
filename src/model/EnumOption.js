@@ -12,23 +12,20 @@
  */
 
 import ApiClient from '../ApiClient';
-import AsanaResource from './AsanaResource';
-import EnumOptionAllOf from './EnumOptionAllOf';
 
 /**
  * The EnumOption model module.
  * @module model/EnumOption
- * @version 1.0.3
+ * @version 1.0.4
  */
 class EnumOption {
     /**
      * Constructs a new <code>EnumOption</code>.
+     * A generic Asana Resource, containing a globally unique identifier.A generic Asana Resource, containing a globally unique identifier. Enum options are the possible values which an enum custom field can adopt. An enum custom field must contain at least 1 enum option but no more than 500.  You can add enum options to a custom field by using the &#x60;POST /custom_fields/custom_field_gid/enum_options&#x60; endpoint.  **It is not possible to remove or delete an enum option**. Instead, enum options can be disabled by updating the &#x60;enabled&#x60; field to false with the &#x60;PUT /enum_options/enum_option_gid&#x60; endpoint. Other attributes can be updated similarly.  On creation of an enum option, &#x60;enabled&#x60; is always set to &#x60;true&#x60;, meaning the enum option is a selectable value for the custom field. Setting &#x60;enabled&#x3D;false&#x60; is equivalent to “trashing” the enum option in the Asana web app within the “Edit Fields” dialog. The enum option will no longer be selectable but, if the enum option value was previously set within a task, the task will retain the value.  Enum options are an ordered list and by default new enum options are inserted at the end. Ordering in relation to existing enum options can be specified on creation by using &#x60;insert_before&#x60; or &#x60;insert_after&#x60; to reference an existing enum option. Only one of &#x60;insert_before&#x60; and &#x60;insert_after&#x60; can be provided when creating a new enum option.  An enum options list can be reordered with the &#x60;POST /custom_fields/custom_field_gid/enum_options/insert&#x60; endpoint.
      * @alias module:model/EnumOption
-     * @implements module:model/AsanaResource
-     * @implements module:model/EnumOptionAllOf
      */
     constructor() { 
-        AsanaResource.initialize(this);EnumOptionAllOf.initialize(this);
+        
         EnumOption.initialize(this);
     }
 
@@ -50,8 +47,6 @@ class EnumOption {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new EnumOption();
-            AsanaResource.constructFromObject(data, obj);
-            EnumOptionAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('gid')) {
                 obj['gid'] = ApiClient.convertToType(data['gid'], 'String');
@@ -106,33 +101,6 @@ EnumOption.prototype['enabled'] = undefined;
 EnumOption.prototype['color'] = undefined;
 
 
-// Implement AsanaResource interface:
-/**
- * Globally unique identifier of the resource, as a string.
- * @member {String} gid
- */
-AsanaResource.prototype['gid'] = undefined;
-/**
- * The base type of this resource.
- * @member {String} resource_type
- */
-AsanaResource.prototype['resource_type'] = undefined;
-// Implement EnumOptionAllOf interface:
-/**
- * The name of the enum option.
- * @member {String} name
- */
-EnumOptionAllOf.prototype['name'] = undefined;
-/**
- * Whether or not the enum option is a selectable value for the custom field.
- * @member {Boolean} enabled
- */
-EnumOptionAllOf.prototype['enabled'] = undefined;
-/**
- * The color of the enum option. Defaults to ‘none’.
- * @member {String} color
- */
-EnumOptionAllOf.prototype['color'] = undefined;
 
 
 

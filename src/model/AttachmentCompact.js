@@ -12,23 +12,20 @@
  */
 
 import ApiClient from '../ApiClient';
-import AsanaResource from './AsanaResource';
-import AttachmentCompactAllOf from './AttachmentCompactAllOf';
 
 /**
  * The AttachmentCompact model module.
  * @module model/AttachmentCompact
- * @version 1.0.3
+ * @version 1.0.4
  */
 class AttachmentCompact {
     /**
      * Constructs a new <code>AttachmentCompact</code>.
+     * A generic Asana Resource, containing a globally unique identifier.A generic Asana Resource, containing a globally unique identifier. An *attachment* object represents any file attached to a task in Asana, whether it’s an uploaded file or one associated via a third-party service such as Dropbox or Google Drive.
      * @alias module:model/AttachmentCompact
-     * @implements module:model/AsanaResource
-     * @implements module:model/AttachmentCompactAllOf
      */
     constructor() { 
-        AsanaResource.initialize(this);AttachmentCompactAllOf.initialize(this);
+        
         AttachmentCompact.initialize(this);
     }
 
@@ -50,8 +47,6 @@ class AttachmentCompact {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new AttachmentCompact();
-            AsanaResource.constructFromObject(data, obj);
-            AttachmentCompactAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('gid')) {
                 obj['gid'] = ApiClient.convertToType(data['gid'], 'String');
@@ -97,28 +92,6 @@ AttachmentCompact.prototype['name'] = undefined;
 AttachmentCompact.prototype['resource_subtype'] = undefined;
 
 
-// Implement AsanaResource interface:
-/**
- * Globally unique identifier of the resource, as a string.
- * @member {String} gid
- */
-AsanaResource.prototype['gid'] = undefined;
-/**
- * The base type of this resource.
- * @member {String} resource_type
- */
-AsanaResource.prototype['resource_type'] = undefined;
-// Implement AttachmentCompactAllOf interface:
-/**
- * The name of the file.
- * @member {String} name
- */
-AttachmentCompactAllOf.prototype['name'] = undefined;
-/**
- * The service hosting the attachment. Valid values are `asana`, `dropbox`, `gdrive`, `onedrive`, `box`, `vimeo`, and `external`.
- * @member {String} resource_subtype
- */
-AttachmentCompactAllOf.prototype['resource_subtype'] = undefined;
 
 
 

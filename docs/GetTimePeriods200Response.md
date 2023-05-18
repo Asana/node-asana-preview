@@ -4,6 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**[TimePeriodCompact]**](TimePeriodCompact.md) |  | [optional] 
+**data** | [**[TimePeriodResponse]**](TimePeriodResponse.md) |  | [optional] 
 
 

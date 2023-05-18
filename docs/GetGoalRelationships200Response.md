@@ -4,6 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**[GoalRelationshipCompact]**](GoalRelationshipCompact.md) |  | [optional] 
+**data** | [**[GoalRelationshipResponse]**](GoalRelationshipResponse.md) |  | [optional] 
 
 

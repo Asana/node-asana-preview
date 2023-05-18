@@ -17,7 +17,7 @@ import UserResponse from './UserResponse';
 /**
  * The GetUser200Response model module.
  * @module model/GetUser200Response
- * @version 1.0.3
+ * @version 1.0.4
  */
 class GetUser200Response {
     /**

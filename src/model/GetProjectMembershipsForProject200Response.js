@@ -12,12 +12,12 @@
  */
 
 import ApiClient from '../ApiClient';
-import ProjectMembershipCompact from './ProjectMembershipCompact';
+import ProjectMembershipResponse from './ProjectMembershipResponse';
 
 /**
  * The GetProjectMembershipsForProject200Response model module.
  * @module model/GetProjectMembershipsForProject200Response
- * @version 1.0.3
+ * @version 1.0.4
  */
 class GetProjectMembershipsForProject200Response {
     /**
@@ -49,7 +49,7 @@ class GetProjectMembershipsForProject200Response {
             obj = obj || new GetProjectMembershipsForProject200Response();
 
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [ProjectMembershipCompact]);
+                obj['data'] = ApiClient.convertToType(data['data'], [ProjectMembershipResponse]);
             }
         }
         return obj;
@@ -59,7 +59,7 @@ class GetProjectMembershipsForProject200Response {
 }
 
 /**
- * @member {Array.<module:model/ProjectMembershipCompact>} data
+ * @member {Array.<module:model/ProjectMembershipResponse>} data
  */
 GetProjectMembershipsForProject200Response.prototype['data'] = undefined;
 

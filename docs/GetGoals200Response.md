@@ -4,6 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**[GoalCompact]**](GoalCompact.md) |  | [optional] 
+**data** | [**[GoalResponse]**](GoalResponse.md) |  | [optional] 
 
 

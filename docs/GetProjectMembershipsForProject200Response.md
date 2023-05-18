@@ -4,6 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**[ProjectMembershipCompact]**](ProjectMembershipCompact.md) |  | [optional] 
+**data** | [**[ProjectMembershipResponse]**](ProjectMembershipResponse.md) |  | [optional] 
 
 

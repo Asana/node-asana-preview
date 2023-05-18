@@ -12,23 +12,20 @@
  */
 
 import ApiClient from '../ApiClient';
-import AsanaResource from './AsanaResource';
-import ProjectCompactAllOf from './ProjectCompactAllOf';
 
 /**
  * The ProjectCompact model module.
  * @module model/ProjectCompact
- * @version 1.0.3
+ * @version 1.0.4
  */
 class ProjectCompact {
     /**
      * Constructs a new <code>ProjectCompact</code>.
+     * A generic Asana Resource, containing a globally unique identifier.A generic Asana Resource, containing a globally unique identifier. A *project* represents a prioritized list of tasks in Asana or a board with columns of tasks represented as cards. It exists in a single workspace or organization and is accessible to a subset of users in that workspace or organization, depending on its permissions.
      * @alias module:model/ProjectCompact
-     * @implements module:model/AsanaResource
-     * @implements module:model/ProjectCompactAllOf
      */
     constructor() { 
-        AsanaResource.initialize(this);ProjectCompactAllOf.initialize(this);
+        
         ProjectCompact.initialize(this);
     }
 
@@ -50,8 +47,6 @@ class ProjectCompact {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new ProjectCompact();
-            AsanaResource.constructFromObject(data, obj);
-            ProjectCompactAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('gid')) {
                 obj['gid'] = ApiClient.convertToType(data['gid'], 'String');
@@ -88,23 +83,6 @@ ProjectCompact.prototype['resource_type'] = undefined;
 ProjectCompact.prototype['name'] = undefined;
 
 
-// Implement AsanaResource interface:
-/**
- * Globally unique identifier of the resource, as a string.
- * @member {String} gid
- */
-AsanaResource.prototype['gid'] = undefined;
-/**
- * The base type of this resource.
- * @member {String} resource_type
- */
-AsanaResource.prototype['resource_type'] = undefined;
-// Implement ProjectCompactAllOf interface:
-/**
- * Name of the project. This is generally a short sentence fragment that fits on a line in the UI for maximum readability. However, it can be longer.
- * @member {String} name
- */
-ProjectCompactAllOf.prototype['name'] = undefined;
 
 
 

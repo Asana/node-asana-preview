@@ -12,24 +12,21 @@
  */
 
 import ApiClient from '../ApiClient';
-import ProjectBriefBase from './ProjectBriefBase';
-import ProjectBriefResponseAllOf from './ProjectBriefResponseAllOf';
-import ProjectCompact from './ProjectCompact';
+import ProjectBriefResponseProject from './ProjectBriefResponseProject';
 
 /**
  * The ProjectBriefResponse model module.
  * @module model/ProjectBriefResponse
- * @version 1.0.3
+ * @version 1.0.4
  */
 class ProjectBriefResponse {
     /**
      * Constructs a new <code>ProjectBriefResponse</code>.
+     * A generic Asana Resource, containing a globally unique identifier.A generic Asana Resource, containing a globally unique identifier. A *Project Brief* allows you to explain the what and why of the project to your team.
      * @alias module:model/ProjectBriefResponse
-     * @implements module:model/ProjectBriefBase
-     * @implements module:model/ProjectBriefResponseAllOf
      */
     constructor() { 
-        ProjectBriefBase.initialize(this);ProjectBriefResponseAllOf.initialize(this);
+        
         ProjectBriefResponse.initialize(this);
     }
 
@@ -51,8 +48,6 @@ class ProjectBriefResponse {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new ProjectBriefResponse();
-            ProjectBriefBase.constructFromObject(data, obj);
-            ProjectBriefResponseAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('gid')) {
                 obj['gid'] = ApiClient.convertToType(data['gid'], 'String');
@@ -73,7 +68,7 @@ class ProjectBriefResponse {
                 obj['permalink_url'] = ApiClient.convertToType(data['permalink_url'], 'String');
             }
             if (data.hasOwnProperty('project')) {
-                obj['project'] = ApiClient.convertToType(data['project'], ProjectCompact);
+                obj['project'] = ProjectBriefResponseProject.constructFromObject(data['project']);
             }
         }
         return obj;
@@ -119,47 +114,11 @@ ProjectBriefResponse.prototype['text'] = undefined;
 ProjectBriefResponse.prototype['permalink_url'] = undefined;
 
 /**
- * @member {module:model/ProjectCompact} project
+ * @member {module:model/ProjectBriefResponseProject} project
  */
 ProjectBriefResponse.prototype['project'] = undefined;
 
 
-// Implement ProjectBriefBase interface:
-/**
- * Globally unique identifier of the resource, as a string.
- * @member {String} gid
- */
-ProjectBriefBase.prototype['gid'] = undefined;
-/**
- * The base type of this resource.
- * @member {String} resource_type
- */
-ProjectBriefBase.prototype['resource_type'] = undefined;
-/**
- * The title of the project brief.
- * @member {String} title
- */
-ProjectBriefBase.prototype['title'] = undefined;
-/**
- * HTML formatted text for the project brief.
- * @member {String} html_text
- */
-ProjectBriefBase.prototype['html_text'] = undefined;
-// Implement ProjectBriefResponseAllOf interface:
-/**
- * [Opt In](/docs/inputoutput-options). The plain text of the project brief.
- * @member {String} text
- */
-ProjectBriefResponseAllOf.prototype['text'] = undefined;
-/**
- * A url that points directly to the object within Asana.
- * @member {String} permalink_url
- */
-ProjectBriefResponseAllOf.prototype['permalink_url'] = undefined;
-/**
- * @member {module:model/ProjectCompact} project
- */
-ProjectBriefResponseAllOf.prototype['project'] = undefined;
 
 
 

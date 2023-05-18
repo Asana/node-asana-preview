@@ -17,7 +17,7 @@ import TaskAddTagRequest from './TaskAddTagRequest';
 /**
  * The AddTagForTaskRequest model module.
  * @module model/AddTagForTaskRequest
- * @version 1.0.3
+ * @version 1.0.4
  */
 class AddTagForTaskRequest {
     /**

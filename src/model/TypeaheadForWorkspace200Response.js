@@ -17,7 +17,7 @@ import AsanaNamedResource from './AsanaNamedResource';
 /**
  * The TypeaheadForWorkspace200Response model module.
  * @module model/TypeaheadForWorkspace200Response
- * @version 1.0.3
+ * @version 1.0.4
  */
 class TypeaheadForWorkspace200Response {
     /**

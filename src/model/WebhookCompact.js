@@ -12,24 +12,21 @@
  */
 
 import ApiClient from '../ApiClient';
-import AsanaNamedResource from './AsanaNamedResource';
-import AsanaResource from './AsanaResource';
-import WebhookCompactAllOf from './WebhookCompactAllOf';
+import MessageParentAllOf from './MessageParentAllOf';
 
 /**
  * The WebhookCompact model module.
  * @module model/WebhookCompact
- * @version 1.0.3
+ * @version 1.0.4
  */
 class WebhookCompact {
     /**
      * Constructs a new <code>WebhookCompact</code>.
+     * A generic Asana Resource, containing a globally unique identifier.A generic Asana Resource, containing a globally unique identifier. Webhook objects represent the state of an active subscription for a server to be updated with information from Asana. This schema represents the subscription itself, not the objects that are sent to the server. For information on those please refer to the [event](/reference/events) schema.
      * @alias module:model/WebhookCompact
-     * @implements module:model/AsanaResource
-     * @implements module:model/WebhookCompactAllOf
      */
     constructor() { 
-        AsanaResource.initialize(this);WebhookCompactAllOf.initialize(this);
+        
         WebhookCompact.initialize(this);
     }
 
@@ -51,8 +48,6 @@ class WebhookCompact {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new WebhookCompact();
-            AsanaResource.constructFromObject(data, obj);
-            WebhookCompactAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('gid')) {
                 obj['gid'] = ApiClient.convertToType(data['gid'], 'String');
@@ -64,7 +59,7 @@ class WebhookCompact {
                 obj['active'] = ApiClient.convertToType(data['active'], 'Boolean');
             }
             if (data.hasOwnProperty('resource')) {
-                obj['resource'] = AsanaNamedResource.constructFromObject(data['resource']);
+                obj['resource'] = MessageParentAllOf.constructFromObject(data['resource']);
             }
             if (data.hasOwnProperty('target')) {
                 obj['target'] = ApiClient.convertToType(data['target'], 'String');
@@ -95,7 +90,7 @@ WebhookCompact.prototype['resource_type'] = undefined;
 WebhookCompact.prototype['active'] = undefined;
 
 /**
- * @member {module:model/AsanaNamedResource} resource
+ * @member {module:model/MessageParentAllOf} resource
  */
 WebhookCompact.prototype['resource'] = undefined;
 
@@ -106,32 +101,6 @@ WebhookCompact.prototype['resource'] = undefined;
 WebhookCompact.prototype['target'] = undefined;
 
 
-// Implement AsanaResource interface:
-/**
- * Globally unique identifier of the resource, as a string.
- * @member {String} gid
- */
-AsanaResource.prototype['gid'] = undefined;
-/**
- * The base type of this resource.
- * @member {String} resource_type
- */
-AsanaResource.prototype['resource_type'] = undefined;
-// Implement WebhookCompactAllOf interface:
-/**
- * If true, the webhook will send events - if false it is considered inactive and will not generate events.
- * @member {Boolean} active
- */
-WebhookCompactAllOf.prototype['active'] = undefined;
-/**
- * @member {module:model/AsanaNamedResource} resource
- */
-WebhookCompactAllOf.prototype['resource'] = undefined;
-/**
- * The URL to receive the HTTP POST.
- * @member {String} target
- */
-WebhookCompactAllOf.prototype['target'] = undefined;
 
 
 

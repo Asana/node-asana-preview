@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ModifyDependentsRequest model module.
  * @module model/ModifyDependentsRequest
- * @version 1.0.3
+ * @version 1.0.4
  */
 class ModifyDependentsRequest {
     /**

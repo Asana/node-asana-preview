@@ -17,7 +17,7 @@ import AddFollowersRequest from './AddFollowersRequest';
 /**
  * The AddFollowersForProjectRequest model module.
  * @module model/AddFollowersForProjectRequest
- * @version 1.0.3
+ * @version 1.0.4
  */
 class AddFollowersForProjectRequest {
     /**

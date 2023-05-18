@@ -19,7 +19,7 @@ import GetUserTaskList200Response from '../model/GetUserTaskList200Response';
 /**
 * UserTaskLists service.
 * @module api/UserTaskListsApi
-* @version 1.0.3
+* @version 1.0.4
 */
 export default class UserTaskListsApi {
 
@@ -75,7 +75,7 @@ export default class UserTaskListsApi {
 
       let authNames = ['personalAccessToken'];
       let contentTypes = [];
-      let accepts = ['application/json'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = GetUserTaskList200Response;
       return this.apiClient.callApi(
         '/user_task_lists/{user_task_list_gid}', 'GET',
@@ -130,7 +130,7 @@ export default class UserTaskListsApi {
 
       let authNames = ['personalAccessToken'];
       let contentTypes = [];
-      let accepts = ['application/json'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = GetUserTaskList200Response;
       return this.apiClient.callApi(
         '/users/{user_gid}/user_task_list', 'GET',

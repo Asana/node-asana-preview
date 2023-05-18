@@ -12,12 +12,12 @@
  */
 
 import ApiClient from '../ApiClient';
-import Error from './Error';
+import ErrorResponseErrorsInner from './ErrorResponseErrorsInner';
 
 /**
  * The ErrorResponse model module.
  * @module model/ErrorResponse
- * @version 1.0.3
+ * @version 1.0.4
  */
 class ErrorResponse {
     /**
@@ -50,7 +50,7 @@ class ErrorResponse {
             obj = obj || new ErrorResponse();
 
             if (data.hasOwnProperty('errors')) {
-                obj['errors'] = ApiClient.convertToType(data['errors'], [Error]);
+                obj['errors'] = ApiClient.convertToType(data['errors'], [ErrorResponseErrorsInner]);
             }
         }
         return obj;
@@ -60,7 +60,7 @@ class ErrorResponse {
 }
 
 /**
- * @member {Array.<module:model/Error>} errors
+ * @member {Array.<module:model/ErrorResponseErrorsInner>} errors
  */
 ErrorResponse.prototype['errors'] = undefined;
 

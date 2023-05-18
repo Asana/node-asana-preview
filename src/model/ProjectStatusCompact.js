@@ -12,23 +12,20 @@
  */
 
 import ApiClient from '../ApiClient';
-import AsanaResource from './AsanaResource';
-import ProjectStatusCompactAllOf from './ProjectStatusCompactAllOf';
 
 /**
  * The ProjectStatusCompact model module.
  * @module model/ProjectStatusCompact
- * @version 1.0.3
+ * @version 1.0.4
  */
 class ProjectStatusCompact {
     /**
      * Constructs a new <code>ProjectStatusCompact</code>.
+     * A generic Asana Resource, containing a globally unique identifier.A generic Asana Resource, containing a globally unique identifier. *Deprecated: new integrations should prefer the &#x60;status_update&#x60; resource.* A *project status* is an update on the progress of a particular project, and is sent out to all project followers when created. These updates include both text describing the update and a color code intended to represent the overall state of the project: \&quot;green\&quot; for projects that are on track, \&quot;yellow\&quot; for projects at risk, and \&quot;red\&quot; for projects that are behind.
      * @alias module:model/ProjectStatusCompact
-     * @implements module:model/AsanaResource
-     * @implements module:model/ProjectStatusCompactAllOf
      */
     constructor() { 
-        AsanaResource.initialize(this);ProjectStatusCompactAllOf.initialize(this);
+        
         ProjectStatusCompact.initialize(this);
     }
 
@@ -50,8 +47,6 @@ class ProjectStatusCompact {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new ProjectStatusCompact();
-            AsanaResource.constructFromObject(data, obj);
-            ProjectStatusCompactAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('gid')) {
                 obj['gid'] = ApiClient.convertToType(data['gid'], 'String');
@@ -88,23 +83,6 @@ ProjectStatusCompact.prototype['resource_type'] = undefined;
 ProjectStatusCompact.prototype['title'] = undefined;
 
 
-// Implement AsanaResource interface:
-/**
- * Globally unique identifier of the resource, as a string.
- * @member {String} gid
- */
-AsanaResource.prototype['gid'] = undefined;
-/**
- * The base type of this resource.
- * @member {String} resource_type
- */
-AsanaResource.prototype['resource_type'] = undefined;
-// Implement ProjectStatusCompactAllOf interface:
-/**
- * The title of the project status update.
- * @member {String} title
- */
-ProjectStatusCompactAllOf.prototype['title'] = undefined;
 
 
 

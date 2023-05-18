@@ -17,7 +17,7 @@ import SectionTaskInsertRequest from './SectionTaskInsertRequest';
 /**
  * The AddTaskForSectionRequest model module.
  * @module model/AddTaskForSectionRequest
- * @version 1.0.3
+ * @version 1.0.4
  */
 class AddTaskForSectionRequest {
     /**

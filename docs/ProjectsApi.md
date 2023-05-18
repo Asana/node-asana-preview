@@ -49,7 +49,7 @@ let projectGid = 1331; // String | Globally unique identifier for the project.
 let addCustomFieldSettingForPortfolioRequest = new AsanaPreview.AddCustomFieldSettingForPortfolioRequest(); // AddCustomFieldSettingForPortfolioRequest | Information about the custom field setting.
 let opts = {
   'optPretty': true, // Boolean | Provides “pretty” output. Provides the response in a “pretty” format. In the case of JSON this means doing proper line breaking and indentation to make it readable. This will take extra time and increase the response size so it is advisable only to use this during debugging.
-  'optFields': ["is_important","custom_field","project","parent"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
+  'optFields': ["parent","is_important","custom_field","project"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
 };
 
 apiInstance.addCustomFieldSettingForProject(projectGid, addCustomFieldSettingForPortfolioRequest, opts, (error, data, response) => {
@@ -81,8 +81,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+- **Content-Type**: application/json; charset=UTF-8
+- **Accept**: application/json; charset=UTF-8
 
 
 ## addFollowersForProject
@@ -108,7 +108,7 @@ let projectGid = 1331; // String | Globally unique identifier for the project.
 let addFollowersForProjectRequest = new AsanaPreview.AddFollowersForProjectRequest(); // AddFollowersForProjectRequest | Information about the followers being added.
 let opts = {
   'optPretty': true, // Boolean | Provides “pretty” output. Provides the response in a “pretty” format. In the case of JSON this means doing proper line breaking and indentation to make it readable. This will take extra time and increase the response size so it is advisable only to use this during debugging.
-  'optFields': ["created_at","color","archived","icon","public","default_view","members","project_brief","custom_fields","html_notes","privacy_setting","due_on","name","permalink_url","owner","modified_at","current_status","completed_at","completed_by","current_status_update","workspace","due_date","completed","custom_field_settings","notes","followers","start_on","team","created_from_template"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
+  'optFields': ["created_at","modified_at","color","team","custom_field_settings","completed_by","name","privacy_setting","public","custom_fields","due_date","due_on","archived","project_brief","notes","created_from_template","start_on","workspace","followers","members","current_status","icon","current_status_update","completed_at","html_notes","permalink_url","owner","completed","default_view"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
 };
 
 apiInstance.addFollowersForProject(projectGid, addFollowersForProjectRequest, opts, (error, data, response) => {
@@ -140,8 +140,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+- **Content-Type**: application/json; charset=UTF-8
+- **Accept**: application/json; charset=UTF-8
 
 
 ## addMembersForProject
@@ -167,7 +167,7 @@ let projectGid = 1331; // String | Globally unique identifier for the project.
 let addMembersForPortfolioRequest = new AsanaPreview.AddMembersForPortfolioRequest(); // AddMembersForPortfolioRequest | Information about the members being added.
 let opts = {
   'optPretty': true, // Boolean | Provides “pretty” output. Provides the response in a “pretty” format. In the case of JSON this means doing proper line breaking and indentation to make it readable. This will take extra time and increase the response size so it is advisable only to use this during debugging.
-  'optFields': ["created_at","color","archived","icon","public","default_view","members","project_brief","custom_fields","html_notes","privacy_setting","due_on","name","permalink_url","owner","modified_at","current_status","completed_at","completed_by","current_status_update","workspace","due_date","completed","custom_field_settings","notes","followers","start_on","team","created_from_template"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
+  'optFields': ["created_at","modified_at","color","team","custom_field_settings","completed_by","name","privacy_setting","public","custom_fields","due_date","due_on","archived","project_brief","notes","created_from_template","start_on","workspace","followers","members","current_status","icon","current_status_update","completed_at","html_notes","permalink_url","owner","completed","default_view"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
 };
 
 apiInstance.addMembersForProject(projectGid, addMembersForPortfolioRequest, opts, (error, data, response) => {
@@ -199,8 +199,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+- **Content-Type**: application/json; charset=UTF-8
+- **Accept**: application/json; charset=UTF-8
 
 
 ## createProject
@@ -225,7 +225,7 @@ let apiInstance = new AsanaPreview.ProjectsApi();
 let createProjectRequest = new AsanaPreview.CreateProjectRequest(); // CreateProjectRequest | The project to create.
 let opts = {
   'optPretty': true, // Boolean | Provides “pretty” output. Provides the response in a “pretty” format. In the case of JSON this means doing proper line breaking and indentation to make it readable. This will take extra time and increase the response size so it is advisable only to use this during debugging.
-  'optFields': ["created_at","color","archived","icon","public","default_view","members","project_brief","custom_fields","html_notes","privacy_setting","due_on","name","permalink_url","owner","modified_at","current_status","completed_at","completed_by","current_status_update","workspace","due_date","completed","custom_field_settings","notes","followers","start_on","team","created_from_template"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
+  'optFields': ["created_at","modified_at","color","team","custom_field_settings","completed_by","name","privacy_setting","public","custom_fields","due_date","due_on","archived","project_brief","notes","created_from_template","start_on","workspace","followers","members","current_status","icon","current_status_update","completed_at","html_notes","permalink_url","owner","completed","default_view"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
 };
 
 apiInstance.createProject(createProjectRequest, opts, (error, data, response) => {
@@ -256,8 +256,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+- **Content-Type**: application/json; charset=UTF-8
+- **Accept**: application/json; charset=UTF-8
 
 
 ## createProjectForTeam
@@ -283,7 +283,7 @@ let teamGid = 159874; // String | Globally unique identifier for the team.
 let createProjectRequest = new AsanaPreview.CreateProjectRequest(); // CreateProjectRequest | The new project to create.
 let opts = {
   'optPretty': true, // Boolean | Provides “pretty” output. Provides the response in a “pretty” format. In the case of JSON this means doing proper line breaking and indentation to make it readable. This will take extra time and increase the response size so it is advisable only to use this during debugging.
-  'optFields': ["created_at","color","archived","icon","public","default_view","members","project_brief","custom_fields","html_notes","privacy_setting","due_on","name","permalink_url","owner","modified_at","current_status","completed_at","completed_by","current_status_update","workspace","due_date","completed","custom_field_settings","notes","followers","start_on","team","created_from_template"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
+  'optFields': ["created_at","modified_at","color","team","custom_field_settings","completed_by","name","privacy_setting","public","custom_fields","due_date","due_on","archived","project_brief","notes","created_from_template","start_on","workspace","followers","members","current_status","icon","current_status_update","completed_at","html_notes","permalink_url","owner","completed","default_view"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
 };
 
 apiInstance.createProjectForTeam(teamGid, createProjectRequest, opts, (error, data, response) => {
@@ -315,8 +315,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+- **Content-Type**: application/json; charset=UTF-8
+- **Accept**: application/json; charset=UTF-8
 
 
 ## createProjectForWorkspace
@@ -342,7 +342,7 @@ let workspaceGid = 12345; // String | Globally unique identifier for the workspa
 let createProjectRequest = new AsanaPreview.CreateProjectRequest(); // CreateProjectRequest | The new project to create.
 let opts = {
   'optPretty': true, // Boolean | Provides “pretty” output. Provides the response in a “pretty” format. In the case of JSON this means doing proper line breaking and indentation to make it readable. This will take extra time and increase the response size so it is advisable only to use this during debugging.
-  'optFields': ["created_at","color","archived","icon","public","default_view","members","project_brief","custom_fields","html_notes","privacy_setting","due_on","name","permalink_url","owner","modified_at","current_status","completed_at","completed_by","current_status_update","workspace","due_date","completed","custom_field_settings","notes","followers","start_on","team","created_from_template"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
+  'optFields': ["created_at","modified_at","color","team","custom_field_settings","completed_by","name","privacy_setting","public","custom_fields","due_date","due_on","archived","project_brief","notes","created_from_template","start_on","workspace","followers","members","current_status","icon","current_status_update","completed_at","html_notes","permalink_url","owner","completed","default_view"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
 };
 
 apiInstance.createProjectForWorkspace(workspaceGid, createProjectRequest, opts, (error, data, response) => {
@@ -374,8 +374,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+- **Content-Type**: application/json; charset=UTF-8
+- **Accept**: application/json; charset=UTF-8
 
 
 ## deleteProject
@@ -430,7 +430,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: application/json; charset=UTF-8
 
 
 ## duplicateProject
@@ -455,7 +455,7 @@ let apiInstance = new AsanaPreview.ProjectsApi();
 let projectGid = 1331; // String | Globally unique identifier for the project.
 let opts = {
   'optPretty': true, // Boolean | Provides “pretty” output. Provides the response in a “pretty” format. In the case of JSON this means doing proper line breaking and indentation to make it readable. This will take extra time and increase the response size so it is advisable only to use this during debugging.
-  'optFields': ["status","resource_subtype","new_project_template","new_task","new_task_template","new_project"], // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
+  'optFields': ["status","new_task","new_project","new_project_template","new_task_template","resource_subtype"], // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
   'duplicateProjectRequest': new AsanaPreview.DuplicateProjectRequest() // DuplicateProjectRequest | Describes the duplicate's name and the elements that will be duplicated.
 };
 
@@ -488,8 +488,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+- **Content-Type**: application/json; charset=UTF-8
+- **Accept**: application/json; charset=UTF-8
 
 
 ## getProject
@@ -514,7 +514,7 @@ let apiInstance = new AsanaPreview.ProjectsApi();
 let projectGid = 1331; // String | Globally unique identifier for the project.
 let opts = {
   'optPretty': true, // Boolean | Provides “pretty” output. Provides the response in a “pretty” format. In the case of JSON this means doing proper line breaking and indentation to make it readable. This will take extra time and increase the response size so it is advisable only to use this during debugging.
-  'optFields': ["created_at","color","archived","icon","public","default_view","members","project_brief","custom_fields","html_notes","privacy_setting","due_on","name","permalink_url","owner","modified_at","current_status","completed_at","completed_by","current_status_update","workspace","due_date","completed","custom_field_settings","notes","followers","start_on","team","created_from_template"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
+  'optFields': ["created_at","modified_at","color","team","custom_field_settings","completed_by","name","privacy_setting","public","custom_fields","due_date","due_on","archived","project_brief","notes","created_from_template","start_on","workspace","followers","members","current_status","icon","current_status_update","completed_at","html_notes","permalink_url","owner","completed","default_view"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
 };
 
 apiInstance.getProject(projectGid, opts, (error, data, response) => {
@@ -546,7 +546,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: application/json; charset=UTF-8
 
 
 ## getProjects
@@ -575,7 +575,7 @@ let opts = {
   'workspace': 1331, // String | The workspace or organization to filter projects on.
   'team': 14916, // String | The team to filter projects on.
   'archived': false, // Boolean | Only return projects whose `archived` field takes on the value of this parameter.
-  'optFields': ["created_at","color","archived","icon","public","default_view","members","project_brief","custom_fields","html_notes","privacy_setting","name","due_on","permalink_url","owner","modified_at","current_status","completed_at","completed_by","current_status_update","workspace","due_date","completed","custom_field_settings","notes","followers","start_on","team","created_from_template"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
+  'optFields': ["created_at","modified_at","color","team","custom_field_settings","completed_by","name","privacy_setting","public","custom_fields","due_date","due_on","archived","project_brief","notes","created_from_template","start_on","workspace","followers","members","current_status","icon","current_status_update","completed_at","html_notes","permalink_url","owner","completed","default_view"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
 };
 
 apiInstance.getProjects(opts, (error, data, response) => {
@@ -611,7 +611,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: application/json; charset=UTF-8
 
 
 ## getProjectsForTask
@@ -638,7 +638,7 @@ let opts = {
   'optPretty': true, // Boolean | Provides “pretty” output. Provides the response in a “pretty” format. In the case of JSON this means doing proper line breaking and indentation to make it readable. This will take extra time and increase the response size so it is advisable only to use this during debugging.
   'limit': 50, // Number | Results per page. The number of objects to return per page. The value must be between 1 and 100.
   'offset': eyJ0eXAiOJiKV1iQLCJhbGciOiJIUzI1NiJ9, // String | Offset token. An offset to the next page returned by the API. A pagination request will return an offset token, which can be used as an input parameter to the next request. If an offset is not passed in, the API will return the first page of results. 'Note: You can only pass in an offset that was returned to you via a previously paginated request.'
-  'optFields': ["created_at","color","archived","icon","public","default_view","members","project_brief","custom_fields","html_notes","privacy_setting","name","due_on","permalink_url","owner","modified_at","current_status","completed_at","completed_by","current_status_update","workspace","due_date","completed","custom_field_settings","notes","followers","start_on","team","created_from_template"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
+  'optFields': ["created_at","modified_at","color","team","custom_field_settings","completed_by","name","privacy_setting","public","custom_fields","due_date","due_on","archived","project_brief","notes","created_from_template","start_on","workspace","followers","members","current_status","icon","current_status_update","completed_at","html_notes","permalink_url","owner","completed","default_view"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
 };
 
 apiInstance.getProjectsForTask(taskGid, opts, (error, data, response) => {
@@ -672,7 +672,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: application/json; charset=UTF-8
 
 
 ## getProjectsForTeam
@@ -700,7 +700,7 @@ let opts = {
   'limit': 50, // Number | Results per page. The number of objects to return per page. The value must be between 1 and 100.
   'offset': eyJ0eXAiOJiKV1iQLCJhbGciOiJIUzI1NiJ9, // String | Offset token. An offset to the next page returned by the API. A pagination request will return an offset token, which can be used as an input parameter to the next request. If an offset is not passed in, the API will return the first page of results. 'Note: You can only pass in an offset that was returned to you via a previously paginated request.'
   'archived': false, // Boolean | Only return projects whose `archived` field takes on the value of this parameter.
-  'optFields': ["created_at","color","archived","icon","public","default_view","members","project_brief","custom_fields","html_notes","privacy_setting","name","due_on","permalink_url","owner","modified_at","current_status","completed_at","completed_by","current_status_update","workspace","due_date","completed","custom_field_settings","notes","followers","start_on","team","created_from_template"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
+  'optFields': ["created_at","modified_at","color","team","custom_field_settings","completed_by","name","privacy_setting","public","custom_fields","due_date","due_on","archived","project_brief","notes","created_from_template","start_on","workspace","followers","members","current_status","icon","current_status_update","completed_at","html_notes","permalink_url","owner","completed","default_view"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
 };
 
 apiInstance.getProjectsForTeam(teamGid, opts, (error, data, response) => {
@@ -735,7 +735,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: application/json; charset=UTF-8
 
 
 ## getProjectsForWorkspace
@@ -763,7 +763,7 @@ let opts = {
   'limit': 50, // Number | Results per page. The number of objects to return per page. The value must be between 1 and 100.
   'offset': eyJ0eXAiOJiKV1iQLCJhbGciOiJIUzI1NiJ9, // String | Offset token. An offset to the next page returned by the API. A pagination request will return an offset token, which can be used as an input parameter to the next request. If an offset is not passed in, the API will return the first page of results. 'Note: You can only pass in an offset that was returned to you via a previously paginated request.'
   'archived': false, // Boolean | Only return projects whose `archived` field takes on the value of this parameter.
-  'optFields': ["created_at","color","archived","icon","public","default_view","members","project_brief","custom_fields","html_notes","privacy_setting","name","due_on","permalink_url","owner","modified_at","current_status","completed_at","completed_by","current_status_update","workspace","due_date","completed","custom_field_settings","notes","followers","start_on","team","created_from_template"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
+  'optFields': ["created_at","modified_at","color","team","custom_field_settings","completed_by","name","privacy_setting","public","custom_fields","due_date","due_on","archived","project_brief","notes","created_from_template","start_on","workspace","followers","members","current_status","icon","current_status_update","completed_at","html_notes","permalink_url","owner","completed","default_view"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
 };
 
 apiInstance.getProjectsForWorkspace(workspaceGid, opts, (error, data, response) => {
@@ -798,7 +798,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: application/json; charset=UTF-8
 
 
 ## getTaskCountsForProject
@@ -825,7 +825,7 @@ let opts = {
   'optPretty': true, // Boolean | Provides “pretty” output. Provides the response in a “pretty” format. In the case of JSON this means doing proper line breaking and indentation to make it readable. This will take extra time and increase the response size so it is advisable only to use this during debugging.
   'limit': 50, // Number | Results per page. The number of objects to return per page. The value must be between 1 and 100.
   'offset': eyJ0eXAiOJiKV1iQLCJhbGciOiJIUzI1NiJ9, // String | Offset token. An offset to the next page returned by the API. A pagination request will return an offset token, which can be used as an input parameter to the next request. If an offset is not passed in, the API will return the first page of results. 'Note: You can only pass in an offset that was returned to you via a previously paginated request.'
-  'optFields': ["num_incomplete_tasks","num_completed_milestones","num_tasks","num_milestones","num_incomplete_milestones","num_completed_tasks"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
+  'optFields': ["num_completed_tasks","num_tasks","num_completed_milestones","num_incomplete_milestones","num_milestones","num_incomplete_tasks"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
 };
 
 apiInstance.getTaskCountsForProject(projectGid, opts, (error, data, response) => {
@@ -859,7 +859,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: application/json; charset=UTF-8
 
 
 ## projectSaveAsTemplate
@@ -885,7 +885,7 @@ let projectGid = 1331; // String | Globally unique identifier for the project.
 let projectSaveAsTemplateRequest = new AsanaPreview.ProjectSaveAsTemplateRequest(); // ProjectSaveAsTemplateRequest | Describes the inputs used for creating a project template, such as the resulting project template's name, which team it should be created in.
 let opts = {
   'optPretty': true, // Boolean | Provides “pretty” output. Provides the response in a “pretty” format. In the case of JSON this means doing proper line breaking and indentation to make it readable. This will take extra time and increase the response size so it is advisable only to use this during debugging.
-  'optFields': ["status","resource_subtype","new_project_template","new_task","new_task_template","new_project"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
+  'optFields': ["status","new_task","new_project","new_project_template","new_task_template","resource_subtype"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
 };
 
 apiInstance.projectSaveAsTemplate(projectGid, projectSaveAsTemplateRequest, opts, (error, data, response) => {
@@ -917,8 +917,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+- **Content-Type**: application/json; charset=UTF-8
+- **Accept**: application/json; charset=UTF-8
 
 
 ## removeCustomFieldSettingForProject
@@ -974,8 +974,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+- **Content-Type**: application/json; charset=UTF-8
+- **Accept**: application/json; charset=UTF-8
 
 
 ## removeFollowersForProject
@@ -1001,7 +1001,7 @@ let projectGid = 1331; // String | Globally unique identifier for the project.
 let removeFollowersForProjectRequest = new AsanaPreview.RemoveFollowersForProjectRequest(); // RemoveFollowersForProjectRequest | Information about the followers being removed.
 let opts = {
   'optPretty': true, // Boolean | Provides “pretty” output. Provides the response in a “pretty” format. In the case of JSON this means doing proper line breaking and indentation to make it readable. This will take extra time and increase the response size so it is advisable only to use this during debugging.
-  'optFields': ["created_at","color","archived","icon","public","default_view","members","project_brief","custom_fields","html_notes","privacy_setting","due_on","name","permalink_url","owner","modified_at","current_status","completed_at","completed_by","current_status_update","workspace","due_date","completed","custom_field_settings","notes","followers","start_on","team","created_from_template"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
+  'optFields': ["created_at","modified_at","color","team","custom_field_settings","completed_by","name","privacy_setting","public","custom_fields","due_date","due_on","archived","project_brief","notes","created_from_template","start_on","workspace","followers","members","current_status","icon","current_status_update","completed_at","html_notes","permalink_url","owner","completed","default_view"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
 };
 
 apiInstance.removeFollowersForProject(projectGid, removeFollowersForProjectRequest, opts, (error, data, response) => {
@@ -1033,8 +1033,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+- **Content-Type**: application/json; charset=UTF-8
+- **Accept**: application/json; charset=UTF-8
 
 
 ## removeMembersForProject
@@ -1060,7 +1060,7 @@ let projectGid = 1331; // String | Globally unique identifier for the project.
 let removeMembersForPortfolioRequest = new AsanaPreview.RemoveMembersForPortfolioRequest(); // RemoveMembersForPortfolioRequest | Information about the members being removed.
 let opts = {
   'optPretty': true, // Boolean | Provides “pretty” output. Provides the response in a “pretty” format. In the case of JSON this means doing proper line breaking and indentation to make it readable. This will take extra time and increase the response size so it is advisable only to use this during debugging.
-  'optFields': ["created_at","color","archived","icon","public","default_view","members","project_brief","custom_fields","html_notes","privacy_setting","due_on","name","permalink_url","owner","modified_at","current_status","completed_at","completed_by","current_status_update","workspace","due_date","completed","custom_field_settings","notes","followers","start_on","team","created_from_template"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
+  'optFields': ["created_at","modified_at","color","team","custom_field_settings","completed_by","name","privacy_setting","public","custom_fields","due_date","due_on","archived","project_brief","notes","created_from_template","start_on","workspace","followers","members","current_status","icon","current_status_update","completed_at","html_notes","permalink_url","owner","completed","default_view"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
 };
 
 apiInstance.removeMembersForProject(projectGid, removeMembersForPortfolioRequest, opts, (error, data, response) => {
@@ -1092,8 +1092,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+- **Content-Type**: application/json; charset=UTF-8
+- **Accept**: application/json; charset=UTF-8
 
 
 ## updateProject
@@ -1119,7 +1119,7 @@ let projectGid = 1331; // String | Globally unique identifier for the project.
 let createProjectRequest = new AsanaPreview.CreateProjectRequest(); // CreateProjectRequest | The updated fields for the project.
 let opts = {
   'optPretty': true, // Boolean | Provides “pretty” output. Provides the response in a “pretty” format. In the case of JSON this means doing proper line breaking and indentation to make it readable. This will take extra time and increase the response size so it is advisable only to use this during debugging.
-  'optFields': ["created_at","color","archived","icon","public","default_view","members","project_brief","custom_fields","html_notes","privacy_setting","due_on","name","permalink_url","owner","modified_at","current_status","completed_at","completed_by","current_status_update","workspace","due_date","completed","custom_field_settings","notes","followers","start_on","team","created_from_template"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
+  'optFields': ["created_at","modified_at","color","team","custom_field_settings","completed_by","name","privacy_setting","public","custom_fields","due_date","due_on","archived","project_brief","notes","created_from_template","start_on","workspace","followers","members","current_status","icon","current_status_update","completed_at","html_notes","permalink_url","owner","completed","default_view"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
 };
 
 apiInstance.updateProject(projectGid, createProjectRequest, opts, (error, data, response) => {
@@ -1151,6 +1151,6 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+- **Content-Type**: application/json; charset=UTF-8
+- **Accept**: application/json; charset=UTF-8
 

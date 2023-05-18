@@ -12,24 +12,21 @@
  */
 
 import ApiClient from '../ApiClient';
-import AsanaResource from './AsanaResource';
-import ProjectMembershipCompactAllOf from './ProjectMembershipCompactAllOf';
-import UserCompact from './UserCompact';
+import CustomFieldResponsePeopleValueInner from './CustomFieldResponsePeopleValueInner';
 
 /**
  * The ProjectMembershipCompact model module.
  * @module model/ProjectMembershipCompact
- * @version 1.0.3
+ * @version 1.0.4
  */
 class ProjectMembershipCompact {
     /**
      * Constructs a new <code>ProjectMembershipCompact</code>.
+     * A generic Asana Resource, containing a globally unique identifier.A generic Asana Resource, containing a globally unique identifier. With the introduction of “comment-only” projects in Asana, a user’s membership in a project comes with associated permissions. These permissions (whether a user has full access to the project or comment-only access) are accessible through the project memberships endpoints described here.
      * @alias module:model/ProjectMembershipCompact
-     * @implements module:model/AsanaResource
-     * @implements module:model/ProjectMembershipCompactAllOf
      */
     constructor() { 
-        AsanaResource.initialize(this);ProjectMembershipCompactAllOf.initialize(this);
+        
         ProjectMembershipCompact.initialize(this);
     }
 
@@ -51,8 +48,6 @@ class ProjectMembershipCompact {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new ProjectMembershipCompact();
-            AsanaResource.constructFromObject(data, obj);
-            ProjectMembershipCompactAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('gid')) {
                 obj['gid'] = ApiClient.convertToType(data['gid'], 'String');
@@ -61,7 +56,7 @@ class ProjectMembershipCompact {
                 obj['resource_type'] = ApiClient.convertToType(data['resource_type'], 'String');
             }
             if (data.hasOwnProperty('user')) {
-                obj['user'] = UserCompact.constructFromObject(data['user']);
+                obj['user'] = CustomFieldResponsePeopleValueInner.constructFromObject(data['user']);
             }
         }
         return obj;
@@ -83,27 +78,11 @@ ProjectMembershipCompact.prototype['gid'] = undefined;
 ProjectMembershipCompact.prototype['resource_type'] = undefined;
 
 /**
- * @member {module:model/UserCompact} user
+ * @member {module:model/CustomFieldResponsePeopleValueInner} user
  */
 ProjectMembershipCompact.prototype['user'] = undefined;
 
 
-// Implement AsanaResource interface:
-/**
- * Globally unique identifier of the resource, as a string.
- * @member {String} gid
- */
-AsanaResource.prototype['gid'] = undefined;
-/**
- * The base type of this resource.
- * @member {String} resource_type
- */
-AsanaResource.prototype['resource_type'] = undefined;
-// Implement ProjectMembershipCompactAllOf interface:
-/**
- * @member {module:model/UserCompact} user
- */
-ProjectMembershipCompactAllOf.prototype['user'] = undefined;
 
 
 

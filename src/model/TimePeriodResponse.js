@@ -12,22 +12,21 @@
  */
 
 import ApiClient from '../ApiClient';
-import TimePeriodBase from './TimePeriodBase';
-import TimePeriodCompact from './TimePeriodCompact';
+import TimePeriodBaseParent from './TimePeriodBaseParent';
 
 /**
  * The TimePeriodResponse model module.
  * @module model/TimePeriodResponse
- * @version 1.0.3
+ * @version 1.0.4
  */
 class TimePeriodResponse {
     /**
      * Constructs a new <code>TimePeriodResponse</code>.
+     * A generic Asana Resource, containing a globally unique identifier.
      * @alias module:model/TimePeriodResponse
-     * @implements module:model/TimePeriodBase
      */
     constructor() { 
-        TimePeriodBase.initialize(this);
+        
         TimePeriodResponse.initialize(this);
     }
 
@@ -49,7 +48,6 @@ class TimePeriodResponse {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new TimePeriodResponse();
-            TimePeriodBase.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('gid')) {
                 obj['gid'] = ApiClient.convertToType(data['gid'], 'String');
@@ -70,7 +68,7 @@ class TimePeriodResponse {
                 obj['display_name'] = ApiClient.convertToType(data['display_name'], 'String');
             }
             if (data.hasOwnProperty('parent')) {
-                obj['parent'] = TimePeriodCompact.constructFromObject(data['parent']);
+                obj['parent'] = TimePeriodBaseParent.constructFromObject(data['parent']);
             }
         }
         return obj;
@@ -116,46 +114,11 @@ TimePeriodResponse.prototype['period'] = undefined;
 TimePeriodResponse.prototype['display_name'] = undefined;
 
 /**
- * @member {module:model/TimePeriodCompact} parent
+ * @member {module:model/TimePeriodBaseParent} parent
  */
 TimePeriodResponse.prototype['parent'] = undefined;
 
 
-// Implement TimePeriodBase interface:
-/**
- * Globally unique identifier of the resource, as a string.
- * @member {String} gid
- */
-TimePeriodBase.prototype['gid'] = undefined;
-/**
- * The base type of this resource.
- * @member {String} resource_type
- */
-TimePeriodBase.prototype['resource_type'] = undefined;
-/**
- * The localized end date of the time period in `YYYY-MM-DD` format.
- * @member {String} end_on
- */
-TimePeriodBase.prototype['end_on'] = undefined;
-/**
- * The localized start date of the time period in `YYYY-MM-DD` format.
- * @member {String} start_on
- */
-TimePeriodBase.prototype['start_on'] = undefined;
-/**
- * The cadence and index of the time period. The value is one of: `FY`, `H1`, `H2`, `Q1`, `Q2`, `Q3`, or `Q4`.
- * @member {module:model/TimePeriodBase.PeriodEnum} period
- */
-TimePeriodBase.prototype['period'] = undefined;
-/**
- * A string representing the cadence code and the fiscal year.
- * @member {String} display_name
- */
-TimePeriodBase.prototype['display_name'] = undefined;
-/**
- * @member {module:model/TimePeriodCompact} parent
- */
-TimePeriodBase.prototype['parent'] = undefined;
 
 
 

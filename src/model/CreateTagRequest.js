@@ -17,7 +17,7 @@ import TagRequest from './TagRequest';
 /**
  * The CreateTagRequest model module.
  * @module model/CreateTagRequest
- * @version 1.0.3
+ * @version 1.0.4
  */
 class CreateTagRequest {
     /**

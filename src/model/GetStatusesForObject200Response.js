@@ -12,12 +12,12 @@
  */
 
 import ApiClient from '../ApiClient';
-import StatusUpdateCompact from './StatusUpdateCompact';
+import StatusUpdateResponse from './StatusUpdateResponse';
 
 /**
  * The GetStatusesForObject200Response model module.
  * @module model/GetStatusesForObject200Response
- * @version 1.0.3
+ * @version 1.0.4
  */
 class GetStatusesForObject200Response {
     /**
@@ -49,7 +49,7 @@ class GetStatusesForObject200Response {
             obj = obj || new GetStatusesForObject200Response();
 
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [StatusUpdateCompact]);
+                obj['data'] = ApiClient.convertToType(data['data'], [StatusUpdateResponse]);
             }
         }
         return obj;
@@ -59,7 +59,7 @@ class GetStatusesForObject200Response {
 }
 
 /**
- * @member {Array.<module:model/StatusUpdateCompact>} data
+ * @member {Array.<module:model/StatusUpdateResponse>} data
  */
 GetStatusesForObject200Response.prototype['data'] = undefined;
 

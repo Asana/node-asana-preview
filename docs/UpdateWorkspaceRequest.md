@@ -4,6 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**WorkspaceCompact**](WorkspaceCompact.md) |  | [optional] 
+**data** | [**WorkspaceRequest**](WorkspaceRequest.md) |  | [optional] 
 
 

@@ -17,7 +17,7 @@ import TeamAddUserRequest from './TeamAddUserRequest';
 /**
  * The AddUserForTeamRequest model module.
  * @module model/AddUserForTeamRequest
- * @version 1.0.3
+ * @version 1.0.4
  */
 class AddUserForTeamRequest {
     /**

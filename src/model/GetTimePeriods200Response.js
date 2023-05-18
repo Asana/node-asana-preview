@@ -12,12 +12,12 @@
  */
 
 import ApiClient from '../ApiClient';
-import TimePeriodCompact from './TimePeriodCompact';
+import TimePeriodResponse from './TimePeriodResponse';
 
 /**
  * The GetTimePeriods200Response model module.
  * @module model/GetTimePeriods200Response
- * @version 1.0.3
+ * @version 1.0.4
  */
 class GetTimePeriods200Response {
     /**
@@ -49,7 +49,7 @@ class GetTimePeriods200Response {
             obj = obj || new GetTimePeriods200Response();
 
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [TimePeriodCompact]);
+                obj['data'] = ApiClient.convertToType(data['data'], [TimePeriodResponse]);
             }
         }
         return obj;
@@ -59,7 +59,7 @@ class GetTimePeriods200Response {
 }
 
 /**
- * @member {Array.<module:model/TimePeriodCompact>} data
+ * @member {Array.<module:model/TimePeriodResponse>} data
  */
 GetTimePeriods200Response.prototype['data'] = undefined;
 

@@ -23,7 +23,7 @@ import UpdateWebhookRequest from '../model/UpdateWebhookRequest';
 /**
 * Webhooks service.
 * @module api/WebhooksApi
-* @version 1.0.3
+* @version 1.0.4
 */
 export default class WebhooksApi {
 
@@ -77,8 +77,8 @@ export default class WebhooksApi {
       };
 
       let authNames = ['personalAccessToken'];
-      let contentTypes = ['application/json'];
-      let accepts = ['application/json'];
+      let contentTypes = ['application/json; charset=UTF-8'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = CreateWebhook201Response;
       return this.apiClient.callApi(
         '/webhooks', 'POST',
@@ -125,7 +125,7 @@ export default class WebhooksApi {
 
       let authNames = ['personalAccessToken'];
       let contentTypes = [];
-      let accepts = ['application/json'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = DeleteAttachment200Response;
       return this.apiClient.callApi(
         '/webhooks/{webhook_gid}', 'DELETE',
@@ -174,7 +174,7 @@ export default class WebhooksApi {
 
       let authNames = ['personalAccessToken'];
       let contentTypes = [];
-      let accepts = ['application/json'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = CreateWebhook201Response;
       return this.apiClient.callApi(
         '/webhooks/{webhook_gid}', 'GET',
@@ -229,7 +229,7 @@ export default class WebhooksApi {
 
       let authNames = ['personalAccessToken'];
       let contentTypes = [];
-      let accepts = ['application/json'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = GetWebhooks200Response;
       return this.apiClient.callApi(
         '/webhooks', 'GET',
@@ -282,8 +282,8 @@ export default class WebhooksApi {
       };
 
       let authNames = ['personalAccessToken'];
-      let contentTypes = ['application/json'];
-      let accepts = ['application/json'];
+      let contentTypes = ['application/json; charset=UTF-8'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = CreateWebhook201Response;
       return this.apiClient.callApi(
         '/webhooks/{webhook_gid}', 'PUT',

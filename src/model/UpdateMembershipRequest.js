@@ -17,7 +17,7 @@ import MembershipRequest from './MembershipRequest';
 /**
  * The UpdateMembershipRequest model module.
  * @module model/UpdateMembershipRequest
- * @version 1.0.3
+ * @version 1.0.4
  */
 class UpdateMembershipRequest {
     /**

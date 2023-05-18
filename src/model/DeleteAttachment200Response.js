@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DeleteAttachment200Response model module.
  * @module model/DeleteAttachment200Response
- * @version 1.0.3
+ * @version 1.0.4
  */
 class DeleteAttachment200Response {
     /**

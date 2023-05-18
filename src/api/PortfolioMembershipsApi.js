@@ -20,7 +20,7 @@ import GetPortfolioMemberships200Response from '../model/GetPortfolioMemberships
 /**
 * PortfolioMemberships service.
 * @module api/PortfolioMembershipsApi
-* @version 1.0.3
+* @version 1.0.4
 */
 export default class PortfolioMembershipsApi {
 
@@ -76,7 +76,7 @@ export default class PortfolioMembershipsApi {
 
       let authNames = ['personalAccessToken'];
       let contentTypes = [];
-      let accepts = ['application/json'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = GetPortfolioMembership200Response;
       return this.apiClient.callApi(
         '/portfolio_memberships/{portfolio_membership_gid}', 'GET',
@@ -129,7 +129,7 @@ export default class PortfolioMembershipsApi {
 
       let authNames = ['personalAccessToken'];
       let contentTypes = [];
-      let accepts = ['application/json'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = GetPortfolioMemberships200Response;
       return this.apiClient.callApi(
         '/portfolio_memberships', 'GET',
@@ -184,7 +184,7 @@ export default class PortfolioMembershipsApi {
 
       let authNames = ['personalAccessToken'];
       let contentTypes = [];
-      let accepts = ['application/json'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = GetPortfolioMemberships200Response;
       return this.apiClient.callApi(
         '/portfolios/{portfolio_gid}/portfolio_memberships', 'GET',

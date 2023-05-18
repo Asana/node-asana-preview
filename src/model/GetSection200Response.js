@@ -17,7 +17,7 @@ import SectionResponse from './SectionResponse';
 /**
  * The GetSection200Response model module.
  * @module model/GetSection200Response
- * @version 1.0.3
+ * @version 1.0.4
  */
 class GetSection200Response {
     /**

@@ -12,23 +12,20 @@
  */
 
 import ApiClient from '../ApiClient';
-import TagBaseAllOf from './TagBaseAllOf';
-import TagCompact from './TagCompact';
 
 /**
  * The TagBase model module.
  * @module model/TagBase
- * @version 1.0.3
+ * @version 1.0.4
  */
 class TagBase {
     /**
      * Constructs a new <code>TagBase</code>.
+     * A generic Asana Resource, containing a globally unique identifier.A generic Asana Resource, containing a globally unique identifier. A *tag* is a label that can be attached to any task in Asana. It exists in a single workspace or organization.
      * @alias module:model/TagBase
-     * @implements module:model/TagCompact
-     * @implements module:model/TagBaseAllOf
      */
     constructor() { 
-        TagCompact.initialize(this);TagBaseAllOf.initialize(this);
+        
         TagBase.initialize(this);
     }
 
@@ -50,8 +47,6 @@ class TagBase {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new TagBase();
-            TagCompact.constructFromObject(data, obj);
-            TagBaseAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('gid')) {
                 obj['gid'] = ApiClient.convertToType(data['gid'], 'String');
@@ -106,33 +101,6 @@ TagBase.prototype['color'] = undefined;
 TagBase.prototype['notes'] = undefined;
 
 
-// Implement TagCompact interface:
-/**
- * Globally unique identifier of the resource, as a string.
- * @member {String} gid
- */
-TagCompact.prototype['gid'] = undefined;
-/**
- * The base type of this resource.
- * @member {String} resource_type
- */
-TagCompact.prototype['resource_type'] = undefined;
-/**
- * Name of the tag. This is generally a short sentence fragment that fits on a line in the UI for maximum readability. However, it can be longer.
- * @member {String} name
- */
-TagCompact.prototype['name'] = undefined;
-// Implement TagBaseAllOf interface:
-/**
- * Color of the tag.
- * @member {module:model/TagBaseAllOf.ColorEnum} color
- */
-TagBaseAllOf.prototype['color'] = undefined;
-/**
- * Free-form textual information associated with the tag (i.e. its description).
- * @member {String} notes
- */
-TagBaseAllOf.prototype['notes'] = undefined;
 
 
 

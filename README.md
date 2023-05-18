@@ -2,7 +2,7 @@
 
 This is a [preview version](https://forum.asana.com/t/try-an-early-preview-of-our-new-node-js-and-python-sdks/394881) of Asana's new node client library. For feedback and feature requests, please leave a comment on [this forum thread](https://forum.asana.com/t/try-an-early-preview-of-our-new-node-js-and-python-sdks/394881) or through [the feedback form on our documentation site](https://form-beta.asana.com/?k=C4sELCq6hAUsoWEY0kJwAA&d=15793206719)
 
-- Package version: 1.0.3
+- Package version: 1.0.4
 
 ## Installation
 
@@ -141,12 +141,14 @@ Class | Method | HTTP request | Description
 *AsanaPreview.GoalRelationshipsApi* | [**getGoalRelationships**](docs/GoalRelationshipsApi.md#getGoalRelationships) | **GET** /goal_relationships | Get goal relationships
 *AsanaPreview.GoalRelationshipsApi* | [**removeSupportingRelationship**](docs/GoalRelationshipsApi.md#removeSupportingRelationship) | **POST** /goals/{goal_gid}/removeSupportingRelationship | Removes a supporting goal relationship
 *AsanaPreview.GoalRelationshipsApi* | [**updateGoalRelationship**](docs/GoalRelationshipsApi.md#updateGoalRelationship) | **PUT** /goal_relationships/{goal_relationship_gid} | Update a goal relationship
+*AsanaPreview.GoalsApi* | [**addFollowers**](docs/GoalsApi.md#addFollowers) | **POST** /goals/{goal_gid}/addFollowers | Add a collaborator to a goal
 *AsanaPreview.GoalsApi* | [**createGoal**](docs/GoalsApi.md#createGoal) | **POST** /goals | Create a goal
 *AsanaPreview.GoalsApi* | [**createGoalMetric**](docs/GoalsApi.md#createGoalMetric) | **POST** /goals/{goal_gid}/setMetric | Create a goal metric
 *AsanaPreview.GoalsApi* | [**deleteGoal**](docs/GoalsApi.md#deleteGoal) | **DELETE** /goals/{goal_gid} | Delete a goal
 *AsanaPreview.GoalsApi* | [**getGoal**](docs/GoalsApi.md#getGoal) | **GET** /goals/{goal_gid} | Get a goal
 *AsanaPreview.GoalsApi* | [**getGoals**](docs/GoalsApi.md#getGoals) | **GET** /goals | Get goals
 *AsanaPreview.GoalsApi* | [**getParentGoalsForGoal**](docs/GoalsApi.md#getParentGoalsForGoal) | **GET** /goals/{goal_gid}/parentGoals | Get parent goals from a goal
+*AsanaPreview.GoalsApi* | [**removeFollowers**](docs/GoalsApi.md#removeFollowers) | **POST** /goals/{goal_gid}/removeFollowers | Remove a collaborator from a goal
 *AsanaPreview.GoalsApi* | [**updateGoal**](docs/GoalsApi.md#updateGoal) | **PUT** /goals/{goal_gid} | Update a goal
 *AsanaPreview.GoalsApi* | [**updateGoalMetric**](docs/GoalsApi.md#updateGoalMetric) | **POST** /goals/{goal_gid}/setMetricCurrentValue | Update a goal metric
 *AsanaPreview.JobsApi* | [**getJob**](docs/JobsApi.md#getJob) | **GET** /jobs/{job_gid} | Get a job by id
@@ -231,6 +233,7 @@ Class | Method | HTTP request | Description
 *AsanaPreview.TagsApi* | [**updateTag**](docs/TagsApi.md#updateTag) | **PUT** /tags/{tag_gid} | Update a tag
 *AsanaPreview.TasksApi* | [**addDependenciesForTask**](docs/TasksApi.md#addDependenciesForTask) | **POST** /tasks/{task_gid}/addDependencies | Set dependencies for a task
 *AsanaPreview.TasksApi* | [**addDependentsForTask**](docs/TasksApi.md#addDependentsForTask) | **POST** /tasks/{task_gid}/addDependents | Set dependents for a task
+*AsanaPreview.TasksApi* | [**addFollowersForTask**](docs/TasksApi.md#addFollowersForTask) | **POST** /tasks/{task_gid}/addFollowers | Add followers to a task
 *AsanaPreview.TasksApi* | [**addProjectForTask**](docs/TasksApi.md#addProjectForTask) | **POST** /tasks/{task_gid}/addProject | Add a project to a task
 *AsanaPreview.TasksApi* | [**addTagForTask**](docs/TasksApi.md#addTagForTask) | **POST** /tasks/{task_gid}/addTag | Add a tag to a task
 *AsanaPreview.TasksApi* | [**createSubtaskForTask**](docs/TasksApi.md#createSubtaskForTask) | **POST** /tasks/{task_gid}/subtasks | Create a subtask

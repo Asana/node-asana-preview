@@ -4,6 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**[TeamCompact]**](TeamCompact.md) |  | [optional] 
+**data** | [**[TeamResponse]**](TeamResponse.md) |  | [optional] 
 
 

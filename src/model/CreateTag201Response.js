@@ -17,7 +17,7 @@ import TagResponse from './TagResponse';
 /**
  * The CreateTag201Response model module.
  * @module model/CreateTag201Response
- * @version 1.0.3
+ * @version 1.0.4
  */
 class CreateTag201Response {
     /**

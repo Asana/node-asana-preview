@@ -4,6 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**[StoryCompact]**](StoryCompact.md) |  | [optional] 
+**data** | [**[StoryResponse]**](StoryResponse.md) |  | [optional] 
 
 

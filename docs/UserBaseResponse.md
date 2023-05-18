@@ -8,6 +8,6 @@ Name | Type | Description | Notes
 **resourceType** | **String** | The base type of this resource. | [optional] [readonly] 
 **name** | **String** | *Read-only except when same user as requester*. The user’s name. | [optional] 
 **email** | **String** | The user&#39;s email address. | [optional] [readonly] 
-**photo** | [**UserBaseResponseAllOfPhoto**](UserBaseResponseAllOfPhoto.md) |  | [optional] 
+**photo** | [**UserBaseResponsePhoto**](UserBaseResponsePhoto.md) |  | [optional] 
 
 

@@ -25,7 +25,7 @@ import UpdateTeamRequest from '../model/UpdateTeamRequest';
 /**
 * Teams service.
 * @module api/TeamsApi
-* @version 1.0.3
+* @version 1.0.4
 */
 export default class TeamsApi {
 
@@ -85,8 +85,8 @@ export default class TeamsApi {
       };
 
       let authNames = ['personalAccessToken'];
-      let contentTypes = ['application/json'];
-      let accepts = ['application/json'];
+      let contentTypes = ['application/json; charset=UTF-8'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = GetTeamMembership200Response;
       return this.apiClient.callApi(
         '/teams/{team_gid}/addUser', 'POST',
@@ -137,8 +137,8 @@ export default class TeamsApi {
       };
 
       let authNames = ['personalAccessToken'];
-      let contentTypes = ['application/json'];
-      let accepts = ['application/json'];
+      let contentTypes = ['application/json; charset=UTF-8'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = UpdateTeam200Response;
       return this.apiClient.callApi(
         '/teams', 'POST',
@@ -191,7 +191,7 @@ export default class TeamsApi {
 
       let authNames = ['personalAccessToken'];
       let contentTypes = [];
-      let accepts = ['application/json'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = UpdateTeam200Response;
       return this.apiClient.callApi(
         '/teams/{team_gid}', 'GET',
@@ -250,7 +250,7 @@ export default class TeamsApi {
 
       let authNames = ['personalAccessToken'];
       let contentTypes = [];
-      let accepts = ['application/json'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = GetTeamsForWorkspace200Response;
       return this.apiClient.callApi(
         '/users/{user_gid}/teams', 'GET',
@@ -303,7 +303,7 @@ export default class TeamsApi {
 
       let authNames = ['personalAccessToken'];
       let contentTypes = [];
-      let accepts = ['application/json'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = GetTeamsForWorkspace200Response;
       return this.apiClient.callApi(
         '/workspaces/{workspace_gid}/teams', 'GET',
@@ -354,8 +354,8 @@ export default class TeamsApi {
       };
 
       let authNames = ['personalAccessToken'];
-      let contentTypes = ['application/json'];
-      let accepts = ['application/json'];
+      let contentTypes = ['application/json; charset=UTF-8'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = DeleteAttachment200Response;
       return this.apiClient.callApi(
         '/teams/{team_gid}/removeUser', 'POST',
@@ -406,8 +406,8 @@ export default class TeamsApi {
       };
 
       let authNames = ['personalAccessToken'];
-      let contentTypes = ['application/json'];
-      let accepts = ['application/json'];
+      let contentTypes = ['application/json; charset=UTF-8'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = UpdateTeam200Response;
       return this.apiClient.callApi(
         '/teams', 'PUT',

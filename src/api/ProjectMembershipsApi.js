@@ -20,7 +20,7 @@ import GetProjectMembershipsForProject200Response from '../model/GetProjectMembe
 /**
 * ProjectMemberships service.
 * @module api/ProjectMembershipsApi
-* @version 1.0.3
+* @version 1.0.4
 */
 export default class ProjectMembershipsApi {
 
@@ -76,7 +76,7 @@ export default class ProjectMembershipsApi {
 
       let authNames = ['personalAccessToken'];
       let contentTypes = [];
-      let accepts = ['application/json'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = GetProjectMembership200Response;
       return this.apiClient.callApi(
         '/project_memberships/{project_membership_gid}', 'GET',
@@ -131,7 +131,7 @@ export default class ProjectMembershipsApi {
 
       let authNames = ['personalAccessToken'];
       let contentTypes = [];
-      let accepts = ['application/json'];
+      let accepts = ['application/json; charset=UTF-8'];
       let returnType = GetProjectMembershipsForProject200Response;
       return this.apiClient.callApi(
         '/projects/{project_gid}/project_memberships', 'GET',

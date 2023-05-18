@@ -4,6 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**[TaskCompact]**](TaskCompact.md) |  | [optional] 
+**data** | [**[TaskResponse]**](TaskResponse.md) |  | [optional] 
 
 

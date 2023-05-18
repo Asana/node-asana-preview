@@ -12,12 +12,12 @@
  */
 
 import ApiClient from '../ApiClient';
-import ProjectCompact from './ProjectCompact';
+import ProjectResponse from './ProjectResponse';
 
 /**
  * The GetItemsForPortfolio200Response model module.
  * @module model/GetItemsForPortfolio200Response
- * @version 1.0.3
+ * @version 1.0.4
  */
 class GetItemsForPortfolio200Response {
     /**
@@ -49,7 +49,7 @@ class GetItemsForPortfolio200Response {
             obj = obj || new GetItemsForPortfolio200Response();
 
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [ProjectCompact]);
+                obj['data'] = ApiClient.convertToType(data['data'], [ProjectResponse]);
             }
         }
         return obj;
@@ -59,7 +59,7 @@ class GetItemsForPortfolio200Response {
 }
 
 /**
- * @member {Array.<module:model/ProjectCompact>} data
+ * @member {Array.<module:model/ProjectResponse>} data
  */
 GetItemsForPortfolio200Response.prototype['data'] = undefined;
 

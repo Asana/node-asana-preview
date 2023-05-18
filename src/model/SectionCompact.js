@@ -12,23 +12,20 @@
  */
 
 import ApiClient from '../ApiClient';
-import AsanaResource from './AsanaResource';
-import SectionCompactAllOf from './SectionCompactAllOf';
 
 /**
  * The SectionCompact model module.
  * @module model/SectionCompact
- * @version 1.0.3
+ * @version 1.0.4
  */
 class SectionCompact {
     /**
      * Constructs a new <code>SectionCompact</code>.
+     * A generic Asana Resource, containing a globally unique identifier.A generic Asana Resource, containing a globally unique identifier. A *section* is a subdivision of a project that groups tasks together. It can either be a header above a list of tasks in a list view or a column in a board view of a project.
      * @alias module:model/SectionCompact
-     * @implements module:model/AsanaResource
-     * @implements module:model/SectionCompactAllOf
      */
     constructor() { 
-        AsanaResource.initialize(this);SectionCompactAllOf.initialize(this);
+        
         SectionCompact.initialize(this);
     }
 
@@ -50,8 +47,6 @@ class SectionCompact {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new SectionCompact();
-            AsanaResource.constructFromObject(data, obj);
-            SectionCompactAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('gid')) {
                 obj['gid'] = ApiClient.convertToType(data['gid'], 'String');
@@ -88,23 +83,6 @@ SectionCompact.prototype['resource_type'] = undefined;
 SectionCompact.prototype['name'] = undefined;
 
 
-// Implement AsanaResource interface:
-/**
- * Globally unique identifier of the resource, as a string.
- * @member {String} gid
- */
-AsanaResource.prototype['gid'] = undefined;
-/**
- * The base type of this resource.
- * @member {String} resource_type
- */
-AsanaResource.prototype['resource_type'] = undefined;
-// Implement SectionCompactAllOf interface:
-/**
- * The name of the section (i.e. the text displayed as the section header).
- * @member {String} name
- */
-SectionCompactAllOf.prototype['name'] = undefined;
 
 
 

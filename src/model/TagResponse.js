@@ -12,25 +12,22 @@
  */
 
 import ApiClient from '../ApiClient';
-import TagBase from './TagBase';
-import TagResponseAllOf from './TagResponseAllOf';
-import UserCompact from './UserCompact';
-import WorkspaceCompact from './WorkspaceCompact';
+import CustomFieldResponsePeopleValueInner from './CustomFieldResponsePeopleValueInner';
+import GoalResponseWorkspace from './GoalResponseWorkspace';
 
 /**
  * The TagResponse model module.
  * @module model/TagResponse
- * @version 1.0.3
+ * @version 1.0.4
  */
 class TagResponse {
     /**
      * Constructs a new <code>TagResponse</code>.
+     * A generic Asana Resource, containing a globally unique identifier.A generic Asana Resource, containing a globally unique identifier. A *tag* is a label that can be attached to any task in Asana. It exists in a single workspace or organization.
      * @alias module:model/TagResponse
-     * @implements module:model/TagBase
-     * @implements module:model/TagResponseAllOf
      */
     constructor() { 
-        TagBase.initialize(this);TagResponseAllOf.initialize(this);
+        
         TagResponse.initialize(this);
     }
 
@@ -52,8 +49,6 @@ class TagResponse {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new TagResponse();
-            TagBase.constructFromObject(data, obj);
-            TagResponseAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('gid')) {
                 obj['gid'] = ApiClient.convertToType(data['gid'], 'String');
@@ -74,10 +69,10 @@ class TagResponse {
                 obj['created_at'] = ApiClient.convertToType(data['created_at'], 'Date');
             }
             if (data.hasOwnProperty('followers')) {
-                obj['followers'] = ApiClient.convertToType(data['followers'], [UserCompact]);
+                obj['followers'] = ApiClient.convertToType(data['followers'], [CustomFieldResponsePeopleValueInner]);
             }
             if (data.hasOwnProperty('workspace')) {
-                obj['workspace'] = WorkspaceCompact.constructFromObject(data['workspace']);
+                obj['workspace'] = GoalResponseWorkspace.constructFromObject(data['workspace']);
             }
             if (data.hasOwnProperty('permalink_url')) {
                 obj['permalink_url'] = ApiClient.convertToType(data['permalink_url'], 'String');
@@ -127,12 +122,12 @@ TagResponse.prototype['created_at'] = undefined;
 
 /**
  * Array of users following this tag.
- * @member {Array.<module:model/UserCompact>} followers
+ * @member {Array.<module:model/CustomFieldResponsePeopleValueInner>} followers
  */
 TagResponse.prototype['followers'] = undefined;
 
 /**
- * @member {module:model/WorkspaceCompact} workspace
+ * @member {module:model/GoalResponseWorkspace} workspace
  */
 TagResponse.prototype['workspace'] = undefined;
 
@@ -143,52 +138,6 @@ TagResponse.prototype['workspace'] = undefined;
 TagResponse.prototype['permalink_url'] = undefined;
 
 
-// Implement TagBase interface:
-/**
- * Globally unique identifier of the resource, as a string.
- * @member {String} gid
- */
-TagBase.prototype['gid'] = undefined;
-/**
- * The base type of this resource.
- * @member {String} resource_type
- */
-TagBase.prototype['resource_type'] = undefined;
-/**
- * Name of the tag. This is generally a short sentence fragment that fits on a line in the UI for maximum readability. However, it can be longer.
- * @member {String} name
- */
-TagBase.prototype['name'] = undefined;
-/**
- * Color of the tag.
- * @member {module:model/TagBase.ColorEnum} color
- */
-TagBase.prototype['color'] = undefined;
-/**
- * Free-form textual information associated with the tag (i.e. its description).
- * @member {String} notes
- */
-TagBase.prototype['notes'] = undefined;
-// Implement TagResponseAllOf interface:
-/**
- * The time at which this resource was created.
- * @member {Date} created_at
- */
-TagResponseAllOf.prototype['created_at'] = undefined;
-/**
- * Array of users following this tag.
- * @member {Array.<module:model/UserCompact>} followers
- */
-TagResponseAllOf.prototype['followers'] = undefined;
-/**
- * @member {module:model/WorkspaceCompact} workspace
- */
-TagResponseAllOf.prototype['workspace'] = undefined;
-/**
- * A url that points directly to the object within Asana.
- * @member {String} permalink_url
- */
-TagResponseAllOf.prototype['permalink_url'] = undefined;
 
 
 
