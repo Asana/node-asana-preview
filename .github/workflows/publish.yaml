@@ -22,7 +22,7 @@ jobs:
           echo "generator_name=swagger-codegen-cli.jar" >> "$GITHUB_ENV"
           echo "jar_asana=codegen/swagger/target/AsanaClientCodegen-swagger-codegen-1.0.0.jar" >> "$GITHUB_ENV"
           echo "actual_lang=com.asana.codegen.JavascriptClientCodegenGenerator" >> "$GITHUB_ENV"
-          echo "name=asana_preview" >> "$GITHUB_ENV"
+          echo "name=asana-preview" >> "$GITHUB_ENV"
       - name: Download generator
         run: |
           wget -q -O $generator_name https://repo1.maven.org/maven2/io/swagger/codegen/v3/swagger-codegen-cli/${{ env.generator_version }}/swagger-codegen-cli-${{ env.generator_version }}.jar

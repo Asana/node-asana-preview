@@ -8,11 +8,11 @@ public class PythonClientCodegenGenerator extends PythonClientCodegen {
   @Override
   public void processOpts() {
     // custom generators do not set the CodegenConstants
-    additionalProperties.put(CodegenConstants.PACKAGE_NAME, "asana_preview");
-    setPackageName("asana_preview");
+    additionalProperties.put(CodegenConstants.PACKAGE_NAME, "asana-preview");
+    setPackageName("asana-preview");
 
-    additionalProperties.put(CodegenConstants.PROJECT_NAME, "asana_preview");
-    setProjectName("asana_preview");
+    additionalProperties.put(CodegenConstants.PROJECT_NAME, "asana-preview");
+    setProjectName("asana-preview");
 
     // Super must be called AFTER our modification, otherwise the package name
     // somehow ends up wrong

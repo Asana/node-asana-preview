@@ -12,7 +12,7 @@ public class JavascriptClientCodegenGenerator extends JavaScriptClientCodegen {
     // Super must be called BEFORE our modification, otherwise the package name
     // somehow ends up wrong
     super.processOpts();
-    setProjectName("asana_preview");
+    setProjectName("asana-preview");
   }
 
   @Override
