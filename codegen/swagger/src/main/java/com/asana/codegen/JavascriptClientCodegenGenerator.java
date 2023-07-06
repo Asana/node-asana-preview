@@ -30,6 +30,14 @@ public class JavascriptClientCodegenGenerator extends JavaScriptClientCodegen {
     // super does its special magic of determining the example type:
     // https://github.com/swagger-api/swagger-codegen-generators/blob/master/src/main/java/io/swagger/codegen/v3/generators/javascript/JavaScriptClientCodegen.java#L714
     ExampleUtility.tryToSetExample(p);
+
+    // "CSV" is used to declare that a query param string is joined by commas.
+    // If that's the case, we can use the raw JSON representation as a valid
+    // python list as the syntax is the same
+    if ("csv".equalsIgnoreCase(p.collectionFormat)) {
+      return;
+    }
+
     super.setParameterExampleValue(p);
   }
 }

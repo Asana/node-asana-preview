@@ -815,6 +815,8 @@
         example: 50
         schema:
           type: integer
+          minimum: 1
+          maximum: 100
       offset:
         name: offset
         in: query
@@ -1410,11 +1412,6 @@
           application/json; charset=UTF-8:
             schema:
               $ref: '#/components/schemas/GoalResponseArray'
-      ProjectResponseArray:
-        content:
-          application/json; charset=UTF-8:
-            schema:
-              $ref: '#/components/schemas/ProjectResponseArray'
       JobResponseData:
         content:
           application/json; charset=UTF-8:
@@ -1430,11 +1427,6 @@
           application/json; charset=UTF-8:
             schema:
               $ref: '#/components/schemas/MembershipResponseData'
-      MessageBaseData:
-        content:
-          application/json; charset=UTF-8:
-            schema:
-              $ref: '#/components/schemas/MessageBaseData'
       OrganizationExportResponseData:
         content:
           application/json; charset=UTF-8:
@@ -1460,6 +1452,11 @@
           application/json; charset=UTF-8:
             schema:
               $ref: '#/components/schemas/PortfolioResponseData'
+      ProjectResponseArray:
+        content:
+          application/json; charset=UTF-8:
+            schema:
+              $ref: '#/components/schemas/ProjectResponseArray'
       CustomFieldSettingResponseData:
         content:
           application/json; charset=UTF-8:
@@ -7811,6 +7808,7 @@
                   - approval
                 example: default_task
             x-docs-overrides: *id010
+            nullable: true
           new_project_template:
             description: >-
               A generic Asana Resource, containing a globally unique identifier.A generic
@@ -7959,6 +7957,7 @@
                   - approval
                 example: default_task
             x-docs-overrides: *id010
+            nullable: true
           new_project_template:
             description: >-
               A generic Asana Resource, containing a globally unique identifier.A generic
@@ -8105,6 +8104,7 @@
                   - approval
                 example: default_task
             x-docs-overrides: *id010
+            nullable: true
           new_project_template:
             description: >-
               A generic Asana Resource, containing a globally unique identifier.A generic
@@ -11957,25 +11957,38 @@
             example: '12345'
           include:
             description: >-
-              The elements that will be duplicated to the new project.
-              Tasks are always included.
-            type: string
-            enum:
-              - members
-              - notes
+              A comma-separated list of elements that will be duplicated to the new
+              project. Tasks are always included.
+  
+              ##### Fields
+  
               - forms
-              - task_notes
-              - task_assignee
-              - task_subtasks
-              - task_attachments
-              - task_dates
-              - task_dependencies
-              - task_followers
-              - task_tags
-              - task_projects
-            example:
+  
               - members
+  
+              - notes
+  
+              - task_assignee
+  
+              - task_attachments
+  
+              - task_dates
+  
+              - task_dependencies
+  
+              - task_followers
+  
               - task_notes
+  
+              - task_projects
+  
+              - task_subtasks
+  
+              - task_tags
+            type: string
+            pattern: ([members|notes|forms|task_notes|task_assignee|task_subtasks|task_attachments|task_dates|task_dependencies|task_followers|task_tags|task_projects])(,\1)*
+            example:
+              - members,notes,forms,task_notes,task_assignee,task_subtasks,task_attachments,task_dates,task_dependencies,task_followers,task_tags,task_projects
           schedule_dates:
             description: >-
               A dictionary of options to auto-shift dates.
@@ -19917,22 +19930,35 @@
             type: string
             example: New Task Name
           include:
-            description: The fields that will be duplicated to the new task.
-            type: string
-            enum:
-              - notes
+            description: >-
+              A comma-separated list of fields that will be duplicated to the new
+              task.
+  
+              ##### Fields
+  
               - assignee
-              - subtasks
+  
               - attachments
-              - tags
-              - followers
-              - projects
+  
               - dates
+  
               - dependencies
-              - parent
-            example:
+  
+              - followers
+  
               - notes
-              - assignee
+  
+              - parent
+  
+              - projects
+  
+              - subtasks
+  
+              - tags
+            type: string
+            pattern: ([notes|assignee|subtasks|attachments|tags|followers|projects|dates|dependencies|parent])(,\1)*
+            example:
+              - notes,assignee,subtasks,attachments,tags,followers,projects,dates,dependencies,parent
       TaskRemoveFollowersRequest:
         type: object
         properties:
@@ -25272,15 +25298,6 @@
             type: array
             items:
               $ref: '#/components/schemas/GoalResponse'
-      ProjectResponseArray:
-        type: object
-        properties:
-          required:
-            - data
-          data:
-            type: array
-            items:
-              $ref: '#/components/schemas/ProjectResponse'
       JobResponseData:
         type: object
         properties:
@@ -25304,13 +25321,6 @@
             - data
           data:
             $ref: '#/components/schemas/MembershipResponse'
-      MessageBaseData:
-        type: object
-        properties:
-          required:
-            - data
-          data:
-            $ref: '#/components/schemas/MessageBase'
       OrganizationExportResponseData:
         type: object
         properties:
@@ -25350,6 +25360,15 @@
             - data
           data:
             $ref: '#/components/schemas/PortfolioResponse'
+      ProjectResponseArray:
+        type: object
+        properties:
+          required:
+            - data
+          data:
+            type: array
+            items:
+              $ref: '#/components/schemas/ProjectResponse'
       CustomFieldSettingResponseData:
         type: object
         properties:
@@ -27116,7 +27135,7 @@
   
           Asana limits a single sync token to 100 events. If more than 100 events exist
           for a given resource, `has_more: true` will be returned in the response, indicating
-          that there are more events to pull. 
+          that there are more events to pull.
   
           *Note: The resource returned will be the resource that triggered the
           event. This may be different from the one that the events were requested
@@ -27182,6 +27201,35 @@
             $ref: '#/components/responses/Forbidden'
           404:
             $ref: '#/components/responses/NotFound'
+          412:
+            description: >-
+              The request is missing or has an expired sync token.
+            content:
+              application/json; charset=UTF-8:
+                schema:
+                  type: object
+                  properties:
+                    errors:
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          message:
+                            type: string
+                            readOnly: true
+                            description: >-
+                              Message providing more detail about the error
+                              that occurred, if available.
+                            example: Sync token invalid or too old. If you are attempting
+                              to keep resources in sync, you must fetch the full dataset
+                              for this query now and use the new sync token for the
+                              next sync.
+                    sync:
+                      type: string
+                      readOnly: true
+                      description: A sync token to be used with the next call to the
+                        /events endpoint.
+                      example: de4774f6915eae04714ca93bb2f5ee81
           500:
             $ref: '#/components/responses/InternalServerError'
     /goal_relationships/{goal_relationship_gid}:
@@ -28700,7 +28748,6 @@
               - new_task
               - new_task.name
               - new_task.resource_subtype
-              - new_task_template
               - resource_subtype
               - status
             schema:
@@ -28715,7 +28762,6 @@
                   - new_task
                   - new_task.name
                   - new_task.resource_subtype
-                  - new_task_template
                   - resource_subtype
                   - status
             style: form
@@ -30195,7 +30241,6 @@
               - notes
               - owner
               - permalink_url
-              - privacy_setting
               - project_brief
               - public
               - start_on
@@ -30313,7 +30358,6 @@
                   - notes
                   - owner
                   - permalink_url
-                  - privacy_setting
                   - project_brief
                   - public
                   - start_on
@@ -31728,7 +31772,6 @@
               - new_task
               - new_task.name
               - new_task.resource_subtype
-              - new_task_template
               - resource_subtype
               - status
             schema:
@@ -31743,7 +31786,6 @@
                   - new_task
                   - new_task.name
                   - new_task.resource_subtype
-                  - new_task_template
                   - resource_subtype
                   - status
             style: form
@@ -31915,7 +31957,6 @@
               - notes
               - owner
               - permalink_url
-              - privacy_setting
               - project_brief
               - public
               - start_on
@@ -32033,7 +32074,6 @@
                   - notes
                   - owner
                   - permalink_url
-                  - privacy_setting
                   - project_brief
                   - public
                   - start_on
@@ -32187,7 +32227,6 @@
               - notes
               - owner
               - permalink_url
-              - privacy_setting
               - project_brief
               - public
               - start_on
@@ -32305,7 +32344,6 @@
                   - notes
                   - owner
                   - permalink_url
-                  - privacy_setting
                   - project_brief
                   - public
                   - start_on
@@ -32461,7 +32499,6 @@
               - notes
               - owner
               - permalink_url
-              - privacy_setting
               - project_brief
               - public
               - start_on
@@ -32579,7 +32616,6 @@
                   - notes
                   - owner
                   - permalink_url
-                  - privacy_setting
                   - project_brief
                   - public
                   - start_on
@@ -32731,7 +32767,6 @@
               - notes
               - owner
               - permalink_url
-              - privacy_setting
               - project_brief
               - public
               - start_on
@@ -32849,7 +32884,6 @@
                   - notes
                   - owner
                   - permalink_url
-                  - privacy_setting
                   - project_brief
                   - public
                   - start_on
@@ -32931,7 +32965,6 @@
               - new_task
               - new_task.name
               - new_task.resource_subtype
-              - new_task_template
               - resource_subtype
               - status
             schema:
@@ -32946,7 +32979,6 @@
                   - new_task
                   - new_task.name
                   - new_task.resource_subtype
-                  - new_task_template
                   - resource_subtype
                   - status
             style: form
@@ -33100,7 +33132,6 @@
               - notes
               - owner
               - permalink_url
-              - privacy_setting
               - project_brief
               - public
               - start_on
@@ -33218,7 +33249,6 @@
                   - notes
                   - owner
                   - permalink_url
-                  - privacy_setting
                   - project_brief
                   - public
                   - start_on
@@ -33368,7 +33398,6 @@
               - notes
               - owner
               - permalink_url
-              - privacy_setting
               - project_brief
               - public
               - start_on
@@ -33486,7 +33515,6 @@
                   - notes
                   - owner
                   - permalink_url
-                  - privacy_setting
                   - project_brief
                   - public
                   - start_on
@@ -33632,7 +33660,6 @@
               - notes
               - owner
               - permalink_url
-              - privacy_setting
               - project_brief
               - public
               - start_on
@@ -33750,7 +33777,6 @@
                   - notes
                   - owner
                   - permalink_url
-                  - privacy_setting
                   - project_brief
                   - public
                   - start_on
@@ -33913,7 +33939,6 @@
               - notes
               - owner
               - permalink_url
-              - privacy_setting
               - project_brief
               - public
               - start_on
@@ -34031,7 +34056,6 @@
                   - notes
                   - owner
                   - permalink_url
-                  - privacy_setting
                   - project_brief
                   - public
                   - start_on
@@ -34180,7 +34204,6 @@
               - notes
               - owner
               - permalink_url
-              - privacy_setting
               - project_brief
               - public
               - start_on
@@ -34298,7 +34321,6 @@
                   - notes
                   - owner
                   - permalink_url
-                  - privacy_setting
                   - project_brief
                   - public
                   - start_on
@@ -34595,7 +34617,6 @@
               - notes
               - owner
               - permalink_url
-              - privacy_setting
               - project_brief
               - public
               - start_on
@@ -34713,7 +34734,6 @@
                   - notes
                   - owner
                   - permalink_url
-                  - privacy_setting
                   - project_brief
                   - public
                   - start_on
@@ -34872,7 +34892,6 @@
               - notes
               - owner
               - permalink_url
-              - privacy_setting
               - project_brief
               - public
               - start_on
@@ -34990,7 +35009,6 @@
                   - notes
                   - owner
                   - permalink_url
-                  - privacy_setting
                   - project_brief
                   - public
                   - start_on
@@ -35153,7 +35171,6 @@
               - notes
               - owner
               - permalink_url
-              - privacy_setting
               - project_brief
               - public
               - start_on
@@ -35271,7 +35288,6 @@
                   - notes
                   - owner
                   - permalink_url
-                  - privacy_setting
                   - project_brief
                   - public
                   - start_on
@@ -35431,7 +35447,6 @@
               - notes
               - owner
               - permalink_url
-              - privacy_setting
               - project_brief
               - public
               - start_on
@@ -35549,7 +35564,6 @@
                   - notes
                   - owner
                   - permalink_url
-                  - privacy_setting
                   - project_brief
                   - public
                   - start_on
@@ -35610,7 +35624,6 @@
               - new_task
               - new_task.name
               - new_task.resource_subtype
-              - new_task_template
               - resource_subtype
               - status
             schema:
@@ -35625,7 +35638,6 @@
                   - new_task
                   - new_task.name
                   - new_task.resource_subtype
-                  - new_task_template
                   - resource_subtype
                   - status
             style: form
@@ -39051,7 +39063,6 @@
               - new_task
               - new_task.name
               - new_task.resource_subtype
-              - new_task_template
               - resource_subtype
               - status
             schema:
@@ -39066,7 +39077,6 @@
                   - new_task
                   - new_task.name
                   - new_task.resource_subtype
-                  - new_task_template
                   - resource_subtype
                   - status
             style: form
