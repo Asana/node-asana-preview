@@ -17,7 +17,7 @@ import {ApiClient} from '../ApiClient';
 /**
  * The TaskCompact model module.
  * @module model/TaskCompact
- * @version 1.0.5
+ * @version 1.0.6
  */
 export class TaskCompact {
   /**

@@ -17,7 +17,7 @@ import {ApiClient} from '../ApiClient';
 /**
  * The TaskSetParentRequest model module.
  * @module model/TaskSetParentRequest
- * @version 1.0.5
+ * @version 1.0.6
  */
 export class TaskSetParentRequest {
   /**

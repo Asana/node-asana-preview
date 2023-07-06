@@ -18,7 +18,7 @@ import {ProjectSectionInsertRequest} from './ProjectSectionInsertRequest';
 /**
  * The SectionsInsertBody model module.
  * @module model/SectionsInsertBody
- * @version 1.0.5
+ * @version 1.0.6
  */
 export class SectionsInsertBody {
   /**

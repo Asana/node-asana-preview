@@ -20,7 +20,7 @@ import {TimePeriodResponseData} from '../model/TimePeriodResponseData';
 /**
 * TimePeriods service.
 * @module api/TimePeriodsApi
-* @version 1.0.5
+* @version 1.0.6
 */
 export class TimePeriodsApi {
 

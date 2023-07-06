@@ -18,7 +18,7 @@ import {TeamResponseOrganization} from './TeamResponseOrganization';
 /**
  * The TeamResponse model module.
  * @module model/TeamResponse
- * @version 1.0.5
+ * @version 1.0.6
  */
 export class TeamResponse {
   /**

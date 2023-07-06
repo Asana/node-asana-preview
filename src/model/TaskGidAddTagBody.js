@@ -18,7 +18,7 @@ import {TaskAddTagRequest} from './TaskAddTagRequest';
 /**
  * The TaskGidAddTagBody model module.
  * @module model/TaskGidAddTagBody
- * @version 1.0.5
+ * @version 1.0.6
  */
 export class TaskGidAddTagBody {
   /**

@@ -20,7 +20,7 @@ import {ProjectMembershipResponseMember} from './ProjectMembershipResponseMember
 /**
  * The ProjectMembershipResponse model module.
  * @module model/ProjectMembershipResponse
- * @version 1.0.5
+ * @version 1.0.6
  */
 export class ProjectMembershipResponse {
   /**

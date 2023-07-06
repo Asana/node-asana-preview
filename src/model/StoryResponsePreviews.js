@@ -17,7 +17,7 @@ import {ApiClient} from '../ApiClient';
 /**
  * The StoryResponsePreviews model module.
  * @module model/StoryResponsePreviews
- * @version 1.0.5
+ * @version 1.0.6
  */
 export class StoryResponsePreviews {
   /**

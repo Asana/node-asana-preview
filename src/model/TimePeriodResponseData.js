@@ -18,7 +18,7 @@ import {TimePeriodResponse} from './TimePeriodResponse';
 /**
  * The TimePeriodResponseData model module.
  * @module model/TimePeriodResponseData
- * @version 1.0.5
+ * @version 1.0.6
  */
 export class TimePeriodResponseData {
   /**

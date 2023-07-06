@@ -20,7 +20,7 @@ import {CustomFieldBaseEnumValue} from './CustomFieldBaseEnumValue';
 /**
  * The PortfolioResponseCustomFields model module.
  * @module model/PortfolioResponseCustomFields
- * @version 1.0.5
+ * @version 1.0.6
  */
 export class PortfolioResponseCustomFields {
   /**

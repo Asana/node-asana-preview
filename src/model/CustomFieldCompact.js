@@ -20,7 +20,7 @@ import {CustomFieldBaseEnumValue} from './CustomFieldBaseEnumValue';
 /**
  * The CustomFieldCompact model module.
  * @module model/CustomFieldCompact
- * @version 1.0.5
+ * @version 1.0.6
  */
 export class CustomFieldCompact {
   /**

@@ -22,7 +22,7 @@ import {ProjectBaseWorkspace} from './ProjectBaseWorkspace';
 /**
  * The ProjectBase model module.
  * @module model/ProjectBase
- * @version 1.0.5
+ * @version 1.0.6
  */
 export class ProjectBase {
   /**

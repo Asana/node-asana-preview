@@ -17,7 +17,7 @@ import {ApiClient} from '../ApiClient';
 /**
  * The TaskResponseTags model module.
  * @module model/TaskResponseTags
- * @version 1.0.5
+ * @version 1.0.6
  */
 export class TaskResponseTags {
   /**

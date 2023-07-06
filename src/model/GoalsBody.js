@@ -18,7 +18,7 @@ import {GoalRequest} from './GoalRequest';
 /**
  * The GoalsBody model module.
  * @module model/GoalsBody
- * @version 1.0.5
+ * @version 1.0.6
  */
 export class GoalsBody {
   /**

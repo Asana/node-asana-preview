@@ -31,7 +31,7 @@ let apiInstance = new AsanaPreview.GoalRelationshipsApi();
 let body = new AsanaPreview.GoalGidAddSupportingRelationshipBody(); // GoalGidAddSupportingRelationshipBody | The supporting resource to be added to the goal
 let goal_gid = "12345"; // String | Globally unique identifier for the goal.
 let opts = { 
-  'opt_fields': ["[\"contribution_weight\",\"resource_subtype\",\"supported_goal\",\"supported_goal.name\",\"supported_goal.owner\",\"supported_goal.owner.name\",\"supporting_resource\",\"supporting_resource.name\"]"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
+  'opt_fields': ["contribution_weight","resource_subtype","supported_goal","supported_goal.name","supported_goal.owner","supported_goal.owner.name","supporting_resource","supporting_resource.name"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
 };
 apiInstance.addSupportingRelationship(body, goal_gid, opts, (error, data, response) => {
   if (error) {
@@ -83,7 +83,7 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new AsanaPreview.GoalRelationshipsApi();
 let goal_relationship_gid = "12345"; // String | Globally unique identifier for the goal relationship.
 let opts = { 
-  'opt_fields': ["[\"contribution_weight\",\"resource_subtype\",\"supported_goal\",\"supported_goal.name\",\"supported_goal.owner\",\"supported_goal.owner.name\",\"supporting_resource\",\"supporting_resource.name\"]"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
+  'opt_fields': ["contribution_weight","resource_subtype","supported_goal","supported_goal.name","supported_goal.owner","supported_goal.owner.name","supporting_resource","supporting_resource.name"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
 };
 apiInstance.getGoalRelationship(goal_relationship_gid, opts, (error, data, response) => {
   if (error) {
@@ -135,7 +135,7 @@ let apiInstance = new AsanaPreview.GoalRelationshipsApi();
 let supported_goal = "12345"; // String | Globally unique identifier for the supported goal in the goal relationship.
 let opts = { 
   'resource_subtype': "subgoal", // String | If provided, filter to goal relationships with a given resource_subtype.
-  'opt_fields': ["[\"contribution_weight\",\"resource_subtype\",\"supported_goal\",\"supported_goal.name\",\"supported_goal.owner\",\"supported_goal.owner.name\",\"supporting_resource\",\"supporting_resource.name\"]"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
+  'opt_fields': ["contribution_weight","resource_subtype","supported_goal","supported_goal.name","supported_goal.owner","supported_goal.owner.name","supporting_resource","supporting_resource.name"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
 };
 apiInstance.getGoalRelationships(supported_goal, opts, (error, data, response) => {
   if (error) {
@@ -238,7 +238,7 @@ let apiInstance = new AsanaPreview.GoalRelationshipsApi();
 let body = new AsanaPreview.GoalRelationshipsGoalRelationshipGidBody(); // GoalRelationshipsGoalRelationshipGidBody | The updated fields for the goal relationship.
 let goal_relationship_gid = "12345"; // String | Globally unique identifier for the goal relationship.
 let opts = { 
-  'opt_fields': ["[\"contribution_weight\",\"resource_subtype\",\"supported_goal\",\"supported_goal.name\",\"supported_goal.owner\",\"supported_goal.owner.name\",\"supporting_resource\",\"supporting_resource.name\"]"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
+  'opt_fields': ["contribution_weight","resource_subtype","supported_goal","supported_goal.name","supported_goal.owner","supported_goal.owner.name","supporting_resource","supporting_resource.name"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
 };
 apiInstance.updateGoalRelationship(body, goal_relationship_gid, opts, (error, data, response) => {
   if (error) {

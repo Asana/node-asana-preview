@@ -20,7 +20,7 @@ import {ProjectMembershipResponseData} from '../model/ProjectMembershipResponseD
 /**
 * ProjectMemberships service.
 * @module api/ProjectMembershipsApi
-* @version 1.0.5
+* @version 1.0.6
 */
 export class ProjectMembershipsApi {
 

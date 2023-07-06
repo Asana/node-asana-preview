@@ -18,7 +18,7 @@ import {MembershipRequest} from './MembershipRequest';
 /**
  * The MembershipsMembershipGidBody model module.
  * @module model/MembershipsMembershipGidBody
- * @version 1.0.5
+ * @version 1.0.6
  */
 export class MembershipsMembershipGidBody {
   /**

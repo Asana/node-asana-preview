@@ -18,7 +18,7 @@ import {CustomFieldResponseCreatedBy} from './CustomFieldResponseCreatedBy';
 /**
  * The GoalMembershipBaseGoal model module.
  * @module model/GoalMembershipBaseGoal
- * @version 1.0.5
+ * @version 1.0.6
  */
 export class GoalMembershipBaseGoal {
   /**

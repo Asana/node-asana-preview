@@ -17,7 +17,7 @@ import {ApiClient} from '../ApiClient';
 /**
  * The WorkspaceCompact model module.
  * @module model/WorkspaceCompact
- * @version 1.0.5
+ * @version 1.0.6
  */
 export class WorkspaceCompact {
   /**

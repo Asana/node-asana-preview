@@ -18,7 +18,7 @@ import {RuleTriggerRequest} from './RuleTriggerRequest';
 /**
  * The RuleTriggerGidRunBody model module.
  * @module model/RuleTriggerGidRunBody
- * @version 1.0.5
+ * @version 1.0.6
  */
 export class RuleTriggerGidRunBody {
   /**

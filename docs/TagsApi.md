@@ -33,7 +33,7 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new AsanaPreview.TagsApi();
 let body = new AsanaPreview.TagsBody(); // TagsBody | The tag to create.
 let opts = { 
-  'opt_fields': ["[\"color\",\"created_at\",\"followers\",\"followers.name\",\"name\",\"notes\",\"permalink_url\",\"workspace\",\"workspace.name\"]"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
+  'opt_fields': ["color","created_at","followers","followers.name","name","notes","permalink_url","workspace","workspace.name"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
 };
 apiInstance.createTag(body, opts, (error, data, response) => {
   if (error) {
@@ -85,7 +85,7 @@ let apiInstance = new AsanaPreview.TagsApi();
 let body = new AsanaPreview.WorkspaceGidTagsBody(); // WorkspaceGidTagsBody | The tag to create.
 let workspace_gid = "12345"; // String | Globally unique identifier for the workspace or organization.
 let opts = { 
-  'opt_fields': ["[\"color\",\"created_at\",\"followers\",\"followers.name\",\"name\",\"notes\",\"permalink_url\",\"workspace\",\"workspace.name\"]"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
+  'opt_fields': ["color","created_at","followers","followers.name","name","notes","permalink_url","workspace","workspace.name"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
 };
 apiInstance.createTagForWorkspace(body, workspace_gid, opts, (error, data, response) => {
   if (error) {
@@ -192,7 +192,7 @@ let tag_gid = "11235"; // String | Globally unique identifier for the tag.
 let opts = { 
   'limit': 50, // Number | Results per page. The number of objects to return per page. The value must be between 1 and 100.
   'offset': "eyJ0eXAiOJiKV1iQLCJhbGciOiJIUzI1NiJ9", // String | Offset token. An offset to the next page returned by the API. A pagination request will return an offset token, which can be used as an input parameter to the next request. If an offset is not passed in, the API will return the first page of results. 'Note: You can only pass in an offset that was returned to you via a previously paginated request.'
-  'opt_fields': ["[\"color\",\"created_at\",\"followers\",\"followers.name\",\"name\",\"notes\",\"permalink_url\",\"workspace\",\"workspace.name\"]"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
+  'opt_fields': ["color","created_at","followers","followers.name","name","notes","permalink_url","workspace","workspace.name"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
 };
 apiInstance.getTag(tag_gid, opts, (error, data, response) => {
   if (error) {
@@ -247,7 +247,7 @@ let opts = {
   'limit': 50, // Number | Results per page. The number of objects to return per page. The value must be between 1 and 100.
   'offset': "eyJ0eXAiOJiKV1iQLCJhbGciOiJIUzI1NiJ9", // String | Offset token. An offset to the next page returned by the API. A pagination request will return an offset token, which can be used as an input parameter to the next request. If an offset is not passed in, the API will return the first page of results. 'Note: You can only pass in an offset that was returned to you via a previously paginated request.'
   'workspace': "1331", // String | The workspace to filter tags on.
-  'opt_fields': ["[\"color\",\"created_at\",\"followers\",\"followers.name\",\"name\",\"notes\",\"permalink_url\",\"workspace\",\"workspace.name\"]"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
+  'opt_fields': ["color","created_at","followers","followers.name","name","notes","permalink_url","workspace","workspace.name"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
 };
 apiInstance.getTags(opts, (error, data, response) => {
   if (error) {
@@ -302,7 +302,7 @@ let task_gid = "321654"; // String | The task to operate on.
 let opts = { 
   'limit': 50, // Number | Results per page. The number of objects to return per page. The value must be between 1 and 100.
   'offset': "eyJ0eXAiOJiKV1iQLCJhbGciOiJIUzI1NiJ9", // String | Offset token. An offset to the next page returned by the API. A pagination request will return an offset token, which can be used as an input parameter to the next request. If an offset is not passed in, the API will return the first page of results. 'Note: You can only pass in an offset that was returned to you via a previously paginated request.'
-  'opt_fields': ["[\"color\",\"created_at\",\"followers\",\"followers.name\",\"name\",\"notes\",\"permalink_url\",\"workspace\",\"workspace.name\"]"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
+  'opt_fields': ["color","created_at","followers","followers.name","name","notes","permalink_url","workspace","workspace.name"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
 };
 apiInstance.getTagsForTask(task_gid, opts, (error, data, response) => {
   if (error) {
@@ -357,7 +357,7 @@ let workspace_gid = "12345"; // String | Globally unique identifier for the work
 let opts = { 
   'limit': 50, // Number | Results per page. The number of objects to return per page. The value must be between 1 and 100.
   'offset': "eyJ0eXAiOJiKV1iQLCJhbGciOiJIUzI1NiJ9", // String | Offset token. An offset to the next page returned by the API. A pagination request will return an offset token, which can be used as an input parameter to the next request. If an offset is not passed in, the API will return the first page of results. 'Note: You can only pass in an offset that was returned to you via a previously paginated request.'
-  'opt_fields': ["[\"color\",\"created_at\",\"followers\",\"followers.name\",\"name\",\"notes\",\"permalink_url\",\"workspace\",\"workspace.name\"]"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
+  'opt_fields': ["color","created_at","followers","followers.name","name","notes","permalink_url","workspace","workspace.name"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
 };
 apiInstance.getTagsForWorkspace(workspace_gid, opts, (error, data, response) => {
   if (error) {
@@ -412,7 +412,7 @@ let tag_gid = "11235"; // String | Globally unique identifier for the tag.
 let opts = { 
   'limit': 50, // Number | Results per page. The number of objects to return per page. The value must be between 1 and 100.
   'offset': "eyJ0eXAiOJiKV1iQLCJhbGciOiJIUzI1NiJ9", // String | Offset token. An offset to the next page returned by the API. A pagination request will return an offset token, which can be used as an input parameter to the next request. If an offset is not passed in, the API will return the first page of results. 'Note: You can only pass in an offset that was returned to you via a previously paginated request.'
-  'opt_fields': ["[\"color\",\"created_at\",\"followers\",\"followers.name\",\"name\",\"notes\",\"permalink_url\",\"workspace\",\"workspace.name\"]"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
+  'opt_fields': ["color","created_at","followers","followers.name","name","notes","permalink_url","workspace","workspace.name"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
 };
 apiInstance.updateTag(tag_gid, opts, (error, data, response) => {
   if (error) {

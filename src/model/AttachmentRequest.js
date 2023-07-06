@@ -17,7 +17,7 @@ import {ApiClient} from '../ApiClient';
 /**
  * The AttachmentRequest model module.
  * @module model/AttachmentRequest
- * @version 1.0.5
+ * @version 1.0.6
  */
 export class AttachmentRequest {
   /**

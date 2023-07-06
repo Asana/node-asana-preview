@@ -18,7 +18,7 @@ import {ProjectDuplicateRequestScheduleDates} from './ProjectDuplicateRequestSch
 /**
  * The ProjectDuplicateRequest model module.
  * @module model/ProjectDuplicateRequest
- * @version 1.0.5
+ * @version 1.0.6
  */
 export class ProjectDuplicateRequest {
   /**
@@ -67,86 +67,8 @@ ProjectDuplicateRequest.prototype.name = undefined;
 ProjectDuplicateRequest.prototype.team = undefined;
 
 /**
- * Allowed values for the <code>include</code> property.
- * @enum {String}
- * @readonly
- */
-ProjectDuplicateRequest.IncludeEnum = {
-  /**
-   * value: "members"
-   * @const
-   */
-  members: "members",
-
-  /**
-   * value: "notes"
-   * @const
-   */
-  notes: "notes",
-
-  /**
-   * value: "forms"
-   * @const
-   */
-  forms: "forms",
-
-  /**
-   * value: "task_notes"
-   * @const
-   */
-  task_notes: "task_notes",
-
-  /**
-   * value: "task_assignee"
-   * @const
-   */
-  task_assignee: "task_assignee",
-
-  /**
-   * value: "task_subtasks"
-   * @const
-   */
-  task_subtasks: "task_subtasks",
-
-  /**
-   * value: "task_attachments"
-   * @const
-   */
-  task_attachments: "task_attachments",
-
-  /**
-   * value: "task_dates"
-   * @const
-   */
-  task_dates: "task_dates",
-
-  /**
-   * value: "task_dependencies"
-   * @const
-   */
-  task_dependencies: "task_dependencies",
-
-  /**
-   * value: "task_followers"
-   * @const
-   */
-  task_followers: "task_followers",
-
-  /**
-   * value: "task_tags"
-   * @const
-   */
-  task_tags: "task_tags",
-
-  /**
-   * value: "task_projects"
-   * @const
-   */
-  task_projects: "task_projects"
-};
-/**
- * The elements that will be duplicated to the new project. Tasks are always included.
- * @member {module:model/ProjectDuplicateRequest.IncludeEnum} include
+ * A comma-separated list of elements that will be duplicated to the new project. Tasks are always included. ##### Fields - forms - members - notes - task_assignee - task_attachments - task_dates - task_dependencies - task_followers - task_notes - task_projects - task_subtasks - task_tags
+ * @member {String} include
  */
 ProjectDuplicateRequest.prototype.include = undefined;
 

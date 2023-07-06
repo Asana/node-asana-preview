@@ -18,7 +18,7 @@ import {CustomFieldRequest} from './CustomFieldRequest';
 /**
  * The CustomFieldsCustomFieldGidBody model module.
  * @module model/CustomFieldsCustomFieldGidBody
- * @version 1.0.5
+ * @version 1.0.6
  */
 export class CustomFieldsCustomFieldGidBody {
   /**

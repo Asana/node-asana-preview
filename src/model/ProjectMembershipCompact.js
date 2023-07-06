@@ -18,7 +18,7 @@ import {CustomFieldResponsePeopleValue} from './CustomFieldResponsePeopleValue';
 /**
  * The ProjectMembershipCompact model module.
  * @module model/ProjectMembershipCompact
- * @version 1.0.5
+ * @version 1.0.6
  */
 export class ProjectMembershipCompact {
   /**

@@ -22,7 +22,7 @@ import {CustomFieldResponsePeopleValue} from './CustomFieldResponsePeopleValue';
 /**
  * The TaskResponseCustomFields model module.
  * @module model/TaskResponseCustomFields
- * @version 1.0.5
+ * @version 1.0.6
  */
 export class TaskResponseCustomFields {
   /**

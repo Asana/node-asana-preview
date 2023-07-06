@@ -18,7 +18,7 @@ import {UserResponse} from './UserResponse';
 /**
  * The UserResponseArray model module.
  * @module model/UserResponseArray
- * @version 1.0.5
+ * @version 1.0.6
  */
 export class UserResponseArray {
   /**

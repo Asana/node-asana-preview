@@ -17,7 +17,7 @@ import {ApiClient} from '../ApiClient';
 /**
  * The GoalResponseCurrentStatusUpdate model module.
  * @module model/GoalResponseCurrentStatusUpdate
- * @version 1.0.5
+ * @version 1.0.6
  */
 export class GoalResponseCurrentStatusUpdate {
   /**

@@ -17,7 +17,7 @@ import {ApiClient} from '../ApiClient';
 /**
  * The StoryResponseAssignee model module.
  * @module model/StoryResponseAssignee
- * @version 1.0.5
+ * @version 1.0.6
  */
 export class StoryResponseAssignee {
   /**

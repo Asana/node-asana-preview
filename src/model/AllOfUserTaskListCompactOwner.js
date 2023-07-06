@@ -17,7 +17,7 @@ import {ApiClient} from '../ApiClient';
 /**
  * The AllOfUserTaskListCompactOwner model module.
  * @module model/AllOfUserTaskListCompactOwner
- * @version 1.0.5
+ * @version 1.0.6
  */
 export class AllOfUserTaskListCompactOwner {
   /**

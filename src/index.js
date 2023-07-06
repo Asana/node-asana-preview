@@ -142,6 +142,8 @@ import {GoalResponseWorkspace} from './model/GoalResponseWorkspace';
 import {GoalUpdateRequest} from './model/GoalUpdateRequest';
 import {GoalsBody} from './model/GoalsBody';
 import {GoalsGoalGidBody} from './model/GoalsGoalGidBody';
+import {InlineResponse412} from './model/InlineResponse412';
+import {InlineResponse412Errors} from './model/InlineResponse412Errors';
 import {JobBase} from './model/JobBase';
 import {JobBaseNewProject} from './model/JobBaseNewProject';
 import {JobBaseNewProjectTemplate} from './model/JobBaseNewProjectTemplate';
@@ -157,7 +159,6 @@ import {MembershipResponseArray} from './model/MembershipResponseArray';
 import {MembershipResponseData} from './model/MembershipResponseData';
 import {MembershipsBody} from './model/MembershipsBody';
 import {MembershipsMembershipGidBody} from './model/MembershipsMembershipGidBody';
-import {MessageBaseData} from './model/MessageBaseData';
 import {ModifyDependenciesRequest} from './model/ModifyDependenciesRequest';
 import {ModifyDependentsRequest} from './model/ModifyDependentsRequest';
 import {OrganizationExportBase} from './model/OrganizationExportBase';
@@ -489,7 +490,7 @@ import {WorkspacesApi} from './api/WorkspacesApi';
 * </pre>
 * </p>
 * @module index
-* @version 1.0.5
+* @version 1.0.6
 */
 export {
     /**
@@ -1273,6 +1274,18 @@ export {
     GoalsGoalGidBody,
 
     /**
+     * The InlineResponse412 model constructor.
+     * @property {module:model/InlineResponse412}
+     */
+    InlineResponse412,
+
+    /**
+     * The InlineResponse412Errors model constructor.
+     * @property {module:model/InlineResponse412Errors}
+     */
+    InlineResponse412Errors,
+
+    /**
      * The JobBase model constructor.
      * @property {module:model/JobBase}
      */
@@ -1361,12 +1374,6 @@ export {
      * @property {module:model/MembershipsMembershipGidBody}
      */
     MembershipsMembershipGidBody,
-
-    /**
-     * The MessageBaseData model constructor.
-     * @property {module:model/MessageBaseData}
-     */
-    MessageBaseData,
 
     /**
      * The ModifyDependenciesRequest model constructor.

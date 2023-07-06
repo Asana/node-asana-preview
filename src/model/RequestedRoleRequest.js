@@ -17,7 +17,7 @@ import {ApiClient} from '../ApiClient';
 /**
  * The RequestedRoleRequest model module.
  * @module model/RequestedRoleRequest
- * @version 1.0.5
+ * @version 1.0.6
  */
 export class RequestedRoleRequest {
   /**

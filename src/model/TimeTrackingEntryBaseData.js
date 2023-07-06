@@ -18,7 +18,7 @@ import {TimeTrackingEntryBase} from './TimeTrackingEntryBase';
 /**
  * The TimeTrackingEntryBaseData model module.
  * @module model/TimeTrackingEntryBaseData
- * @version 1.0.5
+ * @version 1.0.6
  */
 export class TimeTrackingEntryBaseData {
   /**

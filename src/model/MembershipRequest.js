@@ -17,7 +17,7 @@ import {ApiClient} from '../ApiClient';
 /**
  * The MembershipRequest model module.
  * @module model/MembershipRequest
- * @version 1.0.5
+ * @version 1.0.6
  */
 export class MembershipRequest {
   /**

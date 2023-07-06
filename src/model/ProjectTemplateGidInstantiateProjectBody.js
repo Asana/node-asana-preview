@@ -18,7 +18,7 @@ import {ProjectTemplateInstantiateProjectRequest} from './ProjectTemplateInstant
 /**
  * The ProjectTemplateGidInstantiateProjectBody model module.
  * @module model/ProjectTemplateGidInstantiateProjectBody
- * @version 1.0.5
+ * @version 1.0.6
  */
 export class ProjectTemplateGidInstantiateProjectBody {
   /**

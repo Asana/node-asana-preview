@@ -17,7 +17,7 @@ import {ApiClient} from '../ApiClient';
 /**
  * The TaskDuplicateRequest model module.
  * @module model/TaskDuplicateRequest
- * @version 1.0.5
+ * @version 1.0.6
  */
 export class TaskDuplicateRequest {
   /**
@@ -54,74 +54,8 @@ export class TaskDuplicateRequest {
 TaskDuplicateRequest.prototype.name = undefined;
 
 /**
- * Allowed values for the <code>include</code> property.
- * @enum {String}
- * @readonly
- */
-TaskDuplicateRequest.IncludeEnum = {
-  /**
-   * value: "notes"
-   * @const
-   */
-  notes: "notes",
-
-  /**
-   * value: "assignee"
-   * @const
-   */
-  assignee: "assignee",
-
-  /**
-   * value: "subtasks"
-   * @const
-   */
-  subtasks: "subtasks",
-
-  /**
-   * value: "attachments"
-   * @const
-   */
-  attachments: "attachments",
-
-  /**
-   * value: "tags"
-   * @const
-   */
-  tags: "tags",
-
-  /**
-   * value: "followers"
-   * @const
-   */
-  followers: "followers",
-
-  /**
-   * value: "projects"
-   * @const
-   */
-  projects: "projects",
-
-  /**
-   * value: "dates"
-   * @const
-   */
-  dates: "dates",
-
-  /**
-   * value: "dependencies"
-   * @const
-   */
-  dependencies: "dependencies",
-
-  /**
-   * value: "parent"
-   * @const
-   */
-  parent: "parent"
-};
-/**
- * The fields that will be duplicated to the new task.
- * @member {module:model/TaskDuplicateRequest.IncludeEnum} include
+ * A comma-separated list of fields that will be duplicated to the new task. ##### Fields - assignee - attachments - dates - dependencies - followers - notes - parent - projects - subtasks - tags
+ * @member {String} include
  */
 TaskDuplicateRequest.prototype.include = undefined;
 

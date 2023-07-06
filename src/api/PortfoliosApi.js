@@ -31,7 +31,7 @@ import {ProjectResponseArray} from '../model/ProjectResponseArray';
 /**
 * Portfolios service.
 * @module api/PortfoliosApi
-* @version 1.0.5
+* @version 1.0.6
 */
 export class PortfoliosApi {
 

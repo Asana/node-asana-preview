@@ -29,7 +29,7 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new AsanaPreview.TeamMembershipsApi();
 let team_membership_gid = "724362"; // String | 
 let opts = { 
-  'opt_fields': ["[\"is_admin\",\"is_guest\",\"is_limited_access\",\"team\",\"team.name\",\"user\",\"user.name\"]"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
+  'opt_fields': ["is_admin","is_guest","is_limited_access","team","team.name","user","user.name"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
 };
 apiInstance.getTeamMembership(team_membership_gid, opts, (error, data, response) => {
   if (error) {
@@ -84,7 +84,7 @@ let opts = {
   'team': "159874", // String | Globally unique identifier for the team.
   'user': "512241", // String | A string identifying a user. This can either be the string \"me\", an email, or the gid of a user. This parameter must be used with the workspace parameter.
   'workspace': "31326", // String | Globally unique identifier for the workspace. This parameter must be used with the user parameter.
-  'opt_fields': ["[\"is_admin\",\"is_guest\",\"is_limited_access\",\"team\",\"team.name\",\"user\",\"user.name\"]"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
+  'opt_fields': ["is_admin","is_guest","is_limited_access","team","team.name","user","user.name"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
 };
 apiInstance.getTeamMemberships(opts, (error, data, response) => {
   if (error) {
@@ -141,7 +141,7 @@ let team_gid = "159874"; // String | Globally unique identifier for the team.
 let opts = { 
   'limit': 50, // Number | Results per page. The number of objects to return per page. The value must be between 1 and 100.
   'offset': "eyJ0eXAiOJiKV1iQLCJhbGciOiJIUzI1NiJ9", // String | Offset token. An offset to the next page returned by the API. A pagination request will return an offset token, which can be used as an input parameter to the next request. If an offset is not passed in, the API will return the first page of results. 'Note: You can only pass in an offset that was returned to you via a previously paginated request.'
-  'opt_fields': ["[\"is_admin\",\"is_guest\",\"is_limited_access\",\"team\",\"team.name\",\"user\",\"user.name\"]"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
+  'opt_fields': ["is_admin","is_guest","is_limited_access","team","team.name","user","user.name"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
 };
 apiInstance.getTeamMembershipsForTeam(team_gid, opts, (error, data, response) => {
   if (error) {
@@ -197,7 +197,7 @@ let workspace = "31326"; // String | Globally unique identifier for the workspac
 let opts = { 
   'limit': 50, // Number | Results per page. The number of objects to return per page. The value must be between 1 and 100.
   'offset': "eyJ0eXAiOJiKV1iQLCJhbGciOiJIUzI1NiJ9", // String | Offset token. An offset to the next page returned by the API. A pagination request will return an offset token, which can be used as an input parameter to the next request. If an offset is not passed in, the API will return the first page of results. 'Note: You can only pass in an offset that was returned to you via a previously paginated request.'
-  'opt_fields': ["[\"is_admin\",\"is_guest\",\"is_limited_access\",\"team\",\"team.name\",\"user\",\"user.name\"]"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
+  'opt_fields': ["is_admin","is_guest","is_limited_access","team","team.name","user","user.name"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
 };
 apiInstance.getTeamMembershipsForUser(user_gid, workspace, opts, (error, data, response) => {
   if (error) {

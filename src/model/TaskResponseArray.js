@@ -18,7 +18,7 @@ import {TaskResponse} from './TaskResponse';
 /**
  * The TaskResponseArray model module.
  * @module model/TaskResponseArray
- * @version 1.0.5
+ * @version 1.0.6
  */
 export class TaskResponseArray {
   /**

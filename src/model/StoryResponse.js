@@ -31,7 +31,7 @@ import {StoryResponseTask} from './StoryResponseTask';
 /**
  * The StoryResponse model module.
  * @module model/StoryResponse
- * @version 1.0.5
+ * @version 1.0.6
  */
 export class StoryResponse {
   /**

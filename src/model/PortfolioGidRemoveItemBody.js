@@ -18,7 +18,7 @@ import {PortfolioRemoveItemRequest} from './PortfolioRemoveItemRequest';
 /**
  * The PortfolioGidRemoveItemBody model module.
  * @module model/PortfolioGidRemoveItemBody
- * @version 1.0.5
+ * @version 1.0.6
  */
 export class PortfolioGidRemoveItemBody {
   /**

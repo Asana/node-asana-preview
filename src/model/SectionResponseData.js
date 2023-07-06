@@ -18,7 +18,7 @@ import {SectionResponse} from './SectionResponse';
 /**
  * The SectionResponseData model module.
  * @module model/SectionResponseData
- * @version 1.0.5
+ * @version 1.0.6
  */
 export class SectionResponseData {
   /**

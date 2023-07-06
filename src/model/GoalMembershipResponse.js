@@ -19,7 +19,7 @@ import {ProjectMembershipResponseMember} from './ProjectMembershipResponseMember
 /**
  * The GoalMembershipResponse model module.
  * @module model/GoalMembershipResponse
- * @version 1.0.5
+ * @version 1.0.6
  */
 export class GoalMembershipResponse {
   /**

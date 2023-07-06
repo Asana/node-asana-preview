@@ -17,7 +17,7 @@ import {ApiClient} from '../ApiClient';
 /**
  * The SectionCompact model module.
  * @module model/SectionCompact
- * @version 1.0.5
+ * @version 1.0.6
  */
 export class SectionCompact {
   /**

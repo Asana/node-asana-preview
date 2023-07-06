@@ -17,7 +17,7 @@ import {ApiClient} from '../ApiClient';
 /**
  * The TagRequest model module.
  * @module model/TagRequest
- * @version 1.0.5
+ * @version 1.0.6
  */
 export class TagRequest {
   /**

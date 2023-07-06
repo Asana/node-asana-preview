@@ -23,7 +23,7 @@ import {MembershipsMembershipGidBody} from '../model/MembershipsMembershipGidBod
 /**
 * Memberships service.
 * @module api/MembershipsApi
-* @version 1.0.5
+* @version 1.0.6
 */
 export class MembershipsApi {
 

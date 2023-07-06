@@ -19,7 +19,7 @@ import {ProjectTemplateBaseTeam} from './ProjectTemplateBaseTeam';
 /**
  * The TeamMembershipBase model module.
  * @module model/TeamMembershipBase
- * @version 1.0.5
+ * @version 1.0.6
  */
 export class TeamMembershipBase {
   /**

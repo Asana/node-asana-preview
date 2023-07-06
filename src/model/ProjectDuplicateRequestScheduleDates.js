@@ -17,7 +17,7 @@ import {ApiClient} from '../ApiClient';
 /**
  * The ProjectDuplicateRequestScheduleDates model module.
  * @module model/ProjectDuplicateRequestScheduleDates
- * @version 1.0.5
+ * @version 1.0.6
  */
 export class ProjectDuplicateRequestScheduleDates {
   /**

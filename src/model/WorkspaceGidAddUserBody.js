@@ -18,7 +18,7 @@ import {WorkspaceAddUserRequest} from './WorkspaceAddUserRequest';
 /**
  * The WorkspaceGidAddUserBody model module.
  * @module model/WorkspaceGidAddUserBody
- * @version 1.0.5
+ * @version 1.0.6
  */
 export class WorkspaceGidAddUserBody {
   /**

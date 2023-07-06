@@ -30,7 +30,7 @@ let apiInstance = new AsanaPreview.ProjectBriefsApi();
 let body = new AsanaPreview.ProjectGidProjectBriefsBody(); // ProjectGidProjectBriefsBody | The project brief to create.
 let project_gid = "1331"; // String | Globally unique identifier for the project.
 let opts = { 
-  'opt_fields': ["[\"html_text\",\"permalink_url\",\"project\",\"project.name\",\"text\",\"title\"]"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
+  'opt_fields': ["html_text","permalink_url","project","project.name","text","title"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
 };
 apiInstance.createProjectBrief(body, project_gid, opts, (error, data, response) => {
   if (error) {
@@ -130,7 +130,7 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new AsanaPreview.ProjectBriefsApi();
 let project_brief_gid = "12345"; // String | Globally unique identifier for the project brief.
 let opts = { 
-  'opt_fields': ["[\"html_text\",\"permalink_url\",\"project\",\"project.name\",\"text\",\"title\"]"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
+  'opt_fields': ["html_text","permalink_url","project","project.name","text","title"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
 };
 apiInstance.getProjectBrief(project_brief_gid, opts, (error, data, response) => {
   if (error) {
@@ -182,7 +182,7 @@ let apiInstance = new AsanaPreview.ProjectBriefsApi();
 let body = new AsanaPreview.ProjectBriefsProjectBriefGidBody(); // ProjectBriefsProjectBriefGidBody | The updated fields for the project brief.
 let project_brief_gid = "12345"; // String | Globally unique identifier for the project brief.
 let opts = { 
-  'opt_fields': ["[\"html_text\",\"permalink_url\",\"project\",\"project.name\",\"text\",\"title\"]"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
+  'opt_fields': ["html_text","permalink_url","project","project.name","text","title"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
 };
 apiInstance.updateProjectBrief(body, project_brief_gid, opts, (error, data, response) => {
   if (error) {

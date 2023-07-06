@@ -17,7 +17,7 @@ import {ApiClient} from '../ApiClient';
 /**
  * The SectionTaskInsertRequest model module.
  * @module model/SectionTaskInsertRequest
- * @version 1.0.5
+ * @version 1.0.6
  */
 export class SectionTaskInsertRequest {
   /**

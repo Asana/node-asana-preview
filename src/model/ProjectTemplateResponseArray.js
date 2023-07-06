@@ -18,7 +18,7 @@ import {ProjectTemplateResponse} from './ProjectTemplateResponse';
 /**
  * The ProjectTemplateResponseArray model module.
  * @module model/ProjectTemplateResponseArray
- * @version 1.0.5
+ * @version 1.0.6
  */
 export class ProjectTemplateResponseArray {
   /**

@@ -36,7 +36,7 @@ import {WorkspaceGidProjectsBody} from '../model/WorkspaceGidProjectsBody';
 /**
 * Projects service.
 * @module api/ProjectsApi
-* @version 1.0.5
+* @version 1.0.6
 */
 export class ProjectsApi {
 

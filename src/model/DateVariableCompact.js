@@ -17,7 +17,7 @@ import {ApiClient} from '../ApiClient';
 /**
  * The DateVariableCompact model module.
  * @module model/DateVariableCompact
- * @version 1.0.5
+ * @version 1.0.6
  */
 export class DateVariableCompact {
   /**

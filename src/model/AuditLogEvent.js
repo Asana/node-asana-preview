@@ -20,7 +20,7 @@ import {AuditLogEventResource} from './AuditLogEventResource';
 /**
  * The AuditLogEvent model module.
  * @module model/AuditLogEvent
- * @version 1.0.5
+ * @version 1.0.6
  */
 export class AuditLogEvent {
   /**

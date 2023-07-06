@@ -30,7 +30,7 @@ let apiInstance = new AsanaPreview.ProjectStatusesApi();
 let body = new AsanaPreview.ProjectGidProjectStatusesBody(); // ProjectGidProjectStatusesBody | The project status to create.
 let project_gid = "1331"; // String | Globally unique identifier for the project.
 let opts = { 
-  'opt_fields': ["[\"author\",\"author.name\",\"color\",\"created_at\",\"created_by\",\"created_by.name\",\"html_text\",\"modified_at\",\"text\",\"title\"]"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
+  'opt_fields': ["author","author.name","color","created_at","created_by","created_by.name","html_text","modified_at","text","title"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
 };
 apiInstance.createProjectStatusForProject(body, project_gid, opts, (error, data, response) => {
   if (error) {
@@ -130,7 +130,7 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new AsanaPreview.ProjectStatusesApi();
 let project_status_gid = "321654"; // String | The project status update to get.
 let opts = { 
-  'opt_fields': ["[\"author\",\"author.name\",\"color\",\"created_at\",\"created_by\",\"created_by.name\",\"html_text\",\"modified_at\",\"text\",\"title\"]"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
+  'opt_fields': ["author","author.name","color","created_at","created_by","created_by.name","html_text","modified_at","text","title"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
 };
 apiInstance.getProjectStatus(project_status_gid, opts, (error, data, response) => {
   if (error) {
@@ -183,7 +183,7 @@ let project_gid = "1331"; // String | Globally unique identifier for the project
 let opts = { 
   'limit': 50, // Number | Results per page. The number of objects to return per page. The value must be between 1 and 100.
   'offset': "eyJ0eXAiOJiKV1iQLCJhbGciOiJIUzI1NiJ9", // String | Offset token. An offset to the next page returned by the API. A pagination request will return an offset token, which can be used as an input parameter to the next request. If an offset is not passed in, the API will return the first page of results. 'Note: You can only pass in an offset that was returned to you via a previously paginated request.'
-  'opt_fields': ["[\"author\",\"author.name\",\"color\",\"created_at\",\"created_by\",\"created_by.name\",\"html_text\",\"modified_at\",\"text\",\"title\"]"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
+  'opt_fields': ["author","author.name","color","created_at","created_by","created_by.name","html_text","modified_at","text","title"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
 };
 apiInstance.getProjectStatusesForProject(project_gid, opts, (error, data, response) => {
   if (error) {

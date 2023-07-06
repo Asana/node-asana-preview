@@ -17,7 +17,7 @@ import {ApiClient} from '../ApiClient';
 /**
  * The ProjectBaseWorkspace model module.
  * @module model/ProjectBaseWorkspace
- * @version 1.0.5
+ * @version 1.0.6
  */
 export class ProjectBaseWorkspace {
   /**

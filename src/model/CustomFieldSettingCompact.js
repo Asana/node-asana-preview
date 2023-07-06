@@ -17,7 +17,7 @@ import {ApiClient} from '../ApiClient';
 /**
  * The CustomFieldSettingCompact model module.
  * @module model/CustomFieldSettingCompact
- * @version 1.0.5
+ * @version 1.0.6
  */
 export class CustomFieldSettingCompact {
   /**

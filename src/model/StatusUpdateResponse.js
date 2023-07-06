@@ -20,7 +20,7 @@ import {StatusUpdateResponseParent} from './StatusUpdateResponseParent';
 /**
  * The StatusUpdateResponse model module.
  * @module model/StatusUpdateResponse
- * @version 1.0.5
+ * @version 1.0.6
  */
 export class StatusUpdateResponse {
   /**

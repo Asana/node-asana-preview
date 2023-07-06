@@ -26,7 +26,7 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new AsanaPreview.JobsApi();
 let job_gid = "12345"; // String | Globally unique identifier for the job.
 let opts = { 
-  'opt_fields': ["[\"new_project\",\"new_project.name\",\"new_project_template\",\"new_project_template.name\",\"new_task\",\"new_task.name\",\"new_task.resource_subtype\",\"new_task_template\",\"resource_subtype\",\"status\"]"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
+  'opt_fields': ["new_project","new_project.name","new_project_template","new_project_template.name","new_task","new_task.name","new_task.resource_subtype","resource_subtype","status"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
 };
 apiInstance.getJob(job_gid, opts, (error, data, response) => {
   if (error) {

@@ -18,7 +18,7 @@ import {TagResponse} from './TagResponse';
 /**
  * The WorkspaceGidTagsBody model module.
  * @module model/WorkspaceGidTagsBody
- * @version 1.0.5
+ * @version 1.0.6
  */
 export class WorkspaceGidTagsBody {
   /**

@@ -17,7 +17,7 @@ import {ApiClient} from '../ApiClient';
 /**
  * The StatusUpdateCompact model module.
  * @module model/StatusUpdateCompact
- * @version 1.0.5
+ * @version 1.0.6
  */
 export class StatusUpdateCompact {
   /**

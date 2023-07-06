@@ -29,7 +29,7 @@ let body = new AsanaPreview.OrganizationExportsBody(); // OrganizationExportsBod
 let opts = { 
   'limit': 50, // Number | Results per page. The number of objects to return per page. The value must be between 1 and 100.
   'offset': "eyJ0eXAiOJiKV1iQLCJhbGciOiJIUzI1NiJ9", // String | Offset token. An offset to the next page returned by the API. A pagination request will return an offset token, which can be used as an input parameter to the next request. If an offset is not passed in, the API will return the first page of results. 'Note: You can only pass in an offset that was returned to you via a previously paginated request.'
-  'opt_fields': ["[\"created_at\",\"download_url\",\"organization\",\"organization.name\",\"state\"]"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
+  'opt_fields': ["created_at","download_url","organization","organization.name","state"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
 };
 apiInstance.createOrganizationExport(body, opts, (error, data, response) => {
   if (error) {
@@ -82,7 +82,7 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new AsanaPreview.OrganizationExportsApi();
 let organization_export_gid = "12345"; // String | Globally unique identifier for the organization export.
 let opts = { 
-  'opt_fields': ["[\"created_at\",\"download_url\",\"organization\",\"organization.name\",\"state\"]"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
+  'opt_fields': ["created_at","download_url","organization","organization.name","state"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
 };
 apiInstance.getOrganizationExport(organization_export_gid, opts, (error, data, response) => {
   if (error) {

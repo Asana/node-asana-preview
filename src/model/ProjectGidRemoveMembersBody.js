@@ -18,7 +18,7 @@ import {RemoveMembersRequest} from './RemoveMembersRequest';
 /**
  * The ProjectGidRemoveMembersBody model module.
  * @module model/ProjectGidRemoveMembersBody
- * @version 1.0.5
+ * @version 1.0.6
  */
 export class ProjectGidRemoveMembersBody {
   /**

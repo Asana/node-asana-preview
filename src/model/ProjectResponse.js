@@ -27,7 +27,7 @@ import {ProjectResponseTeam} from './ProjectResponseTeam';
 /**
  * The ProjectResponse model module.
  * @module model/ProjectResponse
- * @version 1.0.5
+ * @version 1.0.6
  */
 export class ProjectResponse {
   /**

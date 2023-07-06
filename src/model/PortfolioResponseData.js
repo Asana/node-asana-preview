@@ -18,7 +18,7 @@ import {PortfolioResponse} from './PortfolioResponse';
 /**
  * The PortfolioResponseData model module.
  * @module model/PortfolioResponseData
- * @version 1.0.5
+ * @version 1.0.6
  */
 export class PortfolioResponseData {
   /**

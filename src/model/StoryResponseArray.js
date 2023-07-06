@@ -18,7 +18,7 @@ import {StoryResponse} from './StoryResponse';
 /**
  * The StoryResponseArray model module.
  * @module model/StoryResponseArray
- * @version 1.0.5
+ * @version 1.0.6
  */
 export class StoryResponseArray {
   /**

@@ -17,7 +17,7 @@ import {ApiClient} from '../ApiClient';
 /**
  * The TeamAddUserRequest model module.
  * @module model/TeamAddUserRequest
- * @version 1.0.5
+ * @version 1.0.6
  */
 export class TeamAddUserRequest {
   /**

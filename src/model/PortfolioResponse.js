@@ -23,7 +23,7 @@ import {PortfolioResponseWorkspace} from './PortfolioResponseWorkspace';
 /**
  * The PortfolioResponse model module.
  * @module model/PortfolioResponse
- * @version 1.0.5
+ * @version 1.0.6
  */
 export class PortfolioResponse {
   /**

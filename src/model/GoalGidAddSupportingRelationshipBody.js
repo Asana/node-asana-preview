@@ -18,7 +18,7 @@ import {GoalAddSupportingRelationshipRequest} from './GoalAddSupportingRelations
 /**
  * The GoalGidAddSupportingRelationshipBody model module.
  * @module model/GoalGidAddSupportingRelationshipBody
- * @version 1.0.5
+ * @version 1.0.6
  */
 export class GoalGidAddSupportingRelationshipBody {
   /**

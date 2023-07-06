@@ -18,7 +18,7 @@ import {PortfolioMembershipResponse} from './PortfolioMembershipResponse';
 /**
  * The PortfolioMembershipResponseArray model module.
  * @module model/PortfolioMembershipResponseArray
- * @version 1.0.5
+ * @version 1.0.6
  */
 export class PortfolioMembershipResponseArray {
   /**

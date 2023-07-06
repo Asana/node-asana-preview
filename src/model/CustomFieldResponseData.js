@@ -18,7 +18,7 @@ import {CustomFieldResponse} from './CustomFieldResponse';
 /**
  * The CustomFieldResponseData model module.
  * @module model/CustomFieldResponseData
- * @version 1.0.5
+ * @version 1.0.6
  */
 export class CustomFieldResponseData {
   /**

@@ -26,7 +26,7 @@ import {TeamsBody1} from '../model/TeamsBody1';
 /**
 * Teams service.
 * @module api/TeamsApi
-* @version 1.0.5
+* @version 1.0.6
 */
 export class TeamsApi {
 

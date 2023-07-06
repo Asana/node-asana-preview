@@ -19,7 +19,7 @@ import {ProjectTemplateBaseTeam} from './ProjectTemplateBaseTeam';
 /**
  * The TeamMembershipResponse model module.
  * @module model/TeamMembershipResponse
- * @version 1.0.5
+ * @version 1.0.6
  */
 export class TeamMembershipResponse {
   /**

@@ -34,7 +34,7 @@ let opts = {
   'url': "url_example", // String | 
   'name': "name_example", // String | 
   'connect_to_app': true, // Boolean | 
-  'opt_fields': ["[\"connected_to_app\",\"created_at\",\"download_url\",\"host\",\"name\",\"parent\",\"parent.name\",\"parent.resource_subtype\",\"permanent_url\",\"resource_subtype\",\"size\",\"view_url\"]"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
+  'opt_fields': ["connected_to_app","created_at","download_url","host","name","parent","parent.name","parent.resource_subtype","permanent_url","resource_subtype","size","view_url"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
 };
 apiInstance.createAttachmentForObject(opts, (error, data, response) => {
   if (error) {
@@ -138,7 +138,7 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new AsanaPreview.AttachmentsApi();
 let attachment_gid = "12345"; // String | Globally unique identifier for the attachment.
 let opts = { 
-  'opt_fields': ["[\"connected_to_app\",\"created_at\",\"download_url\",\"host\",\"name\",\"parent\",\"parent.name\",\"parent.resource_subtype\",\"permanent_url\",\"resource_subtype\",\"size\",\"view_url\"]"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
+  'opt_fields': ["connected_to_app","created_at","download_url","host","name","parent","parent.name","parent.resource_subtype","permanent_url","resource_subtype","size","view_url"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
 };
 apiInstance.getAttachment(attachment_gid, opts, (error, data, response) => {
   if (error) {
@@ -191,7 +191,7 @@ let parent = "159874"; // String | Globally unique identifier for object to fetc
 let opts = { 
   'limit': 50, // Number | Results per page. The number of objects to return per page. The value must be between 1 and 100.
   'offset': "eyJ0eXAiOJiKV1iQLCJhbGciOiJIUzI1NiJ9", // String | Offset token. An offset to the next page returned by the API. A pagination request will return an offset token, which can be used as an input parameter to the next request. If an offset is not passed in, the API will return the first page of results. 'Note: You can only pass in an offset that was returned to you via a previously paginated request.'
-  'opt_fields': ["[\"connected_to_app\",\"created_at\",\"download_url\",\"host\",\"name\",\"parent\",\"parent.name\",\"parent.resource_subtype\",\"permanent_url\",\"resource_subtype\",\"size\",\"view_url\"]"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
+  'opt_fields': ["connected_to_app","created_at","download_url","host","name","parent","parent.name","parent.resource_subtype","permanent_url","resource_subtype","size","view_url"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
 };
 apiInstance.getAttachmentsForObject(parent, opts, (error, data, response) => {
   if (error) {

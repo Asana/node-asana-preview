@@ -18,7 +18,7 @@ import {AsanaNamedResource} from './AsanaNamedResource';
 /**
  * The AsanaNamedResourceArray model module.
  * @module model/AsanaNamedResourceArray
- * @version 1.0.5
+ * @version 1.0.6
  */
 export class AsanaNamedResourceArray {
   /**

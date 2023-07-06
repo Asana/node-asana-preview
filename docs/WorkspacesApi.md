@@ -31,7 +31,7 @@ let apiInstance = new AsanaPreview.WorkspacesApi();
 let body = new AsanaPreview.WorkspaceGidAddUserBody(); // WorkspaceGidAddUserBody | The user to add to the workspace.
 let workspace_gid = "12345"; // String | Globally unique identifier for the workspace or organization.
 let opts = { 
-  'opt_fields': ["[\"email\",\"name\",\"photo\",\"photo.image_1024x1024\",\"photo.image_128x128\",\"photo.image_21x21\",\"photo.image_27x27\",\"photo.image_36x36\",\"photo.image_60x60\"]"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
+  'opt_fields': ["email","name","photo","photo.image_1024x1024","photo.image_128x128","photo.image_21x21","photo.image_27x27","photo.image_36x36","photo.image_60x60"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
 };
 apiInstance.addUserForWorkspace(body, workspace_gid, opts, (error, data, response) => {
   if (error) {
@@ -83,7 +83,7 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new AsanaPreview.WorkspacesApi();
 let workspace_gid = "12345"; // String | Globally unique identifier for the workspace or organization.
 let opts = { 
-  'opt_fields': ["[\"email_domains\",\"is_organization\",\"name\"]"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
+  'opt_fields': ["email_domains","is_organization","name"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
 };
 apiInstance.getWorkspace(workspace_gid, opts, (error, data, response) => {
   if (error) {
@@ -135,7 +135,7 @@ let apiInstance = new AsanaPreview.WorkspacesApi();
 let opts = { 
   'limit': 50, // Number | Results per page. The number of objects to return per page. The value must be between 1 and 100.
   'offset': "eyJ0eXAiOJiKV1iQLCJhbGciOiJIUzI1NiJ9", // String | Offset token. An offset to the next page returned by the API. A pagination request will return an offset token, which can be used as an input parameter to the next request. If an offset is not passed in, the API will return the first page of results. 'Note: You can only pass in an offset that was returned to you via a previously paginated request.'
-  'opt_fields': ["[\"email_domains\",\"is_organization\",\"name\"]"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
+  'opt_fields': ["email_domains","is_organization","name"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
 };
 apiInstance.getWorkspaces(opts, (error, data, response) => {
   if (error) {
@@ -238,7 +238,7 @@ let apiInstance = new AsanaPreview.WorkspacesApi();
 let body = new AsanaPreview.WorkspacesWorkspaceGidBody(); // WorkspacesWorkspaceGidBody | The workspace object with all updated properties.
 let workspace_gid = "12345"; // String | Globally unique identifier for the workspace or organization.
 let opts = { 
-  'opt_fields': ["[\"email_domains\",\"is_organization\",\"name\"]"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
+  'opt_fields': ["email_domains","is_organization","name"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
 };
 apiInstance.updateWorkspace(body, workspace_gid, opts, (error, data, response) => {
   if (error) {

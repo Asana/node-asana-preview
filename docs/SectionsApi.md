@@ -84,7 +84,7 @@ let apiInstance = new AsanaPreview.SectionsApi();
 let project_gid = "1331"; // String | Globally unique identifier for the project.
 let opts = { 
   'body': new AsanaPreview.ProjectGidSectionsBody(), // ProjectGidSectionsBody | The section to create.
-  'opt_fields': ["[\"created_at\",\"name\",\"project\",\"project.name\",\"projects\",\"projects.name\"]"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
+  'opt_fields': ["created_at","name","project","project.name","projects","projects.name"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
 };
 apiInstance.createSectionForProject(project_gid, opts, (error, data, response) => {
   if (error) {
@@ -184,7 +184,7 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new AsanaPreview.SectionsApi();
 let section_gid = "321654"; // String | The globally unique identifier for the section.
 let opts = { 
-  'opt_fields': ["[\"created_at\",\"name\",\"project\",\"project.name\",\"projects\",\"projects.name\"]"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
+  'opt_fields': ["created_at","name","project","project.name","projects","projects.name"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
 };
 apiInstance.getSection(section_gid, opts, (error, data, response) => {
   if (error) {
@@ -237,7 +237,7 @@ let project_gid = "1331"; // String | Globally unique identifier for the project
 let opts = { 
   'limit': 50, // Number | Results per page. The number of objects to return per page. The value must be between 1 and 100.
   'offset': "eyJ0eXAiOJiKV1iQLCJhbGciOiJIUzI1NiJ9", // String | Offset token. An offset to the next page returned by the API. A pagination request will return an offset token, which can be used as an input parameter to the next request. If an offset is not passed in, the API will return the first page of results. 'Note: You can only pass in an offset that was returned to you via a previously paginated request.'
-  'opt_fields': ["[\"created_at\",\"name\",\"project\",\"project.name\",\"projects\",\"projects.name\"]"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
+  'opt_fields': ["created_at","name","project","project.name","projects","projects.name"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
 };
 apiInstance.getSectionsForProject(project_gid, opts, (error, data, response) => {
   if (error) {
@@ -342,7 +342,7 @@ let apiInstance = new AsanaPreview.SectionsApi();
 let section_gid = "321654"; // String | The globally unique identifier for the section.
 let opts = { 
   'body': new AsanaPreview.SectionsSectionGidBody(), // SectionsSectionGidBody | The section to create.
-  'opt_fields': ["[\"created_at\",\"name\",\"project\",\"project.name\",\"projects\",\"projects.name\"]"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
+  'opt_fields': ["created_at","name","project","project.name","projects","projects.name"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
 };
 apiInstance.updateSection(section_gid, opts, (error, data, response) => {
   if (error) {

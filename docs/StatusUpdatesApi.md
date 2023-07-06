@@ -31,7 +31,7 @@ let body = new AsanaPreview.StatusUpdatesBody(); // StatusUpdatesBody | The stat
 let opts = { 
   'limit': 50, // Number | Results per page. The number of objects to return per page. The value must be between 1 and 100.
   'offset': "eyJ0eXAiOJiKV1iQLCJhbGciOiJIUzI1NiJ9", // String | Offset token. An offset to the next page returned by the API. A pagination request will return an offset token, which can be used as an input parameter to the next request. If an offset is not passed in, the API will return the first page of results. 'Note: You can only pass in an offset that was returned to you via a previously paginated request.'
-  'opt_fields': ["[\"author\",\"author.name\",\"created_at\",\"created_by\",\"created_by.name\",\"hearted\",\"hearts\",\"hearts.user\",\"hearts.user.name\",\"html_text\",\"liked\",\"likes\",\"likes.user\",\"likes.user.name\",\"modified_at\",\"num_hearts\",\"num_likes\",\"parent\",\"parent.name\",\"resource_subtype\",\"status_type\",\"text\",\"title\"]"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
+  'opt_fields': ["author","author.name","created_at","created_by","created_by.name","hearted","hearts","hearts.user","hearts.user.name","html_text","liked","likes","likes.user","likes.user.name","modified_at","num_hearts","num_likes","parent","parent.name","resource_subtype","status_type","text","title"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
 };
 apiInstance.createStatusForObject(body, opts, (error, data, response) => {
   if (error) {
@@ -132,7 +132,7 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new AsanaPreview.StatusUpdatesApi();
 let status_update_gid = "321654"; // String | The status update to get.
 let opts = { 
-  'opt_fields': ["[\"author\",\"author.name\",\"created_at\",\"created_by\",\"created_by.name\",\"hearted\",\"hearts\",\"hearts.user\",\"hearts.user.name\",\"html_text\",\"liked\",\"likes\",\"likes.user\",\"likes.user.name\",\"modified_at\",\"num_hearts\",\"num_likes\",\"parent\",\"parent.name\",\"resource_subtype\",\"status_type\",\"text\",\"title\"]"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
+  'opt_fields': ["author","author.name","created_at","created_by","created_by.name","hearted","hearts","hearts.user","hearts.user.name","html_text","liked","likes","likes.user","likes.user.name","modified_at","num_hearts","num_likes","parent","parent.name","resource_subtype","status_type","text","title"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
 };
 apiInstance.getStatus(status_update_gid, opts, (error, data, response) => {
   if (error) {
@@ -186,7 +186,7 @@ let opts = {
   'limit': 50, // Number | Results per page. The number of objects to return per page. The value must be between 1 and 100.
   'offset': "eyJ0eXAiOJiKV1iQLCJhbGciOiJIUzI1NiJ9", // String | Offset token. An offset to the next page returned by the API. A pagination request will return an offset token, which can be used as an input parameter to the next request. If an offset is not passed in, the API will return the first page of results. 'Note: You can only pass in an offset that was returned to you via a previously paginated request.'
   'created_since': new Date("2012-02-22T02:06:58.158Z"), // Date | Only return statuses that have been created since the given time.
-  'opt_fields': ["[\"author\",\"author.name\",\"created_at\",\"created_by\",\"created_by.name\",\"hearted\",\"hearts\",\"hearts.user\",\"hearts.user.name\",\"html_text\",\"liked\",\"likes\",\"likes.user\",\"likes.user.name\",\"modified_at\",\"num_hearts\",\"num_likes\",\"parent\",\"parent.name\",\"resource_subtype\",\"status_type\",\"text\",\"title\"]"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
+  'opt_fields': ["author","author.name","created_at","created_by","created_by.name","hearted","hearts","hearts.user","hearts.user.name","html_text","liked","likes","likes.user","likes.user.name","modified_at","num_hearts","num_likes","parent","parent.name","resource_subtype","status_type","text","title"] // [String] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
 };
 apiInstance.getStatusesForObject(parent, opts, (error, data, response) => {
   if (error) {

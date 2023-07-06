@@ -18,7 +18,7 @@ import {StoryRequest} from './StoryRequest';
 /**
  * The StoriesStoryGidBody model module.
  * @module model/StoriesStoryGidBody
- * @version 1.0.5
+ * @version 1.0.6
  */
 export class StoriesStoryGidBody {
   /**
